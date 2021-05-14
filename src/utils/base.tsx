@@ -11,39 +11,39 @@ interface Base {
 // BASE constant colors
 export const LIGHT: Base = {
   slate: {
-    S99: "#000000",
-    S95: "#191919",
-    S90: "#24292E",
-    S70: "#757A82",
-    S30: "#E7E7E7",
-    S20: "#F3F3F3",
-    S10: "#F4F6F9",
-    S00: "#FFFFFF"
+    S100: "#000000",
+    S090: "#191919",
+    S070: "#24292E",
+    S060: "#757A82",
+    S040: "#E7E7E7",
+    S020: "#F3F3F3",
+    S010: "#F4F6F9",
+    S000: "#FFFFFF"
   },
   main: {
-    M99: "#00BAFF",
-    M40: "rgba(0,186,255,.4)"
+    M100: "#00BAFF",
+    M040: "rgba(0,186,255,.4)"
   },
   secondary: {
-    S99: "#6A78FF",
-    S40: "rgba(106,120,255,.4)",
+    S100: "#6A78FF",
+    S040: "rgba(106,120,255,.4)",
     gradient: "linear-gradient(180deg, rgba(106, 120, 255, 0.1) -30%, rgba(0, 185, 255, 0.1) 130%)"
   },
   red: {
-    R99: "#FC605C",
-    R40: "rgba(252,96,92,.4)"
+    R100: "#FC605C",
+    R040: "rgba(252,96,92,.4)"
   },
   yellow: {
-    Y99: "#FDBC40",
-    Y40: "rgba(253,188,64,.4)"
+    Y100: "#FDBC40",
+    Y040: "rgba(253,188,64,.4)"
   },
   green: {
-    G99: "#34C749",
-    G40: "rgba(52,199,73,.4)"
+    G100: "#34C749",
+    G040: "rgba(52,199,73,.4)"
   },
   opacity: {
-    O10: "rgba(25,25,25,.1",
-    O00: "rgba(0,0,0,0)",
+    O010: "rgba(25,25,25,.1",
+    O000: "rgba(0,0,0,0)",
     transparent: "rgba(255,255,255,0)"
   }
 }
@@ -51,85 +51,85 @@ export const LIGHT: Base = {
 // TODO Dark colors
 export const DARK: Base = {
   slate: {
-    S99: "#000000",
-    S95: "#191919",
-    S90: "#24292E",
-    S70: "#757A82",
-    S30: "#E7E7E7",
-    S20: "#F3F3F3",
-    S10: "#F4F6F9",
-    S00: "#FFFFFF"
+    S100: "#FFFFFF",
+    S090: "#E9E9E9",
+    S070: "#878892",
+    S060: "#2C292E",
+    S040: "#282828",
+    S020: "#1C1C1C",
+    S010: "#0E1012",
+    S000: "#000000"
   },
   main: {
-    M99: "#00BAFF",
-    M40: "rgba(0,186,255,.4)"
+    M100: "#6946BA",
+    M040: "rgba(105,70,186,.4)"
   },
   secondary: {
-    S99: "#6A78FF",
-    S40: "rgba(106,120,255,.4)",
-    gradient: "linear-gradient(180deg, rgba(106, 120, 255, 0.1) -30%, rgba(0, 185, 255, 0.1) 130%)"
+    S100: "#500BF1",
+    S040: "rgba(80,11,241,.4)",
+    gradient: "linear-gradient(180deg, rgba(80, 11, 241, 0.25) -29.19%, rgba(105, 70, 186, 0.25) 127.14%);"
   },
   red: {
-    R99: "#FC605C",
-    R40: "rgba(252,96,92,.4)"
+    R100: "#FC605C",
+    R040: "rgba(252,96,92,.4)"
   },
   yellow: {
-    Y99: "#FDBC40",
-    Y40: "rgba(253,188,64,.4)"
+    Y100: "#FDBC40",
+    Y040: "rgba(253,188,64,.4)"
   },
   green: {
-    G99: "#34C749",
-    G40: "rgba(52,199,73,.4)"
+    G100: "#34C749",
+    G040: "rgba(52,199,73,.4)"
   },
   opacity: {
-    O10: "rgba(25,25,25,.1",
-    O00: "rgba(0,0,0,0)",
-    transparent: "rgba(255,255,255,0)"
+    O010: "rgba(225,225,225,.1",
+    O000: "rgba(255,255,255,0)",
+    transparent: "rgba(0,0,0,0)"
   }
 }
 
 
 // Object types
 type Slate = {
-  S99: string
-  S95: string
-  S90: string
-  S70: string
-  S30: string
-  S20: string
-  S10: string
-  S00: string
+  S100: string
+  S090: string
+  S070: string
+  S060: string
+  S040: string
+  S020: string
+  S010: string
+  S000: string
 }
 
 type Main = {
-  M99: string
-  M40: string
+  M100: string
+  M040: string
 }
 
 type Secondary = {
-  S99: string
-  S40: string
+  S100: string
+  S040: string
   gradient: string
 }
 
 type Red = {
-  R99: string
-  R40: string
+  R100: string
+  R040: string
 }
 
 type Yellow = {
-  Y99: string
-  Y40: string
+  Y100: string
+  Y040: string
 }
 
 type Green = {
-  G99: string
-  G40: string
+  G100: string
+  G040: string
 }
 
 type Opacity = {
-  O10: string
-  O00: string
+  O010: string
+  O000: string
   transparent: string
 }
 

@@ -17,67 +17,67 @@ export const THEME: Colors = {
   // Light theme
   light: {
     text: {
-      primary: LIGHT.slate.S90,
-      secondary: LIGHT.slate.S70,
-      hover: LIGHT.main.M99,
-      active: LIGHT.secondary.S99,
-      visited: LIGHT.secondary.S40,
-      tooltip: LIGHT.slate.S00,
+      primary: LIGHT.slate.S090,
+      secondary: LIGHT.slate.S070,
+      hover: LIGHT.main.M100,
+      active: LIGHT.secondary.S100,
+      visited: LIGHT.secondary.S040,
+      tooltip: LIGHT.slate.S000,
       hero: LIGHT.secondary.gradient
     },
     background: {
-      hover: LIGHT.slate.S30,
-      basic: LIGHT.slate.S20,
-      tint: LIGHT.slate.S10,
-      default: LIGHT.slate.S00,
+      hover: LIGHT.slate.S040,
+      basic: LIGHT.slate.S020,
+      tint: LIGHT.slate.S010,
+      default: LIGHT.slate.S000,
       transparent: LIGHT.opacity.transparent,
-      tooltip: LIGHT.slate.S99
+      tooltip: LIGHT.slate.S100
     },
     border: {
-      outline: LIGHT.opacity.O10,
-      transparent: LIGHT.opacity.O00
+      outline: LIGHT.opacity.O010,
+      transparent: LIGHT.opacity.O000
     },
     alert: {
-      error: LIGHT.red.R99,
-      warning: LIGHT.yellow.Y99,
-      valid: LIGHT.green.G99,
+      error: LIGHT.red.R100,
+      warning: LIGHT.yellow.Y100,
+      valid: LIGHT.green.G100,
     },
     constant: {
-      black: LIGHT.slate.S99,
-      white: LIGHT.slate.S00
+      black: LIGHT.slate.S100,
+      white: LIGHT.slate.S000
     }
   },
   // Dark theme
   dark: {
     text: {
-      primary: DARK.slate.S90,
-      secondary: DARK.slate.S70,
-      hover: DARK.main.M99,
-      active: DARK.secondary.S99,
-      visited: DARK.secondary.S40,
-      tooltip: DARK.slate.S00,
+      primary: DARK.slate.S090,
+      secondary: DARK.slate.S070,
+      hover: DARK.main.M100,
+      active: DARK.secondary.S100,
+      visited: DARK.secondary.S040,
+      tooltip: DARK.slate.S000,
       hero: DARK.secondary.gradient
     },
     background: {
-      hover: DARK.slate.S30,
-      basic: DARK.slate.S20,
-      tint: DARK.slate.S10,
-      default: DARK.slate.S00,
+      hover: DARK.slate.S040,
+      basic: DARK.slate.S020,
+      tint: DARK.slate.S060,
+      default: DARK.slate.S010,
       transparent: DARK.opacity.transparent,
-      tooltip: DARK.slate.S99
+      tooltip: DARK.slate.S100
     },
     border: {
-      outline: DARK.opacity.O10,
-      transparent: DARK.opacity.O00
+      outline: DARK.opacity.O010,
+      transparent: DARK.opacity.O000
     },
     alert: {
-      error: DARK.red.R99,
-      warning: DARK.yellow.Y99,
-      valid: DARK.green.G99,
+      error: DARK.red.R100,
+      warning: DARK.yellow.Y100,
+      valid: DARK.green.G100,
     },
     constant: {
-      black: DARK.slate.S99,
-      white: DARK.slate.S00
+      black: DARK.slate.S100,
+      white: DARK.slate.S100
     }
   },
 }
