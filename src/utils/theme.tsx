@@ -4,7 +4,7 @@ import { LIGHT, DARK } from "./base"
 // They need to be changed at the root of colors
 // in ./src/utils/base.tsx
 
-interface Theme {
+export interface Theme {
   text: Font
   background: Background
   border: Border
@@ -17,8 +17,8 @@ export const THEME: Colors = {
   // Light theme
   light: {
     text: {
-      primary: LIGHT.slate.S090,
-      secondary: LIGHT.slate.S070,
+      primary: LIGHT.slate.S070,
+      secondary: LIGHT.slate.S060,
       hover: LIGHT.main.M100,
       active: LIGHT.secondary.S100,
       visited: LIGHT.secondary.S040,
@@ -31,7 +31,7 @@ export const THEME: Colors = {
       tint: LIGHT.slate.S010,
       default: LIGHT.slate.S000,
       transparent: LIGHT.opacity.transparent,
-      tooltip: LIGHT.slate.S100
+      tooltip: LIGHT.slate.S090
     },
     border: {
       outline: LIGHT.opacity.O010,
@@ -47,6 +47,7 @@ export const THEME: Colors = {
       white: LIGHT.slate.S000
     }
   },
+
   // Dark theme
   dark: {
     text: {
@@ -55,7 +56,7 @@ export const THEME: Colors = {
       hover: DARK.main.M100,
       active: DARK.secondary.S100,
       visited: DARK.secondary.S040,
-      tooltip: DARK.slate.S000,
+      tooltip: DARK.slate.S010,
       hero: DARK.secondary.gradient
     },
     background: {
@@ -76,7 +77,7 @@ export const THEME: Colors = {
       valid: DARK.green.G100,
     },
     constant: {
-      black: DARK.slate.S100,
+      black: DARK.slate.S000,
       white: DARK.slate.S100
     }
   },

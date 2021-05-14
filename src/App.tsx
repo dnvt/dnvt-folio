@@ -1,11 +1,15 @@
-import React from 'react';
-import { THEME } from './utils/theme';
+import { useTheme } from 'theming';
+import { Theme } from './utils/theme';
 
 function App() {
+  const theme: Theme = useTheme()
+
   return (
-    <h1 style={{ color: THEME.light.text.primary }}>
-      Hello world!
+    <div style={{ width: "100vw", minHeight: "100vh", height: "auto" }}>
+      <h1 style={{ color: theme.text.primary }}>
+        Hello world!
     </h1>
+    </div>
   );
 }
 
