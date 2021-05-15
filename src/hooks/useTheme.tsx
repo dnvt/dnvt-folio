@@ -2,15 +2,14 @@
 import React, { createContext, useContext } from "react";
 import useDarkMode from "use-dark-mode";
 import { useTheme, ThemeProvider } from "react-jss";
-import { THEME } from "../utils/theme";
+import { THEME } from "../utils/theme/theme";
 
 type Context = [boolean, Function?]
-type Props = { children: JSX.Element }
 
 const DarkModeCtx = createContext<Context>([false, () => { }]);
 
-export function ColorTheme({ children }: Props) {
-  const darkMode = useDarkMode(false);
+export const ColorTheme: React.FC = ({ children }) => {
+  const darkMode = useDarkMode(false, { storageKey: "null" });
 
   return (
     <DarkModeCtx.Provider value={[false]}>

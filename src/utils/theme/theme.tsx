@@ -34,6 +34,8 @@ export const THEME: Colors = {
       tooltip: LIGHT.slate.S090
     },
     border: {
+      verticalGrid: LIGHT.main.M020,
+      horizontalGrid: LIGHT.secondary.S020,
       outline: LIGHT.opacity.O010,
       transparent: LIGHT.opacity.O000
     },
@@ -68,6 +70,8 @@ export const THEME: Colors = {
       tooltip: DARK.slate.S100
     },
     border: {
+      verticalGrid: DARK.secondary.S020,
+      horizontalGrid: DARK.main.M020,
       outline: DARK.opacity.O010,
       transparent: DARK.opacity.O000
     },
@@ -104,8 +108,10 @@ type Background = {
 }
 
 type Border = {
-  outline: string,
-  transparent: string,
+  verticalGrid: string
+  horizontalGrid: string
+  outline: string
+  transparent: string
 }
 
 // TODO

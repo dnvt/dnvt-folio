@@ -1,15 +1,20 @@
 import { useTheme } from 'theming';
-import { Theme } from './utils/theme';
+import { Theme } from './utils/theme/theme';
+import Container from './containers/Container';
+import Vertical from "./utils/grid/Vertical";
+import Horizontal from "./utils/grid/Horizontal";
 
-function App() {
+const App: React.FC = () => {
   const theme: Theme = useTheme()
 
   return (
-    <div style={{ width: "100vw", minHeight: "100vh", height: "auto" }}>
-      <h1 style={{ color: theme.text.primary }}>
-        Hello world!
-    </h1>
-    </div>
+    <>
+      <Vertical />
+      <Horizontal />
+      <Container>
+        <h1 style={{ color: theme.text.primary, margin: 0 }}>Hello world!</h1>
+      </Container>
+    </>
   );
 }
 

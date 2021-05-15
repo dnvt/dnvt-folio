@@ -22,11 +22,13 @@ export const LIGHT: Base = {
   },
   main: {
     M100: "#00BAFF",
-    M040: "rgba(0,186,255,.4)"
+    M040: "rgba(0,186,255,.4)",
+    M020: "rgba(0,186,255,.20)"
   },
   secondary: {
     S100: "#6A78FF",
     S040: "rgba(106,120,255,.4)",
+    S020: "rgba(106,120,255,.2)",
     gradient: "linear-gradient(180deg, rgba(106, 120, 255, 0.1) -30%, rgba(0, 185, 255, 0.1) 130%)"
   },
   red: {
@@ -62,11 +64,13 @@ export const DARK: Base = {
   },
   main: {
     M100: "#6946BA",
-    M040: "rgba(105,70,186,.4)"
+    M040: "rgba(105,70,186,.4)",
+    M020: "rgba(105,70,186,.20)"
   },
   secondary: {
     S100: "#500BF1",
     S040: "rgba(80,11,241,.4)",
+    S020: "rgba(80,11,241,.2)",
     gradient: "linear-gradient(180deg, rgba(80, 11, 241, 0.25) -29.19%, rgba(105, 70, 186, 0.25) 127.14%);"
   },
   red: {
@@ -104,12 +108,14 @@ type Slate = {
 type Main = {
   M100: string
   M040: string
+  M020: string
 }
 
 type Secondary = {
+  gradient: string
   S100: string
   S040: string
-  gradient: string
+  S020: string
 }
 
 type Red = {
@@ -128,8 +134,8 @@ type Green = {
 }
 
 type Opacity = {
+  transparent: string
   O010: string
   O000: string
-  transparent: string
 }
 
