@@ -1,5 +1,6 @@
 import React from "react"
 import { useGridVisibility } from "../../hooks/useGridVisibility"
+import Icon from "../../utils/icons/Icon"
 
 const GridToggleIcon: React.FC = () => {
   const [visibility, setVisibility] = useGridVisibility()
@@ -7,14 +8,13 @@ const GridToggleIcon: React.FC = () => {
   return (
     <button
       type='button'
-      onClick={() => {
-        setVisibility(!visibility)
-      }}
+      onClick={() => { setVisibility(!visibility) }}
       aria-label='grid toggle'
     >
-      {visibility ? "Hide grid" : "Show grid"}
+      <Icon name={visibility ? "guidelinesOff" : "guidelinesOn"} />
     </button>
   )
+
 }
 
 export default GridToggleIcon

@@ -2,7 +2,7 @@ import { useTheme } from 'theming'
 import { Theme } from './utils/theme/theme'
 import Container from './containers/Container'
 import GridToggleIcon from './ui/buttons/GridToggleIcon'
-import Grid from './utils/grid/Grid'
+import Grid from './utils/grids/Grid'
 import Spacer from './utils/spacer/Spacer'
 
 const App: React.FC = () => {
