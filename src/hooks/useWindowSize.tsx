@@ -31,5 +31,5 @@ export const WindowSizeProvider: React.FC = ({ children }) => {
 };
 
 export const useWindowSize = () => {
-  return useContext(WindowSizeCtx);
+  return useContext(WindowSizeCtx)
 };

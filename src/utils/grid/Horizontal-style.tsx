@@ -8,6 +8,10 @@ const HorizontalStyle = createUseStyles({
     left: 0,
     width: "100%",
     zIndex: "-1",
+    WebkitUserSelect: "none",  /* Chrome all / Safari all */
+    MozUserSelect: "none",     /* Firefox all */
+    MsUserSelect: "none",      /* IE 10+ */
+    userSelect: "none",
   },
 
   Row: {

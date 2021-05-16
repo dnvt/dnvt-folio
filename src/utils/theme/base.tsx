@@ -23,13 +23,15 @@ export const LIGHT: Base = {
   main: {
     M100: "#00BAFF",
     M040: "rgba(0,186,255,.4)",
-    M020: "rgba(0,186,255,.20)"
+    M020: "rgba(0,186,255,.2)",
+    M015: "rgba(0,186,255,.15)"
   },
   secondary: {
+    gradient: "linear-gradient(180deg, rgba(106, 120, 255, 0.1) -30%, rgba(0, 185, 255, 0.1) 130%)",
     S100: "#6A78FF",
     S040: "rgba(106,120,255,.4)",
     S020: "rgba(106,120,255,.2)",
-    gradient: "linear-gradient(180deg, rgba(106, 120, 255, 0.1) -30%, rgba(0, 185, 255, 0.1) 130%)"
+    S015: "rgba(106,120,255,.15)"
   },
   red: {
     R100: "#FC605C",
@@ -65,13 +67,15 @@ export const DARK: Base = {
   main: {
     M100: "#6946BA",
     M040: "rgba(105,70,186,.4)",
-    M020: "rgba(105,70,186,.20)"
+    M020: "rgba(105,70,186,.2)",
+    M015: "rgba(105,70,186,.15)"
   },
   secondary: {
+    gradient: "linear-gradient(180deg, rgba(80, 11, 241, 0.25) -29.19%, rgba(105, 70, 186, 0.25) 127.14%);",
     S100: "#500BF1",
     S040: "rgba(80,11,241,.4)",
     S020: "rgba(80,11,241,.2)",
-    gradient: "linear-gradient(180deg, rgba(80, 11, 241, 0.25) -29.19%, rgba(105, 70, 186, 0.25) 127.14%);"
+    S015: "rgba(80,11,241,.15)"
   },
   red: {
     R100: "#FC605C",
@@ -109,6 +113,7 @@ type Main = {
   M100: string
   M040: string
   M020: string
+  M015: string
 }
 
 type Secondary = {
@@ -116,6 +121,7 @@ type Secondary = {
   S100: string
   S040: string
   S020: string
+  S015: string
 }
 
 type Red = {
