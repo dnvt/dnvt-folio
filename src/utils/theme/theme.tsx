@@ -8,6 +8,7 @@ export interface Theme {
   text: Font
   background: Background
   border: Border
+  grid: Grid
   alert: Alert
   constant: Constant
 }
@@ -34,10 +35,15 @@ export const THEME: Colors = {
       tooltip: LIGHT.slate.S090
     },
     border: {
-      verticalGrid: LIGHT.main.M015,
-      horizontalGrid: LIGHT.secondary.S020,
       outline: LIGHT.opacity.O010,
       transparent: LIGHT.opacity.O000
+    },
+    grid: {
+      text: LIGHT.main.M100,
+      fill: LIGHT.main.M040,
+      outline: LIGHT.main.M040,
+      verticalGrid: LIGHT.main.M015,
+      horizontalGrid: LIGHT.secondary.S020,
     },
     alert: {
       error: LIGHT.red.R100,
@@ -70,10 +76,15 @@ export const THEME: Colors = {
       tooltip: DARK.slate.S100
     },
     border: {
-      verticalGrid: DARK.secondary.S015,
-      horizontalGrid: DARK.main.M020,
       outline: DARK.opacity.O010,
       transparent: DARK.opacity.O000
+    },
+    grid: {
+      text: DARK.main.M100,
+      fill: DARK.main.M040,
+      outline: DARK.main.M040,
+      verticalGrid: DARK.secondary.S015,
+      horizontalGrid: DARK.main.M020,
     },
     alert: {
       error: DARK.red.R100,
@@ -108,8 +119,6 @@ type Background = {
 }
 
 type Border = {
-  verticalGrid: string
-  horizontalGrid: string
   outline: string
   transparent: string
 }
@@ -117,6 +126,13 @@ type Border = {
 // TODO
 // type Projects = {}
 
+type Grid = {
+  text: string
+  fill: string
+  outline: string
+  verticalGrid: string
+  horizontalGrid: string
+}
 type Alert = {
   error: string
   warning: string

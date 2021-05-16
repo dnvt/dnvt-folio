@@ -1,5 +1,5 @@
-import { createUseStyles } from "react-jss";
-import { Theme } from "../theme/theme";
+import { createUseStyles } from "react-jss"
+import { Theme } from "../theme/theme"
 
 const HorizontalStyle = createUseStyles({
   Horizontal: {
@@ -26,9 +26,9 @@ const HorizontalStyle = createUseStyles({
       bottom: 0,
       width: "100%",
       height: 1,
-      background: ({ theme }) => (theme as Theme).border.horizontalGrid,
+      background: ({ theme }) => (theme as Theme).grid.horizontalGrid,
     },
   },
-});
+})
 
-export default HorizontalStyle;
+export default HorizontalStyle

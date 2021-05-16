@@ -1,7 +1,7 @@
 import React from "react"
 import { useGridVisibility } from "../../hooks/useGridVisibility"
 
-const GridToggleIcon: React.FC = (props) => {
+const GridToggleIcon: React.FC = () => {
   const [visibility, setVisibility] = useGridVisibility()
 
   return (

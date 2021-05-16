@@ -23,7 +23,7 @@ const VerticalStyle = createUseStyles({
 
     "& div": {
       height: "100%",
-      background: ({ theme }) => (theme as Theme).border.verticalGrid,
+      background: ({ theme }) => (theme as Theme).grid.verticalGrid,
     },
 
     "@media (min-width: 576px)": {

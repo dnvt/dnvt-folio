@@ -10,6 +10,8 @@
 [x] - Basic Container
 [x] - Window size hook
 [x] - Document size hook
-[ ] - Work on the spacers
+[x] - Work on the spacers
+[ ] - Icons
+[ ] - Fonts
 
 ---

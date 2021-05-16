@@ -5,14 +5,23 @@ import Horizontal from "./Horizontal"
 
 const Grid: React.FC = (props) => {
   const [visibility] = useGridVisibility()
-  const grid = <><Vertical /><Horizontal /></>
+  const { children } = props
 
-  return (
-    <>
-      {visibility ? grid : null}
-      {props.children}
-    </>
-  )
+  const grid = <><Vertical /><Horizontal /></>
+  const gridComponent: JSX.Element = setGridVisibility()
+
+  return <>{gridComponent}</>
+
+  //
+
+  function setGridVisibility() {
+    return (
+      <>
+        {visibility ? grid : null}
+        {children}
+      </>
+    )
+  }
 }
 
 export default Grid
