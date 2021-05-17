@@ -1,35 +1,40 @@
 import React from "react"
+import { useTheme } from "react-jss"
+import { Theme } from "../../theme/theme"
 import { FontTagWrapperProps, FontTypes, StyleProps } from "../Font-props"
+import FontStyle from "../Font-style"
 import FontPadding from "./FontPadding"
 
 const FontTagWrapper: React.FC<FontTagWrapperProps> = (props): JSX.Element => {
+  const theme: Theme = useTheme()
+  const classes = FontStyle({ ...props, theme })
   const { type, style, children } = props
 
-  let fontComponent: JSX.Element = intiateFontComponent(type)
   let wrappedTag: JSX.Element | null = addTagWrapper(type, style)
+  let fontComponent: JSX.Element = addPaddingWrapper(type)
 
-  return <>{wrappedTag}</>
+  return <>{fontComponent}</>
 
   //
 
   function addTagWrapper(type: FontTypes, style?: StyleProps) {
     switch (type) {
-      case "h1": return <h1 style={style}>{fontComponent}</h1>
-      case "h2": return <h2 style={style}>{fontComponent}</h2>
-      case "h3": return <h3 style={style}>{fontComponent}</h3>
-      case "h4": return <h4 style={style}>{fontComponent}</h4>
-      case "h5": return <h5 style={style}>{fontComponent}</h5>
-      case "text": return <p className={type} style={style}>{fontComponent}</p>
-      case "legend": return <div className={type} style={style}>{fontComponent}</div>
-      case "menu": return <div className={type} style={style}>{fontComponent}</div>
-      case "tooltip": return <div className={type} style={style}>{fontComponent}</div>
-      case "hero": return <div className={type} style={style}>{fontComponent}</div>
+      case "h1": return <h1 style={style}>{children}</h1>
+      case "h2": return <h2 style={style}>{children}</h2>
+      case "h3": return <h3 style={style}>{children}</h3>
+      case "h4": return <h4 style={style}>{children}</h4>
+      case "h5": return <h5 style={style}>{children}</h5>
+      case "text": return <p style={style}>{children}</p>
+      case "legend": return <div className={classes.legend} style={style}>{children}</div>
+      case "menu": return <div className={classes.menu} style={style}>{children}</div>
+      case "tooltip": return <div className={classes.tooltip} style={style}>{children}</div>
+      case "hero": return <div className={classes.hero} style={style}>{children}</div>
       default: return null
     }
   }
 
-  function intiateFontComponent(type: FontTypes) {
-    return <FontPadding type={type}>{type === "h3" ? <span>{children}</span> : children}</FontPadding>
+  function addPaddingWrapper(type: FontTypes) {
+    return <FontPadding type={type}>{type === "h3" ? <span>{wrappedTag}</span> : wrappedTag}</FontPadding>
 
   }
 }

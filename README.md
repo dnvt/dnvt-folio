@@ -13,6 +13,6 @@
 [x] - Work on the spacers
 [x] - Icons
 [x] - Fonts
-[ ] - FontStyle
+[x] - FontStyle directly in css
 
 ---
