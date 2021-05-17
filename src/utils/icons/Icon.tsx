@@ -1,16 +1,20 @@
 import React from "react"
+import { useTheme } from "theming"
+import { Theme } from "../theme/theme"
+
 import IconStyle from "./Icon-style"
 
 type IconProps = {
   name: ShapesTypes
-  size?: number
   color?: string
+  size?: number
 }
 
 type ShapesTypes = "leaf" | "link" | "lock" | "contact" | "construction" | "grid" | "hash" | "loading" | "stop" | "peace" | "menu" | "cross" | "lightOn" | "lightOff" | "smileyOn" | "smileyOff" | "mouseOn" | "mouseOff" | "guidelinesOn" | "guidelinesOff" | "cheeseOn" | "cheeseOff" | "darkOn" | "darkOff"
 
 const Icon: React.FC<IconProps> = (props) => {
   const classes = IconStyle()
+  const theme: Theme = useTheme()
   const { size, color, name } = props
 
   return (
@@ -21,7 +25,7 @@ const Icon: React.FC<IconProps> = (props) => {
     >
       <path
         className={classes.Icon}
-        fill={color}
+        fill={color ? color : theme.text.primary}
         d={shapes[name]}
       ></path>
     </svg>

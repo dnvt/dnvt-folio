@@ -11,7 +11,8 @@
 [x] - Window size hook
 [x] - Document size hook
 [x] - Work on the spacers
-[ ] - Icons
-[ ] - Fonts
+[x] - Icons
+[x] - Fonts
+[ ] - FontStyle
 
 ---

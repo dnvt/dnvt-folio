@@ -14,16 +14,15 @@ interface SpacerType {
   bg?: string
   display?: boolean
   contained?: boolean
-  invisible?: boolean
+  borderLess?: boolean
 }
-
 
 function Spacer(props: SpacerType): JSX.Element {
   const theme: Theme = useTheme()
   const [visibility] = useGridVisibility()
 
   const classes = SpacerStyle({ ...props, theme })
-  const { invisible, width, height, display, bg, contained } = props
+  const { borderLess, width, height, display, bg, contained } = props
 
   let heightValueDisplayed: JSX.Element
   let spacerComponent: JSX.Element = setComponentToTransparent()
@@ -38,6 +37,7 @@ function Spacer(props: SpacerType): JSX.Element {
   if (visibility || display) setComponentToVisible()
 
   if (contained) return <Container>{spacerComponent}</Container>
+  
   return <>{spacerComponent}</>
 
   // 
@@ -59,7 +59,7 @@ function Spacer(props: SpacerType): JSX.Element {
     spacerComponent = (
       <div
         style={{ width, height, background: bg }}
-        className={invisible ? classes.fontSpacer : classes.spacer}
+        className={borderLess ? classes.fontSpacer : classes.spacer}
       >
         {heightValueDisplayed}
       </div>
