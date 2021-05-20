@@ -1,16 +1,19 @@
+import { MotionConfig } from "framer-motion"
 import React from "react"
 import { DocumentSizeProvider } from "./useDimensionSize"
 import { GridVisibilityProvider } from "./useGridVisibility"
 import { ColorTheme } from "./useTheme"
 import { WindowSizeProvider } from "./useWindowSize"
 
-const Context: React.FC = (props) => {
+const ContextHooks: React.FC = (props) => {
   return (
     <WindowSizeProvider>
       <DocumentSizeProvider>
         <ColorTheme>
           <GridVisibilityProvider>
-            {props.children}
+            <MotionConfig transition={{ duration: .012, type: "springs"  }}>
+              {props.children}
+            </MotionConfig>
           </GridVisibilityProvider>
         </ColorTheme>
       </DocumentSizeProvider>
@@ -18,4 +21,4 @@ const Context: React.FC = (props) => {
   )
 }
 
-export default Context
+export default ContextHooks

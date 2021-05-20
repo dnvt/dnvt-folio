@@ -15,15 +15,16 @@ export type FontTagWrapperProps = {
   type: FontTypes
   style?: {
     color: string
-    margin: string
-    width: string
+    margin?: string
+    width?: string
   }
+  animation?: {}
 }
 
 export type StyleProps = {
   color: string
-  margin: string
-  width: string
+  margin?: string
+  width?: string
 }
 
 export type FontPaddingProps = {

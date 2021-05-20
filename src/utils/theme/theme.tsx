@@ -71,7 +71,7 @@ export const THEME: Colors = {
       hover: DARK.slate.S040,
       basic: DARK.slate.S020,
       tint: DARK.slate.S060,
-      default: DARK.slate.S010,
+      default: DARK.slate.S000,
       transparent: DARK.opacity.transparent,
       tooltip: DARK.slate.S100
     },
@@ -83,8 +83,8 @@ export const THEME: Colors = {
       text: DARK.main.M100,
       fill: DARK.main.M040,
       outline: DARK.main.M040,
-      verticalGrid: DARK.secondary.S015,
-      horizontalGrid: DARK.main.M020,
+      verticalGrid: DARK.secondary.S020,
+      horizontalGrid: DARK.main.M040,
     },
     alert: {
       error: DARK.red.R100,

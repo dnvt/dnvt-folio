@@ -9,7 +9,7 @@ const Vertical: React.FC = (props) => {
   const window = useWindowSize()
   const classes = VerticalStyle({ ...props, theme })
 
-  const breakpoints = [576, 768, 992, 1360]
+  const breakpoints = [575, 767, 991, 1359]
   let rowNumber = 12
 
 

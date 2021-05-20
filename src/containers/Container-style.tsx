@@ -1,8 +1,9 @@
-import { createUseStyles } from "react-jss";
+import { createUseStyles } from "react-jss"
 
 const ContainerStyle = createUseStyles({
   Container: {
-    maxWidth: "100%",
+    width: "100%",
+    maxWidth: "928px",
     height: "auto",
     padding: "0 16px",
     margin: "0 auto",
@@ -29,4 +30,4 @@ const ContainerStyle = createUseStyles({
   }
 })
 
-export default ContainerStyle;
+export default ContainerStyle
