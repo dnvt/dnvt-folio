@@ -125,7 +125,7 @@ function FontSpacing(window: Partial<{ width: number; height: number }>): FontTy
 
       // link
       linkTop = "8px"
-      linkBottom = "8px"
+      linkBottom = "9px"
 
       // legend
       legendTop = "10px"

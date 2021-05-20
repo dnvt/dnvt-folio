@@ -1,22 +1,23 @@
 import { createUseStyles } from "react-jss"
-import { UnderlineProps } from "./Underline"
+import { Theme } from "../theme/theme"
 
 const UnderlineStyle = createUseStyles({
-  Separator: (props: UnderlineProps) => ({
+  Separator: {
     width: "100%",
     height: "1px",
-    opacity: props.opacity,
-    marginTop: "-9px",
-    transition: "background .12s ease"
-  }),
-  
-  SeparEx: (props: UnderlineProps) => ({
-    width: "100%",
-    height: "1px",
-    opacity: props.opacity,
     marginTop: "-10px",
+    marginBottom: "1px",
+    background: ({ theme }) => (theme as Theme).text.primary,
     transition: "background .12s ease"
-  }),
+  },
+  
+  SeparEx: {
+    width: "100%",
+    height: "1px",
+    marginTop: "-10px",
+    background: ({ theme }) => (theme as Theme).text.primary,
+    transition: "background .12s ease"
+  }
 })
 
 export default UnderlineStyle
