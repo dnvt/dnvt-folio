@@ -1,3 +1,7 @@
+/**
+ * Welcome to @dnvt/external-link!
+ */
+
 import React from "react"
 import { useWindowSize } from "../../../hooks/useWindowSize"
 import Icon from "../../../utils/icons/Icon"
@@ -6,7 +10,7 @@ import { LinkProps } from "../link-types"
 import ExternalLinkStyle from "./ExternalLink-style"
 import { motion } from "framer-motion"
 
-
+////////////////////////////////////////////////////////////////////////////////
 
 const ExternalLink: React.FC<LinkProps> = (props) => {
   const classes = ExternalLinkStyle()
@@ -25,7 +29,7 @@ const ExternalLink: React.FC<LinkProps> = (props) => {
           <Icon name='link' />
         </div>
       </div>
-      <Underline ext opacity='1' />
+      <Underline ext opacity={1} />
     </>
   )
 
@@ -49,8 +53,7 @@ const ExternalLink: React.FC<LinkProps> = (props) => {
           <Icon name='link' />
         </motion.div>
       </div>
-      {/* <Underline ext opacity='1' style={{ background: theme.text.primary }} /> */}
-      <Underline ext opacity='1' />
+      <Underline ext opacity={1} />
     </>
   )
 
@@ -60,7 +63,9 @@ const ExternalLink: React.FC<LinkProps> = (props) => {
     </motion.div>
   )
 
-  //
+  ////////////////////////////////////////////////////////////////////////////////
+  // Animation values
+
   function getIconLeftAnimValue() {
     return ({
       rest: {

@@ -1,6 +1,12 @@
+/**
+ * Welcome to @dnvt/grid-button!
+ */
+
 import React from "react"
-import { useGridVisibility } from "../../hooks/useGridVisibility"
-import Icon from "../../utils/icons/Icon"
+import { useGridVisibility } from "../../../hooks/useGridVisibility"
+import Icon from "../../../utils/icons/Icon"
+
+////////////////////////////////////////////////////////////////////////////////
 
 const GridToggleIcon: React.FC = () => {
   const [visibility, setVisibility] = useGridVisibility()
@@ -11,10 +17,9 @@ const GridToggleIcon: React.FC = () => {
       onClick={() => { setVisibility(!visibility) }}
       aria-label='grid toggle'
     >
-      <Icon name={visibility ? "guidelinesOff" : "guidelinesOn"} />
+      <Icon name={visibility ? "grid" : "grid"} />
     </button>
   )
-
 }
 
 export default GridToggleIcon

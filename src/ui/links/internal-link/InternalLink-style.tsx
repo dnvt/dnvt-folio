@@ -14,6 +14,7 @@ const InternalLinkStyle = createUseStyles({
     paddingBottom: "7px",
     width: "max-content",
     marginRight: "24px",
+    color:"",
 
     "@media (min-width: 768px)": { marginRight: "32px" },
     "@media (min-width: 1360px)": { marginRight: "40px" },

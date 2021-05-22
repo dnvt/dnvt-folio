@@ -5,7 +5,7 @@ import { Theme } from "../theme/theme"
 import UnderlineStyle from "./Underline-style"
 
 export type UnderlineProps = {
-  opacity?: string
+  opacity?: number
   animation?: {}
   ext?: boolean
 }
