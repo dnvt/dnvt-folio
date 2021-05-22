@@ -2,7 +2,7 @@ import { createUseStyles } from "react-jss"
 
 const InternalLinkStyle = createUseStyles({
   inside: {
-    display: "flex",
+    display: "flex", 
     justifyContent: "space-between",
     alignItems: "center",
     width: "100%",

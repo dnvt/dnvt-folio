@@ -35,7 +35,8 @@ const InternalLink: React.FC<LinkProps> = (props) => {
     </motion.div>
   )
 
-  //
+  ////////////////////////////////////////////////////////////////////////////////
+  // Animation values
 
   function fontAnim() {
     return ({

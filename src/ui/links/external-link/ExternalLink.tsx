@@ -17,7 +17,7 @@ const ExternalLink: React.FC<LinkProps> = (props) => {
   const window = useWindowSize()
   const { path, value } = props
 
-  // External link on Mobile ==> Full width
+  // External link on Mobile => Full width
   const mobileSize = window.width! < 768
   const MobileLink = (
     <>
@@ -29,7 +29,7 @@ const ExternalLink: React.FC<LinkProps> = (props) => {
           <Icon name='link' />
         </div>
       </div>
-      <Underline ext opacity={1} />
+      <Underline external opacity={1} />
     </>
   )
 
@@ -53,7 +53,7 @@ const ExternalLink: React.FC<LinkProps> = (props) => {
           <Icon name='link' />
         </motion.div>
       </div>
-      <Underline ext opacity={1} />
+      <Underline external opacity={1} />
     </>
   )
 

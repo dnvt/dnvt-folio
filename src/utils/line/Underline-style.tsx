@@ -2,7 +2,7 @@ import { createUseStyles } from "react-jss"
 import { Theme } from "../theme/theme"
 
 const UnderlineStyle = createUseStyles({
-  Separator: {
+  Internal: {
     width: "100%",
     height: "1px",
     marginTop: "-10px",
@@ -10,8 +10,14 @@ const UnderlineStyle = createUseStyles({
     background: ({ theme }) => (theme as Theme).text.primary,
     transition: "background .12s ease"
   },
-  
-  SeparEx: {
+  Button: {
+    width: "100%",
+    height: "1px",
+    marginTop: "-9px",
+    background: ({ theme }) => (theme as Theme).text.primary,
+    transition: "background .12s ease"
+  },
+  External: {
     width: "100%",
     height: "1px",
     marginTop: "-10px",

@@ -50,13 +50,14 @@ const Button: React.FC<ButtonProps> = (props) => {
         <Font type='menu'>
           {children}
         </Font>
-        <Underline animation={getUnderlinAnimValue()} />
+        <Underline button animation={getUnderlinAnimValue()} />
       </div>
       {tooltipComponent}
     </motion.a>
   )
 
-  //
+  ////////////////////////////////////////////////////////////////////////////////
+  // Animation values
 
   function iconWrapper(Icon: JSX.Element) {
     return <div className={classes.icon} style={{ marginRight: "8px" }}>{Icon}  </div>

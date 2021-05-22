@@ -16,11 +16,11 @@
 [x] - FontStyle directly in css
 [x] - Internal link
 [x] - External link
-[x] - Link animation
 [x] - Icon Button
 [x] - Button
 [x] - Button animation
-[ ] - Button underline postion css
-[ ] - Icon Button animation
+[x] - Button underline postion css
+[x] - Icon Button animation
+[ ] - Link animation
 
 ---

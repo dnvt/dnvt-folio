@@ -2,37 +2,47 @@
  * Welcome to @dnvt/icon-button!
  */
 
-import React from "react"
-import Icon, { ShapesTypes } from "../../utils/icons/Icon"
+import React, { useState } from "react"
 import GridToggleIcon from "./variants/GridToggleIcon"
 import ThemeToggleIcon from "./variants/ThemeToggleIcon"
 import MenuButtonStyle from "./Buttons-style"
 import { motion } from "framer-motion"
+import { Theme } from "../../utils/theme/theme"
+import { useTheme } from "theming"
+import Icon, { ShapesTypes } from "../../utils/icons/Icon"
 
 type iconButtonType = {
   icon: ShapesTypes
   path: string
+  animation?: {}
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
-const IconButton: React.FC<iconButtonType> = (props) => {
+const IconButton: React.FC<iconButtonType> = ({ icon }) => {
   const classes = MenuButtonStyle()
-  const { icon, path } = props
+  const theme: Theme = useTheme()
+  const [iconColor, setIconColor] = useState(false)
 
-  if (icon == "grid") return iconWrapper(<GridToggleIcon />)
-  if (icon == "light") return iconWrapper(<ThemeToggleIcon />)
-  else return linkWrapper(<Icon name={icon} />)
+  const hover = theme.text.hover
+  const primary = theme.text.primary
+  const hoverAnimation = iconColor ? hover : primary
 
-  //
+  let iconComponent: JSX.Element | undefined
 
-  function iconWrapper(Icon: JSX.Element) {
-    return <motion.div className={classes.icon}>{Icon}</motion.div>
-  }
+  if (icon == "grid") iconComponent = <GridToggleIcon color={hoverAnimation} />
+  if (icon == "light") iconComponent = <ThemeToggleIcon color={hoverAnimation} />
+  else iconComponent = <Icon color={hoverAnimation} name={icon} />
 
-  function linkWrapper(Icon: JSX.Element) {
-    return <a href={path} className={classes.MenuButton}>{iconWrapper(Icon)}</a>
-  }
+  return (
+    <motion.div
+      className={classes.icon}
+      onHoverStart={() => setIconColor(iconColor => !iconColor)}
+      onHoverEnd={() => setIconColor(iconColor => !iconColor)} >
+      {iconComponent}
+    </motion.div>)
+
+
 }
 
 export default IconButton

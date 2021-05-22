@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"
 import React from "react"
 import { useTheme } from "theming"
 import { Theme } from "../theme/theme"
@@ -15,7 +16,7 @@ export type ShapesTypes = "leaf" | "link" | "lock" | "contact" | "construction" 
 const Icon: React.FC<IconProps> = (props) => {
   const classes = IconStyle()
   const theme: Theme = useTheme()
-  const { size, color, name } = props
+  const { color, size, name } = props
 
   return (
     <svg
@@ -23,11 +24,11 @@ const Icon: React.FC<IconProps> = (props) => {
       height={size ? size : 24}
       viewBox='0 0 24 24'
     >
-      <path
+      <motion.path
         className={classes.Icon}
-        fill={color ? color : theme.text.primary}
         d={shapes[name]}
-      ></path>
+        fill={color ?? theme.text.primary}
+      ></motion.path>
     </svg>
   )
 }

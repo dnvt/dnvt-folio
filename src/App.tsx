@@ -41,7 +41,6 @@ const App: React.FC = () => {
             <Button path="/" >Super button</Button>
             <Button >Disabled button</Button>
             <Button path="/" icon="mouseOn" hover="mouseOff" >Icon button</Button>
-            <IconButton icon="loading" path="/" />
           </div>
           <Spacer height={8} />
           <Font type="h3">This is Francois speaking<br />And Joey!</Font>
@@ -72,8 +71,6 @@ const App: React.FC = () => {
           <div style={{ height: 32, display: 'flex', alignItems: "flex-start" }}>
             <IconButton icon="grid" path="/" />
             <IconButton icon="light" path="/" />
-            <IconButton icon="guidelinesOn" path="/" />
-            <IconButton icon="hash" path="/" />
           </div>
           <Spacer height={104} />
         </Container>
