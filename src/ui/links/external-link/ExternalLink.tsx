@@ -15,7 +15,7 @@ import { motion } from "framer-motion"
 const ExternalLink: React.FC<LinkProps> = (props) => {
   const classes = ExternalLinkStyle()
   const window = useWindowSize()
-  const { path, value } = props
+  const { path, children } = props
 
   // External link on Mobile => Full width
   const mobileSize = window.width! < 768
@@ -23,7 +23,7 @@ const ExternalLink: React.FC<LinkProps> = (props) => {
     <>
       <div className={classes.inside}>
         <a className={classes.link} href={path} target='_blank' rel='noopener noreferrer'>
-          {value}
+          {children}
         </a>
         <div className={classes.iconRight}>
           <Icon name='link' />
@@ -47,7 +47,7 @@ const ExternalLink: React.FC<LinkProps> = (props) => {
           target='_blank'
           rel='noopener noreferrer'
         >
-          {value}
+          {children}
         </motion.a>
         <motion.div className={classes.iconRight} variants={getIconRightAnimValue()}>
           <Icon name='link' />

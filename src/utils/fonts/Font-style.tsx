@@ -59,7 +59,7 @@ const FontStyle = createUseStyles(theme => ({
     fontWeight: "normal",
     fontSize: "15px",
     lineHeight: "24px",
-    letterSpacing: "-.009em",
+    letterSpacing: "-.007em",
     paddingInlineStart: 0,
     paddingInlineEnd: 0,
     color: (theme as Theme).text.secondary,
@@ -68,12 +68,12 @@ const FontStyle = createUseStyles(theme => ({
     "@media (min-width: 768px)": {
       fontSize: "16px",
       lineHeight: "32px",
-      letterSpacing: "-.011em",
+      letterSpacing: "-.009em",
     },
     "@media (min-width: 1360px)": {
       fontSize: "18px",
       lineHeight: "32px",
-      letterSpacing: "-.014em",
+      letterSpacing: "-.011em",
     },
   },
   tooltip: {

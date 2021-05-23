@@ -5,7 +5,7 @@ import { ShapesTypes } from "../../../utils/icons/Icon"
 import ThemeToggleIcon from "../../buttons/variants/ThemeToggleIcon"
 import ButtonStyle from "../../buttons/Buttons-style"
 
-type iconButtonType = {
+export type iconButtonType = {
   name: ShapesTypes,
   path: string,
   value?: Boolean

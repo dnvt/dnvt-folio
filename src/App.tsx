@@ -7,7 +7,7 @@
  */
 
 import React from 'react'
-import Container from './containers/Container'
+import Container from './components/containers/Container'
 import ContextHooks from "./hooks/ContextHooks"
 import Grid from './utils/grids/Grid'
 import Spacer from './utils/spacer/Spacer'
@@ -16,10 +16,8 @@ import Sidelines from './utils/sidelines/Sidelines'
 import InternalLink from './ui/links/internal-link/InternalLink'
 import ExternalLink from './ui/links/external-link/ExternalLink'
 import { MotionConfig } from 'framer-motion'
-import IconButton from './ui/buttons/IconButton'
-import Button from './ui/buttons/Button'
 import Header from './components/navigations/Header'
-
+import Footer from './components/navigations/Footer'
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -36,18 +34,11 @@ const App: React.FC = () => {
           <Font type="h1">Hello World</Font>
           <Font type="h2">Helloooo</Font>
           <Spacer height={32} />
-          <InternalLink path="http://dnvt.me" value="Hello link" />
-          <ExternalLink path="http://dnvt.me" value="Hello link" />
+          <InternalLink path="http://dnvt.me">Hello link</InternalLink>
+          <ExternalLink path="http://dnvt.me">Hello external lol</ExternalLink>
           <Spacer height={24} />
-          <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
-            <Button path="/" >Super button</Button>
-            <Button >Disabled button</Button>
-            <Button path="/" icon="mouse" hover="mouseHover" >Icon button</Button>
-            <IconButton icon="grid" />
-            <IconButton icon="light" />
-          </div>
-          <Spacer height={8} />
           <Font type="h3">This is Francois speaking<br />And Joey!</Font>
+          <Spacer height={16} />
           <Font type="text">
             This is François!!!! Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sed posuere consectetur est at lobortis. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur.
             Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.
@@ -71,11 +62,8 @@ const App: React.FC = () => {
           <Font type="text">
             Maecenas faucibus mollis interdum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna.
           </Font>
-          <Spacer height={24} />
-          <div style={{ height: 32, display: 'flex', alignItems: "flex-start" }}>
-          </div>
-          <Spacer height={104} />
         </Container>
+        <Footer />
       </MotionConfig>
     </ContextHooks>
   )

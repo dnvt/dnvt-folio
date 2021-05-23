@@ -11,13 +11,11 @@ import ThemeToggleIcon from "./variants/ThemeToggleIcon"
 import MenuToggleIcon from "./variants/MenuToggleIcon"
 import MenuButtonStyle from "./Buttons-style"
 
-type iconButtonType = {
-  icon: "grid" | "light" | "menu"
-}
+export type IconButtonType = "grid" | "light" | "menu"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-const IconButton: React.FC<iconButtonType> = ({ icon }) => {
+const IconButton: React.FC<{ icon: IconButtonType }> = ({ icon }) => {
   const classes = MenuButtonStyle()
   const theme: Theme = useTheme()
   const [iconColor, setIconColor] = useState<Boolean>(false)

@@ -17,7 +17,7 @@ import { LinkProps } from "../link-types"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-const InternalLink: React.FC<LinkProps> = ({ path, value }) => {
+const InternalLink: React.FC<LinkProps> = ({ path, children }) => {
   const classes = InternalLinkStyle()
   const theme: Theme = useTheme()
   const [fontColor, setFontColor] = useState<Boolean>(false)
@@ -34,7 +34,7 @@ const InternalLink: React.FC<LinkProps> = ({ path, value }) => {
       <div className={classes.inside}>
         <a href={path}>
           <Font type='link' style={{ color: hoverAnimation }}>
-            {value}
+            {children}
           </Font>
         </a>
       </div>

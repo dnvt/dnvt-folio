@@ -23,6 +23,11 @@
 [x] - Icon Button animation
 [x] - Link animation
 [x] - Header Component
-[ ] - Footer Component
+[x] - Footer Component
+[ ] - Image
+[ ] - Vignettes
+[ ] - Devices
+[ ] - Cards
+[ ] - Hero
 
 ---

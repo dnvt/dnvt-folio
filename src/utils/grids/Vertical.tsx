@@ -1,8 +1,14 @@
+/**
+ * Welcome to @dnvt/Vertical!
+ */
+
 import { useTheme } from "react-jss"
 import { useWindowSize } from "../../hooks/useWindowSize"
 import { Theme } from "../theme/theme"
-import Container from "../../containers/Container"
+import Container from "../../components/containers/Container"
 import VerticalStyle from "./Vertical-style"
+
+////////////////////////////////////////////////////////////////////////////////
 
 const Vertical: React.FC = (props) => {
   const theme: Theme = useTheme()
@@ -11,7 +17,6 @@ const Vertical: React.FC = (props) => {
 
   const breakpoints = [575, 767, 991, 1359]
   let rowNumber = 12
-
 
   switch (true) {
     case window.width! < breakpoints[0]:
@@ -27,7 +32,6 @@ const Vertical: React.FC = (props) => {
       rowNumber = 12
       break
   }
-
 
   const rowArray = []
 

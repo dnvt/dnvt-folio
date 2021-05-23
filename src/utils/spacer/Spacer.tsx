@@ -1,11 +1,13 @@
+/**
+ * Welcome to @dnvt/Spacer!
+ */
+
+
 import { useTheme } from "react-jss"
 import { useGridVisibility } from "../../hooks/useGridVisibility"
 import { Theme } from "../theme/theme"
-import Container from "../../containers/Container"
+import Container from "../../components/containers/Container"
 import SpacerStyle from "./Spacer-style"
-
-// TODO
-// Change spacer value to an array (which will contain numbers and 100% > strings)
 
 type HeightType = 8 | 16 | 24 | 32 | 40 | 64 | 80 | 104 | 184 | "100%"
 interface SpacerType {
@@ -16,6 +18,8 @@ interface SpacerType {
   contained?: Boolean
   borderLess?: Boolean
 }
+
+////////////////////////////////////////////////////////////////////////////////
 
 function Spacer(props: SpacerType): JSX.Element {
   const theme: Theme = useTheme()
