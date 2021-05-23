@@ -2,7 +2,6 @@
  * Welcome to @dnvt/underline!
  */
 
-import { motion } from "framer-motion"
 import React from "react"
 import { useTheme } from "theming"
 import { Theme } from "../theme/theme"
@@ -10,7 +9,7 @@ import UnderlineStyle from "./Underline-style"
 
 export type UnderlineProps = {
   opacity?: number
-  animation?: {}
+  color?: string
   button?: boolean
   internal?: boolean
   external?: boolean
@@ -18,7 +17,7 @@ export type UnderlineProps = {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-const Underline: React.FC<UnderlineProps> = ({ internal, external, button, animation, ...props }) => {
+const Underline: React.FC<UnderlineProps> = ({ internal, external, button, ...props }) => {
   const theme: Theme = useTheme()
   const classes = UnderlineStyle({ ...props, theme })
 
@@ -27,7 +26,7 @@ const Underline: React.FC<UnderlineProps> = ({ internal, external, button, anima
   if (button) className = classes.Button
 
   return (
-    <motion.div variants={animation}
+    <div
       className={className}
     />
   )

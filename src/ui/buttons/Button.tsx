@@ -50,7 +50,7 @@ const Button: React.FC<ButtonProps> = (props) => {
         <Font type='menu'>
           {children}
         </Font>
-        <Underline button animation={getUnderlinAnimValue()} />
+        <Underline button opacity={iconHover ? 1 : 0} />
       </div>
       {tooltipComponent}
     </motion.a>
@@ -61,13 +61,6 @@ const Button: React.FC<ButtonProps> = (props) => {
 
   function iconWrapper(Icon: JSX.Element) {
     return <div className={classes.icon} style={{ marginRight: "8px" }}>{Icon}  </div>
-  }
-
-  function getUnderlinAnimValue() {
-    return ({
-      rest: { opacity: 0 },
-      hover: { opacity: 1 }
-    })
   }
 }
 

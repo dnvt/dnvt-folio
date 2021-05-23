@@ -3,13 +3,13 @@
  */
 
 import React, { useState } from "react"
+import { motion } from "framer-motion"
+import { useTheme } from "theming"
+import { Theme } from "../../utils/theme/theme"
+import Icon, { ShapesTypes } from "../../utils/icons/Icon"
 import GridToggleIcon from "./variants/GridToggleIcon"
 import ThemeToggleIcon from "./variants/ThemeToggleIcon"
 import MenuButtonStyle from "./Buttons-style"
-import { motion } from "framer-motion"
-import { Theme } from "../../utils/theme/theme"
-import { useTheme } from "theming"
-import Icon, { ShapesTypes } from "../../utils/icons/Icon"
 
 type iconButtonType = {
   icon: ShapesTypes
@@ -22,7 +22,7 @@ type iconButtonType = {
 const IconButton: React.FC<iconButtonType> = ({ icon }) => {
   const classes = MenuButtonStyle()
   const theme: Theme = useTheme()
-  const [iconColor, setIconColor] = useState(false)
+  const [iconColor, setIconColor] = useState<Boolean>(false)
 
   const hover = theme.text.hover
   const primary = theme.text.primary

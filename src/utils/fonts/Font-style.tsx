@@ -1,8 +1,9 @@
 import { createUseStyles } from "react-jss"
 import { Theme } from "../theme/theme"
 
+type Props = { color: string }
 
-const FontStyle = createUseStyles({
+const FontStyle = createUseStyles(theme => ({
   hero: {
     // Test
     position: "absolute",
@@ -16,7 +17,7 @@ const FontStyle = createUseStyles({
     userSelect: "none",
     padding: "0 60px",
 
-    background: ({ theme }) => (theme as Theme).text.hero,
+    background: (theme as Theme).text.hero,
     WebkitBackgroundClip: "text !important",
     backgroundClip: "text !important",
     color: "transparent",
@@ -41,7 +42,7 @@ const FontStyle = createUseStyles({
     lineHeight: "24px",
     letterSpacing: "0em",
     margin: "0",
-    color: ({ theme }) => (theme as Theme).text.primary,
+    color: props => (props as unknown as Props).color ?? (theme as Theme).text.primary,
 
     "@media (min-width: 768px)": {
       fontSize: "21px",
@@ -61,7 +62,7 @@ const FontStyle = createUseStyles({
     letterSpacing: "-.009em",
     paddingInlineStart: 0,
     paddingInlineEnd: 0,
-    color: ({ theme }) => (theme as Theme).text.secondary,
+    color: (theme as Theme).text.secondary,
     margin: "0",
 
     "@media (min-width: 768px)": {
@@ -85,7 +86,7 @@ const FontStyle = createUseStyles({
     paddingInlineStart: 0,
     paddingInlineEnd: 0,
     whiteSpace: "nowrap",
-    color: ({ theme }) => (theme as Theme).background.tooltip,
+    color: (theme as Theme).background.tooltip,
     margin: "0",
 
     "@media (min-width: 768px)": {
@@ -110,7 +111,7 @@ const FontStyle = createUseStyles({
     paddingInlineEnd: 0,
     margin: "0",
     whiteSpace: "nowrap",
-    color: ({ theme }) => (theme as Theme).text.primary,
+    color: (theme as Theme).text.primary,
 
     "@media (min-width: 768px)": {
       fontSize: "16px",
@@ -123,6 +124,6 @@ const FontStyle = createUseStyles({
       letterSpacing: "-.014em",
     },
   },
-})
+}))
 
 export default FontStyle

@@ -6,7 +6,7 @@
  * 
  */
 
-import React from "react"
+import React, { useState } from "react"
 import { useTheme } from "react-jss"
 import { Theme } from "../../../utils/theme/theme"
 import Font from "../../../utils/fonts/Font"
@@ -17,40 +17,47 @@ import { LinkProps } from "../link-types"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-const InternalLink: React.FC<LinkProps> = (props) => {
+const InternalLink: React.FC<LinkProps> = ({ path, value }) => {
   const classes = InternalLinkStyle()
   const theme: Theme = useTheme()
-  const { path, value } = props
+  const [fontColor, setFontColor] = useState<Boolean>(false)
+
+  const hover = theme.text.hover
+  const primary = theme.text.primary
+  const hoverAnimation = fontColor ? hover : primary
 
   return (
-    <motion.div className={classes.internal} initial="rest" whileHover="hover" animate="rest" >
+    <motion.div
+      className={classes.internal}
+      onHoverStart={() => setFontColor(fontColor => !fontColor)}
+      onHoverEnd={() => setFontColor(fontColor => !fontColor)} >
       <div className={classes.inside}>
         <a href={path}>
-          <Font type='link' animation={fontAnim()}>
+          <Font type='link' style={{ color: hoverAnimation }}>
             {value}
           </Font>
         </a>
       </div>
-      <Underline opacity={1} animation={underlineAnim()} />
+      <Underline opacity={1} color={hoverAnimation} />
     </motion.div>
   )
 
-  ////////////////////////////////////////////////////////////////////////////////
-  // Animation values
+  // ////////////////////////////////////////////////////////////////////////////////
+  // // Animation values
 
-  function fontAnim() {
-    return ({
-      rest: { color: theme.text.primary },
-      hover: { color: theme.text.hover }
-    })
-  }
+  // function fontAnim() {
+  //   return ({
+  //     rest: { color: theme.text.primary },
+  //     hover: { color: theme.text.hover }
+  //   })
+  // }
 
-  function underlineAnim() {
-    return ({
-      rest: { background: theme.text.primary },
-      hover: { background: theme.text.hover }
-    })
-  }
+  // function underlineAnim() {
+  //   return ({
+  //     rest: { background: theme.text.primary },
+  //     hover: { background: theme.text.hover }
+  //   })
+  // }
 }
 
 export default InternalLink
