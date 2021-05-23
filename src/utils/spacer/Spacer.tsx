@@ -12,9 +12,9 @@ interface SpacerType {
   height: HeightType | string
   width?: number | string
   bg?: string
-  display?: boolean
-  contained?: boolean
-  borderLess?: boolean
+  display?: Boolean
+  contained?: Boolean
+  borderLess?: Boolean
 }
 
 function Spacer(props: SpacerType): JSX.Element {
@@ -35,9 +35,8 @@ function Spacer(props: SpacerType): JSX.Element {
   if (height > 32) setClassToValue(classes.bigNumber)
 
   if (visibility || display) setComponentToVisible()
-
   if (contained) return <Container>{spacerComponent}</Container>
-  
+
   return <>{spacerComponent}</>
 
   // 

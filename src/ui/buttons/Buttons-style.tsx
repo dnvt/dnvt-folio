@@ -5,23 +5,17 @@ const ButtonStyle = createUseStyles({
     position: "relative",
     display: "flex",
     flexDirection: "row",
+    marginBottom: "6px"
   },
-  WIPLink: {
-    position: "relative",
-    cursor: "not-allowed",
-    display: "flex",
-    flexDirection: "row",
-  },
+  // WIPLink: {
+  //   position: "relative",
+  //   cursor: "not-allowed",
+  //   display: "flex",
+  //   flexDirection: "row",
+  // },
   icon: {
     height: "100%",
-    padding: "6px 0 2px",
-    display: "flex",
-    alignItems: "center",
-  },
-  iconRight: {
-    height: "100%",
-    padding: "6px 0 2px",
-    marginLeft: "8px",
+    padding: "5px 0",
     display: "flex",
     alignItems: "center",
   },

@@ -6,15 +6,13 @@ import React, { useState } from "react"
 import { motion } from "framer-motion"
 import { useTheme } from "theming"
 import { Theme } from "../../utils/theme/theme"
-import Icon, { ShapesTypes } from "../../utils/icons/Icon"
 import GridToggleIcon from "./variants/GridToggleIcon"
 import ThemeToggleIcon from "./variants/ThemeToggleIcon"
+import MenuToggleIcon from "./variants/MenuToggleIcon"
 import MenuButtonStyle from "./Buttons-style"
 
 type iconButtonType = {
-  icon: ShapesTypes
-  path: string
-  animation?: {}
+  icon: "grid" | "light" | "menu"
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -32,7 +30,7 @@ const IconButton: React.FC<iconButtonType> = ({ icon }) => {
 
   if (icon == "grid") iconComponent = <GridToggleIcon color={hoverAnimation} />
   if (icon == "light") iconComponent = <ThemeToggleIcon color={hoverAnimation} />
-  else iconComponent = <Icon color={hoverAnimation} name={icon} />
+  if (icon == "menu") iconComponent = <MenuToggleIcon color={hoverAnimation} />
 
   return (
     <motion.div

@@ -22,7 +22,7 @@
 [x] - Button underline postion css
 [x] - Icon Button animation
 [x] - Link animation
-[ ] - Header Component
+[x] - Header Component
 [ ] - Footer Component
 
 ---
