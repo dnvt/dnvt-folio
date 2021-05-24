@@ -31,6 +31,7 @@ export const THEME: Colors = {
       basic: LIGHT.slate.S020,
       tint: LIGHT.slate.S010,
       default: LIGHT.slate.S000,
+      empty: LIGHT.opacity.O010,
       transparent: LIGHT.opacity.transparent,
       tooltip: LIGHT.slate.S090
     },
@@ -72,6 +73,7 @@ export const THEME: Colors = {
       basic: DARK.slate.S020,
       tint: DARK.slate.S060,
       default: DARK.slate.S000,
+      empty: DARK.opacity.O010,
       transparent: DARK.opacity.transparent,
       tooltip: DARK.slate.S100
     },
@@ -114,6 +116,7 @@ type Background = {
   basic: string
   tint: string
   default: string
+  empty: string
   transparent: string
   tooltip: string
 }

@@ -18,10 +18,15 @@ import ExternalLink from './ui/links/external-link/ExternalLink'
 import { MotionConfig } from 'framer-motion'
 import Header from './components/navigations/Header'
 import Footer from './components/navigations/Footer'
+import Vignettes from './components/vignettes/Vignettes'
+import { Theme } from './utils/theme/theme'
+import { useTheme } from 'theming'
 
 ////////////////////////////////////////////////////////////////////////////////
 
 const App: React.FC = () => {
+
+  const theme: Theme = useTheme()
 
   return (
     <ContextHooks>
@@ -29,6 +34,9 @@ const App: React.FC = () => {
       <Grid />
       <MotionConfig transition={{ duration: .012, type: "springs" }}>
         <Header />
+        <Vignettes hero background="#ccc" alt="Hero container baby" />
+        <Spacer contained height={104}  />
+        <Vignettes big alt="Hero container baby" />
         <Container>
           <Spacer height={104} />
           <Font type="h1">Hello World</Font>
@@ -46,6 +54,8 @@ const App: React.FC = () => {
           <Font type="legend">
             Maecenas faucibus mollis interdum.
           </Font>
+          <Spacer height={24} />
+          <Vignettes />
           <Spacer height={24} />
           <Font type="h5">This is Francois speaking</Font>
           <Font type="text">

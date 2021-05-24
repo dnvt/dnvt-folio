@@ -1,9 +1,9 @@
 import React, { useState, useEffect, createContext, useContext } from "react"
 
-
-type WindowSizeType = { width: number | undefined, height: number | undefined }
-const WINDOW_INITIAL_STATE = { width: undefined, height: undefined }
+type WindowSizeType = { width: number , height: number }
+const WINDOW_INITIAL_STATE = { width: 1920, height: 1080 }
 const WindowSizeCtx = createContext<WindowSizeType>(WINDOW_INITIAL_STATE)
+
 
 export const WindowSizeProvider: React.FC = ({ children }) => {
   // Initialize state with undefined width/height so server and client renders match

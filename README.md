@@ -24,8 +24,9 @@
 [x] - Link animation
 [x] - Header Component
 [x] - Footer Component
-[ ] - Image
+[x] - Image
 [ ] - Vignettes
+      [ ] - Repair background and Alt props
 [ ] - Devices
 [ ] - Cards
 [ ] - Hero
