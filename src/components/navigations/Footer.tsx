@@ -4,12 +4,12 @@
 
 import React, { useMemo } from "react"
 import { useTheme } from "react-jss"
-import Container from "../containers/Container"
+import { Theme } from "../../utils/theme/theme"
 import { useWindowSize } from "../../hooks/useWindowSize"
+import Container from "../containers/Container"
 import ExternalLink from "../../ui/links/external-link/ExternalLink"
 import Font from "../../utils/fonts/Font"
 import Spacer from "../../utils/spacer/Spacer"
-import { Theme } from "../../utils/theme/theme"
 
 type ContentType = {
   value: string

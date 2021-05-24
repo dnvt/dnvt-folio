@@ -20,7 +20,7 @@ interface ImageType {
 /**
  * Takes a description and the webp and png links
  * @param alt image description
- * @param src tuple of image links
+ * @param src tuple of png and webp
  * @returns Image component
  */
 const ImageContainer: React.FC<ImageType> = (props) => {

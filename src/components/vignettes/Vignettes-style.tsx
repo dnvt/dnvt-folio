@@ -1,8 +1,7 @@
 import { createUseStyles } from "react-jss"
 import { Theme } from "../../utils/theme/theme"
-import { VignettesProps } from "./Vignettes"
 
-const VignettesStyle = createUseStyles({
+const VignetteStyle = createUseStyles(theme => ({
   Vignette: {
     display: "flex",
     textAlign: "center",
@@ -10,7 +9,7 @@ const VignettesStyle = createUseStyles({
     alignItems: "center",
     justifyContent: "center",
     height: "256px",
-    background: ({ theme }) => (theme as Theme).background.empty,
+    background: (theme as Theme).background.empty,
 
     "@media (min-width: 768px)": {
       height: "576px",
@@ -26,7 +25,7 @@ const VignettesStyle = createUseStyles({
     alignItems: "center",
     justifyContent: "center",
     height: "336px",
-    background: ({ theme }) => (theme as Theme).background.empty,
+    background: (theme as Theme).background.empty,
 
     "@media (min-width: 768px)": {
       height: "296px",
@@ -46,8 +45,6 @@ const VignettesStyle = createUseStyles({
     overflow: "hidden",
     padding: "24px 0",
     height: "664px",
-    // Final values in the Component
-    background: (props) => (props as unknown as VignettesProps).background,
 
     "@media (min-width: 768px)": {
       height: "960px",
@@ -72,6 +69,6 @@ const VignettesStyle = createUseStyles({
       minWidth: "100%",
     },
   },
-})
+}))
 
-export default VignettesStyle
+export default VignetteStyle
