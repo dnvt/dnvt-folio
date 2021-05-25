@@ -21,6 +21,7 @@ import Footer from './components/navigations/Footer'
 import { HeroVignette, Vignette } from './components/vignettes/Vignettes'
 import Device from './components/devices/Device'
 import GroupedMobileBrowser from './components/devices/layouts/GroupedMobileBrowser'
+import DragMobileFour from './components/devices/layouts/DragMobileFour'
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -61,9 +62,10 @@ const App: React.FC = () => {
           <Font type="text">
             Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sed posuere consectetur est at lobortis. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur.
           </Font>
-          </Container>
-          <GroupedMobileBrowser srcBrowser={[]} srcMobile={[]} altBrowser={["yo"]} altMobile={["yo"]} />
-          <Container>
+        </Container>
+        <DragMobileFour src={[["", ""], ["", ""], ["", ""], ["", ""]]} alt={["", "", "", ""]} />
+        <GroupedMobileBrowser srcBrowser={[]} srcMobile={[]} altBrowser={["yo"]} altMobile={["yo"]} />
+        <Container>
           <div >
             <Device alt="No Image" type="browser" src={["", ""]} />
             <Device alt="No Image" type="mobile" src={["", ""]} />

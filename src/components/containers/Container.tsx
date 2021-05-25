@@ -1,3 +1,17 @@
+import React from "react"
+import ArrowDragScroll from "../../utils/signals/ArrowSignals"
+import Verticaler from "../../utils/spacer/variations/Verticaler"
+import ContainerStyle from "./Container-style"
+
+type Drag = "three" | "four" | "five"
+
+type ContainerType = {
+  height?: Boolean
+  big?: Boolean
+  center?: Boolean
+  drag?: Drag
+}
+
 /**
  * Welcome to @dnvt/Container!
  * 
@@ -6,23 +20,19 @@
  * - Question Heght props
  * 
  */
-
-import React from "react"
-import ContainerStyle from "./Container-style"
-
-type ContainerType = {
-  height?: Boolean
-  big?: Boolean
-  center?: Boolean
-}
-
-////////////////////////////////////////////////////////////////////////////////
-
 const Container: React.FC<ContainerType> = (props) => {
   const classes = ContainerStyle()
-  const { children, height, big, center } = props
+  const { children, height, big, center, drag } = props
 
-  if (height) {
+  if (height) return heightContainer()
+  if (big) return bigContainer()
+  if (drag) return draggableContainer()
+
+  return <div className={classes.Container}>{children}</div>
+
+  ////////////////////////////////////////////////////////////////////////////////
+
+  function heightContainer(): JSX.Element {
     return (
       <div className={classes.Container} style={{ height: "100%" }}>
         {children}
@@ -30,7 +40,7 @@ const Container: React.FC<ContainerType> = (props) => {
     )
   }
 
-  if (big)
+  function bigContainer(): JSX.Element {
     return (
       <div className={classes.BigContainer}>
         <div className={center ? classes.flexCenter : classes.flexAround}>
@@ -38,9 +48,33 @@ const Container: React.FC<ContainerType> = (props) => {
         </div>
       </div>
     )
+  }
 
-  // Default
-  return <div className={classes.Container}>{children}</div>
+  function draggableContainer(): JSX.Element {
+    let scrollNumber: string
+    if (drag == "three") scrollNumber = classes.ScrollThree
+    if (drag == "four") scrollNumber = classes.ScrollFour
+    else scrollNumber = classes.ScrollFive
+
+    return (
+      <div className={classes.FullContainer}>
+        <ArrowDragScroll big left />
+        <div className={classes.DragContainer}>
+          <div className={scrollNumber}>
+            <div>
+              <Verticaler width={64} />
+            </div>
+            {children}
+            <div>
+              <Verticaler width={64} />
+            </div>
+          </div>
+        </div>
+        <ArrowDragScroll big />
+      </div>
+    )
+  }
 }
 
 export default Container
+

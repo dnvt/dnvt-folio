@@ -2,16 +2,14 @@ import { createUseStyles } from "react-jss"
 
 const ContainerStyle = createUseStyles({
   Container: {
-    width: "100%",
-    maxWidth: "928px",
+    maxWidth: "100%",
     height: "auto",
     padding: "0 16px",
     margin: "0 auto",
     zIndex: "5",
-    transition: "width .15s ease, padding .15s ease",
 
     "@media (min-width: 576px)": {
-      padding: "0 23px",
+      padding: "0 24px",
     },
 
     "@media (min-width: 768px)": {
@@ -29,6 +27,7 @@ const ContainerStyle = createUseStyles({
     },
   },
 
+  // Realm of the Big Container
   BigContainer: {
     overflow: "visible",
     maxWidth: "100%",
@@ -65,6 +64,101 @@ const ContainerStyle = createUseStyles({
     display: "flex",
     alignItems: "center",
     justifyContent: "space-around",
+  },
+
+  // Realm of the Group
+  // TODO: Do the match to not use the css grid
+  GroupLeft: {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    columnGap: "24px",
+
+    "@media (min-width: 992px)": {
+      gridTemplateColumns: "288px auto",
+      columnGap: "32px",
+    },
+    "@media (min-width: 1360px)": {
+      gridTemplateColumns: "352px auto",
+    },
+  },
+
+  GroupRight: {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    columnGap: "24px",
+
+    "@media (min-width: 992px)": {
+      gridTemplateColumns: "auto 288px",
+      columnGap: "32px",
+    },
+    "@media (min-width: 1360px)": {
+      gridTemplateColumns: "auto 352px",
+    },
+  },
+
+  // Realm of the Dragable
+  DragContainer: {
+    position: "relative",
+    WebkitOverflowScrolling: "touch",
+    scrollSnapType: "x mandatory",
+    overflowX: "scroll",
+    overflowY: "visible",
+    "&::-webkit-scrollbar": {
+      display: "none",
+    },
+
+    "& div": {
+      scrollSnapAlign: "center",
+      scrollSnapStop: "always",
+    },
+    maxWidth: "100%",
+    margin: "-160px auto",
+    padding: "160px 16px",
+    zIndex: "1",
+  },
+
+  ScrollFive: {
+    display: "grid",
+    gridTemplateColumns: "64px 1fr 1fr 1fr 1fr 1fr 64px",
+    columnGap: "24px",
+
+    "@media (min-width: 768px)": { columnGap: "32px" },
+  },
+
+  ScrollFour: {
+    display: "grid",
+    gridTemplateColumns: "64px 1fr 1fr 1fr 1fr 64px",
+    columnGap: "24px",
+
+    "@media (min-width: 768px)": { columnGap: "32px" },
+  },
+
+  ScrollThree: {
+    display: "grid",
+    gridTemplateColumns: "64px 1fr 1fr 1fr 64px",
+    columnGap: "24px",
+
+    "@media (min-width: 768px)": { columnGap: "32px" },
+  },
+
+  // Realm of the Footer
+  FooterCards: {
+    display: "grid",
+    gridTemplateColumns: " 1fr 1fr 1fr ",
+    columnGap: "32px",
+  },
+
+  // Realm of the Full Container
+  FullContainer: {
+    position: "relative",
+    overflow: "visible",
+    // It is not needed at least for Frameless Devices
+    maxWidth: "100%",
+    height: "auto",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    zIndex: "1",
   },
 })
 

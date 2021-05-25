@@ -14,12 +14,11 @@ interface DeviceProps {
 
 /**
  * Takes a device name and render the device in css
- * @param DeviceProps image description
+ * @param alt image description
  * @param src tuple of png and webp
  * @param device tuple of png and webp
  * @returns Device(Image) component
  */
-
 const Device: React.FC<DeviceProps> = (props) => {
   const theme: Theme = useTheme()
   const classes = DeviceStyle({ ...props, theme })
@@ -32,13 +31,12 @@ const Device: React.FC<DeviceProps> = (props) => {
   if (type == "browser") deviceType = browser()
   if (type == "mobile") deviceType = mobile()
   if (type == "frameless") deviceType = frameless()
+  
   return deviceType
 
   ////////////////////////////////////////////////////////////////////////////////
 
-  ///
   // Browser device
-  /// TODO: Create real class for this <Image />
   function browser(): JSX.Element {
     return (
       <div className={classes.browserContent}>
@@ -49,7 +47,6 @@ const Device: React.FC<DeviceProps> = (props) => {
   }
 
   // Browser headerless device
-  /// TODO: Create real class for this <Image />
   function browserLess(): JSX.Element {
     return (
       <div className={classes.browserLessContent}>

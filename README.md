@@ -31,8 +31,8 @@
 [x] - Independant Devices
 [ ] - Devices layouts
       [x] - Grouped
+      [x] - DragFour
       [ ] - DragFramless
-      [ ] - DragFour
 [ ] - Cards
 [ ] - Hero
 [ ] - Add documentation to my functions
