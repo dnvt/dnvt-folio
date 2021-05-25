@@ -20,6 +20,7 @@ import Header from './components/navigations/Header'
 import Footer from './components/navigations/Footer'
 import { HeroVignette, Vignette } from './components/vignettes/Vignettes'
 import Device from './components/devices/Device'
+import GroupedMobileBrowser from './components/devices/layouts/GroupedMobileBrowser'
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -60,11 +61,14 @@ const App: React.FC = () => {
           <Font type="text">
             Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sed posuere consectetur est at lobortis. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur.
           </Font>
+          </Container>
+          <GroupedMobileBrowser srcBrowser={[]} srcMobile={[]} altBrowser={["yo"]} altMobile={["yo"]} />
+          <Container>
           <div >
-            <Device alt="No Image" device="browser" />
-            <Device alt="No Image" device="mobile" />
-            <Device alt="No Image" device="browserless" />
-            <Device alt="No Image" device="frameless" />
+            <Device alt="No Image" type="browser" src={["", ""]} />
+            <Device alt="No Image" type="mobile" src={["", ""]} />
+            <Device alt="No Image" type="browserless" src={["", ""]} />
+            <Device alt="No Image" type="frameless" src={["", ""]} />
           </div>
           <Font type="text">
             Maecenas faucibus mollis interdum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna.

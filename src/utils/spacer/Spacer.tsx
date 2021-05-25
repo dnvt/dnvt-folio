@@ -9,7 +9,7 @@ import { Theme } from "../theme/theme"
 import Container from "../../components/containers/Container"
 import SpacerStyle from "./Spacer-style"
 
-type HeightType = 8 | 16 | 24 | 32 | 40 | 64 | 80 | 104 | 184 | "100%"
+type HeightType = 8 | 16 | 24 | 32 | 40 | 64 | 80 | 104 | 184 | 600 | 736 | "100%"
 interface SpacerType {
   height: HeightType | string
   width?: number | string

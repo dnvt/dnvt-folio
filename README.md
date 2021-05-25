@@ -27,10 +27,14 @@
 [x] - Image
 [ ] - Vignettes
       [ ] - Repair background and Alt props
-      [ ] - Repair the Vignette component's width
-[x] - Devices
+      [ ] - Repair the Vignette component's width on mobile
+[x] - Independant Devices
 [ ] - Devices layouts
+      [x] - Grouped
+      [ ] - DragFramless
+      [ ] - DragFour
 [ ] - Cards
 [ ] - Hero
+[ ] - Add documentation to my functions
 
 ---
