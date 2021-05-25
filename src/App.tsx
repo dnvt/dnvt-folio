@@ -19,12 +19,13 @@ import { MotionConfig } from 'framer-motion'
 import Header from './components/navigations/Header'
 import Footer from './components/navigations/Footer'
 import { HeroVignette, Vignette } from './components/vignettes/Vignettes'
+import Device from './components/devices/Device'
 
 
 ////////////////////////////////////////////////////////////////////////////////
 
 const App: React.FC = () => {
-  const HERO_IMAGE = ["./src/assets/images/USMobile/System/App-01.webp","./src/assets/images/USMobile/System/App-01.pnp"]
+  // const HERO_IMAGE = ["./src/assets/images/USMobile/System/App-01.webp","./src/assets/images/USMobile/System/App-01.pnp"]
 
   return (
     <ContextHooks>
@@ -32,7 +33,7 @@ const App: React.FC = () => {
       <Grid />
       <MotionConfig transition={{ duration: .012, type: "springs" }}>
         <Header />
-        <HeroVignette src={HERO_IMAGE} alt="Hero container baby" background="#color" />
+        <HeroVignette alt="Hero container baby" background="#color" />
         <Spacer height={104} />
         <Vignette big background="yellow" alt="Hero container baby" />
         <Container>
@@ -59,6 +60,12 @@ const App: React.FC = () => {
           <Font type="text">
             Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sed posuere consectetur est at lobortis. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur.
           </Font>
+          <div >
+            <Device alt="No Image" device="browser" />
+            <Device alt="No Image" device="mobile" />
+            <Device alt="No Image" device="browserless" />
+            <Device alt="No Image" device="frameless" />
+          </div>
           <Font type="text">
             Maecenas faucibus mollis interdum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna.
           </Font>

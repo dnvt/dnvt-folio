@@ -20,7 +20,7 @@ const ImageStyle = createUseStyles({
 			padding: "24px",
 		},
 	},
-	mobile: {
+	mobileLoading: {
 		width: "225px",
 		height: "100%",
 		background: ({ theme }) => (theme as Theme).background.empty,

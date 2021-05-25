@@ -13,6 +13,7 @@ interface ImageType {
   background?: string
   fullWidth?: Boolean
   big?: Boolean
+  mobile?: Boolean
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -28,7 +29,7 @@ const ImageContainer: React.FC<ImageType> = (props) => {
   const classes = ImageStyle({ ...props, theme })
   const window = useWindowSize()
 
-  const { alt, src, scale, background, fullWidth, big } = props
+  const { alt, src, scale, background, fullWidth, big, mobile } = props
 
   let sizing =
     window.width! > 768
@@ -68,7 +69,7 @@ const ImageContainer: React.FC<ImageType> = (props) => {
 
   function loading(): JSX.Element {
     return containerWrapperForBigProps(
-      <div className={big ? classes.bigLoading : classes.loading}>
+      <div className={big ? classes.bigLoading : mobile ? classes.mobileLoading : classes.loading}>
         <Button icon='loading'>Loading...</Button>
       </div>)
   }

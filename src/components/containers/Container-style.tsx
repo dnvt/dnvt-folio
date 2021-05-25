@@ -11,7 +11,7 @@ const ContainerStyle = createUseStyles({
     transition: "width .15s ease, padding .15s ease",
 
     "@media (min-width: 576px)": {
-      padding: "0 24px",
+      padding: "0 23px",
     },
 
     "@media (min-width: 768px)": {

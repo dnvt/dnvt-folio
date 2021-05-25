@@ -27,7 +27,9 @@
 [x] - Image
 [ ] - Vignettes
       [ ] - Repair background and Alt props
-[ ] - Devices
+      [ ] - Repair the Vignette component's width
+[x] - Devices
+[ ] - Devices layouts
 [ ] - Cards
 [ ] - Hero
 
