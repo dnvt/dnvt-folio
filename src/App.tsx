@@ -1,11 +1,3 @@
-/**
- * Welcome to @dnvt/Homepage!
- * 
- * TODO:
- * Mount the page when all components exist
- * 
- */
-
 import React from 'react'
 import Container from './components/containers/Container'
 import ContextHooks from "./hooks/ContextHooks"
@@ -19,13 +11,29 @@ import { MotionConfig } from 'framer-motion'
 import Header from './components/navigations/Header'
 import Footer from './components/navigations/Footer'
 import { HeroVignette, Vignette } from './components/vignettes/Vignettes'
-import Device from './components/devices/Device'
 import GroupedMobileBrowser from './components/devices/layouts/GroupedMobileBrowser'
 import DragMobileFour from './components/devices/layouts/DragMobileFour'
-
-
+import DragFramelessFive from './components/devices/layouts/DragFramelessFive'
+//
+import App01Png from "../src/assets/images/USMobile/System/App-01.png"
+import App02Png from "../src/assets/images/USMobile/System/App-02.png"
+import App03Png from "../src/assets/images/USMobile/System/App-03.png"
+import App04Png from "../src/assets/images/USMobile/System/App-04.png"
+import App05Png from "../src/assets/images/USMobile/System/App-05.png"
+import App01Webp from "../src/assets/images/USMobile/System/App-01.webp"
+import App02Webp from "../src/assets/images/USMobile/System/App-02.webp"
+import App03Webp from "../src/assets/images/USMobile/System/App-03.webp"
+import App04Webp from "../src/assets/images/USMobile/System/App-04.webp"
+import App05Webp from "../src/assets/images/USMobile/System/App-05.webp"
 ////////////////////////////////////////////////////////////////////////////////
 
+/**
+ * Welcome to @dnvt/Homepage!
+ * 
+ * TODO:
+ * Mount the page when all components exist
+ * 
+ */
 const App: React.FC = () => {
   // const HERO_IMAGE = ["./src/assets/images/USMobile/System/App-01.webp","./src/assets/images/USMobile/System/App-01.pnp"]
 
@@ -63,15 +71,14 @@ const App: React.FC = () => {
             Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sed posuere consectetur est at lobortis. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur.
           </Font>
         </Container>
+        <Spacer height={80} />
         <DragMobileFour src={[["", ""], ["", ""], ["", ""], ["", ""]]} alt={["", "", "", ""]} />
+        <Spacer height={80} />
+        <DragFramelessFive src={[[App01Png, App01Webp], [App02Png, App02Webp], [App03Png, App03Webp], [App04Png, App04Webp], [App05Png, App05Webp]]} alt={["", "", "", "", ""]} />
+        <Spacer height={80} />
         <GroupedMobileBrowser srcBrowser={[]} srcMobile={[]} altBrowser={["yo"]} altMobile={["yo"]} />
+        <Spacer height={80} />
         <Container>
-          <div >
-            <Device alt="No Image" type="browser" src={["", ""]} />
-            <Device alt="No Image" type="mobile" src={["", ""]} />
-            <Device alt="No Image" type="browserless" src={["", ""]} />
-            <Device alt="No Image" type="frameless" src={["", ""]} />
-          </div>
           <Font type="text">
             Maecenas faucibus mollis interdum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna.
           </Font>

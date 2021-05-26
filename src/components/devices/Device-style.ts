@@ -2,6 +2,25 @@ import { createUseStyles } from "react-jss"
 import { Theme } from "../../utils/theme/theme"
 
 const DeviceStyle = createUseStyles((theme) => ({
+	shadowContent: {
+		position: "relative",
+		boxShadow: (theme as Theme).shadow.device,
+		background: (theme as Theme).background.tint,
+		overflow: "hidden",
+		width: "236px",
+		objectFit: "cover",
+		height: "512px",
+		zIndex: "90",
+
+		"@media (min-width: 768px)": {
+			minWidth: "262px",
+			height: "576px",
+		},
+		"@media (min-width: 1360px)": {
+			height: "704px",
+			minWidth: "325px",
+		},
+	},
 	// Browser
 	browserContent: {
 		display: "flex",
@@ -245,27 +264,6 @@ const DeviceStyle = createUseStyles((theme) => ({
 		zIndex: "-1",
 		borderTop: `1px solid ${(theme as Theme).background.empty}`,
 		borderBottom: `1px solid ${(theme as Theme).background.empty}`,
-	},
-
-	// Frameless
-	shadowContent: {
-		zIndex: "90",
-		position: "relative",
-		boxShadow: (theme as Theme).shadow.device,
-		background: (theme as Theme).background.tint,
-		overflow: "hidden",
-		width: "236px",
-		objectFit: "cover",
-		height: "512px",
-
-		"@media (min-width: 768px)": {
-			minWidth: "270px",
-			height: "576px",
-		},
-		"@media (min-width: 1360px)": {
-			height: "704px",
-			minWidth: "325px",
-		},
 	},
 }))
 

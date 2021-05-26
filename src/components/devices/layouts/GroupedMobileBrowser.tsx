@@ -12,6 +12,11 @@ interface GroupedDevicePropTypes {
   altMobile: string[]
 }
 
+////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Welcome to @dnvt/GroupedMobileBrowser!
+ */
 const GroupedMobileBrowser: React.FC<GroupedDevicePropTypes> = (props) => {
   const window = useWindowSize()
   const { srcBrowser, srcMobile, altBrowser, altMobile } = props
@@ -24,7 +29,14 @@ const GroupedMobileBrowser: React.FC<GroupedDevicePropTypes> = (props) => {
     <Device type="mobile" src={srcMobile[0]} alt={altMobile[0]} />,
     <Device type="mobile" src={srcMobile[1]} alt={altMobile[1]} />]
 
-  if (window.width > 992)
+  if (window.width > 992) return bigLayout()
+  if (window.width > 576) return smallLayout()
+
+  return mobileLayout()
+
+  ////////////////////////////////////////////////////////////////////////////////
+
+  function bigLayout(): JSX.Element {
     return (
       <>
         <Container big>
@@ -42,8 +54,9 @@ const GroupedMobileBrowser: React.FC<GroupedDevicePropTypes> = (props) => {
         </Container>
       </>
     )
+  }
 
-  if (window.width > 576)
+  function smallLayout(): JSX.Element {
     return (
       <>
         <Container big>
@@ -63,29 +76,32 @@ const GroupedMobileBrowser: React.FC<GroupedDevicePropTypes> = (props) => {
         </Container>
       </>
     )
+  }
 
-  return (
-    <>
-      <Container big>
-        {browserComponent[0]}
-      </Container>
-      <Spacer contained height={40} />
+  function mobileLayout(): JSX.Element {
+    return (
+      <>
+        <Container big>
+          {browserComponent[0]}
+        </Container>
+        <Spacer contained height={40} />
 
-      <Container big>
-        {browserComponent[1]}
-      </Container>
-      <Spacer contained height={40} />
+        <Container big>
+          {browserComponent[1]}
+        </Container>
+        <Spacer contained height={40} />
 
-      <Container big center>
-        {mobileComponent[0]}
-      </Container>
-      <Spacer contained height={40} />
+        <Container big center>
+          {mobileComponent[0]}
+        </Container>
+        <Spacer contained height={40} />
 
-      <Container big center>
-        {mobileComponent[1]}
-      </Container>
-    </>
-  )
+        <Container big center>
+          {mobileComponent[1]}
+        </Container>
+      </>
+    )
+  }
 }
 
 export default GroupedMobileBrowser

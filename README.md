@@ -32,7 +32,7 @@
 [ ] - Devices layouts
       [x] - Grouped
       [x] - DragFour
-      [ ] - DragFramless
+      [x] - DragFramless
 [ ] - Cards
 [ ] - Hero
 [ ] - Add documentation to my functions

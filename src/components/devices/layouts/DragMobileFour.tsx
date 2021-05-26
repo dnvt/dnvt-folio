@@ -4,12 +4,17 @@ import Device from "../Device"
 
 type Tuples = [string, string]
 
-type DragMobile = {
+type DragFourProps = {
   src: [Tuples, Tuples, Tuples, Tuples]
   alt: [string, string, string, string]
 }
 
-const DragMobileFour: React.FC<DragMobile> = (props) => {
+////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Welcome to @dnvt/DragMobileFour!
+ */
+const DragMobileFour: React.FC<DragFourProps> = (props) => {
   const { src, alt } = props
 
   return (

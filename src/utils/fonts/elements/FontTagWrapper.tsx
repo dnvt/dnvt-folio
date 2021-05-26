@@ -18,7 +18,6 @@ const FontTagWrapper: React.FC<FontTagWrapperProps> = (props): JSX.Element => {
   //
 
   function addTagWrapper(type: FontTypes, style?: StyleProps) {
-    console.log(style)
     switch (type) {
       case "h1": return <h1 style={style}>{children}</h1>
       case "h2": return <h2 style={style}>{children}</h2>

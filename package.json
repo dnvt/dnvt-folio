@@ -32,7 +32,8 @@
 	},
 	"eslintConfig": {
 		"rules": {
-			"eqeqeq": "off"
+			"eqeqeq": "off",
+			"semi": "off"
 		},
 		"extends": [
 			"react-app",
