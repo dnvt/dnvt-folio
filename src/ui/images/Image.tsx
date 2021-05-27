@@ -7,8 +7,8 @@ import Button from "../buttons/Button"
 import ImageStyle from "./Image-style"
 
 interface ImageType {
+  src: string[] | undefined
   alt?: string
-  src?: any[]
   scale?: number
   background?: string
   fullWidth?: Boolean
@@ -63,7 +63,8 @@ const ImageContainer: React.FC<ImageType> = (props) => {
     </picture>
   )
 
-  return src ? picture : loading()
+  if (src && src[0] != "") return picture
+  return loading()
 
   //
 

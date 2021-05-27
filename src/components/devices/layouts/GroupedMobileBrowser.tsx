@@ -5,9 +5,11 @@ import SpacerFullHeight from "../../../utils/spacer/variations/SpacerFullHeight"
 import Container from "../../containers/Container"
 import Device from "../Device"
 
+type Tuples = [string, string]
+
 interface GroupedDevicePropTypes {
-  srcBrowser: [string, string][]
-  srcMobile: [string, string][]
+  srcBrowser: [Tuples, Tuples]
+  srcMobile: [Tuples, Tuples]
   altBrowser: string[]
   altMobile: string[]
 }

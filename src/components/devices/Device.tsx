@@ -5,7 +5,7 @@ import { Theme } from "../../utils/theme/theme"
 import DeviceStyle from "./Device-style"
 
 interface DeviceProps {
-  src: [string, string]
+  src?: [string, string]
   alt: string
   type: "mobile" | "browser" | "browserless" | "frameless"
 }

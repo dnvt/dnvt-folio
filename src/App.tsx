@@ -76,7 +76,7 @@ const App: React.FC = () => {
         <Spacer height={80} />
         <DragFramelessFive src={[[App01Png, App01Webp], [App02Png, App02Webp], [App03Png, App03Webp], [App04Png, App04Webp], [App05Png, App05Webp]]} alt={["", "", "", "", ""]} />
         <Spacer height={80} />
-        <GroupedMobileBrowser srcBrowser={[]} srcMobile={[]} altBrowser={["yo"]} altMobile={["yo"]} />
+        <GroupedMobileBrowser srcBrowser={[["", ""], ["", ""]]} srcMobile={[["", ""], ["", ""]]} altBrowser={["yo"]} altMobile={["yo"]} />
         <Spacer height={80} />
         <Container>
           <Font type="text">
