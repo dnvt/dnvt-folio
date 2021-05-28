@@ -31,7 +31,7 @@ const ImageContainer: React.FC<ImageType> = (props) => {
 
   const { alt, src, scale, background, fullWidth, big, mobile } = props
 
-  let sizing =
+  let fullWidthSizing =
     window.width! > 768
       ? { width: "100%" }
       : { height: "fill-available", minWidth: "100%" }
@@ -46,7 +46,7 @@ const ImageContainer: React.FC<ImageType> = (props) => {
 
   const picture = (
     <picture
-      className={big && classes.image}
+      className={classes.image}
       style={
         (background && { background: background }) ||
         (scale && { transform: `scale(${ scale })` }) ||
@@ -56,7 +56,7 @@ const ImageContainer: React.FC<ImageType> = (props) => {
       <source srcSet={imageWebp} type='image/webp' />
       <img
         className={fullWidth ? classes.deviceImg : classes.img}
-        style={fullWidth ? sizing : { height: "100%" }}
+        style={fullWidth ? fullWidthSizing : { height: "100%" }}
         src={imagePng}
         alt={alt}
       />

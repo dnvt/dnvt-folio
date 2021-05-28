@@ -2,28 +2,29 @@ import React from "react"
 import { useTheme } from "react-jss"
 import { useWindowSize } from "../../hooks/useWindowSize"
 import ImageContainer from "../../ui/images/Image"
-import Font from "../../utils/fonts/Font"
-import Spacer from "../../utils/spacer/Spacer"
-// import Font from "../../utils/fonts/Font"
-// import Spacer from "../../utils/spacer/Spacer"
 import { Theme } from "../../utils/theme/theme"
 import Container from "../containers/Container"
-// import Container from "../containers/Container"
+import Legend from "./Legend"
 
 import VignetteStyle from "./Vignettes-style"
 
 export interface VignetteProps {
   alt: string
-  src?: any[]
+  src: any[]
+  background?: string
+}
+
+export interface BigProps {
+  alt: string
+  src: any[]
   background?: string
   big?: Boolean
   width?: Boolean
-  hero?: Boolean
 }
 
 export interface HeroProps {
   alt: string
-  src?: any[]
+  src: any[]
   background?: "color" | string
   big?: Boolean
   width?: Boolean
@@ -33,61 +34,48 @@ export interface HeroProps {
 
 const Vignette: React.FC<VignetteProps> = (props) => {
   const theme: Theme = useTheme()
-  const window = useWindowSize()
   const classes = VignetteStyle({ ...props, theme })
-  
-  const { src, alt, background, big, width } = props
-  
-  const legendSegment = (
-    <>
-      <Spacer height={window.width > 992 ? 16 : 8} />
-      <Font type='legend'>{alt}</Font>
-    </>
+
+  const { src, alt } = props
+
+  return (
+    <Container>
+      <div className={classes.Vignette}>
+        <ImageContainer
+          src={src}
+          alt={alt}
+        />
+      </div>
+      {alt && <Legend alt={alt} />}
+    </Container>
   )
-  
-  const imgSegment = (
+}
+
+const BigVignette: React.FC<BigProps> = props => {
+  const theme: Theme = useTheme()
+  const classes = VignetteStyle({ ...props, theme })
+  const { width, background, src, alt } = props
+
+  return (<>
     <div
-    className={width ? classes.VignetteWidth : classes.Vignette}
-    style={{ background: background }}
+      className={classes.Vignette}
+      style={{ background: background ?? theme.background.empty }}
     >
       <ImageContainer
         fullWidth={width}
-        big={big}
+        big
         src={src}
         alt={alt}
-        />
+      />
     </div>
-  )
-  
-  if (big) return bigVignette()
-  else return vignette()
-  
-  //
-  
-  function bigVignette() {
-    return (
-      <>
-        {imgSegment}
-        {alt && <Container>{legendSegment}</Container>}
-      </>
-    )
-  }
-  function vignette() {
-    return (
-      <Container>
-        {imgSegment}
-        {alt && <> {legendSegment}</>}
-      </Container>
-    )
-  }
+    {alt && <Container><Legend alt={alt} /></Container>}
+  </>)
 }
-
 
 const HeroVignette: React.FC<HeroProps> = props => {
   const window = useWindowSize()
   const theme: Theme = useTheme()
   const classes = VignetteStyle({ ...props, theme })
-  // const [transition] = useHeroTransition();
 
   const { src, alt, background } = props
 
@@ -113,4 +101,4 @@ const HeroVignette: React.FC<HeroProps> = props => {
   )
 }
 
-export { HeroVignette, Vignette }
+export { HeroVignette, BigVignette, Vignette }

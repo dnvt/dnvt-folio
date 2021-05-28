@@ -10,7 +10,7 @@ import ExternalLink from './ui/links/external-link/ExternalLink'
 import { MotionConfig } from 'framer-motion'
 import Header from './components/navigations/Header'
 import Footer from './components/navigations/Footer'
-import { HeroVignette, Vignette } from './components/vignettes/Vignettes'
+import { BigVignette, HeroVignette, Vignette } from './components/vignettes/Vignettes'
 import GroupedMobileBrowser from './components/devices/layouts/GroupedMobileBrowser'
 import DragMobileFour from './components/devices/layouts/DragMobileFour'
 import DragFramelessFive from './components/devices/layouts/DragFramelessFive'
@@ -43,9 +43,9 @@ const App: React.FC = () => {
       <Grid />
       <MotionConfig transition={{ duration: .012, type: "springs" }}>
         <Header />
-        <HeroVignette alt="Hero container baby" background="#color" />
+        <HeroVignette src={["", ""]} alt="Hero container baby" background="#color" />
         <Spacer height={104} />
-        <Vignette big background="yellow" alt="Hero container baby" />
+        <BigVignette src={["", ""]} alt="Hero container baby" />
         <Container>
           <Spacer height={104} />
           <Font type="h1">Hello World</Font>
@@ -64,7 +64,9 @@ const App: React.FC = () => {
             Maecenas faucibus mollis interdum.
           </Font>
           <Spacer height={24} />
-          <Vignette alt="Yellow" />
+        </Container>
+        <Vignette src={["", ""]} alt="Yellow" />
+        <Container>
           <Spacer height={24} />
           <Font type="h5">This is Francois speaking</Font>
           <Font type="text">

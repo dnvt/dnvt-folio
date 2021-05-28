@@ -185,8 +185,8 @@ const DeviceStyle = createUseStyles((theme) => ({
 		content: "''",
 		width: "48%",
 		height: "5.7%",
-		borderRadius: "0 0 12px 12px",
 		background: (theme as Theme).background.tint,
+		borderRadius: "0 0 12px 12px",
 
 		"@media (min-width: 1360px)": {
 			borderRadius: "0 0 20px 20px",
@@ -245,16 +245,6 @@ const DeviceStyle = createUseStyles((theme) => ({
 			},
 		},
 	},
-	sound: {
-		position: "absolute",
-		width: "25%",
-		height: "10%",
-		background: (theme as Theme).background.empty,
-		zIndex: "3",
-		top: "50%",
-		left: "37.5%",
-		borderRadius: "20px",
-	},
 	ligns: {
 		position: "absolute",
 		top: "10%",
@@ -262,8 +252,18 @@ const DeviceStyle = createUseStyles((theme) => ({
 		width: "100%",
 		height: "80%",
 		zIndex: "-1",
-		borderTop: `1px solid ${(theme as Theme).background.empty}`,
-		borderBottom: `1px solid ${(theme as Theme).background.empty}`,
+		borderTop: "1px solid " + (theme as Theme).background.empty,
+		borderBottom: "1px solid " + (theme as Theme).background.empty,
+	},
+	sound: {
+		position: "absolute",
+		width: "25%",
+		height: "10%",
+		zIndex: "3",
+		top: "50%",
+		left: "37.5%",
+		borderRadius: "20px",
+		background: (theme as Theme).background.empty,
 	},
 }))
 

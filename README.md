@@ -25,17 +25,22 @@
 [x] - Header Component
 [x] - Footer Component
 [x] - Image
-[ ] - Vignettes
-      [ ] - Repair background and Alt props
-      [ ] - Repair the Vignette component's width on mobile
+[x] - Vignettes
 [x] - Independant Devices
-[ ] - Devices layouts
+[x] - Devices layouts
       [x] - Grouped
       [x] - DragFour
       [x] - DragFramless
-      [ ] - Repair the src (should be empty for loading states?)
+      [x] - Repair the src (should be empty for loading states?)
+      [x] - Repair ligns and sound on the phone
 [ ] - Cards
-[ ] - Hero
+      [ ] - CardImage
+      [ ] - CardStatus
+      [ ] - Cardtitle
+      [ ] - Layout
+      [ ] - Switch
+[ ] - Guidelines
 [ ] - Add documentation to my functions
+[ ] - Hero
 
 ---

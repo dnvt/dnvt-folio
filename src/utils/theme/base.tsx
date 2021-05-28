@@ -46,7 +46,7 @@ export const LIGHT: Base = {
     G040: "rgba(52,199,73,.4)"
   },
   opacity: {
-    O010: "rgba(25,25,25,.1",
+    O010: "rgba(25,25,25,.1)",
     O000: "rgba(0,0,0,0)",
     transparent: "rgba(255,255,255,0)"
   }
@@ -90,7 +90,7 @@ export const DARK: Base = {
     G040: "rgba(52,199,73,.4)"
   },
   opacity: {
-    O010: "rgba(225,225,225,.1",
+    O010: "rgba(225,225,225,.1)",
     O000: "rgba(255,255,255,0)",
     transparent: "rgba(0,0,0,0)"
   }
