@@ -247,13 +247,23 @@ const DeviceStyle = createUseStyles((theme) => ({
 	},
 	ligns: {
 		position: "absolute",
-		top: "10%",
+		top: "71px",
+		height: "561px",
 		left: "0",
 		width: "100%",
-		height: "80%",
 		zIndex: "-1",
 		borderTop: "1px solid " + (theme as Theme).background.empty,
 		borderBottom: "1px solid " + (theme as Theme).background.empty,
+		// TODO
+		// Change the value for the lines position
+		"@media (min-width: 768px)": {
+			top: "71px",
+			height: "561px",
+		},
+		"@media (min-width: 1360px)": {
+			top: "71px",
+			height: "561px",
+		},
 	},
 	sound: {
 		position: "absolute",

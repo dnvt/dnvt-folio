@@ -33,12 +33,14 @@
       [x] - DragFramless
       [x] - Repair the src (should be empty for loading states?)
       [x] - Repair ligns and sound on the phone
+      [ ] - Responsive height jump bug in the Grouped Deviced
 [ ] - Cards
-      [ ] - CardImage
-      [ ] - CardStatus
-      [ ] - Cardtitle
+      [x] - CardImage
+      [x] - CardStatus
+      [x] - Cardtitle
       [ ] - Layout
-      [ ] - Switch
+[ ] - Turn loading into a non Button
+[ ] - Add Link to: CardImage | InternalLink | Button
 [ ] - Guidelines
 [ ] - Add documentation to my functions
 [ ] - Hero

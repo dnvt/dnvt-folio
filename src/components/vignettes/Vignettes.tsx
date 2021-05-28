@@ -1,11 +1,10 @@
 import React from "react"
 import { useTheme } from "react-jss"
+import { Theme } from "../../utils/theme/theme"
 import { useWindowSize } from "../../hooks/useWindowSize"
 import ImageContainer from "../../ui/images/Image"
-import { Theme } from "../../utils/theme/theme"
 import Container from "../containers/Container"
 import Legend from "./Legend"
-
 import VignetteStyle from "./Vignettes-style"
 
 export interface VignetteProps {
@@ -40,7 +39,7 @@ const Vignette: React.FC<VignetteProps> = (props) => {
 
   return (
     <Container>
-      <div className={classes.Vignette}>
+      <div className={classes.Image}>
         <ImageContainer
           src={src}
           alt={alt}

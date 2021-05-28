@@ -20,6 +20,22 @@ const ImageStyle = createUseStyles({
 			padding: "24px",
 		},
 	},
+	cardLoading: {
+		minWidth: "100%",
+		height: "100%",
+		background: ({ theme }) => (theme as Theme).background.empty,
+		padding: "16px 24px",
+
+		"@media (min-width: 768px)": {
+			padding: "40px",
+		},
+		"@media (min-width: 992px)": {
+			padding: "40px 48px",
+		},
+		"@media (min-width: 1360px)": {
+			padding: "40px 56px",
+		},
+	},
 	mobileLoading: {
 		width: "225px",
 		height: "100%",
@@ -108,7 +124,7 @@ const ImageStyle = createUseStyles({
 			minWidth: "100%",
 		},
 	},
-	image: {
+	Image: {
 		display: "flex",
 		justifyContent: "center",
 		position: "relative",

@@ -13,6 +13,7 @@ import Footer from './components/navigations/Footer'
 import { BigVignette, HeroVignette, Vignette } from './components/vignettes/Vignettes'
 import GroupedMobileBrowser from './components/devices/layouts/GroupedMobileBrowser'
 import DragMobileFour from './components/devices/layouts/DragMobileFour'
+import Card from './components/cards/Card'
 import DragFramelessFive from './components/devices/layouts/DragFramelessFive'
 //
 import App01Png from "../src/assets/images/USMobile/System/App-01.png"
@@ -36,7 +37,6 @@ import App05Webp from "../src/assets/images/USMobile/System/App-05.webp"
  */
 const App: React.FC = () => {
   // const HERO_IMAGE = ["./src/assets/images/USMobile/System/App-01.webp","./src/assets/images/USMobile/System/App-01.pnp"]
-
   return (
     <ContextHooks>
       <Sidelines />
@@ -75,11 +75,13 @@ const App: React.FC = () => {
         </Container>
         <Spacer height={80} />
         <DragMobileFour src={[["", ""], ["", ""], ["", ""], ["", ""]]} alt={["", "", "", ""]} />
-        <Spacer height={80} />
+        <Spacer contained height={80} />
         <DragFramelessFive src={[[App01Png, App01Webp], [App02Png, App02Webp], [App03Png, App03Webp], [App04Png, App04Webp], [App05Png, App05Webp]]} alt={["", "", "", "", ""]} />
-        <Spacer height={80} />
+        <Spacer contained height={80} />
         <GroupedMobileBrowser srcBrowser={[["", ""], ["", ""]]} srcMobile={[["", ""], ["", ""]]} altBrowser={["yo"]} altMobile={["yo"]} />
-        <Spacer height={80} />
+        <Spacer contained height={80} />
+        <Card alt={"image alt"} src={["", ""]} tagValue="Hello test">Testing the card thing</Card>
+        <Spacer contained height={80} />
         <Container>
           <Font type="text">
             Maecenas faucibus mollis interdum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna.

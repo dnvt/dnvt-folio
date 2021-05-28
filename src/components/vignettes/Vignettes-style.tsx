@@ -56,17 +56,26 @@ const VignetteStyle = createUseStyles(theme => ({
     },
   },
 
-  image: {
+  Image: {
+
     display: "flex",
     justifyContent: "center",
     position: "relative",
     width: "auto",
-    height: "100%",
+    background: (theme as Theme).background.empty,
+    height: "256px",
+
     objectFit: "cover",
     transition: "transform .15s ease",
 
     "@media (min-width: 576px)": {
       minWidth: "100%",
+    },
+    "@media (min-width: 768px)": {
+      height: "576px",
+    },
+    "@media (min-width: 1360px)": {
+      height: "704px",
     },
   },
 }))
