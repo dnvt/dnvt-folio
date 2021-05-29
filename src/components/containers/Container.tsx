@@ -6,10 +6,12 @@ import ContainerStyle from "./Container-style"
 type Drag = "three" | "four" | "five"
 
 type ContainerType = {
+  drag?: Drag
   height?: Boolean
+  group?: Boolean
   big?: Boolean
   center?: Boolean
-  drag?: Drag
+  left?: Boolean
 }
 
 /**
@@ -22,11 +24,12 @@ type ContainerType = {
  */
 const Container: React.FC<ContainerType> = (props) => {
   const classes = ContainerStyle()
-  const { children, height, big, center, drag } = props
+  const { children, height, big, center, drag, left, group } = props
 
   if (height) return heightContainer()
   if (big) return bigContainer()
   if (drag) return draggableContainer()
+  if (group) return groupedCardContainer()
 
   return <div className={classes.Container}>{children}</div>
 
@@ -48,6 +51,15 @@ const Container: React.FC<ContainerType> = (props) => {
         </div>
       </div>
     )
+  }
+
+  function groupedCardContainer() {
+    return (
+      <div className={classes.Container}>
+        <div className={left ? classes.GroupLeft : classes.GroupRight}>
+          {props.children}
+        </div>
+      </div>)
   }
 
   function draggableContainer(): JSX.Element {

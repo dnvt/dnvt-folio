@@ -2,8 +2,10 @@ import React from "react"
 import { useTheme } from "react-jss"
 import Container from "../../components/containers/Container"
 import { useWindowSize } from "../../hooks/useWindowSize"
+import Font from "../../utils/fonts/Font"
+import Icon from "../../utils/icons/Icon"
+import Underline from "../../utils/line/Underline"
 import { Theme } from "../../utils/theme/theme"
-import Button from "../buttons/Button"
 import ImageStyle from "./Image-style"
 
 interface ImageType {
@@ -77,8 +79,17 @@ const ImageContainer: React.FC<ImageType> = (props) => {
   function loading(): JSX.Element {
     return containerWrapperForBigProps(
       <div className={loaderPositioningClass}>
-        <Button icon='loading'>Loading...</Button>
-      </div>)
+        <div className={classes.MenuButton}>
+          <div className={classes.icon} style={{ marginRight: "8px" }}>
+            <Icon name="loading" />
+          </div>
+          <div>
+            <Font type='menu'>Loading...</Font>
+            <Underline button opacity={0} />
+          </div>
+        </div>
+      </div>
+    )
   }
 
   function containerWrapperForBigProps(Element: JSX.Element): JSX.Element {

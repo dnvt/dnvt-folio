@@ -26,6 +26,8 @@ import App02Webp from "../src/assets/images/USMobile/System/App-02.webp"
 import App03Webp from "../src/assets/images/USMobile/System/App-03.webp"
 import App04Webp from "../src/assets/images/USMobile/System/App-04.webp"
 import App05Webp from "../src/assets/images/USMobile/System/App-05.webp"
+import GroupedCard from './components/cards/layouts/GroupedCard'
+
 ////////////////////////////////////////////////////////////////////////////////
 
 /**
@@ -81,6 +83,30 @@ const App: React.FC = () => {
         <GroupedMobileBrowser srcBrowser={[["", ""], ["", ""]]} srcMobile={[["", ""], ["", ""]]} altBrowser={["yo"]} altMobile={["yo"]} />
         <Spacer contained height={80} />
         <Card alt={"image alt"} src={["", ""]} tagValue="Hello test">Testing the card thing</Card>
+        <Spacer contained height={32} />
+        <GroupedCard
+          title={{
+            value: ["Title number 1", "Title number 2"],
+          }}
+          tag={{
+            value: ["Tag number 1", "Tag number 2"],
+          }}
+          src={[["", ""], ["", ""]]}
+          alt={["", ""]}
+        />
+        <Spacer contained height={32} />
+        <GroupedCard
+          left
+          title={{
+            value: ["Title number 1", "Title number 2"],
+          }}
+          tag={{
+            value: ["Tag number 1", "Tag number 2"],
+          }}
+          status={["loading", "loading"]}
+          src={[["", ""], ["", ""]]}
+          alt={["", ""]}
+        />
         <Spacer contained height={80} />
         <Container>
           <Font type="text">

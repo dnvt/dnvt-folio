@@ -10,7 +10,7 @@ export type CardStatusType = "loading" | "link" | "stop" | "construction"
 const CardStatus: React.FC<{ status: CardStatusType }> = ({ status }) => {
   const classes = CardStyle()
 
-  let value = "loading..."
+  let value: string | undefined
   if (status == "link") value = "External link"
   if (status == "stop") value = " Password protected"
   if (status == "construction") value = "In Progress"

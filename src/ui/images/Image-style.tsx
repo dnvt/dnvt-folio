@@ -2,6 +2,12 @@ import { createUseStyles } from "react-jss"
 import { Theme } from "../../utils/theme/theme"
 
 const ImageStyle = createUseStyles({
+	MenuButton: {
+		position: "relative",
+		display: "flex",
+		flexDirection: "row",
+		marginBottom: "6px"
+	},
 	loading: {
 		width: "100%",
 		height: "100%",
@@ -136,6 +142,12 @@ const ImageStyle = createUseStyles({
 		"@media (min-width: 576px)": {
 			minWidth: "100%",
 		},
+	},
+	icon: {
+		height: "100%",
+		padding: "5px 0",
+		display: "flex",
+		alignItems: "center",
 	},
 })
 

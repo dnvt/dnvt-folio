@@ -7,7 +7,7 @@ import CardStyle from "./card-style"
 import CardStatus, { CardStatusType } from "./segments/CardStatus"
 import CardTitle from "./segments/CardTitle"
 
-interface CardPropsType {
+export interface CardPropsType {
 	src: [string, string]
 	alt: string
 	tagValue: string
@@ -16,8 +16,8 @@ interface CardPropsType {
 	tagColor?: string
 	background?: string
 	height?: number
-	width?: number
-	uncontained?: string
+	width?: number | "100%"
+	uncontained?: Boolean
 	reverse?: Boolean
 	right?: Boolean
 	path?: string
