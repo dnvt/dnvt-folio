@@ -1,30 +1,27 @@
 import React from "react"
+import { STuples } from "../../cards/Card"
 import Container from "../../containers/Container"
 import Device from "../Device"
 
-export type STuples = [string, string]
 
-type DragFiveProps = {
-  src: [STuples, STuples, STuples, STuples, STuples]
-  alt: [string, string, string, string, string]
-}
+type DragFiveProps = { src: STuples, alt: string }
+export type FiveImagesType = [DragFiveProps, DragFiveProps, DragFiveProps, DragFiveProps, DragFiveProps]
+interface DragFramelessFiveProps { images: FiveImagesType }
 
 ////////////////////////////////////////////////////////////////////////////////
 
 /**
  * Welcome to @dnvt/DragFramelessFive!
  */
-const DragFramelessFive: React.FC<DragFiveProps> = ({ src, alt }) => {
-  return (
-    <Container drag="five">
-      <Device type="frameless" src={src[0]} alt={alt[0]} />
-      <Device type="frameless" src={src[1]} alt={alt[1]} />
-      <Device type="frameless" src={src[2]} alt={alt[2]} />
-      <Device type="frameless" src={src[3]} alt={alt[3]} />
-      <Device type="frameless" src={src[4]} alt={alt[4]} />
-    </Container>
-  )
+const DragFramelessFive: React.FC<DragFramelessFiveProps> = ({ images }) => {
+  const devices = images.map(FiveDevices)
 
+  return <Container drag="five">{devices}</Container>
+
+}
+
+const FiveDevices: React.FC<DragFiveProps> = ({ src, alt }) => {
+  return <Device type="frameless" src={src} alt={alt} />
 }
 
 export default DragFramelessFive

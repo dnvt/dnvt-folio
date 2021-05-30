@@ -6,7 +6,8 @@ import CardImage from "./segments/CardImage"
 import CardStyle from "./card-style"
 import CardStatus, { CardStatusType } from "./segments/CardStatus"
 import CardTitle from "./segments/CardTitle"
-import { STuples } from "../devices/layouts/DragFramelessFive"
+
+export type STuples = [string, string]
 
 export interface CardPropsType {
 	src: STuples

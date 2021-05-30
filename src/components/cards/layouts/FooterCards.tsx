@@ -1,9 +1,7 @@
 import React from "react"
 import Container from "../../containers/Container"
-import { STuples } from "../../devices/layouts/DragFramelessFive"
-import Card from "../Card"
+import Card, { STuples } from "../Card"
 import { CardStatusType } from "../segments/CardStatus"
-
 
 interface CardPropsType {
   key: number

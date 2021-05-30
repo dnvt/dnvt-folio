@@ -1,0 +1,69 @@
+import { FooterContentType } from "./components/cards/layouts/FooterCards"
+import { GroupedContentType } from "./components/cards/layouts/GroupedCards"
+import { FiveImagesType } from "./components/devices/layouts/DragFramelessFive"
+import { FourImagesType } from "./components/devices/layouts/DragMobileFour"
+//
+import App01Png from "../src/assets/images/USMobile/System/App-01.png"
+import App02Png from "../src/assets/images/USMobile/System/App-02.png"
+import App03Png from "../src/assets/images/USMobile/System/App-03.png"
+import App04Png from "../src/assets/images/USMobile/System/App-04.png"
+import App05Png from "../src/assets/images/USMobile/System/App-05.png"
+import App01Webp from "../src/assets/images/USMobile/System/App-01.webp"
+import App02Webp from "../src/assets/images/USMobile/System/App-02.webp"
+import App03Webp from "../src/assets/images/USMobile/System/App-03.webp"
+import App04Webp from "../src/assets/images/USMobile/System/App-04.webp"
+import App05Webp from "../src/assets/images/USMobile/System/App-05.webp"
+
+export const FOOTER_CARDS: FooterContentType = [
+	{
+		key: 1,
+		src: ["", ""],
+		alt: "test 1",
+		title: { value: "Value title 1" },
+	},
+	{
+		key: 2,
+		src: ["", ""],
+		alt: "test 2",
+		title: { value: "Value title 2" },
+	},
+	{
+		key: 3,
+		src: ["", ""],
+		alt: "test 3",
+		title: { value: "Value title 3" },
+	},
+]
+
+export const GROUPED_CARDS: GroupedContentType = [
+	{
+		key: 1,
+		src: ["", ""],
+		alt: "test 1",
+		tag: { color: "red", value: "Value tag 1" },
+		title: { value: "Value title 1" },
+	},
+	{
+		key: 2,
+		src: ["", ""],
+		alt: "test 2",
+		tag: { value: "Value tag 2" },
+		title: { value: "Value title 2" },
+		background: { color: "red" },
+	},
+]
+
+export const MOBILE_FOUR: FourImagesType = [
+	{ src: ["", ""], alt: "Test 1" },
+	{ src: ["", ""], alt: "Test 2" },
+	{ src: ["", ""], alt: "Test 3" },
+	{ src: ["", ""], alt: "Test 4" },
+]
+
+export const FRAMELESS_FIVE: FiveImagesType = [
+	{ src: [App01Png, App01Webp], alt: "Test 1" },
+	{ src: [App02Png, App02Webp], alt: "Test 2" },
+	{ src: [App03Png, App03Webp], alt: "Test 3" },
+	{ src: [App04Png, App04Webp], alt: "Test 4" },
+	{ src: [App05Png, App05Webp], alt: "Test 4" },
+]

@@ -2,8 +2,7 @@ import React from "react"
 import { useWindowSize } from "../../../hooks/useWindowSize"
 import Spacer from "../../../utils/spacer/Spacer"
 import Container from "../../containers/Container"
-import { STuples } from "../../devices/layouts/DragFramelessFive"
-import Card from "../Card"
+import Card, { STuples } from "../Card"
 import { CardStatusType } from "../segments/CardStatus"
 
 interface CardGroupedProps {
@@ -21,8 +20,8 @@ interface CardGroupedProps {
   left?: Boolean
 }
 
-export type GroupedContentType = [CardGroupedProps, CardGroupedProps]
 interface GroupedCardProps { content: GroupedContentType, left?: Boolean }
+export type GroupedContentType = [CardGroupedProps, CardGroupedProps]
 
 const GroupedCard: React.FC<GroupedCardProps> = ({ content, left }) => {
   const window = useWindowSize()
@@ -42,7 +41,9 @@ const GroupedCard: React.FC<GroupedCardProps> = ({ content, left }) => {
   return <Container type="group">{cardGroup}</Container>
 }
 
-const CardUnit = (props: CardGroupedProps) => {
+//
+
+const CardUnit: React.FC<CardGroupedProps> = (props) => {
   const { key, status, src, alt, path, href, tag, background, title, height } = props
 
   return (

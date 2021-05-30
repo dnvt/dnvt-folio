@@ -15,20 +15,9 @@ import GroupedMobileBrowser from './components/devices/layouts/GroupedMobileBrow
 import DragMobileFour from './components/devices/layouts/DragMobileFour'
 import DragFramelessFive from './components/devices/layouts/DragFramelessFive'
 import Card from './components/cards/Card'
-//
-import App01Png from "../src/assets/images/USMobile/System/App-01.png"
-import App02Png from "../src/assets/images/USMobile/System/App-02.png"
-import App03Png from "../src/assets/images/USMobile/System/App-03.png"
-import App04Png from "../src/assets/images/USMobile/System/App-04.png"
-import App05Png from "../src/assets/images/USMobile/System/App-05.png"
-import App01Webp from "../src/assets/images/USMobile/System/App-01.webp"
-import App02Webp from "../src/assets/images/USMobile/System/App-02.webp"
-import App03Webp from "../src/assets/images/USMobile/System/App-03.webp"
-import App04Webp from "../src/assets/images/USMobile/System/App-04.webp"
-import App05Webp from "../src/assets/images/USMobile/System/App-05.webp"
 import GroupedCard from './components/cards/layouts/GroupedCards'
 import FooterCards from './components/cards/layouts/FooterCards'
-import { FOOTER_CARDS, GROUPED_CARDS } from './content/app.content'
+import { FOOTER_CARDS, FRAMELESS_FIVE, GROUPED_CARDS, MOBILE_FOUR } from "./App.content"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -78,9 +67,9 @@ const App: React.FC = () => {
           </Font>
         </Container>
         <Spacer height={80} />
-        <DragMobileFour src={[["", ""], ["", ""], ["", ""], ["", ""]]} alt={["", "", "", ""]} />
+        <DragMobileFour images={MOBILE_FOUR} />
         <Spacer contained height={80} />
-        <DragFramelessFive src={[[App01Png, App01Webp], [App02Png, App02Webp], [App03Png, App03Webp], [App04Png, App04Webp], [App05Png, App05Webp]]} alt={["", "", "", "", ""]} />
+        <DragFramelessFive images={FRAMELESS_FIVE} />
         <Spacer contained height={80} />
         <GroupedMobileBrowser srcBrowser={[["", ""], ["", ""]]} srcMobile={[["", ""], ["", ""]]} altBrowser={["yo"]} altMobile={["yo"]} />
         <Spacer contained height={80} />

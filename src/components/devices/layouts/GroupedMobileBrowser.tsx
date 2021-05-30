@@ -18,6 +18,9 @@ interface GroupedDevicePropTypes {
 
 /**
  * Welcome to @dnvt/GroupedMobileBrowser!
+ * 
+ * Map the mobile and browser images separately
+ * 
  */
 const GroupedMobileBrowser: React.FC<GroupedDevicePropTypes> = (props) => {
   const window = useWindowSize()

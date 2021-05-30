@@ -40,7 +40,8 @@
       [x] - CardStatus
       [x] - Cardtitle
       [ ] - Layout
-[ ] - Turn loading into a non Button
+      [ ] - Card hovers animation
+[x] - Turn loading into a non Button
 [ ] - Add Link to: CardImage | InternalLink | Button
 [ ] - Guidelines
 [ ] - Add documentation to my functions

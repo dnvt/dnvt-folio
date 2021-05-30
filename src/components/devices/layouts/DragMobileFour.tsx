@@ -1,30 +1,25 @@
 import React from "react"
+import { STuples } from "../../cards/Card"
 import Container from "../../containers/Container"
 import Device from "../Device"
 
-type Tuples = [string, string]
-
-type DragFourProps = {
-  src: [Tuples, Tuples, Tuples, Tuples]
-  alt: [string, string, string, string]
-}
+type DragFourProps = { src: STuples, alt: string }
+export type FourImagesType = [DragFourProps, DragFourProps, DragFourProps, DragFourProps]
+interface DragMobileFourProps { images: FourImagesType }
 
 ////////////////////////////////////////////////////////////////////////////////
 
 /**
  * Welcome to @dnvt/DragMobileFour!
  */
-const DragMobileFour: React.FC<DragFourProps> = (props) => {
-  const { src, alt } = props
+const DragMobileFour: React.FC<DragMobileFourProps> = ({ images }) => {
+  const devices = images.map(FourDevices)
 
-  return (
-    <Container drag="four">
-      <Device type="mobile" src={src[0]} alt={alt[0]} />
-      <Device type="mobile" src={src[1]} alt={alt[0]} />
-      <Device type="mobile" src={src[2]} alt={alt[0]} />
-      <Device type="mobile" src={src[3]} alt={alt[0]} />
-    </Container>
-  )
+  return <Container drag="four">{devices}</Container>
+}
+
+const FourDevices: React.FC<DragFourProps> = ({ src, alt }) => {
+  return <Device type="mobile" src={src} alt={alt} />
 }
 
 export default DragMobileFour
