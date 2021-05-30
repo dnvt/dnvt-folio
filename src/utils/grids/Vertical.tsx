@@ -41,7 +41,7 @@ const Vertical: React.FC = (props) => {
 
   return (
     <div className={classes.Vertical}>
-      <Container height>
+      <Container type="height">
         <div className={classes.Column}>{rowArray}</div>
       </Container>
     </div>

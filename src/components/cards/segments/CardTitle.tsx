@@ -5,7 +5,7 @@ import { Theme } from "../../../utils/theme/theme"
 import CardStyle from "../card-style"
 
 interface CardTitleProps {
-  tagValue: string
+  tagValue?: string
   titleColor?: string
   tagColor?: string
   right?: Boolean

@@ -2,10 +2,10 @@ import React from "react"
 import Container from "../../containers/Container"
 import Device from "../Device"
 
-type Tuples = [string, string]
+export type STuples = [string, string]
 
 type DragFiveProps = {
-  src: [Tuples, Tuples, Tuples, Tuples, Tuples]
+  src: [STuples, STuples, STuples, STuples, STuples]
   alt: [string, string, string, string, string]
 }
 

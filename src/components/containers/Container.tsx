@@ -1,4 +1,5 @@
 import React from "react"
+import { useWindowSize } from "../../hooks/useWindowSize"
 import ArrowDragScroll from "../../utils/signals/ArrowSignals"
 import Verticaler from "../../utils/spacer/variations/Verticaler"
 import ContainerStyle from "./Container-style"
@@ -6,12 +7,10 @@ import ContainerStyle from "./Container-style"
 type Drag = "three" | "four" | "five"
 
 type ContainerType = {
-  drag?: Drag
-  height?: Boolean
-  group?: Boolean
-  big?: Boolean
   center?: Boolean
+  drag?: Drag
   left?: Boolean
+  type?: "group" | "big" | "height" | "footer"
 }
 
 /**
@@ -24,12 +23,14 @@ type ContainerType = {
  */
 const Container: React.FC<ContainerType> = (props) => {
   const classes = ContainerStyle()
-  const { children, height, big, center, drag, left, group } = props
+  const window = useWindowSize()
+  const { children, type, center, left, drag } = props
 
-  if (height) return heightContainer()
-  if (big) return bigContainer()
+  if (type == "height") return heightContainer()
+  if (type == "big") return bigContainer()
+  if (type == "group") return groupedCardContainer()
+  if (type == "footer") return footerCardContainer()
   if (drag) return draggableContainer()
-  if (group) return groupedCardContainer()
 
   return <div className={classes.Container}>{children}</div>
 
@@ -62,11 +63,38 @@ const Container: React.FC<ContainerType> = (props) => {
       </div>)
   }
 
+  function footerCardContainer() {
+    if (window.width < 991) {
+      return (
+        <div className={classes.FullContainer}>
+          <ArrowDragScroll big left />
+          <div className={classes.DragContainer}>
+            <div className={classes.ScrollThree}>
+              <div>
+                <Verticaler width={64} />
+              </div>
+              {children}
+              <div>
+                <Verticaler width={64} />
+              </div>
+            </div>
+          </div>
+          <ArrowDragScroll big />
+        </div>
+      )
+    }
+    return (
+      <div className={classes.Container}>
+        <div className={classes.FooterCards}>{children}</div>
+      </div>
+    )
+  }
+
   function draggableContainer(): JSX.Element {
-    let scrollNumber: string
+    let scrollNumber
     if (drag == "three") scrollNumber = classes.ScrollThree
     if (drag == "four") scrollNumber = classes.ScrollFour
-    else scrollNumber = classes.ScrollFive
+    if (drag == "five") scrollNumber = classes.ScrollFive
 
     return (
       <div className={classes.FullContainer}>

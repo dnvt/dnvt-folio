@@ -6,15 +6,24 @@ import CardImage from "./segments/CardImage"
 import CardStyle from "./card-style"
 import CardStatus, { CardStatusType } from "./segments/CardStatus"
 import CardTitle from "./segments/CardTitle"
+import { STuples } from "../devices/layouts/DragFramelessFive"
 
 export interface CardPropsType {
-	src: [string, string]
+	src: STuples
 	alt: string
-	tagValue: string
+	tag?: {
+		value: string,
+		color?: string
+	}
 	status?: CardStatusType
-	titleColor?: string
-	tagColor?: string
-	background?: string
+	title?: {
+		value?: string
+		color?: string
+	}
+	background?: {
+		color?: string
+		hover?: string
+	}
 	height?: number
 	width?: number | "100%"
 	uncontained?: Boolean
@@ -23,13 +32,14 @@ export interface CardPropsType {
 	path?: string
 	href?: string
 	paddingB?: number
+	key?: number
 }
 
 const Card: React.FC<CardPropsType> = (props) => {
 	const theme: Theme = useTheme()
 	const classes = CardStyle()
 
-	const { background, height, width, status, titleColor, alt, src, path, href, paddingB, reverse, right, tagValue, tagColor, uncontained, children } = props
+	const { background, height, width, status, alt, src, path, href, paddingB, reverse, right, tag, title, uncontained, children } = props
 
 	/// Defining if a card as a linked project yet or not
 	let cardPrivacyClass = classes.Card
@@ -39,7 +49,7 @@ const Card: React.FC<CardPropsType> = (props) => {
 		<div
 			className={cardPrivacyClass}
 			style={
-				background == theme.background.transparent
+				background?.color == theme.background.transparent
 					? {
 						border: `1px solid ${ theme.border.outline }`,
 						height: height,
@@ -54,7 +64,7 @@ const Card: React.FC<CardPropsType> = (props) => {
 				src={src}
 				// background={isHovered ? backgroundHover : background}
 				// scale={isHovered ? "1.04" : "1"}
-				background={background ?? theme.background.empty}
+				background={background?.color ?? theme.background.empty}
 				scale={1}
 				path={path}
 				href={href}
@@ -63,9 +73,9 @@ const Card: React.FC<CardPropsType> = (props) => {
 			<CardTitle
 				reverse={reverse}
 				right={right}
-				tagValue={tagValue}
-				tagColor={tagColor}
-				titleColor={titleColor}>
+				tagValue={tag?.value}
+				tagColor={tag?.color}
+				titleColor={title?.color}>
 				{children}
 			</CardTitle>
 		</div>

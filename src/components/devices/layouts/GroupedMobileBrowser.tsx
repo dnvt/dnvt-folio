@@ -41,7 +41,7 @@ const GroupedMobileBrowser: React.FC<GroupedDevicePropTypes> = (props) => {
   function bigLayout(): JSX.Element {
     return (
       <>
-        <Container big>
+        <Container type="big">
           {browserComponent[0]}
           <SpacerFullHeight />
           {mobileComponent[0]}
@@ -49,7 +49,7 @@ const GroupedMobileBrowser: React.FC<GroupedDevicePropTypes> = (props) => {
 
         <Spacer contained height={80} />
 
-        <Container big>
+        <Container type="big">
           {mobileComponent[1]}
           <SpacerFullHeight />
           {browserComponent[1]}
@@ -61,19 +61,19 @@ const GroupedMobileBrowser: React.FC<GroupedDevicePropTypes> = (props) => {
   function smallLayout(): JSX.Element {
     return (
       <>
-        <Container big>
+        <Container type="big">
           {browserComponent[0]}
         </Container>
         <Spacer contained height={80} />
 
-        <Container big center>
+        <Container type="big" center>
           {mobileComponent[0]}
           <SpacerFullHeight />
           {mobileComponent[1]}
         </Container>
         <Spacer contained height={80} />
 
-        <Container big>
+        <Container type="big">
           {browserComponent[1]}
         </Container>
       </>
@@ -83,22 +83,22 @@ const GroupedMobileBrowser: React.FC<GroupedDevicePropTypes> = (props) => {
   function mobileLayout(): JSX.Element {
     return (
       <>
-        <Container big>
+        <Container type="big">
           {browserComponent[0]}
         </Container>
         <Spacer contained height={40} />
 
-        <Container big>
+        <Container type="big">
           {browserComponent[1]}
         </Container>
         <Spacer contained height={40} />
 
-        <Container big center>
+        <Container type="big" center>
           {mobileComponent[0]}
         </Container>
         <Spacer contained height={40} />
 
-        <Container big center>
+        <Container type="big" center>
           {mobileComponent[1]}
         </Container>
       </>

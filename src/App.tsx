@@ -13,8 +13,8 @@ import Footer from './components/navigations/Footer'
 import { BigVignette, HeroVignette, Vignette } from './components/vignettes/Vignettes'
 import GroupedMobileBrowser from './components/devices/layouts/GroupedMobileBrowser'
 import DragMobileFour from './components/devices/layouts/DragMobileFour'
-import Card from './components/cards/Card'
 import DragFramelessFive from './components/devices/layouts/DragFramelessFive'
+import Card from './components/cards/Card'
 //
 import App01Png from "../src/assets/images/USMobile/System/App-01.png"
 import App02Png from "../src/assets/images/USMobile/System/App-02.png"
@@ -26,7 +26,9 @@ import App02Webp from "../src/assets/images/USMobile/System/App-02.webp"
 import App03Webp from "../src/assets/images/USMobile/System/App-03.webp"
 import App04Webp from "../src/assets/images/USMobile/System/App-04.webp"
 import App05Webp from "../src/assets/images/USMobile/System/App-05.webp"
-import GroupedCard from './components/cards/layouts/GroupedCard'
+import GroupedCard from './components/cards/layouts/GroupedCards'
+import FooterCards from './components/cards/layouts/FooterCards'
+import { FOOTER_CARDS } from './content/app.content'
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -82,7 +84,7 @@ const App: React.FC = () => {
         <Spacer contained height={80} />
         <GroupedMobileBrowser srcBrowser={[["", ""], ["", ""]]} srcMobile={[["", ""], ["", ""]]} altBrowser={["yo"]} altMobile={["yo"]} />
         <Spacer contained height={80} />
-        <Card alt={"image alt"} src={["", ""]} tagValue="Hello test">Testing the card thing</Card>
+        <Card alt={"image alt"} src={["", ""]} tag={{ value: "Hello test" }}>Testing the card thing</Card>
         <Spacer contained height={32} />
         <GroupedCard
           title={{
@@ -121,9 +123,10 @@ const App: React.FC = () => {
             Maecenas faucibus mollis interdum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna.
           </Font>
         </Container>
+        <FooterCards content={FOOTER_CARDS} />
         <Footer />
       </MotionConfig>
-    </ContextHooks>
+    </ContextHooks >
   )
 }
 

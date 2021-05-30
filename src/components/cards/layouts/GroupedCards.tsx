@@ -4,11 +4,12 @@ import { useWindowSize } from "../../../hooks/useWindowSize"
 import Spacer from "../../../utils/spacer/Spacer"
 import { Theme } from "../../../utils/theme/theme"
 import Container from "../../containers/Container"
+import { STuples } from "../../devices/layouts/DragFramelessFive"
 import Card from "../Card"
 import { CardStatusType } from "../segments/CardStatus"
 
 interface GroupedCardProps {
-  src: [string, string][]
+  src: [STuples, STuples]
   alt: string[]
   tag: { color?: string[], value: string[] }
   title: { color?: string[], value: string[] }
@@ -32,13 +33,11 @@ const GroupedCard: React.FC<GroupedCardProps> = (props) => {
         key={i}
         src={src[i]}
         alt={alt[i]}
-        tagColor={tag.color && tag.color[i]}
-        tagValue={tag.value[i]}
-        titleColor={title.color && title.color[i]}
+        tag={{ value: tag.value[i], color: tag.color && tag?.color[i] }}
+        background={{ color: background?.color[i] ?? theme.background.empty }}
         status={status && status[i]}
         path={path && path[i]}
         href={href && href[i]}
-        background={background ? background.color[i] : theme.background.empty}
         width="100%"
         height={height}
         uncontained
@@ -57,8 +56,8 @@ const GroupedCard: React.FC<GroupedCardProps> = (props) => {
       </Container>
     )
 
-  if (left) return <Container group left>{cardGroup}</Container>
-  return <Container group>{cardGroup}</Container>
+  if (left) return <Container type="group" left>{cardGroup}</Container>
+  return <Container type="group">{cardGroup}</Container>
 }
 
 export default GroupedCard
