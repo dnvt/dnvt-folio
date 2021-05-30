@@ -32,7 +32,6 @@ export interface CardPropsType {
 	path?: string
 	href?: string
 	paddingB?: number
-	key?: number
 }
 
 const Card: React.FC<CardPropsType> = (props) => {

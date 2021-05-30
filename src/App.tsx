@@ -28,7 +28,7 @@ import App04Webp from "../src/assets/images/USMobile/System/App-04.webp"
 import App05Webp from "../src/assets/images/USMobile/System/App-05.webp"
 import GroupedCard from './components/cards/layouts/GroupedCards'
 import FooterCards from './components/cards/layouts/FooterCards'
-import { FOOTER_CARDS } from './content/app.content'
+import { FOOTER_CARDS, GROUPED_CARDS } from './content/app.content'
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -86,29 +86,9 @@ const App: React.FC = () => {
         <Spacer contained height={80} />
         <Card alt={"image alt"} src={["", ""]} tag={{ value: "Hello test" }}>Testing the card thing</Card>
         <Spacer contained height={32} />
-        <GroupedCard
-          title={{
-            value: ["Title number 1", "Title number 2"],
-          }}
-          tag={{
-            value: ["Tag number 1", "Tag number 2"],
-          }}
-          src={[["", ""], ["", ""]]}
-          alt={["", ""]}
-        />
+        <GroupedCard content={GROUPED_CARDS} left />
         <Spacer contained height={32} />
-        <GroupedCard
-          left
-          title={{
-            value: ["Title number 1", "Title number 2"],
-          }}
-          tag={{
-            value: ["Tag number 1", "Tag number 2"],
-          }}
-          status={["loading", "loading"]}
-          src={[["", ""], ["", ""]]}
-          alt={["", ""]}
-        />
+        <GroupedCard content={GROUPED_CARDS} />
         <Spacer contained height={80} />
         <Container>
           <Font type="text">

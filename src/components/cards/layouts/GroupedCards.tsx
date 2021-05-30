@@ -1,51 +1,33 @@
 import React from "react"
-import { useTheme } from "theming"
 import { useWindowSize } from "../../../hooks/useWindowSize"
 import Spacer from "../../../utils/spacer/Spacer"
-import { Theme } from "../../../utils/theme/theme"
 import Container from "../../containers/Container"
 import { STuples } from "../../devices/layouts/DragFramelessFive"
 import Card from "../Card"
 import { CardStatusType } from "../segments/CardStatus"
 
-interface GroupedCardProps {
-  src: [STuples, STuples]
-  alt: string[]
-  tag: { color?: string[], value: string[] }
-  title: { color?: string[], value: string[] }
-  background?: { color: string }
-  status?: CardStatusType[]
-  height?: number
+interface CardGroupedProps {
+  key: number
+  src: STuples
+  alt: string
+  status?: CardStatusType
+  title?: { value: string, color?: string }
+  tag: { color?: string, value: string }
+  background?: { color?: string, hover?: string }
   path?: string
   href?: string
+  height?: number
+  reverse?: Boolean
   left?: Boolean
 }
 
-const GroupedCard: React.FC<GroupedCardProps> = (props) => {
-  const window = useWindowSize()
-  const theme: Theme = useTheme()
-  const { status, src, alt, path, href, tag, background, title, height, left } = props
+export type GroupedContentType = [CardGroupedProps, CardGroupedProps]
+interface GroupedCardProps { content: GroupedContentType, left?: Boolean }
 
-  let cardGroup = []
-  for (let i = 0; i < 2; i++) {
-    cardGroup.push(
-      <Card
-        key={i}
-        src={src[i]}
-        alt={alt[i]}
-        tag={{ value: tag.value[i], color: tag.color && tag?.color[i] }}
-        background={{ color: background?.color[i] ?? theme.background.empty }}
-        status={status && status[i]}
-        path={path && path[i]}
-        href={href && href[i]}
-        width="100%"
-        height={height}
-        uncontained
-      >
-        {title.value[i]}
-      </Card>
-    )
-  }
+const GroupedCard: React.FC<GroupedCardProps> = ({ content, left }) => {
+  const window = useWindowSize()
+
+  const cardGroup = content.map(CardUnit)
 
   if (window.width < 992)
     return (
@@ -58,6 +40,28 @@ const GroupedCard: React.FC<GroupedCardProps> = (props) => {
 
   if (left) return <Container type="group" left>{cardGroup}</Container>
   return <Container type="group">{cardGroup}</Container>
+}
+
+const CardUnit = (props: CardGroupedProps) => {
+  const { key, status, src, alt, path, href, tag, background, title, height } = props
+
+  return (
+    <Card
+      uncontained
+      key={key}
+      src={src}
+      alt={alt}
+      tag={tag}
+      background={{ color: background?.color }}
+      status={status}
+      path={path}
+      href={href}
+      width="100%"
+      height={height}
+    >
+      { title!.value}
+    </Card >
+  )
 }
 
 export default GroupedCard

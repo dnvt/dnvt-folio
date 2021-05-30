@@ -1,9 +1,31 @@
 import React from "react"
 import Container from "../../containers/Container"
-import Card, { CardPropsType } from "../Card"
+import { STuples } from "../../devices/layouts/DragFramelessFive"
+import Card from "../Card"
+import { CardStatusType } from "../segments/CardStatus"
+
+
+interface CardPropsType {
+  key: number
+  src: STuples
+  alt: string
+  status?: CardStatusType
+  title?: {
+    value: string
+    color?: string
+  }
+  background?: {
+    color?: string
+    hover?: string
+  }
+  reverse?: Boolean
+  path?: string
+}
 
 export type FooterContentType = [CardPropsType, CardPropsType, CardPropsType]
 interface FooterCardProps { content: FooterContentType }
+
+////////////////////////////////////////////////////////////////////////////////
 
 const FooterCards: React.FC<FooterCardProps> = ({ content }) => {
   const cardGroup = content.map(CardUnit)
