@@ -8,7 +8,7 @@ interface CardPropsType {
   src: STuples
   alt: string
   status?: CardStatusType
-  title?: {
+  title: {
     value: string
     color?: string
   }

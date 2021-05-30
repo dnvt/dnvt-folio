@@ -2,37 +2,27 @@ import React from "react"
 import { useWindowSize } from "../../../hooks/useWindowSize"
 import Spacer from "../../../utils/spacer/Spacer"
 import SpacerFullHeight from "../../../utils/spacer/variations/SpacerFullHeight"
+import { STuples } from "../../cards/Card"
 import Container from "../../containers/Container"
 import Device from "../Device"
 
-type Tuples = [string, string]
+type DeviceProps = { src: STuples, alt: string }
+export type DeviceImagesType = [DeviceProps, DeviceProps]
+export type DevicesMixed = { browser: DeviceImagesType, mobile: DeviceImagesType }
+interface GroupedDeviceProps { images: DevicesMixed }
 
-interface GroupedDevicePropTypes {
-  srcBrowser: [Tuples, Tuples]
-  srcMobile: [Tuples, Tuples]
-  altBrowser: string[]
-  altMobile: string[]
-}
 
 ////////////////////////////////////////////////////////////////////////////////
 
 /**
  * Welcome to @dnvt/GroupedMobileBrowser!
- * 
- * Map the mobile and browser images separately
- * 
  */
-const GroupedMobileBrowser: React.FC<GroupedDevicePropTypes> = (props) => {
+const GroupedMobileBrowser: React.FC<GroupedDeviceProps> = ({ images }) => {
   const window = useWindowSize()
-  const { srcBrowser, srcMobile, altBrowser, altMobile } = props
+  const { browser, mobile } = images
 
-  const browserComponent = [
-    <Device type="browser" src={srcBrowser[0]} alt={altBrowser[0]} />,
-    <Device type="browser" src={srcBrowser[1]} alt={altBrowser[1]} />]
-
-  const mobileComponent = [
-    <Device type="mobile" src={srcMobile[0]} alt={altMobile[0]} />,
-    <Device type="mobile" src={srcMobile[1]} alt={altMobile[1]} />]
+  const browserDevices = browser.map(Browsers)
+  const mobileDevices = mobile.map(Mobiles)
 
   if (window.width > 992) return bigLayout()
   if (window.width > 576) return smallLayout()
@@ -45,17 +35,17 @@ const GroupedMobileBrowser: React.FC<GroupedDevicePropTypes> = (props) => {
     return (
       <>
         <Container type="big">
-          {browserComponent[0]}
+          {browserDevices[0]}
           <SpacerFullHeight />
-          {mobileComponent[0]}
+          {mobileDevices[0]}
         </Container>
 
         <Spacer contained height={80} />
 
         <Container type="big">
-          {mobileComponent[1]}
+          {mobileDevices[1]}
           <SpacerFullHeight />
-          {browserComponent[1]}
+          {browserDevices[1]}
         </Container>
       </>
     )
@@ -65,19 +55,19 @@ const GroupedMobileBrowser: React.FC<GroupedDevicePropTypes> = (props) => {
     return (
       <>
         <Container type="big">
-          {browserComponent[0]}
+          {browserDevices[0]}
         </Container>
         <Spacer contained height={80} />
 
         <Container type="big" center>
-          {mobileComponent[0]}
+          {mobileDevices[0]}
           <SpacerFullHeight />
-          {mobileComponent[1]}
+          {mobileDevices[1]}
         </Container>
         <Spacer contained height={80} />
 
         <Container type="big">
-          {browserComponent[1]}
+          {browserDevices[1]}
         </Container>
       </>
     )
@@ -87,26 +77,33 @@ const GroupedMobileBrowser: React.FC<GroupedDevicePropTypes> = (props) => {
     return (
       <>
         <Container type="big">
-          {browserComponent[0]}
+          {browserDevices[0]}
         </Container>
         <Spacer contained height={40} />
 
         <Container type="big">
-          {browserComponent[1]}
+          {browserDevices[1]}
         </Container>
         <Spacer contained height={40} />
 
         <Container type="big" center>
-          {mobileComponent[0]}
+          {mobileDevices[0]}
         </Container>
         <Spacer contained height={40} />
 
         <Container type="big" center>
-          {mobileComponent[1]}
+          {mobileDevices[1]}
         </Container>
       </>
     )
   }
+}
+
+const Browsers: React.FC<DeviceProps> = ({ src, alt }) => {
+  return <Device type="browser" src={src} alt={alt} />
+}
+const Mobiles: React.FC<DeviceProps> = ({ src, alt }) => {
+  return <Device type="mobile" src={src} alt={alt} />
 }
 
 export default GroupedMobileBrowser

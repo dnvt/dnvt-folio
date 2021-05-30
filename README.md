@@ -39,7 +39,8 @@
       [x] - CardImage
       [x] - CardStatus
       [x] - Cardtitle
-      [ ] - Layout
+      [x] - Layout
+      [ ] - UseMemo on the content
       [ ] - Card hovers animation
 [x] - Turn loading into a non Button
 [ ] - Add Link to: CardImage | InternalLink | Button

@@ -17,7 +17,8 @@ import DragFramelessFive from './components/devices/layouts/DragFramelessFive'
 import Card from './components/cards/Card'
 import GroupedCard from './components/cards/layouts/GroupedCards'
 import FooterCards from './components/cards/layouts/FooterCards'
-import { FOOTER_CARDS, FRAMELESS_FIVE, GROUPED_CARDS, MOBILE_FOUR } from "./App.content"
+import { FOOTER_CARDS, FRAMELESS_FIVE, GROUPED_CARDS, GROUPED_DEVICES, MOBILE_FOUR, THREE_CARDS } from "./App.content"
+import DragCardsThree from './components/cards/layouts/DragCardThree'
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -71,7 +72,9 @@ const App: React.FC = () => {
         <Spacer contained height={80} />
         <DragFramelessFive images={FRAMELESS_FIVE} />
         <Spacer contained height={80} />
-        <GroupedMobileBrowser srcBrowser={[["", ""], ["", ""]]} srcMobile={[["", ""], ["", ""]]} altBrowser={["yo"]} altMobile={["yo"]} />
+        <DragCardsThree content={THREE_CARDS} />
+        <Spacer contained height={80} />
+        <GroupedMobileBrowser images={GROUPED_DEVICES} />
         <Spacer contained height={80} />
         <Card alt={"image alt"} src={["", ""]} tag={{ value: "Hello test" }}>Testing the card thing</Card>
         <Spacer contained height={32} />
