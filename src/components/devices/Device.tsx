@@ -57,7 +57,6 @@ const Device: React.FC<DeviceProps> = (props) => {
 
   // Mobile device
   function mobile(): JSX.Element {
-    console.log(classes.mobileContent)
     return (
       <div className={classes.mobileContent}>
         <div className={classes.ligns}></div>
@@ -71,7 +70,6 @@ const Device: React.FC<DeviceProps> = (props) => {
 
   // Frameless device
   function frameless(): JSX.Element {
-    console.log(classes.shadowContent)
     return (
       <div className={classes.shadowContent}>
         <ImageContainer src={src} alt={alt} />

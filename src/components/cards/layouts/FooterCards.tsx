@@ -20,7 +20,7 @@ interface CardPropsType {
   path?: string
 }
 
-export type FooterContentType = [CardPropsType, CardPropsType, CardPropsType]
+export type FooterContentType = [CardPropsType, CardPropsType, CardPropsType,]
 interface FooterCardProps { content: FooterContentType }
 
 ////////////////////////////////////////////////////////////////////////////////

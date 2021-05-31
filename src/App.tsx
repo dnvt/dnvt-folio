@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import Container from './components/containers/Container'
 import ContextHooks from "./hooks/ContextHooks"
 import Grid from './utils/grids/Grid'
@@ -17,7 +17,7 @@ import DragFramelessFive from './components/devices/layouts/DragFramelessFive'
 import Card from './components/cards/Card'
 import GroupedCard from './components/cards/layouts/GroupedCards'
 import FooterCards from './components/cards/layouts/FooterCards'
-import { FOOTER_CARDS, FRAMELESS_FIVE, GROUPED_CARDS, GROUPED_DEVICES, MOBILE_FOUR, THREE_CARDS } from "./App.content"
+import CONTENT_APP from "./App.content"
 import DragCardsThree from './components/cards/layouts/DragCardThree'
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -30,7 +30,8 @@ import DragCardsThree from './components/cards/layouts/DragCardThree'
  * 
  */
 const App: React.FC = () => {
-  // const HERO_IMAGE = ["./src/assets/images/USMobile/System/App-01.webp","./src/assets/images/USMobile/System/App-01.pnp"]
+  const content = useMemo(() => CONTENT_APP, [])
+
   return (
     <ContextHooks>
       <Sidelines />
@@ -68,19 +69,19 @@ const App: React.FC = () => {
           </Font>
         </Container>
         <Spacer height={80} />
-        <DragMobileFour images={MOBILE_FOUR} />
+        <DragMobileFour images={content.MOBILE_FOUR} />
         <Spacer contained height={80} />
-        <DragFramelessFive images={FRAMELESS_FIVE} />
+        <DragFramelessFive images={content.FRAMELESS_FIVE} />
         <Spacer contained height={80} />
-        <DragCardsThree content={THREE_CARDS} />
+        <DragCardsThree content={content.THREE_CARDS} />
         <Spacer contained height={80} />
-        <GroupedMobileBrowser images={GROUPED_DEVICES} />
+        <GroupedMobileBrowser images={content.GROUPED_DEVICES} />
         <Spacer contained height={80} />
         <Card alt={"image alt"} src={["", ""]} tag={{ value: "Hello test" }}>Testing the card thing</Card>
         <Spacer contained height={32} />
-        <GroupedCard content={GROUPED_CARDS} left />
+        <GroupedCard content={content.GROUPED_CARDS} left />
         <Spacer contained height={32} />
-        <GroupedCard content={GROUPED_CARDS} />
+        <GroupedCard content={content.GROUPED_CARDS} />
         <Spacer contained height={80} />
         <Container>
           <Font type="text">
@@ -95,7 +96,7 @@ const App: React.FC = () => {
             Maecenas faucibus mollis interdum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna.
           </Font>
         </Container>
-        <FooterCards content={FOOTER_CARDS} />
+        <FooterCards content={content.FOOTER_CARDS} />
         <Footer />
       </MotionConfig>
     </ContextHooks >

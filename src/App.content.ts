@@ -16,7 +16,7 @@ import App04Webp from "../src/assets/images/USMobile/System/App-04.webp"
 import App05Webp from "../src/assets/images/USMobile/System/App-05.webp"
 import { ThreeCardsContentType } from "./components/cards/layouts/DragCardThree"
 
-export const FOOTER_CARDS: FooterContentType = [
+const FOOTER_CARDS: FooterContentType = [
 	{
 		key: 1,
 		src: ["", ""],
@@ -37,7 +37,7 @@ export const FOOTER_CARDS: FooterContentType = [
 	},
 ]
 
-export const THREE_CARDS: ThreeCardsContentType = [
+const THREE_CARDS: ThreeCardsContentType = [
 	{
 		key: 1,
 		src: ["", ""],
@@ -61,7 +61,7 @@ export const THREE_CARDS: ThreeCardsContentType = [
 	},
 ]
 
-export const GROUPED_CARDS: GroupedContentType = [
+const GROUPED_CARDS: GroupedContentType = [
 	{
 		key: 1,
 		src: ["", ""],
@@ -79,28 +79,39 @@ export const GROUPED_CARDS: GroupedContentType = [
 	},
 ]
 
-export const MOBILE_FOUR: FourImagesType = [
-	{ src: ["", ""], alt: "Test 1" },
-	{ src: ["", ""], alt: "Test 2" },
-	{ src: ["", ""], alt: "Test 3" },
-	{ src: ["", ""], alt: "Test 4" },
+const MOBILE_FOUR: FourImagesType = [
+	{ src: ["", ""], alt: "Test 1", key: 1 },
+	{ src: ["", ""], alt: "Test 2", key: 2 },
+	{ src: ["", ""], alt: "Test 3", key: 3 },
+	{ src: ["", ""], alt: "Test 4", key: 4 },
 ]
 
-export const FRAMELESS_FIVE: FiveImagesType = [
-	{ src: ["", ""], alt: "Test 1" },
-	{ src: [App02Png, App02Webp], alt: "Test 2" },
-	{ src: [App03Png, App03Webp], alt: "Test 3" },
-	{ src: [App04Png, App04Webp], alt: "Test 4" },
-	{ src: [App05Png, App05Webp], alt: "Test 4" },
+const FRAMELESS_FIVE: FiveImagesType = [
+	{ src: ["", ""], alt: "Test 1", key: 1 },
+	{ src: [App02Png, App02Webp], alt: "Test 2", key: 2 },
+	{ src: [App03Png, App03Webp], alt: "Test 3", key: 3 },
+	{ src: [App04Png, App04Webp], alt: "Test 4", key: 4 },
+	{ src: [App05Png, App05Webp], alt: "Test 4", key: 5 },
 ]
 
-export const GROUPED_DEVICES: DevicesMixed = {
+const GROUPED_DEVICES: DevicesMixed = {
 	browser: [
-		{ src: ["", ""], alt: "Test 1" },
-		{ src: ["", ""], alt: "Test 2" },
+		{ src: ["", ""], alt: "Test 1", key: 1 },
+		{ src: ["", ""], alt: "Test 2", key: 2 },
 	],
 	mobile: [
-		{ src: ["", ""], alt: "Test 1" },
-		{ src: ["", ""], alt: "Test 2" },
+		{ src: ["", ""], alt: "Test 1", key: 3 },
+		{ src: ["", ""], alt: "Test 2", key: 4 },
 	],
 }
+
+const CONTENT_APP = {
+	FOOTER_CARDS,
+	THREE_CARDS,
+	GROUPED_CARDS,
+	GROUPED_DEVICES,
+	MOBILE_FOUR,
+	FRAMELESS_FIVE,
+}
+
+export default CONTENT_APP

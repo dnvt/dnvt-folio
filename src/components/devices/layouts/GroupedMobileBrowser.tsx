@@ -6,7 +6,7 @@ import { STuples } from "../../cards/Card"
 import Container from "../../containers/Container"
 import Device from "../Device"
 
-type DeviceProps = { src: STuples, alt: string }
+type DeviceProps = { src: STuples, alt: string, key: number }
 export type DeviceImagesType = [DeviceProps, DeviceProps]
 export type DevicesMixed = { browser: DeviceImagesType, mobile: DeviceImagesType }
 interface GroupedDeviceProps { images: DevicesMixed }
@@ -99,11 +99,11 @@ const GroupedMobileBrowser: React.FC<GroupedDeviceProps> = ({ images }) => {
   }
 }
 
-const Browsers: React.FC<DeviceProps> = ({ src, alt }) => {
-  return <Device type="browser" src={src} alt={alt} />
+const Browsers: React.FC<DeviceProps> = ({ src, alt, key }) => {
+  return <Device type="browser" src={src} alt={alt} key={key} />
 }
-const Mobiles: React.FC<DeviceProps> = ({ src, alt }) => {
-  return <Device type="mobile" src={src} alt={alt} />
+const Mobiles: React.FC<DeviceProps> = ({ src, alt, key }) => {
+  return <Device type="mobile" src={src} alt={alt} key={key} />
 }
 
 export default GroupedMobileBrowser

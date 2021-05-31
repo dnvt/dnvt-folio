@@ -40,7 +40,8 @@
       [x] - CardStatus
       [x] - Cardtitle
       [x] - Layout
-      [ ] - UseMemo on the content
+      [x] - UseMemo in the Component, where the function is called, calling the CONTENT
+      [x] - Add Keys to the map
       [ ] - Card hovers animation
 [x] - Turn loading into a non Button
 [ ] - Add Link to: CardImage | InternalLink | Button
