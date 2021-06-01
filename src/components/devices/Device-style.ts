@@ -6,6 +6,7 @@ const DeviceStyle = createUseStyles((theme) => ({
 		position: "relative",
 		boxShadow: (theme as Theme).shadow.device,
 		background: (theme as Theme).background.tint,
+		transition: "background .12s ease, box-shadow .12s ease",
 		overflow: "hidden",
 		width: "236px",
 		objectFit: "cover",
@@ -35,7 +36,7 @@ const DeviceStyle = createUseStyles((theme) => ({
 		width: "auto",
 		maxWidth: "100%",
 		height: "284px",
-		transition: "background .15s ease, box-shadow .15s ease",
+		transition: "background .12s ease, box-shadow .12s ease",
 		"@media (min-width: 576px)": {
 			height: "428px",
 		},
@@ -62,7 +63,7 @@ const DeviceStyle = createUseStyles((theme) => ({
 		width: "auto",
 		maxWidth: "100%",
 		height: "364px",
-		transition: "background .15s ease, box-shadow .15s ease",
+		transition: "background .12s ease, box-shadow .12s ease",
 		"@media (min-width: 576px)": {
 			height: "428px",
 		},
@@ -146,6 +147,7 @@ const DeviceStyle = createUseStyles((theme) => ({
 		padding: "12px",
 		boxShadow: (theme as Theme).shadow.device,
 		background: (theme as Theme).background.tint,
+		transition: "background .12s ease, box-shadow .12s ease",
 		borderRadius: "36px",
 		overflow: "hidden",
 		width: "249px",
@@ -186,6 +188,7 @@ const DeviceStyle = createUseStyles((theme) => ({
 		width: "48%",
 		height: "5.7%",
 		background: (theme as Theme).background.tint,
+		transition: "background .12s ease, box-shadow .12s ease",
 		borderRadius: "0 0 12px 12px",
 
 		"@media (min-width: 1360px)": {
@@ -208,6 +211,7 @@ const DeviceStyle = createUseStyles((theme) => ({
 				(theme as Theme).background.tint +
 				" 0) bottom right",
 			top: "12px",
+			transition: "background .12s ease, box-shadow .12s ease",
 			"@media (min-width: 768px)": {
 				top: "14px",
 				left: "-7px",
@@ -235,6 +239,7 @@ const DeviceStyle = createUseStyles((theme) => ({
 				(theme as Theme).background.tint +
 				" 0) bottom right",
 			top: "12px",
+			transition: "background .12s ease, box-shadow .12s ease",
 			"@media (min-width: 768px)": {
 				top: "14px",
 				right: "-7px",
@@ -254,6 +259,7 @@ const DeviceStyle = createUseStyles((theme) => ({
 		zIndex: "-1",
 		borderTop: "1px solid " + (theme as Theme).background.empty,
 		borderBottom: "1px solid " + (theme as Theme).background.empty,
+		transition: "background .12s ease, box-shadow .12s ease",
 		// TODO
 		// Change the value for the lines position
 		"@media (min-width: 768px)": {
@@ -274,6 +280,7 @@ const DeviceStyle = createUseStyles((theme) => ({
 		left: "37.5%",
 		borderRadius: "20px",
 		background: (theme as Theme).background.empty,
+		transition: "background .12s ease, box-shadow .12s ease",
 	},
 }))
 

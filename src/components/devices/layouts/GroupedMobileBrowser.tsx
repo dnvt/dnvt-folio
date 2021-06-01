@@ -24,8 +24,8 @@ const GroupedMobileBrowser: React.FC<GroupedDeviceProps> = ({ images }) => {
   const browserDevices = browser.map(Browsers)
   const mobileDevices = mobile.map(Mobiles)
 
-  if (window.width > 992) return bigLayout()
-  if (window.width > 576) return smallLayout()
+  if (window.width > 991) return bigLayout()
+  if (window.width > 575) return smallLayout()
 
   return mobileLayout()
 
@@ -59,9 +59,8 @@ const GroupedMobileBrowser: React.FC<GroupedDeviceProps> = ({ images }) => {
         </Container>
         <Spacer contained height={80} />
 
-        <Container type="big" center>
+        <Container type="big">
           {mobileDevices[0]}
-          <SpacerFullHeight />
           {mobileDevices[1]}
         </Container>
         <Spacer contained height={80} />

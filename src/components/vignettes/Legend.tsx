@@ -4,12 +4,12 @@ import Font from "../../utils/fonts/Font"
 import Spacer from "../../utils/spacer/Spacer"
 
 const Legend: React.FC<{ alt: string }> = ({ alt }) => {
- const window = useWindowSize()
+  const window = useWindowSize()
 
- return (<>
-  <Spacer height={window.width > 992 ? 16 : 8} />
-  <Font type='legend'>{alt}</Font>
- </>)
+  return (<>
+    <Spacer height={window.width > 991 ? 16 : 8} />
+    <Font type='legend'>{alt}</Font>
+  </>)
 }
 
 export default Legend

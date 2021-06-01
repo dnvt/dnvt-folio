@@ -28,7 +28,7 @@ const GroupedCard: React.FC<GroupedCardProps> = ({ content, left }) => {
 
   const cardGroup = content.map(CardUnit)
 
-  if (window.width < 992)
+  if (window.width < 991)
     return (
       <Container>
         {cardGroup[0]}

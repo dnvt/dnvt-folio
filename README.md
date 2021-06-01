@@ -33,8 +33,8 @@
       [x] - DragFramless
       [x] - Repair the src (should be empty for loading states?)
       [x] - Repair ligns and sound on the phone
-      [ ] - Responsive height jump bug in the Grouped Deviced
-      [ ] - Flex Space-Even the Grouped Phone on Mobile
+      [x] - Responsive height jump bug in the Grouped Deviced
+      [x] - Flex Space-Even the Grouped Phone on Mobile
 [x] - Cards
       [x] - CardImage
       [x] - CardStatus

@@ -17,9 +17,9 @@ const ArrowDragScroll: React.FC<ArrowProps> = (props) => {
   const classes = ArrowSignalsStyle({ ...props, theme })
 
   const { left, big } = props
-  
-  const bigScreen = window.width < 1820
-  const smallScreen = window.width < 992
+
+  const bigScreen = window.width < 1819
+  const smallScreen = window.width < 991
 
   if ((big && bigScreen) || smallScreen)
     return (
