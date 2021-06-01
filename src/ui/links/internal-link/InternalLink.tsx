@@ -11,9 +11,9 @@ import { useTheme } from "react-jss"
 import { Theme } from "../../../utils/theme/theme"
 import Font from "../../../utils/fonts/Font"
 import Underline from "../../../utils/line/Underline"
-import InternalLinkStyle from "./InternalLink-style"
 import { motion } from "framer-motion"
 import { LinkProps } from "../link-types"
+import InternalLinkStyle from "./InternalLink-style"
 
 ////////////////////////////////////////////////////////////////////////////////
 

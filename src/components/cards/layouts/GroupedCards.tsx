@@ -12,7 +12,7 @@ interface CardGroupedProps {
   status?: CardStatusType
   title?: { value: string, color?: string }
   tag: { color?: string, value: string }
-  background?: { color?: string, hover?: string }
+  background?: "alert" | "brand" | "transparent"
   path?: string
   href?: string
   height?: number
@@ -53,7 +53,7 @@ const CardUnit: React.FC<CardGroupedProps> = (props) => {
       src={src}
       alt={alt}
       tag={tag}
-      background={{ color: background?.color }}
+      background={background}
       status={status}
       path={path}
       href={href}

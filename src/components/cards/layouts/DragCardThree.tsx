@@ -17,10 +17,7 @@ interface CardPropsType {
     value: string
     color?: string
   }
-  background?: {
-    color?: string
-    hover?: string
-  }
+  background?: "alert" | "brand" | "transparent"
   path?: string
 }
 

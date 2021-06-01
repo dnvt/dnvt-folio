@@ -34,6 +34,10 @@ const FontStyle = createUseStyles(theme => ({
       letterSpacing: "-.024em",
     },
   },
+  span: {
+    borderBottom: "1px solid",
+    transition: "borderBottom .12s ease",
+  },
   link: {
     transition: "color .15s ease",
     fontFamily: "GT Sectra",

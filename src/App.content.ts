@@ -3,7 +3,7 @@ import { GroupedContentType } from "./components/cards/layouts/GroupedCards"
 import { FiveImagesType } from "./components/devices/layouts/DragFramelessFive"
 import { FourImagesType } from "./components/devices/layouts/DragMobileFour"
 import { DevicesMixed } from "./components/devices/layouts/GroupedMobileBrowser"
-//
+
 // import App01Png from "../src/assets/images/USMobile/System/App-01.png"
 import App02Png from "../src/assets/images/USMobile/System/App-02.png"
 import App03Png from "../src/assets/images/USMobile/System/App-03.png"
@@ -14,7 +14,15 @@ import App02Webp from "../src/assets/images/USMobile/System/App-02.webp"
 import App03Webp from "../src/assets/images/USMobile/System/App-03.webp"
 import App04Webp from "../src/assets/images/USMobile/System/App-04.webp"
 import App05Webp from "../src/assets/images/USMobile/System/App-05.webp"
+import norsePng from "../src/assets/images/Norse/Norse.png"
+import norseWebp from "../src/assets/images/Norse/Norse.webp"
+import elasticPng from "../src/assets/images/Elastic/Elastic.png"
+import elasticWebp from "../src/assets/images/Elastic/Elastic.webp"
 import { ThreeCardsContentType } from "./components/cards/layouts/DragCardThree"
+import { STuples } from "./components/cards/Card"
+
+const norseImages: STuples = [norsePng, norseWebp]
+const elastic: STuples = [elasticPng, elasticWebp]
 
 const FOOTER_CARDS: FooterContentType = [
 	{
@@ -31,7 +39,7 @@ const FOOTER_CARDS: FooterContentType = [
 	},
 	{
 		key: 3,
-		src: ["", ""],
+		src: elastic,
 		alt: "test 3",
 		title: { value: "Value title 3" },
 	},
@@ -64,10 +72,11 @@ const THREE_CARDS: ThreeCardsContentType = [
 const GROUPED_CARDS: GroupedContentType = [
 	{
 		key: 1,
-		src: ["", ""],
+		src: norseImages,
 		alt: "test 1",
 		tag: { color: "red", value: "Value tag 1" },
 		title: { value: "Value title 1" },
+		background: "transparent",
 	},
 	{
 		key: 2,
@@ -75,7 +84,6 @@ const GROUPED_CARDS: GroupedContentType = [
 		alt: "test 2",
 		tag: { value: "Value tag 2" },
 		title: { value: "Value title 2" },
-		background: { color: "red" },
 	},
 ]
 

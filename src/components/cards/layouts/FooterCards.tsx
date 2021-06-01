@@ -12,10 +12,7 @@ interface CardPropsType {
     value: string
     color?: string
   }
-  background?: {
-    color?: string
-    hover?: string
-  }
+  background?: "alert" | "brand" | "transparent"
   reverse?: Boolean
   path?: string
 }
@@ -44,7 +41,7 @@ const CardUnit = (props: CardPropsType) => {
       alt={alt}
       path={path}
       title={{ color: title?.color }}
-      background={{ color: background?.color }}
+      background={background}
     >
       { title!.value}
     </Card >

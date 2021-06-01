@@ -35,14 +35,14 @@
       [x] - Repair ligns and sound on the phone
       [ ] - Responsive height jump bug in the Grouped Deviced
       [ ] - Flex Space-Even the Grouped Phone on Mobile
-[ ] - Cards
+[x] - Cards
       [x] - CardImage
       [x] - CardStatus
       [x] - Cardtitle
       [x] - Layout
       [x] - UseMemo in the Component, where the function is called, calling the CONTENT
       [x] - Add Keys to the map
-      [ ] - Card hovers animation
+      [x] - Card hovers animation
 [x] - Turn loading into a non Button
 [ ] - Add Link to: CardImage | InternalLink | Button
 [ ] - Guidelines

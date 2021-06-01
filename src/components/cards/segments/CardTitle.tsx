@@ -5,6 +5,7 @@ import { Theme } from "../../../utils/theme/theme"
 import CardStyle from "../card-style"
 
 interface CardTitleProps {
+  hover: Boolean
   tagValue?: string
   titleColor?: string
   tagColor?: string
@@ -16,7 +17,7 @@ const CardTitle: React.FC<CardTitleProps> = (props) => {
   const theme: Theme = useTheme()
   const classes = CardStyle()
 
-  const { right, reverse, tagColor, titleColor, tagValue, children } = props
+  const { right, reverse, hover, tagColor, titleColor, tagValue, children } = props
 
   return (
     <>
@@ -27,7 +28,7 @@ const CardTitle: React.FC<CardTitleProps> = (props) => {
         <Font type='h5' style={{ color: tagColor ?? theme.text.secondary, margin: '0 0 -8px 0' }}>
           {tagValue}
         </Font>
-        <Font type='h3' style={{ color: titleColor ?? theme.text.primary }}>
+        <Font type='h3' animation={hover} style={{ color: titleColor ?? theme.text.primary }}>
           {children}
         </Font>
       </div>
