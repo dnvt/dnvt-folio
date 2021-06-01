@@ -28,7 +28,7 @@ export interface CardPropsType {
 	uncontained?: Boolean
 	reverse?: Boolean
 	right?: Boolean
-	path?: string
+	path: string
 	href?: string
 	paddingB?: number
 }

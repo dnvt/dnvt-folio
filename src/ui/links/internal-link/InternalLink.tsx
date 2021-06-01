@@ -14,6 +14,7 @@ import Underline from "../../../utils/line/Underline"
 import { motion } from "framer-motion"
 import { LinkProps } from "../link-types"
 import InternalLinkStyle from "./InternalLink-style"
+import { Link } from "react-router-dom"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -32,11 +33,11 @@ const InternalLink: React.FC<LinkProps> = ({ path, children }) => {
       onHoverStart={() => setFontColor(fontColor => !fontColor)}
       onHoverEnd={() => setFontColor(fontColor => !fontColor)} >
       <div className={classes.inside}>
-        <a href={path}>
+        <Link to={path}>
           <Font type='link' style={{ color: hoverAnimation }}>
             {children}
           </Font>
-        </a>
+        </Link>
       </div>
       <Underline opacity={1} color={hoverAnimation} />
     </motion.div>

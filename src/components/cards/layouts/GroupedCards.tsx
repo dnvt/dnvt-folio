@@ -12,8 +12,8 @@ interface CardGroupedProps {
   status?: CardStatusType
   title?: { value: string, color?: string }
   tag: { color?: string, value: string }
+  path: string
   background?: "alert" | "brand" | "transparent"
-  path?: string
   href?: string
   height?: number
   reverse?: Boolean

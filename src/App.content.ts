@@ -30,18 +30,21 @@ const FOOTER_CARDS: FooterContentType = [
 		src: ["", ""],
 		alt: "test 1",
 		title: { value: "Value title 1" },
+		path: "",
 	},
 	{
 		key: 2,
 		src: ["", ""],
 		alt: "test 2",
 		title: { value: "Value title 2" },
+		path: "",
 	},
 	{
 		key: 3,
 		src: elastic,
 		alt: "test 3",
 		title: { value: "Value title 3" },
+		path: "",
 	},
 ]
 
@@ -52,6 +55,7 @@ const THREE_CARDS: ThreeCardsContentType = [
 		alt: "test 1",
 		tag: { value: "Test 1" },
 		title: { value: "Value title 1" },
+		path: "",
 	},
 	{
 		key: 2,
@@ -59,6 +63,7 @@ const THREE_CARDS: ThreeCardsContentType = [
 		alt: "test 2",
 		tag: { value: "Test 1" },
 		title: { value: "Value title 2" },
+		path: "",
 	},
 	{
 		key: 3,
@@ -66,6 +71,7 @@ const THREE_CARDS: ThreeCardsContentType = [
 		alt: "test 3",
 		tag: { value: "Test 1", color: "red" },
 		title: { value: "Value title 3" },
+		path: "",
 	},
 ]
 
@@ -77,6 +83,7 @@ const GROUPED_CARDS: GroupedContentType = [
 		tag: { color: "red", value: "Value tag 1" },
 		title: { value: "Value title 1" },
 		background: "transparent",
+		path: "",
 	},
 	{
 		key: 2,
@@ -84,6 +91,7 @@ const GROUPED_CARDS: GroupedContentType = [
 		alt: "test 2",
 		tag: { value: "Value tag 2" },
 		title: { value: "Value title 2" },
+		path: "",
 	},
 ]
 

@@ -18,7 +18,7 @@ const CardStatus: React.FC<{ status: CardStatusType }> = ({ status }) => {
   return (
     <>
       <div className={classes.Status}>
-        <Button icon={status}>{value}</Button>
+        <Button path="" icon={status}>{value}</Button>
       </div>
     </>
   )

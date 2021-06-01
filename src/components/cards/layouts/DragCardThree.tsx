@@ -8,6 +8,7 @@ interface CardPropsType {
   key: number
   src: STuples
   alt: string
+  path: string
   status?: CardStatusType
   tag: {
     value: string
@@ -18,7 +19,6 @@ interface CardPropsType {
     color?: string
   }
   background?: "alert" | "brand" | "transparent"
-  path?: string
 }
 
 export type ThreeCardsContentType = [CardPropsType, CardPropsType, CardPropsType]

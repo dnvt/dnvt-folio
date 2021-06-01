@@ -5,6 +5,7 @@ import { CardStatusType } from "../segments/CardStatus"
 
 interface CardPropsType {
   key: number
+  path: string
   src: STuples
   alt: string
   status?: CardStatusType
@@ -14,7 +15,6 @@ interface CardPropsType {
   }
   background?: "alert" | "brand" | "transparent"
   reverse?: Boolean
-  path?: string
 }
 
 export type FooterContentType = [CardPropsType, CardPropsType, CardPropsType,]

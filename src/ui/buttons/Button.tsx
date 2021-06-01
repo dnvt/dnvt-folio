@@ -11,9 +11,10 @@ import MenuButtonStyle from "./Buttons-style"
 import Icon, { ShapesTypes } from "../../utils/icons/Icon"
 import Tooltip from "../tooltips/Tooltip"
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 
 type ButtonProps = {
-  path?: string
+  path: string
   icon?: ShapesTypes
   hover?: ShapesTypes
   tooltip?: string
@@ -35,25 +36,27 @@ const Button: React.FC<ButtonProps> = (props) => {
   if (tooltip) tooltipComponent = <Tooltip value={tooltip} />
 
   return (
-    <motion.a
-      href={path}
-      aria-disabled={path ? "false" : "true"}
-      className={classes.MenuButton}
+    <motion.div
       initial="rest"
       whileHover="hover"
       animate="rest"
       onHoverStart={() => setIconHover(iconHover => !iconHover)}
-      onHoverEnd={() => setIconHover(iconHover => !iconHover)}
-    >
-      {iconComponent}
-      <div>
-        <Font type='menu'>
-          {children}
-        </Font>
-        <Underline button opacity={iconHover ? 1 : 0} />
-      </div>
-      {tooltipComponent}
-    </motion.a>
+      onHoverEnd={() => setIconHover(iconHover => !iconHover)}>
+      <Link
+        to={path}
+        aria-disabled={path ? "false" : "true"}
+        className={classes.MenuButton}
+      >
+        {iconComponent}
+        <div>
+          <Font type='menu'>
+            {children}
+          </Font>
+          <Underline button opacity={iconHover ? 1 : 0} />
+        </div>
+        {tooltipComponent}
+      </Link>
+    </motion.div>
   )
 
   ////////////////////////////////////////////////////////////////////////////////
