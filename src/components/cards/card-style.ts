@@ -49,7 +49,7 @@ const CardStyle = createUseStyles({
 
 	Status: {
 		position: "absolute",
-		zIndex: "10",
+		zIndex: "100",
 		maxWidth: "100%",
 		top: "0",
 		left: "0",
@@ -120,6 +120,20 @@ const CardStyle = createUseStyles({
 		"@media (min-width: 1360px)": {
 			padding: "40px 56px",
 		},
+	},
+
+	MenuButton: {
+		position: "relative",
+		display: "flex",
+		flexDirection: "row",
+		marginBottom: "6px",
+	},
+
+	Icon: {
+		height: "100%",
+		padding: "5px 0",
+		display: "flex",
+		alignItems: "center",
 	},
 })
 

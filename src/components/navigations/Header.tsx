@@ -21,7 +21,7 @@ type ContentType = {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-const Header: React.FC<HeaderType> = () => {
+const Header: React.FC<HeaderType> = ({ positionNotfixed }) => {
   const window = useWindowSize()
   const classes = HeaderStyle()
 
@@ -45,7 +45,7 @@ const Header: React.FC<HeaderType> = () => {
       <Button icon={HEADER_CONTENT[1].icon} hover="mouseHover" path="/">{HEADER_CONTENT[1].value}</Button>{spacer}
       <Button icon={HEADER_CONTENT[2].icon} hover="cheeseHover" path="/">{HEADER_CONTENT[2].value}</Button>{spacer}
       <Button icon={HEADER_CONTENT[3].icon} hover="smileyHover" path="/">{HEADER_CONTENT[3].value}</Button>{spacer}
-      <Button icon={HEADER_CONTENT[4].icon} hover="guidelinesHover" path="/">{HEADER_CONTENT[4].value}</Button>{iconSpacer}
+      <Button icon={HEADER_CONTENT[4].icon} hover="guidelinesHover" path="/guidelines">{HEADER_CONTENT[4].value}</Button>{iconSpacer}
       <IconButton icon="light" />{iconSpacer}
       <IconButton icon="grid" />
     </>
@@ -55,7 +55,10 @@ const Header: React.FC<HeaderType> = () => {
     <Container>
       <header
         className={classes.menu}
-        style={{ position: "fixed", width: mobileSize ? mobileWidth : "100%" }}>
+        style={{
+          position: positionNotfixed ? "relative" : "fixed",
+          width: mobileSize ? mobileWidth : "100%"
+        }}>
         <nav className={classes.nav}>
           <Button path="/">{HEADER_CONTENT[0].value}</Button>
           {spacer}

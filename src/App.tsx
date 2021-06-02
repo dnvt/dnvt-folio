@@ -2,7 +2,8 @@ import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import ContextHooks from './hooks/ContextHooks'
 import Layout from './components/navigations/Layout'
-import Guidelines from "./Guidelines"
+import Guidelines from "./routes/guildelines/Guidelines"
+import Homepage from "./routes/homepage/Homepage"
 import { MotionConfig } from 'framer-motion'
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -15,7 +16,8 @@ const App: React.FC = () => {
         <BrowserRouter basename='/'>
           <Layout>
             <Switch>
-              <Route path="/" component={Guidelines} />
+              <Route path="/guidelines" component={Guidelines} />
+              <Route path="/" component={Homepage} />
             </Switch>
           </Layout>
         </BrowserRouter>

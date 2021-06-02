@@ -28,7 +28,7 @@ export interface CardPropsType {
 	uncontained?: Boolean
 	reverse?: Boolean
 	right?: Boolean
-	path: string
+	path?: string
 	href?: string
 	paddingB?: number
 }
@@ -53,7 +53,7 @@ const Card: React.FC<CardPropsType> = (props) => {
 	}
 
 	let cardPrivacyClass = classes.Card
-	if (status == "stop" || "construction") cardPrivacyClass = classes.PrivateCard
+	// if (status == "stop" || "construction") cardPrivacyClass = classes.PrivateCard
 
 	let card = (
 		<motion.div
@@ -62,6 +62,7 @@ const Card: React.FC<CardPropsType> = (props) => {
 			className={cardPrivacyClass}
 			style={cardStyle}>
 			{status && <CardStatus status={status} />}
+			{href && <CardStatus status={"externalLink"} />}
 			<CardImage
 				status={status}
 				alt={alt}

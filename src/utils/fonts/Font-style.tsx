@@ -7,6 +7,7 @@ const FontStyle = createUseStyles(theme => ({
   hero: {
     // Test
     position: "absolute",
+    zIndex: "-1",
 
     fontFamily: "Inter",
     fontWeight: "800",
@@ -90,7 +91,7 @@ const FontStyle = createUseStyles(theme => ({
     paddingInlineStart: 0,
     paddingInlineEnd: 0,
     whiteSpace: "nowrap",
-    color: (theme as Theme).background.tooltip,
+    color: (theme as Theme).text.tooltip,
     margin: "0",
 
     "@media (min-width: 768px)": {

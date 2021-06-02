@@ -44,7 +44,7 @@
       [x] - Add Keys to the map
       [x] - Card hovers animation
 [x] - Turn loading into a non Button
-[ ] - Add Link to: CardImage | InternalLink | Button
+[x] - Add Link to: CardImage | InternalLink | Button
 [ ] - Guidelines
 [ ] - Add documentation to my functions
 [ ] - Hero

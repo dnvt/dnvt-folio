@@ -8,7 +8,8 @@ interface CardPropsType {
   key: number
   src: STuples
   alt: string
-  path: string
+  path?: string
+  href?: string
   status?: CardStatusType
   tag: {
     value: string
@@ -33,7 +34,7 @@ const DragCardsThree: React.FC<ThreeCardsProps> = ({ content }) => {
 
 const ThreeDevices: React.FC<CardPropsType> = (props) => {
   const window = useWindowSize()
-  const { status, src, alt, path, title, tag, key, background } = props
+  const { status, src, alt, path, title, tag, href, key, background } = props
 
   let cardWidth = 288
   if (window.width > 992) cardWidth = 448
@@ -47,6 +48,7 @@ const ThreeDevices: React.FC<CardPropsType> = (props) => {
       src={src}
       alt={alt}
       path={path}
+      href={href}
       tag={tag}
       background={background}
       width={cardWidth}

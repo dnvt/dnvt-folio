@@ -8,6 +8,7 @@ const ImageStyle = createUseStyles({
 		flexDirection: "row",
 		marginBottom: "6px"
 	},
+
 	loading: {
 		width: "100%",
 		height: "100%",
@@ -17,6 +18,7 @@ const ImageStyle = createUseStyles({
 			padding: "24px",
 		},
 	},
+
 	bigLoading: {
 		minWidth: "100%",
 		height: "fill-available",
@@ -26,6 +28,7 @@ const ImageStyle = createUseStyles({
 			padding: "24px",
 		},
 	},
+
 	cardLoading: {
 		minWidth: "100%",
 		height: "100%",
@@ -42,6 +45,7 @@ const ImageStyle = createUseStyles({
 			padding: "40px 56px",
 		},
 	},
+
 	mobileLoading: {
 		width: "225px",
 		height: "100%",
@@ -58,6 +62,7 @@ const ImageStyle = createUseStyles({
 			borderRadius: "42px",
 		},
 	},
+
 	vignette: {
 		width: "100%",
 		height: "100%",
@@ -103,6 +108,7 @@ const ImageStyle = createUseStyles({
 			width: "1120px",
 		},
 	},
+
 	heroVignette: {
 		display: "flex",
 		textAlign: "center",
@@ -119,9 +125,11 @@ const ImageStyle = createUseStyles({
 			height: "calc(840px + 40px)",
 		},
 	},
+
 	img: {
 		userDrag: "none",
 	},
+
 	deviceImg: {
 		userDrag: "none",
 
@@ -130,6 +138,7 @@ const ImageStyle = createUseStyles({
 			minWidth: "100%",
 		},
 	},
+
 	Image: {
 		display: "flex",
 		justifyContent: "center",
@@ -143,7 +152,8 @@ const ImageStyle = createUseStyles({
 			minWidth: "100%",
 		},
 	},
-	icon: {
+
+	Icon: {
 		height: "100%",
 		padding: "5px 0",
 		display: "flex",

@@ -1,9 +1,3 @@
-import { FooterContentType } from "./components/cards/layouts/FooterCards"
-import { GroupedContentType } from "./components/cards/layouts/GroupedCards"
-import { FiveImagesType } from "./components/devices/layouts/DragFramelessFive"
-import { FourImagesType } from "./components/devices/layouts/DragMobileFour"
-import { DevicesMixed } from "./components/devices/layouts/GroupedMobileBrowser"
-
 // import App01Png from "../src/assets/images/USMobile/System/App-01.png"
 import App02Png from "../src/assets/images/USMobile/System/App-02.png"
 import App03Png from "../src/assets/images/USMobile/System/App-03.png"
@@ -18,8 +12,13 @@ import norsePng from "../src/assets/images/Norse/Norse.png"
 import norseWebp from "../src/assets/images/Norse/Norse.webp"
 import elasticPng from "../src/assets/images/Elastic/Elastic.png"
 import elasticWebp from "../src/assets/images/Elastic/Elastic.webp"
-import { ThreeCardsContentType } from "./components/cards/layouts/DragCardThree"
-import { STuples } from "./components/cards/Card"
+import { STuples } from "../../components/cards/Card"
+import { FooterContentType } from "../../components/cards/layouts/FooterCards"
+import { ThreeCardsContentType } from "../../components/cards/layouts/DragCardThree"
+import { GroupedContentType } from "../../components/cards/layouts/GroupedCards"
+import { FourImagesType } from "../../components/devices/layouts/DragMobileFour"
+import { FiveImagesType } from "../../components/devices/layouts/DragFramelessFive"
+import { DevicesMixed } from "../../components/devices/layouts/GroupedMobileBrowser"
 
 const norseImages: STuples = [norsePng, norseWebp]
 const elastic: STuples = [elasticPng, elasticWebp]

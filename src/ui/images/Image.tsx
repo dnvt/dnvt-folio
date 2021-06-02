@@ -80,7 +80,7 @@ const ImageContainer: React.FC<ImageType> = (props) => {
     return containerWrapperForBigProps(
       <div className={loaderPositioningClass}>
         <div className={classes.MenuButton}>
-          <div className={classes.icon} style={{ marginRight: "8px" }}>
+          <div className={classes.Icon} style={{ marginRight: "8px" }}>
             <Icon name="loading" />
           </div>
           <div>

@@ -12,9 +12,9 @@ interface CardGroupedProps {
   status?: CardStatusType
   title?: { value: string, color?: string }
   tag: { color?: string, value: string }
-  path: string
   background?: "alert" | "brand" | "transparent"
   href?: string
+  path?: string
   height?: number
   reverse?: Boolean
   left?: Boolean

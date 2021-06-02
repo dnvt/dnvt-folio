@@ -1,18 +1,20 @@
 import React, { useMemo } from 'react'
-import Container from './components/containers/Container'
-import Spacer from './utils/spacer/Spacer'
-import Font from './utils/fonts/Font'
-import InternalLink from './ui/links/internal-link/InternalLink'
-import ExternalLink from './ui/links/external-link/ExternalLink'
-import { BigVignette, HeroVignette, Vignette } from './components/vignettes/Vignettes'
-import GroupedMobileBrowser from './components/devices/layouts/GroupedMobileBrowser'
-import DragMobileFour from './components/devices/layouts/DragMobileFour'
-import DragFramelessFive from './components/devices/layouts/DragFramelessFive'
-import Card from './components/cards/Card'
-import GroupedCard from './components/cards/layouts/GroupedCards'
-import FooterCards from './components/cards/layouts/FooterCards'
-import CONTENT_APP from "./App.content"
-import DragCardsThree from './components/cards/layouts/DragCardThree'
+import Container from '../../components/containers/Container'
+import Spacer from '../../utils/spacer/Spacer'
+import Font from '../../utils/fonts/Font'
+import InternalLink from '../../ui/links/internal-link/InternalLink'
+import ExternalLink from '../../ui/links/external-link/ExternalLink'
+import { Vignette } from '../../components/vignettes/Vignettes'
+import GroupedMobileBrowser from '../../components/devices/layouts/GroupedMobileBrowser'
+import DragMobileFour from '../../components/devices/layouts/DragMobileFour'
+import DragFramelessFive from '../../components/devices/layouts/DragFramelessFive'
+import Card from '../../components/cards/Card'
+import GroupedCard from '../../components/cards/layouts/GroupedCards'
+import FooterCards from '../../components/cards/layouts/FooterCards'
+import CONTENT_APP from "../../App.content"
+import DragCardsThree from '../../components/cards/layouts/DragCardThree'
+import Sidelines from '../../utils/sidelines/Sidelines'
+import Grid from '../../utils/grids/Grid'
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -23,17 +25,17 @@ import DragCardsThree from './components/cards/layouts/DragCardThree'
  * Mount the page when all components exist
  * 
  */
-const Guidelines: React.FC = () => {
+const Homepage: React.FC = () => {
   const content = useMemo(() => CONTENT_APP, [])
 
   return (
     <>
-      <HeroVignette src={["", ""]} alt="Hero container baby" background="#color" />
-      <Spacer height={104} />
-      <BigVignette src={["", ""]} alt="Hero container baby" />
+      <Grid />
+      <Sidelines />
+      <Spacer contained height={104} />
       <Container>
-        <Spacer height={104} />
-        <Font type="h1">Hello World</Font>
+        <Spacer height={184} />
+        <Font type="h1">Digital designer based in New York – currently redefining modern video workflow at Frame.io</Font>
         <Font type="h2">Helloooo</Font>
         <Spacer height={32} />
         <InternalLink path="http://dnvt.me">Hello link</InternalLink>
@@ -58,7 +60,7 @@ const Guidelines: React.FC = () => {
           Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sed posuere consectetur est at lobortis. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur.
           </Font>
       </Container>
-      <Spacer height={80} />
+      <Spacer contained height={80} />
       <DragMobileFour images={content.MOBILE_FOUR} />
       <Spacer contained height={80} />
       <DragFramelessFive images={content.FRAMELESS_FIVE} />
@@ -85,10 +87,11 @@ const Guidelines: React.FC = () => {
         <Font type="text">
           Maecenas faucibus mollis interdum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna.
           </Font>
+        <Spacer height={80} />
       </Container>
       <FooterCards content={content.FOOTER_CARDS} />
     </>
   )
 }
 
-export default Guidelines
+export default Homepage

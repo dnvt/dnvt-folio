@@ -5,9 +5,9 @@ import { CardStatusType } from "../segments/CardStatus"
 
 interface CardPropsType {
   key: number
-  path: string
   src: STuples
   alt: string
+  path?: string
   status?: CardStatusType
   title: {
     value: string

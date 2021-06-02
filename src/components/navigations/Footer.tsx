@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
             style={{ color: theme.text.secondary }}>
             {`© ${ currentYear }. Made with Figma and React`}
           </Font>
-          <Spacer height={40} />
+          <Spacer height={64} />
         </Container>
       </footer>
     </>
