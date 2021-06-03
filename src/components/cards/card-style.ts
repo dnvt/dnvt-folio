@@ -53,10 +53,7 @@ const CardStyle = createUseStyles({
 		maxWidth: "100%",
 		top: "0",
 		left: "0",
-		padding: "16px",
-		"@media (min-width: 576px)": {
-			padding: "16px 24px",
-		},
+		padding: "16px 24px",
 
 		"@media (min-width: 768px)": {
 			padding: "40px",
@@ -76,11 +73,7 @@ const CardStyle = createUseStyles({
 		maxWidth: "100%",
 		bottom: "0",
 		left: "0",
-		padding: "16px",
-
-		"@media (min-width: 576px)": {
-			padding: "16px 24px",
-		},
+		padding: "16px 24px",
 
 		"@media (min-width: 768px)": {
 			padding: "32px 40px",
@@ -101,7 +94,7 @@ const CardStyle = createUseStyles({
 		maxWidth: "100%",
 		bottom: "0",
 		right: "0",
-		padding: "16px",
+		padding: "16px 24px",
 
 		"@media (min-width: 576px)": {
 			padding: "16px 24px",

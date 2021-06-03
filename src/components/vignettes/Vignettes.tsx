@@ -8,22 +8,24 @@ import Legend from "./Legend"
 import VignetteStyle from "./Vignettes-style"
 
 export interface VignetteProps {
+  src: [string, string]
   alt: string
-  src: any[]
+  withLegend?: Boolean
   background?: string
 }
 
 export interface BigProps {
+  src: [string, string]
   alt: string
-  src: any[]
   background?: string
+  withLegend?: Boolean
   big?: Boolean
   width?: Boolean
 }
 
 export interface HeroProps {
-  alt: string
-  src: any[]
+  src: [string, string]
+  alt?: string
   background?: "color" | string
   big?: Boolean
   width?: Boolean
@@ -35,7 +37,7 @@ const Vignette: React.FC<VignetteProps> = (props) => {
   const theme: Theme = useTheme()
   const classes = VignetteStyle({ ...props, theme })
 
-  const { src, alt } = props
+  const { src, alt, withLegend } = props
 
   return (
     <Container>
@@ -45,7 +47,7 @@ const Vignette: React.FC<VignetteProps> = (props) => {
           alt={alt}
         />
       </div>
-      {alt && <Legend alt={alt} />}
+      {withLegend && <Legend alt={alt} />}
     </Container>
   )
 }
@@ -53,7 +55,7 @@ const Vignette: React.FC<VignetteProps> = (props) => {
 const BigVignette: React.FC<BigProps> = props => {
   const theme: Theme = useTheme()
   const classes = VignetteStyle({ ...props, theme })
-  const { width, background, src, alt } = props
+  const { width, background, src, alt, withLegend } = props
 
   return (<>
     <div
@@ -67,7 +69,7 @@ const BigVignette: React.FC<BigProps> = props => {
         alt={alt}
       />
     </div>
-    {alt && <Container><Legend alt={alt} /></Container>}
+    {withLegend && <Container><Legend alt={alt} /></Container>}
   </>)
 }
 

@@ -6,6 +6,9 @@ import FontSection from './segments/FontSection'
 import Spacer from '../../utils/spacer/Spacer'
 import NavigationSection from './segments/NavigationSection'
 import UtilsSection from './segments/UtilsSection'
+import { DeviceSection } from './segments/DeviceSection'
+import { ImageSection } from './segments/ImageSection'
+import CardSection from './segments/CardSection'
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -26,11 +29,11 @@ const Guidelines: React.FC = () => {
       <Section value=' Utility Section' />
       <UtilsSection />
       <Section value=' Device Section' />
-      {/* <DeviceSection /> */}
+      <DeviceSection />
       <Section value=' Image Section' />
-      {/* <ImageSection /> */}
+      <ImageSection />
       <Section value=' Card Section' />
-      {/* <CardSection /> */}
+      <CardSection />
     </>
   )
 }

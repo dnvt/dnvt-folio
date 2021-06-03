@@ -1,18 +1,3 @@
-// import App01Png from "../src/assets/images/USMobile/System/App-01.png"
-import App02Png from "../src/assets/images/USMobile/System/App-02.png"
-import App03Png from "../src/assets/images/USMobile/System/App-03.png"
-import App04Png from "../src/assets/images/USMobile/System/App-04.png"
-import App05Png from "../src/assets/images/USMobile/System/App-05.png"
-// import App01Webp from "../src/assets/images/USMobile/System/App-01.webp"
-import App02Webp from "../src/assets/images/USMobile/System/App-02.webp"
-import App03Webp from "../src/assets/images/USMobile/System/App-03.webp"
-import App04Webp from "../src/assets/images/USMobile/System/App-04.webp"
-import App05Webp from "../src/assets/images/USMobile/System/App-05.webp"
-import norsePng from "../src/assets/images/Norse/Norse.png"
-import norseWebp from "../src/assets/images/Norse/Norse.webp"
-import elasticPng from "../src/assets/images/Elastic/Elastic.png"
-import elasticWebp from "../src/assets/images/Elastic/Elastic.webp"
-import { STuples } from "../../components/cards/Card"
 import { FooterContentType } from "../../components/cards/layouts/FooterCards"
 import { ThreeCardsContentType } from "../../components/cards/layouts/DragCardThree"
 import { GroupedContentType } from "../../components/cards/layouts/GroupedCards"
@@ -20,29 +5,29 @@ import { FourImagesType } from "../../components/devices/layouts/DragMobileFour"
 import { FiveImagesType } from "../../components/devices/layouts/DragFramelessFive"
 import { DevicesMixed } from "../../components/devices/layouts/GroupedMobileBrowser"
 
-const norseImages: STuples = [norsePng, norseWebp]
-const elastic: STuples = [elasticPng, elasticWebp]
+// const norseImages: STuples = [norsePng, norseWebp]
 
 const FOOTER_CARDS: FooterContentType = [
 	{
 		key: 1,
+		reverse: true,
 		src: ["", ""],
 		alt: "test 1",
-		title: { value: "Value title 1" },
+		title: { value: "Title 1" },
 		path: "",
 	},
 	{
 		key: 2,
 		src: ["", ""],
 		alt: "test 2",
-		title: { value: "Value title 2" },
+		title: { value: "Title 2" },
 		path: "",
 	},
 	{
 		key: 3,
-		src: elastic,
+		src: ["", ""],
 		alt: "test 3",
-		title: { value: "Value title 3" },
+		title: { value: "Title 3" },
 		path: "",
 	},
 ]
@@ -77,7 +62,7 @@ const THREE_CARDS: ThreeCardsContentType = [
 const GROUPED_CARDS: GroupedContentType = [
 	{
 		key: 1,
-		src: norseImages,
+		src: ["", ""],
 		alt: "test 1",
 		tag: { color: "red", value: "Value tag 1" },
 		title: { value: "Value title 1" },
@@ -103,10 +88,18 @@ const MOBILE_FOUR: FourImagesType = [
 
 const FRAMELESS_FIVE: FiveImagesType = [
 	{ src: ["", ""], alt: "Test 1", key: 1 },
-	{ src: [App02Png, App02Webp], alt: "Test 2", key: 2 },
-	{ src: [App03Png, App03Webp], alt: "Test 3", key: 3 },
-	{ src: [App04Png, App04Webp], alt: "Test 4", key: 4 },
-	{ src: [App05Png, App05Webp], alt: "Test 4", key: 5 },
+	{ src: ["", ""], alt: "Test 2", key: 2 },
+	{ src: ["", ""], alt: "Test 3", key: 3 },
+	{ src: ["", ""], alt: "Test 4", key: 4 },
+	{ src: ["", ""], alt: "Test 4", key: 5 },
+]
+
+const FRAMELESS_FIVE_EMPTY: FiveImagesType = [
+	{ src: ["", ""], alt: "Test 1", key: 1 },
+	{ src: ["", ""], alt: "Test 2", key: 2 },
+	{ src: ["", ""], alt: "Test 3", key: 3 },
+	{ src: ["", ""], alt: "Test 4", key: 4 },
+	{ src: ["", ""], alt: "Test 4", key: 5 },
 ]
 
 const GROUPED_DEVICES: DevicesMixed = {
@@ -127,6 +120,7 @@ const CONTENT_APP = {
 	GROUPED_DEVICES,
 	MOBILE_FOUR,
 	FRAMELESS_FIVE,
+	FRAMELESS_FIVE_EMPTY,
 }
 
 export default CONTENT_APP
