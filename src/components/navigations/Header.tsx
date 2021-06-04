@@ -14,7 +14,7 @@ import { ShapesTypes } from "../../utils/icons/Icon"
 type HeaderType = { positionNotfixed?: Boolean }
 type ContentType = {
   value?: string
-  icon?: ShapesTypes
+  icon?: ShapesTypes | [ShapesTypes, ShapesTypes]
   iconButton?: IconButtonType
   hover?: ShapesTypes
 }
@@ -28,24 +28,33 @@ const Header: React.FC<HeaderType> = ({ positionNotfixed }) => {
   const mobileSize = window.width! < 767
   const mobileWidth = window.width! < 575 ? "calc(100% - 32px)" : "calc(100% - 48px)"
 
-  const spacer = <Spacer borderLess height='100%' width={window.width! > 1360 ? 40 : 32} />
-  const iconSpacer = <Spacer borderLess height='100%' width={window.width! > 1360 ? 32 : 24} />
+  const spacer = <Spacer borderLess height='100%' width={window.width > 1360 ? 40 : 32} />
+  const iconSpacer = <Spacer borderLess height='100%' width={window.width > 1360 ? 32 : 24} />
 
-  const mobileMenu = <IconButton icon='menu' />
-  const HEADER_CONTENT = useMemo<ContentType[]>(() => [
+  const CONTENT = useMemo<ContentType[]>(() => [
     { value: "François Denavaut" },
-    { icon: "mouse", hover: "mouseHover", value: "Work" },
-    { icon: "cheese", hover: "cheeseHover", value: "Playground" },
-    { icon: "smiley", hover: "smileyHover", value: "About" },
-    { icon: "guidelines", hover: "guidelinesHover", value: "Guidelines" },
+    { icon: ["mouse", "mouseHover"], value: "Work" },
+    { icon: ["cheese", "cheeseHover"], value: "Playground" },
+    { icon: ["smiley", "smileyHover"], value: "About" },
+    { icon: ["guidelines", "guidelinesHover"], value: "Guidelines" },
   ], [])
+
+  const mobileMenu = (<>
+    <Button menuToggle path="/">{CONTENT[0].value}</Button>
+    {spacer}
+    <IconButton icon="grid" />
+    <IconButton icon="light" />
+    <IconButton icon='menu' />
+  </>)
 
   const desktopMenu = (
     <>
-      <Button icon={HEADER_CONTENT[1].icon} hover="mouseHover" path="/">{HEADER_CONTENT[1].value}</Button>{spacer}
-      <Button icon={HEADER_CONTENT[2].icon} hover="cheeseHover" path="/">{HEADER_CONTENT[2].value}</Button>{spacer}
-      <Button icon={HEADER_CONTENT[3].icon} hover="smileyHover" path="/">{HEADER_CONTENT[3].value}</Button>{spacer}
-      <Button icon={HEADER_CONTENT[4].icon} hover="guidelinesHover" path="/guidelines">{HEADER_CONTENT[4].value}</Button>{iconSpacer}
+      <Button path="/">{CONTENT[0].value}</Button>
+      {spacer}
+      <Button icon={CONTENT[1].icon} path="/">{CONTENT[1].value}</Button>{spacer}
+      <Button icon={CONTENT[2].icon} path="/">{CONTENT[2].value}</Button>{spacer}
+      <Button icon={CONTENT[3].icon} path="/">{CONTENT[3].value}</Button>{spacer}
+      <Button icon={CONTENT[4].icon} path="/guidelines">{CONTENT[4].value}</Button>{iconSpacer}
       <IconButton icon="light" />{iconSpacer}
       <IconButton icon="grid" />
     </>
@@ -60,8 +69,6 @@ const Header: React.FC<HeaderType> = ({ positionNotfixed }) => {
           width: mobileSize ? mobileWidth : "100%"
         }}>
         <nav className={classes.nav}>
-          <Button path="/">{HEADER_CONTENT[0].value}</Button>
-          {spacer}
           {mobileSize ? mobileMenu : desktopMenu}
         </nav>
       </header>

@@ -12,6 +12,7 @@ interface ImageType {
   src: string[] | undefined
   alt?: string
   scale?: number
+  opacity?: number
   background?: string
   fullWidth?: Boolean
   big?: Boolean
@@ -32,7 +33,7 @@ const ImageContainer: React.FC<ImageType> = (props) => {
   const classes = ImageStyle({ ...props, theme })
   const window = useWindowSize()
 
-  const { alt, src, scale, background, fullWidth, big, card, mobile } = props
+  const { alt, src, scale, background, opacity, fullWidth, big, card, mobile } = props
 
   let fullWidthSizing =
     window.width! > 768
@@ -57,7 +58,7 @@ const ImageContainer: React.FC<ImageType> = (props) => {
       className={classes.Image}
       style={
         (background && { background: background }) ||
-        (scale && { transform: `scale(${ scale })` }) ||
+        (scale && { transform: `scale(${ scale })`, opacity: opacity }) ||
         undefined
       }
     >

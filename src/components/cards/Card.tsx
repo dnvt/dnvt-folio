@@ -1,12 +1,13 @@
 import React, { useState } from "react"
 import { useTheme } from "react-jss"
+import { motion } from "framer-motion"
+
 import { Theme } from "../../utils/theme/theme"
 import Container from "../containers/Container"
 import CardImage from "./segments/CardImage"
-import CardStyle from "./card-style"
 import CardStatus, { CardStatusType } from "./segments/CardStatus"
 import CardTitle from "./segments/CardTitle"
-import { motion } from "framer-motion"
+import CardStyle from "./card-style"
 
 export type STuples = [string, string]
 
@@ -41,12 +42,12 @@ const Card: React.FC<CardPropsType> = (props) => {
 	const { background, height, width, status, alt, src, path, href, paddingB, reverse, right, tag, title, uncontained, children } = props
 
 	const scaleValue = isHovered ? 1.04 : 1
+	const opacityValue = isHovered ? .90 : 1
 	const backgroundColors = setBackgroundColor()
 	const backgroundValue = isHovered ? backgroundColors[1] : backgroundColors[0]
 
 	let cardStyle: any = { height: height, width: width }
 	if (background == "transparent") {
-		console.log("Hey")
 		cardStyle = {
 			border: `1px solid ${ theme.border.outline }`,
 		}
@@ -71,6 +72,7 @@ const Card: React.FC<CardPropsType> = (props) => {
 				background={backgroundValue}
 				path={path}
 				href={href}
+				opacity={opacityValue}
 				paddingB={paddingB}
 			/>
 			<CardTitle

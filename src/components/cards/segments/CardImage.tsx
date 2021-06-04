@@ -8,6 +8,7 @@ interface CardImageProps {
   src: [string, string]
   alt: string
   scale: number
+  opacity: number
   status?: string
   background?: string
   path?: string
@@ -19,7 +20,7 @@ const CardImage: React.FC<CardImageProps> = (props) => {
   const classes = CardStyle()
   const window = useWindowSize()
 
-  const { background, paddingB, scale, src, alt, status, path, href } = props
+  const { background, paddingB, opacity, scale, src, alt, status, path, href } = props
 
   const cardImage = (
     <div
@@ -34,6 +35,7 @@ const CardImage: React.FC<CardImageProps> = (props) => {
         <ImageContainer
           card
           scale={scale}
+          opacity={opacity}
           src={src}
           alt={alt}
         />

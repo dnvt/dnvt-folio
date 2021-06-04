@@ -3,7 +3,6 @@ import { useTheme } from "react-jss"
 import useDarkMode from "use-dark-mode"
 import Container from "../../../components/containers/Container"
 import { useWindowSize } from "../../../hooks/useWindowSize"
-import Tooltip from "../../../ui/tooltips/Tooltip"
 import Font from "../../../utils/fonts/Font"
 import Spacer from "../../../utils/spacer/Spacer"
 import { Theme } from "../../../utils/theme/theme"
@@ -174,8 +173,8 @@ const UtilsSection: React.FC = () => {
             value={darkMode.value ? "#2C292E" : "#F4F6F9"}
           />
         </div>
-        <Spacer height={32} />
-        <Tooltip value='This is a tooltip test!!' />
+        {/* <Spacer height={32} />
+        <Tooltip value='This is a tooltip test!!' /> */}
       </Container>
     </>
   )

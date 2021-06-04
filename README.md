@@ -45,7 +45,11 @@
       [x] - Card hovers animation
 [x] - Turn loading into a non Button
 [x] - Add Link to: CardImage | InternalLink | Button
-[ ] - Guidelines
+[x] - Guidelines
+      [ ] - Update the Descriptions
+      [ ] - Update the colors swatches
+[x] - Menu on mobile
+[ ] - Homepage
 [ ] - Add documentation to my functions
 [ ] - Hero
 

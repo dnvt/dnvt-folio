@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext, useContext } from "react";
+import React, { useState, useEffect, createContext, useContext } from "react"
 
 type DocumentSizeType = { height: number }
 const DocumentSizeCtx = createContext<Partial<DocumentSizeType>>({ height: undefined })
@@ -22,9 +22,9 @@ export const DocumentSizeProvider: React.FC = ({ children }) => {
     <DocumentSizeCtx.Provider value={documentSize}>
       {children}
     </DocumentSizeCtx.Provider>
-  );
-};
+  )
+}
 
 export const useDocumentSize = () => {
   return useContext(DocumentSizeCtx)
-};
+}

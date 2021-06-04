@@ -5,7 +5,7 @@ type VisibilityType = any
 const GridVisibilityCtx = createContext<VisibilityType>([false, () => { }])
 
 export const GridVisibilityProvider: React.FC = ({ children }) => {
-  const [visibility, setVisibility] = useState<VisibilityType>(false)
+  const [visibility, setVisibility] = useState<Boolean>(false)
 
   return (
     <GridVisibilityCtx.Provider value={[visibility, setVisibility]}>

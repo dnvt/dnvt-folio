@@ -1,6 +1,7 @@
 import React from "react"
 import { DocumentSizeProvider } from "./useDimensionSize"
 import { GridVisibilityProvider } from "./useGridVisibility"
+import { MenuVisibilityProvider } from "./useMenuVisibility"
 import { ColorTheme } from "./useTheme"
 import { WindowSizeProvider } from "./useWindowSize"
 
@@ -8,11 +9,13 @@ const ContextHooks: React.FC = (props) => {
   return (
     <WindowSizeProvider>
       <DocumentSizeProvider>
-        <ColorTheme>
-          <GridVisibilityProvider>
+        <GridVisibilityProvider>
+          <MenuVisibilityProvider>
+            <ColorTheme>
               {props.children}
-          </GridVisibilityProvider>
-        </ColorTheme>
+            </ColorTheme>
+          </MenuVisibilityProvider>
+        </GridVisibilityProvider>
       </DocumentSizeProvider>
     </WindowSizeProvider>
   )
