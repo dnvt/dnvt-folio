@@ -9,6 +9,7 @@ import UtilsSection from './segments/UtilsSection'
 import { DeviceSection } from './segments/DeviceSection'
 import { ImageSection } from './segments/ImageSection'
 import CardSection from './segments/CardSection'
+import { DocumentSizeProvider } from '../../hooks/useDimensionSize'
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -18,7 +19,7 @@ import CardSection from './segments/CardSection'
 const Guidelines: React.FC = () => {
 
   return (
-    <>
+    <DocumentSizeProvider>
       <Grid />
       <Sidelines />
       <Spacer contained height={104} />
@@ -34,7 +35,7 @@ const Guidelines: React.FC = () => {
       <ImageSection />
       <Section value=' Card Section' />
       <CardSection />
-    </>
+    </DocumentSizeProvider>
   )
 }
 

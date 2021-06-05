@@ -1,22 +1,22 @@
 import React from "react"
-import { DocumentSizeProvider } from "./useDimensionSize"
 import { GridVisibilityProvider } from "./useGridVisibility"
 import { MenuVisibilityProvider } from "./useMenuVisibility"
+import { MainColorProvider } from "./useSetMainColor"
 import { ColorTheme } from "./useTheme"
 import { WindowSizeProvider } from "./useWindowSize"
 
 const ContextHooks: React.FC = (props) => {
   return (
     <WindowSizeProvider>
-      <DocumentSizeProvider>
-        <GridVisibilityProvider>
-          <MenuVisibilityProvider>
-            <ColorTheme>
+      <GridVisibilityProvider>
+        <MenuVisibilityProvider>
+          <ColorTheme>
+            <MainColorProvider>
               {props.children}
-            </ColorTheme>
-          </MenuVisibilityProvider>
-        </GridVisibilityProvider>
-      </DocumentSizeProvider>
+            </MainColorProvider>
+          </ColorTheme>
+        </MenuVisibilityProvider>
+      </GridVisibilityProvider>
     </WindowSizeProvider>
   )
 }

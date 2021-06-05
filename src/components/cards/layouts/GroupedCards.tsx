@@ -59,6 +59,7 @@ const CardUnit: React.FC<CardGroupedProps> = (props) => {
       href={href}
       width="100%"
       height={height}
+      title={title}
     >
       { title!.value}
     </Card >

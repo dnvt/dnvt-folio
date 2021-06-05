@@ -10,6 +10,7 @@ import Container from "../containers/Container"
 import ExternalLink from "../../ui/links/external-link/ExternalLink"
 import Font from "../../utils/fonts/Font"
 import Spacer from "../../utils/spacer/Spacer"
+import { useMainColor } from "../../hooks/useSetMainColor"
 
 type ContentType = {
   value: string
@@ -20,6 +21,7 @@ type ContentType = {
 const Footer: React.FC = () => {
   const window = useWindowSize()
   const theme: Theme = useTheme()
+  const [color] = useMainColor()
   const currentYear = new Date().getFullYear()
 
   const FOOTER_CONTENT = useMemo<ContentType[]>(() => [
@@ -54,7 +56,7 @@ const Footer: React.FC = () => {
           <Spacer height={window.width! > 767 ? 80 : 64} />
           <Font
             type='legend'
-            style={{ color: theme.text.hover }}>
+            style={{ color: color }}>
             {FOOTER_CONTENT[5].value}
           </Font>
           {menuList}

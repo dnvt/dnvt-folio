@@ -62,8 +62,8 @@ const Card: React.FC<CardPropsType> = (props) => {
 			onHoverEnd={() => setIsHovered(isHovered => !isHovered)}
 			className={cardPrivacyClass}
 			style={cardStyle}>
-			{status && <CardStatus status={status} />}
-			{href && <CardStatus status={"externalLink"} />}
+			{status && <CardStatus status={status} color={title?.color} />}
+			{href && <CardStatus status={"externalLink"} color={title?.color} />}
 			<CardImage
 				status={status}
 				alt={alt}

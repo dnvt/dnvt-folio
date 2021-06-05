@@ -50,6 +50,7 @@
       [ ] - Update the colors swatches
 [x] - Menu on mobile
 [ ] - Homepage
+[ ] - Add Project colors in theme dictionnary
 [ ] - Add documentation to my functions
 [ ] - Hero
 

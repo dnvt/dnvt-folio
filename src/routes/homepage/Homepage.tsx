@@ -1,11 +1,14 @@
-import React, { useMemo } from 'react'
-import Container from '../../components/containers/Container'
+import React, { useEffect } from 'react'
 import Spacer from '../../utils/spacer/Spacer'
 import Font from '../../utils/fonts/Font'
-import FooterCards from '../../components/cards/layouts/FooterCards'
-import CONTENT_APP from "../../App.content"
 import Sidelines from '../../utils/sidelines/Sidelines'
 import Grid from '../../utils/grids/Grid'
+import { useTheme } from 'theming'
+import { Theme } from '../../utils/theme/theme'
+import { useWindowSize } from '../../hooks/useWindowSize'
+import { useMainColor } from '../../hooks/useSetMainColor'
+import { DocumentSizeProvider } from '../../hooks/useDimensionSize'
+import Introduction from './segments/Introduction'
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -17,20 +20,45 @@ import Grid from '../../utils/grids/Grid'
  * 
  */
 const Homepage: React.FC = () => {
-  const content = useMemo(() => CONTENT_APP, [])
+  const theme: Theme = useTheme()
+  const window = useWindowSize()
+  const [, setColor] = useMainColor()
+  // const animate = parse(location.search).fontAnimation
+
+  // let spacer = <Spacer contained height={window.width > 768 ? 184 : 40} />
+
+  useEffect(() => {
+    setColor(theme.text.hover)
+  }, [setColor, theme.text.hover])
 
   return (
-    <>
+    <DocumentSizeProvider>
       <Grid />
       <Sidelines />
       <Spacer contained height={104} />
-      <Container>
-        <Spacer height={184} />
-        <Font type="h1">Digital designer based in New York – currently redefining modern video workflow at Frame.io</Font>
-        <Spacer height={80} />
-      </Container>
-      <FooterCards content={content.FOOTER_CARDS} />
-    </>
+      {window.width > 767 && <Spacer contained height={184} />}
+      <div style={{ position: "relative" }}>
+        <Font type="hero">François</Font>
+      </div>
+      <Introduction />
+      {/* 
+      {spacer}
+      <USMWork />
+      <Spacer contained height={104} />
+      <PrivateWork />
+      <Spacer contained height={104} />
+      <SelectedWork />
+      {spacer}
+      <div style={{ position: "relative" }}>
+        <FontHero animate={animate} value='Yeaaah!' />
+      </div>
+      <PlayGround />
+      <div style={{ position: "relative" }}>
+        <FontHero animate={animate} value='dnvt.me' />
+      </div>
+      {spacer}
+      <About /> */}
+    </DocumentSizeProvider>
   )
 }
 

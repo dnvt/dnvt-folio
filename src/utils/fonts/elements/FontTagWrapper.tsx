@@ -21,7 +21,7 @@ const FontTagWrapper: React.FC<FontTagWrapperProps> = (props): JSX.Element => {
     switch (type) {
       case "h1": return <h1 style={style}>{children}</h1>
       case "h2": return <h2 style={style}>{children}</h2>
-      case "h3": return <h3 style={style}><span style={{ borderColor: animation ? theme.text.primary : "transparent" }} className={classes.span}>{children}</span></h3>
+      case "h3": return <h3 style={style}><span style={{ borderColor: animation ? style?.color : "transparent" }} className={classes.span}>{children}</span></h3>
       case "h4": return <h4 style={style}>{children}</h4>
       case "h5": return <h5 style={style}>{children}</h5>
       case "text": return <p style={style}>{children}</p>
