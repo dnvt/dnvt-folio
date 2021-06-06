@@ -44,8 +44,8 @@ const Homepage: React.FC = () => {
       <Introduction />
       {spacer}
       <USMWork />
-      {/* 
       <Spacer contained height={104} />
+      {/* 
       <PrivateWork />
       <Spacer contained height={104} />
       <SelectedWork />

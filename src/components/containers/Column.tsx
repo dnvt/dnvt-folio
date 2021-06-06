@@ -26,7 +26,7 @@ const Column: React.FC<ColumnType> = (props) => {
       emptyColumn = <Verticaler width={spacerArrayCall} />
 
   return (
-    <div className={classes.Column}>
+    <div className={spacer && classes.Column}>
       <div className={grid && classes.Column}>{children}</div>
       {emptyColumn}
     </div>

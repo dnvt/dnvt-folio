@@ -16,8 +16,7 @@ const USMWork: React.FC = () => {
 
   const CONTENT = useMemo(() => HOMEPAGE_CONTENT.USMWORK, [])
 
-  let spacerWidth: number | "100%" = 0
-  if (window.width > 767) spacerWidth = "100%"
+  let spacerWidth: number | "100%" = "100%"
   if (window.width > 991) spacerWidth = 448
   if (window.width > 1359) spacerWidth = 544
 
@@ -59,42 +58,42 @@ const USMWork: React.FC = () => {
 
       />
       <Spacer contained height={104} />
-      <Container>
-        <Card
-          tag={CONTENT.CARD_BRANDING.tag}
-          src={CONTENT.CARD_BRANDING.src}
-          alt={CONTENT.CARD_BRANDING.alt}
-          path={CONTENT.CARD_BRANDING.path}
-          paddingB={CONTENT.CARD_BRANDING.paddingB}
-          background={CONTENT.CARD_BRANDING.background}
-        >
-          Creative direction <br /> & design guidelines
+      {/* <Container> */}
+      <Card
+        tag={CONTENT.CARD_BRANDING.tag}
+        src={CONTENT.CARD_BRANDING.src}
+        alt={CONTENT.CARD_BRANDING.alt}
+        path={CONTENT.CARD_BRANDING.path}
+        paddingB={CONTENT.CARD_BRANDING.paddingB}
+        background={CONTENT.CARD_BRANDING.background}
+      >
+        Creative direction <br /> & design guidelines
         </Card>
-        <Spacer height={32} />
-        <Card
-          tag={CONTENT.CARD_MATRIX.tag}
-          src={CONTENT.CARD_MATRIX.src}
-          alt={CONTENT.CARD_MATRIX.alt}
-          path={CONTENT.CARD_MATRIX.path}
-          paddingB={CONTENT.CARD_MATRIX.paddingB}
-          background={CONTENT.CARD_MATRIX.background}
-        >
-          Build your plan
+      <Spacer height={32} />
+      <Card
+        tag={CONTENT.CARD_MATRIX.tag}
+        src={CONTENT.CARD_MATRIX.src}
+        alt={CONTENT.CARD_MATRIX.alt}
+        path={CONTENT.CARD_MATRIX.path}
+        paddingB={CONTENT.CARD_MATRIX.paddingB}
+        background={CONTENT.CARD_MATRIX.background}
+      >
+        Build your plan
         </Card>
-        <Spacer height={32} />
-        <Card
-          right
-          tag={CONTENT.CARD_SYSTEM.tag}
-          src={CONTENT.CARD_SYSTEM.src}
-          alt={CONTENT.CARD_SYSTEM.alt}
-          path={CONTENT.CARD_SYSTEM.path}
-          paddingB={CONTENT.CARD_SYSTEM.paddingB}
-          background={CONTENT.CARD_SYSTEM.background}
-        >
-          US Mobile Dashboard use case
+      <Spacer height={32} />
+      <Card
+        right
+        tag={CONTENT.CARD_SYSTEM.tag}
+        src={CONTENT.CARD_SYSTEM.src}
+        alt={CONTENT.CARD_SYSTEM.alt}
+        path={CONTENT.CARD_SYSTEM.path}
+        paddingB={CONTENT.CARD_SYSTEM.paddingB}
+        background={CONTENT.CARD_SYSTEM.background}
+      >
+        US Mobile Dashboard use case
         </Card>
 
-      </Container>
+      {/* </Container> */}
     </>
   )
 }
