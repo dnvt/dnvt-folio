@@ -23,12 +23,12 @@ const Guidelines: React.FC = () => {
       <Grid />
       <Sidelines />
       <Spacer contained height={104} />
-      <Section title='Design Guidelines' value='Font Section' />
+      <Section title='Design Guidelines' value='Utility Section' />
+      <UtilsSection />
+      <Section value='Font Section' />
       <FontSection />
       <Section value='Navigation Section' />
       <NavigationSection />
-      <Section value=' Utility Section' />
-      <UtilsSection />
       <Section value=' Device Section' />
       <DeviceSection />
       <Section value=' Image Section' />

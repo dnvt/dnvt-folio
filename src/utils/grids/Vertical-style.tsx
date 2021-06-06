@@ -19,11 +19,12 @@ const VerticalStyle = createUseStyles({
     height: "100%",
     gridTemplateColumns: "1fr",
     columnGap: "16px",
-    transition: "column-gap .15s ease, grid-template-columns .15s ease",
+    transition: "column-gap .12s ease, grid-template-columns .12s ease",
 
     "& div": {
       height: "100%",
       background: ({ theme }) => (theme as Theme).grid.verticalGrid,
+      transition: "background .12s ease",
     },
 
     "@media (min-width: 576px)": {

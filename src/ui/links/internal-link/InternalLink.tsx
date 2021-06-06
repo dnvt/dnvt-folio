@@ -1,9 +1,5 @@
 /**
  * Welcome to @dnvt/internal-link!
- * 
- * TODO:
- * Add the Router Link component when starting to use it
- * 
  */
 
 import React, { useState } from "react"
@@ -42,23 +38,6 @@ const InternalLink: React.FC<LinkProps> = ({ path, children }) => {
       <Underline opacity={1} color={hoverAnimation} />
     </motion.div>
   )
-
-  // ////////////////////////////////////////////////////////////////////////////////
-  // // Animation values
-
-  // function fontAnim() {
-  //   return ({
-  //     rest: { color: theme.text.primary },
-  //     hover: { color: theme.text.hover }
-  //   })
-  // }
-
-  // function underlineAnim() {
-  //   return ({
-  //     rest: { background: theme.text.primary },
-  //     hover: { background: theme.text.hover }
-  //   })
-  // }
 }
 
 export default InternalLink

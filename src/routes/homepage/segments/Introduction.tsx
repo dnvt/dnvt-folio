@@ -1,5 +1,6 @@
 import React, { useMemo } from "react"
 import GroupedCard from "../../../components/cards/layouts/GroupedCards"
+import Column from "../../../components/containers/Column"
 import Container from "../../../components/containers/Container"
 import ExternalLink from "../../../ui/links/external-link/ExternalLink"
 import Font from "../../../utils/fonts/Font"
@@ -22,13 +23,13 @@ const Introduction: React.FC = () => {
         </Font>
         <Spacer height={40} />
 
-        {/* <Column spacer third> */}
-        <Font type='text'>
-          Product designer and creative director able to provide strong
-          leadership on the development of product designs, marketing
-          campaigns, user interfaces, and motion design.
+        <Column spacer="third">
+          <Font type='text'>
+            Product designer and creative director able to provide strong
+            leadership on the development of product designs, marketing
+            campaigns, user interfaces, and motion design.
           </Font>
-        {/* </Column> */}
+        </Column>
         <ExternalLink path='/'>Get in touch</ExternalLink>
         <Spacer height={80} />
         <Font type='h2'>Latest releases</Font>

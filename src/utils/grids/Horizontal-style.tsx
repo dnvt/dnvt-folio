@@ -27,6 +27,7 @@ const HorizontalStyle = createUseStyles({
       width: "100%",
       height: 1,
       background: ({ theme }) => (theme as Theme).grid.horizontalGrid,
+      transition: "background .12s ease",
     },
   },
 })

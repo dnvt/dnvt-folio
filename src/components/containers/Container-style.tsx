@@ -160,6 +160,23 @@ const ContainerStyle = createUseStyles({
     justifyContent: "center",
     zIndex: "1",
   },
+
+  Column: {
+    display: "grid",
+    width: "100%",
+    gridTemplateColumns: "1fr",
+    columnGap: "24px",
+
+    "@media (min-width: 768px)": {
+      display: "grid",
+      gridTemplateColumns: "auto auto",
+      columnGap: "32px",
+    },
+
+    "@media (min-width: 992px)": {
+      columnGap: "32px",
+    },
+  },
 })
 
 export default ContainerStyle

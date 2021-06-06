@@ -3,7 +3,7 @@ import { Theme } from "../../theme/theme"
 import Spacer from "../Spacer"
 
 interface VerticalerType {
-  width: number
+  width: number | "100%"
 }
 
 ////////////////////////////////////////////////////////////////////////////////

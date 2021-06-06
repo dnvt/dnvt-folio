@@ -9,6 +9,7 @@ import { useWindowSize } from '../../hooks/useWindowSize'
 import { useMainColor } from '../../hooks/useSetMainColor'
 import { DocumentSizeProvider } from '../../hooks/useDimensionSize'
 import Introduction from './segments/Introduction'
+import USMWork from './segments/USMWork'
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -25,7 +26,7 @@ const Homepage: React.FC = () => {
   const [, setColor] = useMainColor()
   // const animate = parse(location.search).fontAnimation
 
-  // let spacer = <Spacer contained height={window.width > 768 ? 184 : 40} />
+  let spacer = <Spacer contained height={window.width > 768 ? 184 : 40} />
 
   useEffect(() => {
     setColor(theme.text.hover)
@@ -37,13 +38,13 @@ const Homepage: React.FC = () => {
       <Sidelines />
       <Spacer contained height={104} />
       {window.width > 767 && <Spacer contained height={184} />}
-      <div style={{ position: "relative" }}>
+      <div style={{ position: "relative", height: 0 }}>
         <Font type="hero">François</Font>
       </div>
       <Introduction />
-      {/* 
       {spacer}
       <USMWork />
+      {/* 
       <Spacer contained height={104} />
       <PrivateWork />
       <Spacer contained height={104} />

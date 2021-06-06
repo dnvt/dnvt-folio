@@ -165,7 +165,7 @@ const UtilsSection: React.FC = () => {
             color={theme.text.hero}
             gradient
             name='Gradient'
-            value='linear-gradient(180deg, $Secondary -30%, $Main 130%);'
+            value="$Secondary to $Main"
           />
           <ColorSwatch
             color={theme.background.tint}

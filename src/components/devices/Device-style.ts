@@ -33,15 +33,15 @@ const DeviceStyle = createUseStyles((theme) => ({
 		background: (theme as Theme).background.tint,
 		borderRadius: "6px",
 		overflow: "hidden",
-		width: "auto",
+		width: "100vw",
 		maxWidth: "100%",
-		height: "284px",
+		height: "280px",
 		transition: "background .12s ease, box-shadow .12s ease",
 		"@media (min-width: 576px)": {
 			height: "428px",
 		},
 		"@media (min-width: 768px)": {
-			height: "568px",
+			height: "576px",
 			paddingTop: "32px",
 			borderRadius: "8px",
 			minWidth: "704px",

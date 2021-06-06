@@ -12,6 +12,7 @@ export interface Theme {
   alert: Alert
   constant: Constant
   shadow: Shadow
+  projects: Projects
 }
 
 // THEME Color Object
@@ -59,6 +60,13 @@ export const THEME: Colors = {
     shadow: {
       device:
         "0 100px 50px 0 rgba(0,0,0,0.07), 0 50px 40px 0 rgba(0,0,0,0.05), 0 30px 24px 0 rgba(0,0,0,0.05), 0 19px 15px 0 rgba(0,0,0,0.04), 0 12px 4px 0 rgba(0,0,0,0.04), 0 7px 6px 0 rgba(0,0,0,0.03), 0 4px 3px 0 rgba(0,0,0,0.02), 0 2px 1px 0 rgba(0,0,0,0.02), 0px 0px 0px 1px rgba(25,25,25,.1)",
+    },
+    projects: {
+      usmobile: {
+        text: "#667AF4",
+        background: "#EEFAF4",
+        hover: "#def5e9",
+      },
     }
   },
 
@@ -105,6 +113,13 @@ export const THEME: Colors = {
     shadow: {
       device:
         "0px -100px 50px rgba(80, 11, 241, 0.07), 0px -50px 250px rgba(80, 11, 241, 0.053), 0px -30.1px 24.1px rgba(80, 11, 241, 0.046), 0px -19.3px 15.5px rgba(80, 11, 241, 0.04), 0px -12px 4px rgba(80, 11, 241, 0.035), 0px -7.9px 6.3px rgba(80, 11, 241, 0.03), 0px -4.5px 3.6px rgba(80, 11, 241, 0.024), 0px -2px 1.6px rgba(80, 11, 241, 0.017)",
+    },
+    projects: {
+      usmobile: {
+        text: "#78C58E",
+        background: "#192E23",
+        hover: "#234232",
+      }
     }
   },
 }
@@ -135,8 +150,11 @@ type Border = {
   transparent: string
 }
 
-// TODO
-// type Projects = {}
+type Usmobile = {
+  text: string
+  hover: string
+  background: string
+}
 
 type Grid = {
   text: string
@@ -163,4 +181,8 @@ type Shadow = {
 type Colors = {
   light: Theme
   dark: Theme
+}
+
+type Projects = {
+  usmobile: Usmobile
 }

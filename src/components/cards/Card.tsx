@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import { useTheme } from "react-jss"
 import { motion } from "framer-motion"
-
 import { Theme } from "../../utils/theme/theme"
 import Container from "../containers/Container"
 import CardImage from "./segments/CardImage"
@@ -10,20 +9,21 @@ import CardTitle from "./segments/CardTitle"
 import CardStyle from "./card-style"
 
 export type STuples = [string, string]
+export type ProjectColor = "frameio" | "usmobile" | "alert" | "brand" | "transparent"
 
 export interface CardPropsType {
 	src: STuples
 	alt: string
 	tag?: {
 		value: string,
-		color?: string
+		color?: ProjectColor
 	}
 	status?: CardStatusType
 	title?: {
 		value?: string
 		color?: string
 	}
-	background?: "alert" | "brand" | "transparent"
+	background?: ProjectColor
 	height?: number
 	width?: number | "100%"
 	uncontained?: Boolean
@@ -42,7 +42,7 @@ const Card: React.FC<CardPropsType> = (props) => {
 	const { background, height, width, status, alt, src, path, href, paddingB, reverse, right, tag, title, uncontained, children } = props
 
 	const scaleValue = isHovered ? 1.04 : 1
-	const opacityValue = isHovered ? .90 : 1
+	// const opacityValue = isHovered ? .90 : 1
 	const backgroundColors = setBackgroundColor()
 	const backgroundValue = isHovered ? backgroundColors[1] : backgroundColors[0]
 
@@ -72,7 +72,7 @@ const Card: React.FC<CardPropsType> = (props) => {
 				background={backgroundValue}
 				path={path}
 				href={href}
-				opacity={opacityValue}
+				opacity={1}
 				paddingB={paddingB}
 			/>
 			<CardTitle
@@ -96,6 +96,7 @@ const Card: React.FC<CardPropsType> = (props) => {
 	function setBackgroundColor() {
 		if (background == "brand") return [theme.grid.fill, theme.grid.text]
 		if (background == "transparent") return [theme.background.transparent, theme.background.empty]
+		if (background == "usmobile") return [theme.projects.usmobile.background, theme.projects.usmobile.hover]
 		else return [theme.background.default, theme.background.hover]
 	}
 

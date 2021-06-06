@@ -16,7 +16,7 @@ export type FontTagWrapperProps = {
   style?: {
     color: string
     margin?: string
-    width?: string
+    width?: number | "100%"
   }
   animation?: Boolean
 }
@@ -24,7 +24,7 @@ export type FontTagWrapperProps = {
 export type StyleProps = {
   color: string
   margin?: string
-  width?: string
+  width?: number | "100%"
 }
 
 export type FontPaddingProps = {

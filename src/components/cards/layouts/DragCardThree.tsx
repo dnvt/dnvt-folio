@@ -1,7 +1,7 @@
 import React from "react"
 import { useWindowSize } from "../../../hooks/useWindowSize"
 import Container from "../../containers/Container"
-import Card, { STuples } from "../Card"
+import Card, { ProjectColor, STuples } from "../Card"
 import { CardStatusType } from "../segments/CardStatus"
 
 interface CardPropsType {
@@ -13,13 +13,13 @@ interface CardPropsType {
   status?: CardStatusType
   tag: {
     value: string
-    color?: string
+    color?: ProjectColor
   }
   title: {
     value: string
     color?: string
   }
-  background?: "alert" | "brand" | "transparent"
+  background?: ProjectColor
 }
 
 export type ThreeCardsContentType = [CardPropsType, CardPropsType, CardPropsType]

@@ -25,7 +25,7 @@ const HeaderStyle = createUseStyles({
 		marginTop: "0",
 		marginBottom: "0",
 		marginRight: "40px",
-		padding: "8px 0px",
+		padding: "8px 0px 10px",
 		"@media (min-width: 768px)": {
 			justifyContent: "flex-start",
 			width: "calc(100% - 12px)",

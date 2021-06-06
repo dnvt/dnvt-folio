@@ -2,7 +2,7 @@ import React from "react"
 import { useWindowSize } from "../../../hooks/useWindowSize"
 import Spacer from "../../../utils/spacer/Spacer"
 import Container from "../../containers/Container"
-import Card, { STuples } from "../Card"
+import Card, { ProjectColor, STuples } from "../Card"
 import { CardStatusType } from "../segments/CardStatus"
 
 interface CardGroupedProps {
@@ -11,11 +11,12 @@ interface CardGroupedProps {
   alt: string
   status?: CardStatusType
   title?: { value: string, color?: string }
-  tag: { color?: string, value: string }
-  background?: "alert" | "brand" | "transparent"
+  tag: { color?: ProjectColor, value: string }
+  background?: ProjectColor
   href?: string
   path?: string
   height?: number
+  paddingB?: number
   reverse?: Boolean
   left?: Boolean
 }
@@ -44,7 +45,7 @@ const GroupedCard: React.FC<GroupedCardProps> = ({ content, left }) => {
 //
 
 const CardUnit: React.FC<CardGroupedProps> = (props) => {
-  const { key, status, src, alt, path, href, tag, background, title, height } = props
+  const { key, status, src, alt, path, href, tag, background, title, height, paddingB } = props
 
   return (
     <Card
@@ -60,6 +61,7 @@ const CardUnit: React.FC<CardGroupedProps> = (props) => {
       width="100%"
       height={height}
       title={title}
+      paddingB={paddingB}
     >
       { title!.value}
     </Card >

@@ -35,7 +35,6 @@ const FontSection: React.FC = () => {
           </div>
         </>
       )}
-      <Spacer contained height={40} />
       <Container>
         <Spacer height={64} />
         <Font type='h1'>
