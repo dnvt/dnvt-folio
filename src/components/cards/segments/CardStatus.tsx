@@ -19,7 +19,7 @@ const CardStatus: React.FC<StatusProps> = ({ status, color }) => {
   const theme: Theme = useTheme()
 
   let value: string | undefined
-  if (status == "stop") value = " Password Protected"
+  if (status == "stop") value = "Password Protected"
   if (status == "construction") value = "In Progress"
   if (status == "externalLink") value = "External Link"
 
@@ -31,10 +31,7 @@ const CardStatus: React.FC<StatusProps> = ({ status, color }) => {
             <Icon name={status as CardStatusType} color={color ?? theme.text.primary} />
           </div>
           <div>
-
-            <Font type='menu' style={{ color: color ?? theme.text.primary }}>{value}</Font> :
-
-
+            <Font type='menu' style={{ color: color ?? theme.text.primary }}>{value}</Font>
             <Underline button opacity={0} />
           </div>
         </div>

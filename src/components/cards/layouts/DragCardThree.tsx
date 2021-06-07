@@ -6,8 +6,10 @@ import { CardStatusType } from "../segments/CardStatus"
 
 interface CardPropsType {
   key: number
-  src: STuples
   alt: string
+  src: STuples
+  srcDark?: STuples
+  srcMobile?: STuples
   path?: string
   href?: string
   status?: CardStatusType
@@ -17,7 +19,7 @@ interface CardPropsType {
   }
   title: {
     value: string
-    color?: string
+    color?: ProjectColor
   }
   background?: ProjectColor
 }
@@ -50,6 +52,7 @@ const ThreeDevices: React.FC<CardPropsType> = (props) => {
       path={path}
       href={href}
       tag={tag}
+      title={title}
       background={background}
       width={cardWidth}
     >

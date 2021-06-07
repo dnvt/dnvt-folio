@@ -1,17 +1,19 @@
 import React from "react"
 import Container from "../../containers/Container"
-import Card, { STuples } from "../Card"
+import Card, { ProjectColor, STuples } from "../Card"
 import { CardStatusType } from "../segments/CardStatus"
 
 interface CardPropsType {
   key: number
-  src: STuples
   alt: string
+  src: STuples
+  srcDark?: STuples
+  srcMobile?: STuples
   path?: string
   status?: CardStatusType
   title: {
     value: string
-    color?: string
+    color?: ProjectColor
   }
   background?: "alert" | "brand" | "transparent"
   reverse?: Boolean

@@ -10,6 +10,10 @@ import { useMainColor } from '../../hooks/useSetMainColor'
 import { DocumentSizeProvider } from '../../hooks/useDimensionSize'
 import Introduction from './segments/Introduction'
 import USMWork from './segments/USMWork'
+import PrivateWork from './segments/PrivateWork'
+import SelectedWork from './segments/SelectedWork'
+import PlayGround from './segments/Playground'
+import About from './segments/About'
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -45,20 +49,19 @@ const Homepage: React.FC = () => {
       {spacer}
       <USMWork />
       <Spacer contained height={104} />
-      {/* 
       <PrivateWork />
       <Spacer contained height={104} />
       <SelectedWork />
       {spacer}
       <div style={{ position: "relative" }}>
-        <FontHero animate={animate} value='Yeaaah!' />
+        <Font type="hero">Yeaaah</Font>
       </div>
       <PlayGround />
       <div style={{ position: "relative" }}>
-        <FontHero animate={animate} value='dnvt.me' />
+        <Font type="hero">dnvt.me </Font>
       </div>
       {spacer}
-      <About /> */}
+      <About />
     </DocumentSizeProvider>
   )
 }

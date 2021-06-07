@@ -7,10 +7,12 @@ import { CardStatusType } from "../segments/CardStatus"
 
 interface CardGroupedProps {
   key: number
-  src: STuples
   alt: string
+  src: STuples
+  srcDark?: STuples
+  srcMobile?: STuples
   status?: CardStatusType
-  title?: { value: string, color?: string }
+  title?: { value: string, color?: ProjectColor }
   tag: { color?: ProjectColor, value: string }
   background?: ProjectColor
   href?: string
@@ -45,13 +47,15 @@ const GroupedCard: React.FC<GroupedCardProps> = ({ content, left }) => {
 //
 
 const CardUnit: React.FC<CardGroupedProps> = (props) => {
-  const { key, status, src, alt, path, href, tag, background, title, height, paddingB } = props
+  const { key, status, src, srcDark, srcMobile, alt, path, href, tag, background, title, height, paddingB } = props
 
   return (
     <Card
       uncontained
       key={key}
       src={src}
+      srcDark={srcDark}
+      srcMobile={srcMobile}
       alt={alt}
       tag={tag}
       background={background}

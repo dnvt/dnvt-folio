@@ -5,8 +5,8 @@ import ImageContainer from "../../../ui/images/Image"
 import CardStyle from "../card-style"
 
 interface CardImageProps {
-  src: [string, string]
-  alt: string
+  src?: [string, string]
+  alt?: string
   scale: number
   opacity: number
   status?: string

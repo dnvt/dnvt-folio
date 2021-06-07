@@ -62,11 +62,13 @@ export const THEME: Colors = {
         "0 100px 50px 0 rgba(0,0,0,0.07), 0 50px 40px 0 rgba(0,0,0,0.05), 0 30px 24px 0 rgba(0,0,0,0.05), 0 19px 15px 0 rgba(0,0,0,0.04), 0 12px 4px 0 rgba(0,0,0,0.04), 0 7px 6px 0 rgba(0,0,0,0.03), 0 4px 3px 0 rgba(0,0,0,0.02), 0 2px 1px 0 rgba(0,0,0,0.02), 0px 0px 0px 1px rgba(25,25,25,.1)",
     },
     projects: {
-      usmobile: {
-        text: "#667AF4",
-        background: "#EEFAF4",
-        hover: "#def5e9",
-      },
+      usmobile: { text: "#667AF4", background: "#EEFAF4", hover: "#def5e9", },
+      stars: { text: LIGHT.slate.S070 },
+      mimi: { text: "#fff", background: "#5ED0B0", hover: "#4AC6A5" },
+      love: { text: "#38CB7E" },
+      norse: { text: "#787A8D" },
+      elastic: { text: "#E16B2D" },
+      kipfit: { text: "#D73951" }
     }
   },
 
@@ -115,11 +117,13 @@ export const THEME: Colors = {
         "0px -100px 50px rgba(80, 11, 241, 0.07), 0px -50px 250px rgba(80, 11, 241, 0.053), 0px -30.1px 24.1px rgba(80, 11, 241, 0.046), 0px -19.3px 15.5px rgba(80, 11, 241, 0.04), 0px -12px 4px rgba(80, 11, 241, 0.035), 0px -7.9px 6.3px rgba(80, 11, 241, 0.03), 0px -4.5px 3.6px rgba(80, 11, 241, 0.024), 0px -2px 1.6px rgba(80, 11, 241, 0.017)",
     },
     projects: {
-      usmobile: {
-        text: "#78C58E",
-        background: "#192E23",
-        hover: "#234232",
-      }
+      usmobile: { text: "#78C58E", background: "#192E23", hover: "#234232" },
+      mimi: { text: "#fff", background: "#5ED0B0", hover: "#4AC6A5" },
+      stars: { text: DARK.slate.S090 },
+      love: { text: "#38CB7E" },
+      norse: { text: "#787A8D" },
+      elastic: { text: "#E16B2D" },
+      kipfit: { text: "#D73951" }
     }
   },
 }
@@ -150,12 +154,6 @@ type Border = {
   transparent: string
 }
 
-type Usmobile = {
-  text: string
-  hover: string
-  background: string
-}
-
 type Grid = {
   text: string
   fill: string
@@ -183,6 +181,44 @@ type Colors = {
   dark: Theme
 }
 
+type Usmobile = {
+  text: string
+  hover: string
+  background: string
+}
+
+type Stars = {
+  text: string
+}
+
+type Mimi = {
+  text: string
+  hover: string
+  background: string
+}
+
+type Norse = {
+  text: string
+}
+
+type Elastic = {
+  text: string
+}
+
+type Love = {
+  text: string
+}
+
+type Kipfit = {
+  text: string
+}
+
 type Projects = {
   usmobile: Usmobile
+  norse: Norse
+  elastic: Elastic
+  love: Love
+  kipfit: Kipfit
+  mimi: Mimi
+  stars: Stars
 }
