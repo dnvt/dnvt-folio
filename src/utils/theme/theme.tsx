@@ -64,7 +64,7 @@ export const THEME: Colors = {
     projects: {
       usmobile: { text: "#667AF4", background: "#EEFAF4", hover: "#def5e9", },
       stars: { text: LIGHT.slate.S070 },
-      mimi: { text: "#fff", background: "#5ED0B0", hover: "#4AC6A5" },
+      mimi: { text: LIGHT.slate.S090, background: "#5ED0B0", hover: "#4AC6A5" },
       love: { text: "#38CB7E" },
       norse: { text: "#787A8D" },
       elastic: { text: "#E16B2D" },
@@ -118,7 +118,7 @@ export const THEME: Colors = {
     },
     projects: {
       usmobile: { text: "#78C58E", background: "#192E23", hover: "#234232" },
-      mimi: { text: "#fff", background: "#5ED0B0", hover: "#4AC6A5" },
+      mimi: { text: DARK.slate.S090, background: "#5ED0B0", hover: "#4AC6A5" },
       stars: { text: DARK.slate.S090 },
       love: { text: "#38CB7E" },
       norse: { text: "#787A8D" },

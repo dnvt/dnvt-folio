@@ -52,7 +52,7 @@ function Spacer(props: SpacerType): JSX.Element {
   function setComponentToTransparent(): JSX.Element {
     return (
       <div
-        style={{ width, height, background: "transparent" }}
+        style={{ width, height, background: "transparent", transition: "  background .12s ease, height .6s ease" }}
         className={classes.hidding}
       ></div>
     )
@@ -61,7 +61,7 @@ function Spacer(props: SpacerType): JSX.Element {
   function setComponentToVisible(): void {
     spacerComponent = (
       <div
-        style={{ width, height, background: bg }}
+        style={{ width, height, background: bg, transition: "  background .12s ease, height .6s ease" }}
         className={borderLess ? classes.fontSpacer : classes.spacer}
       >
         {heightValueDisplayed}

@@ -1,5 +1,6 @@
 import React from "react"
 import Container from "../../../components/containers/Container"
+import { useWindowSize } from "../../../hooks/useWindowSize"
 import Font from "../../../utils/fonts/Font"
 import Spacer from "../../../utils/spacer/Spacer"
 
@@ -10,9 +11,11 @@ interface SectionType {
 
 const Section: React.FC<SectionType> = (props) => {
   const { title, value } = props
+  const window = useWindowSize()
+
   return (
     <Container>
-      <Spacer height={184} />
+      {window.width > 767 && <Spacer contained height={184} />}
       {title && <Font type='h1'>{title}</Font>}
       <Font type='h3'>{value}</Font>
     </Container>

@@ -1,5 +1,6 @@
 import React from "react"
 import { GridVisibilityProvider } from "./useGridVisibility"
+import { IntroTranstionProvider } from "./useHeroTransition"
 import { MenuVisibilityProvider } from "./useMenuVisibility"
 import { MainColorProvider } from "./useSetMainColor"
 import { ColorTheme } from "./useTheme"
@@ -10,11 +11,13 @@ const ContextHooks: React.FC = (props) => {
     <WindowSizeProvider>
       <GridVisibilityProvider>
         <MenuVisibilityProvider>
-          <ColorTheme>
-            <MainColorProvider>
-              {props.children}
-            </MainColorProvider>
-          </ColorTheme>
+          <IntroTranstionProvider>
+            <ColorTheme>
+              <MainColorProvider>
+                {props.children}
+              </MainColorProvider>
+            </ColorTheme>
+          </IntroTranstionProvider>
         </MenuVisibilityProvider>
       </GridVisibilityProvider>
     </WindowSizeProvider>

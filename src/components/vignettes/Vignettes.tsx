@@ -29,6 +29,7 @@ export interface HeroProps {
   background?: "color" | string
   big?: Boolean
   width?: Boolean
+  transition?: Boolean
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -78,25 +79,16 @@ const HeroVignette: React.FC<HeroProps> = props => {
   const theme: Theme = useTheme()
   const classes = VignetteStyle({ ...props, theme })
 
-  const { src, alt, background } = props
+  const { src, alt, background, transition } = props
 
-  let backgroundColor: string = theme.background.empty
-  switch (background) {
-    case "color":
-      backgroundColor = theme.constant.black
-      break
-    default:
-      break
-  }
-
-  let height = "960px"
-  if (window.width >= 768) height = "784px"
-  if (window.width < 768) height = "416"
+  let height = 416
+  if (window.width > 767) height = 784
+  if (window.width > 991) height = 960
 
   return (
     <div
       className={classes.heroVignette}
-      style={{ height: height, background: backgroundColor }}>
+      style={{ height: transition == true ? undefined : height, background: background ?? theme.background.empty }}>
       <ImageContainer big src={src} alt={alt} />
     </div>
   )

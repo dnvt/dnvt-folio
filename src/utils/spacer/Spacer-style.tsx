@@ -9,6 +9,7 @@ const SpacerStyle = createUseStyles({
     padding: 0,
     border: "1px solid",
     borderColor: ({ theme }) => (theme as Theme).grid.fill,
+    transition: " border-color .12s ease, background .12s ease, height .12s ease"
   },
   fontSpacer: {
     zIndex: "-1",
@@ -16,6 +17,7 @@ const SpacerStyle = createUseStyles({
     margin: 0,
     padding: 0,
     border: "1px solid transparent",
+    transition: " border-color .12s ease, background .12s ease, height .12s ease"
   },
   hidding: {
     position: "relative",
