@@ -3,7 +3,7 @@ import { useTheme } from "react-jss"
 import { useWindowSize } from "../../../hooks/useWindowSize"
 import { Theme } from "../../theme/theme"
 import Spacer from "../../spacer/Spacer"
-import FontSpacing from "../FontSpacing"
+import FontSpacing from "./FontSpacing"
 import { FontPaddingProps, FontTypes } from "../Font-props"
 
 const FontPadding: React.FC<FontPaddingProps> = (props): JSX.Element => {

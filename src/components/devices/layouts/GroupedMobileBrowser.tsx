@@ -40,7 +40,7 @@ const GroupedMobileBrowser: React.FC<GroupedDeviceProps> = ({ images }) => {
           {mobileDevices[0]}
         </Container>
 
-        <Spacer contained height={80} />
+        <Spacer contained height={104} />
 
         <Container type="big">
           {mobileDevices[1]}
@@ -57,13 +57,13 @@ const GroupedMobileBrowser: React.FC<GroupedDeviceProps> = ({ images }) => {
         <Container type="big">
           {browserDevices[0]}
         </Container>
-        <Spacer contained height={80} />
+        <Spacer contained height={104} />
 
         <Container type="big">
           {mobileDevices[0]}
           {mobileDevices[1]}
         </Container>
-        <Spacer contained height={80} />
+        <Spacer contained height={104} />
 
         <Container type="big">
           {browserDevices[1]}
@@ -78,17 +78,17 @@ const GroupedMobileBrowser: React.FC<GroupedDeviceProps> = ({ images }) => {
         <Container type="big">
           {browserDevices[0]}
         </Container>
-        <Spacer contained height={40} />
+        <Spacer contained height={64} />
 
         <Container type="big">
           {browserDevices[1]}
         </Container>
-        <Spacer contained height={40} />
+        <Spacer contained height={64} />
 
         <Container type="big" center>
           {mobileDevices[0]}
         </Container>
-        <Spacer contained height={40} />
+        <Spacer contained height={64} />
 
         <Container type="big" center>
           {mobileDevices[1]}

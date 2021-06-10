@@ -15,7 +15,7 @@ interface CardPropsType {
     value: string
     color?: ProjectColor
   }
-  background?: "alert" | "brand" | "transparent"
+  background?: ProjectColor
   reverse?: Boolean
 }
 

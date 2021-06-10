@@ -36,11 +36,13 @@ const Header: React.FC<HeaderType> = ({ positionNotfixed }) => {
   }
 
   const mobileMenu = (<>
-    <Button menuToggle path="/">François Denavaut</Button>
-    {spacer}
-    <IconButton icon="grid" />
-    <IconButton icon="light" />
     <IconButton icon='menu' />
+    {spacer}
+    {spacer}
+    <Button menuToggle path="/">François</Button>
+    {spacer}
+    <IconButton icon="light" />
+    <IconButton icon="grid" />
   </>)
 
   const desktopMenu = (

@@ -21,6 +21,7 @@ export interface BigProps {
   withLegend?: Boolean
   big?: Boolean
   width?: Boolean
+  height?: number
 }
 
 export interface HeroProps {
@@ -56,12 +57,12 @@ const Vignette: React.FC<VignetteProps> = (props) => {
 const BigVignette: React.FC<BigProps> = props => {
   const theme: Theme = useTheme()
   const classes = VignetteStyle({ ...props, theme })
-  const { width, background, src, alt, withLegend } = props
+  const { width, background, src, alt, withLegend, height } = props
 
   return (<>
     <div
       className={classes.Vignette}
-      style={{ background: background ?? theme.background.empty }}
+      style={{ background: background ?? theme.background.empty, height: height }}
     >
       <ImageContainer
         fullWidth={width}
