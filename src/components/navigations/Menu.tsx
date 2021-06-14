@@ -16,7 +16,7 @@ const Menu: React.FC = (props) => {
     <div className={classes.Menu}>
       <Container>
         <nav className={classes.nav}>
-          <Button menuToggle path="/" icon={['mouse', "mouseHover"]} >Work</Button>
+          <Button menuToggle path="/work/usmobile/dashboard-pwa" icon={['mouse', "mouseHover"]} >Work</Button>
           <Spacer borderLess height='64px' width='100%' />
           <Button menuToggle path="/" icon={['cheese', "cheeseHover"]}>Playground</Button>
           <Spacer borderLess height='64px' width='100%' />

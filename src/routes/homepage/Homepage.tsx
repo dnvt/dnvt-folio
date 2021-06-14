@@ -58,7 +58,7 @@ const Homepage: React.FC = () => {
         </div>
         <PlayGround />
         <div style={{ position: "relative" }}>
-          <Font type="hero">dnvt.me </Font>
+          <Font type="hero" style={{ top: -200 }}>dnvt.me </Font>
         </div>
         {spacer}
         <About />

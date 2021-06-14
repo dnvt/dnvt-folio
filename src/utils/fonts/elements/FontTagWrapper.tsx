@@ -3,11 +3,13 @@ import { useTheme } from "react-jss"
 import { Theme } from "../../theme/theme"
 import { FontTagWrapperProps, FontTypes, StyleProps } from "../Font-props"
 import FontStyle from "../Font-style"
+import HeroStyle from "../Hero-style"
 import FontPadding from "./FontPadding"
 
 const FontTagWrapper: React.FC<FontTagWrapperProps> = (props): JSX.Element => {
   const theme: Theme = useTheme()
   const classes = FontStyle({ ...props, theme })
+  const classesHero = HeroStyle()
   const { type, animation, style, children } = props
 
   let wrappedTag: JSX.Element | null = addTagWrapper(type, style)
@@ -29,7 +31,7 @@ const FontTagWrapper: React.FC<FontTagWrapperProps> = (props): JSX.Element => {
       case "menu": return <div className={classes.menu} style={style}>{children}</div>
       case "link": return <div className={classes.link} style={style}>{children}</div>
       case "tooltip": return <div className={classes.tooltip} style={style}>{children}</div>
-      case "hero": return <div className={classes.hero} style={style}>{children}</div>
+      case "hero": return <div className={classesHero.Fontimation} style={style}><div className={classes.hero} style={style}>{children}</div></div>
       default: return null
     }
   }

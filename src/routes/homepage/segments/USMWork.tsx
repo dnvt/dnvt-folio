@@ -9,6 +9,8 @@ import Column from "../../../components/containers/Column"
 import HOMEPAGE_CONTENT from "../Homepage.content"
 import { Theme } from "../../../utils/theme/theme"
 import { useTheme } from "react-jss"
+import InternalLink from "../../../ui/links/internal-link/InternalLink"
+import ExternalLink from "../../../ui/links/external-link/ExternalLink"
 
 const USMWork: React.FC = () => {
   const theme: Theme = useTheme()
@@ -30,6 +32,11 @@ const USMWork: React.FC = () => {
       </Container>
       <Container>
         <Spacer height={40} />
+        <div style={{ display: "flex", transform: "translateY(0)", zIndex: 10 }}>
+          <InternalLink path='/work/usmobile/dashboard'>Read use case</InternalLink>
+          <ExternalLink path='https://usmobile.com'>Visit usmobile.com</ExternalLink>
+        </div>
+        <Spacer height={8} />
         <Column spacer="half">
           <Font type='h3'>US Mobile, cellular plans for everybody.</Font>
         </Column>
@@ -38,18 +45,18 @@ const USMWork: React.FC = () => {
           <div>
             <Font type='text'>
               Lead all creative direction organizationally. <br />
-            Develop the product strategy, set product design requirements and
-            create priority maps based on end-user data. Drive integration
-            efforts with Verizon’s carrier platform while maintaining continued
-            service integration with T-Mobile.
-          </Font>
+              Develop the product strategy, set product design requirements and
+              create priority maps based on end-user data. Drive integration
+              efforts with Verizon’s carrier platform while maintaining continued
+              service integration with T-Mobile.
+            </Font>
           </div>
           <div>
             <Font type='text' style={{ color: theme.text.primary, width: spacerWidth }}>
               Lead to the expansion of the organization from 15,000 customers to
               more than 60,000 users, which occurred primarily through word of
               mouth from product experience.
-          </Font>
+            </Font>
           </div>
         </Column>
       </Container>

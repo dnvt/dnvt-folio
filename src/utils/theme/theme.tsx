@@ -68,7 +68,8 @@ export const THEME: Colors = {
       love: { text: "#38CB7E" },
       norse: { text: "#787A8D" },
       elastic: { text: "#E16B2D" },
-      kipfit: { text: "#D73951" }
+      kipfit: { text: "#D73951" },
+      coverjs: { text: "#E22125" }
     }
   },
 
@@ -123,7 +124,8 @@ export const THEME: Colors = {
       love: { text: "#38CB7E" },
       norse: { text: "#787A8D" },
       elastic: { text: "#E16B2D" },
-      kipfit: { text: "#D73951" }
+      kipfit: { text: "#D73951" },
+      coverjs: { text: "#E22125" }
     }
   },
 }
@@ -221,4 +223,5 @@ type Projects = {
   kipfit: Kipfit
   mimi: Mimi
   stars: Stars
+  coverjs: Love
 }

@@ -14,15 +14,14 @@ const Introduction: React.FC = () => {
 
 
   return (
-    <>
-      {/* <Container style={{ marginTop: "-184px" }}> */}
+
+    <div style={{ transform: "translateY(0)", zIndex: 10 }}>
       <Container>
         <Font type='h1'>
           Digital designer based in New York – currently redefining modern video
           workflow at Frame.io
         </Font>
         <Spacer height={40} />
-
         <Column spacer="third">
           <Font type='text'>
             Product designer and creative director able to provide strong
@@ -36,7 +35,7 @@ const Introduction: React.FC = () => {
         <Spacer height={64} />
       </Container>
       <GroupedCard left content={CONTENT.GRPD_CARD} />
-    </>
+    </div>
   )
 }
 export default Introduction

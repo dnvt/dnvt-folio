@@ -14,15 +14,16 @@ export type FontTypes =
 export type FontTagWrapperProps = {
   type: FontTypes
   style?: {
-    color: string
+    color?: string
     margin?: string
     width?: number | "100%"
+    top?: number
   }
   animation?: Boolean
 }
 
 export type StyleProps = {
-  color: string
+  color?: string
   margin?: string
   width?: number | "100%"
 }

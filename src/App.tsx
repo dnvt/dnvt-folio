@@ -7,6 +7,7 @@ import Homepage from "./routes/homepage/Homepage"
 import { MotionConfig } from 'framer-motion'
 import Dashboard from './routes/work/usmobile/dashboard/Dashboard'
 import ScrollToTop from './hooks/ScrollToTop'
+import Projects from './routes/projects/Projects'
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -21,6 +22,7 @@ const App: React.FC = () => {
             <Switch>
               <Route path="/guidelines" component={Guidelines} />
               <Route path="/work/usmobile/dashboard-pwa" component={Dashboard} />
+              <Route path="/work/coverjs"><Projects type="coverjs" /></Route>
               <Route path="/" component={Homepage} />
             </Switch>
           </Layout>

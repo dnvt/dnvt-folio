@@ -104,16 +104,16 @@ function FontSpacing(window: Partial<{ width: number; height: number }>): FontTy
       h1Bottom = "14px"
 
       // H2
-      h2Top = "16px"
-      h2Bottom = "16px"
+      h2Top = "20px"
+      h2Bottom = "12px"
 
       // H3
       h3Top = "11px"
       h3Bottom = "13px"
 
       // H4
-      h4Top = "7px"
-      h4Bottom = "9px"
+      h4Top = "11px"
+      h4Bottom = "5px"
 
       // H5
       h5Top = "9px"

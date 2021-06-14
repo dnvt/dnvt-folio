@@ -19,8 +19,7 @@ const DashboardContext: React.FC = () => {
         <Font type='h4'>Context</Font>
         <Column spacer="third">
           <Font type='text'>
-            ile’s legacy dashboard is old, unresponsive, and it is very
-            laborious to add new features and customer requirements to it.
+            US Mobile is a telecom company that sells T-Mobile and Verizon networks. We focus on highly customizable and affordable plans for your devices.
           </Font>
         </Column>
         <Spacer height={32} />
@@ -33,16 +32,10 @@ const DashboardContext: React.FC = () => {
         <Spacer height={40} />
         <Column spacer="third">
           <Font type='text'>
-            How can we modernize our dashboard solution to new design standards?
-            cross-platform compatible (desktop to smartphone stores) and this with no
-            connectivity required? With our limited resources ~8 employees in
-            total.
+            How can we modernize our dashboard solution to new design standards? Making it a cross-platform compatible (desktop to smartphone stores) and standalone app–no connectivity required? With our limited resources ~ 8 employees in total.
           </Font>
           <Font type='text'>
-            Entirely reinvented our designs and processes, genuinely focused
-            -platform components with a brand new graphic style- randing. Our
-            Design System Library is made of React compone n be improved with
-            the addition of new features.
+            We entirely reinvented our designs and processes, genuinely focused around cross-platform components with a brand new graphic style-guides and branding. Our Design System Library is made of React components, that can be improved with the addition of new features.
           </Font>
         </Column>
         <Spacer height={24} />

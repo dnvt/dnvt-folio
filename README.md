@@ -50,9 +50,9 @@
       [ ] - Update the colors swatches
 [x] - Menu on mobile
 [x] - Homepage
-[ ] - Set the initial animation one time only (=> make a global Hook)
-[ ] - Project
-[ ] - Clean Project colors in theme dictionnary
+[x] - Set the initial animation one time only (=> make a global Hook)
+[x] - Project
+[x] - Clean Project colors in theme dictionnary
 [ ] - Hero
 [ ] - Add documentation to my functions
 

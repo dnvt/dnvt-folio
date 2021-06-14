@@ -111,7 +111,7 @@ const USMWORK: USMWorkType = {
 	CARD_MATRIX: {
 		src: [matrixPng, matrixWebp],
 		alt: "test 2",
-		tag: { value: "Value tag 2", color: "usmobile" },
+		tag: { value: "Design system, UI, Motion Design", color: "usmobile" },
 		path: "",
 		paddingB: 80,
 		background: "usmobile",
@@ -119,8 +119,8 @@ const USMWORK: USMWorkType = {
 	CARD_SYSTEM: {
 		src: [systemPng, systemWebp],
 		alt: "test 2",
-		tag: { value: "Value tag 2", color: "usmobile" },
-		path: "",
+		tag: { value: "UX, UI, Design system", color: "usmobile" },
+		path: "/work/usmobile/dashboard-pwa",
 		paddingB: 120,
 		background: "usmobile",
 	},
@@ -170,8 +170,8 @@ const SELECTED_WORK: SelectedWorkType = {
 		},
 		{
 			key: 2,
-			src: [elasticPng, elasticWebp],
-			srcMobile: [elasticFullPng, elasticFullWebp],
+			srcMobile: [elasticPng, elasticWebp],
+			src: [elasticFullPng, elasticFullWebp],
 			alt: "Elastic movie who scared the hell out of me",
 			tag: { value: "Design - Webflow", color: "elastic" },
 			title: { value: "Elastic Film" },
@@ -220,7 +220,7 @@ const PLAYGROUND: PlaygroundType = {
 		alt: "Covers animated in CSS and Javascript",
 		tag: { value: "Programming", color: "main" },
 		paddingB: 40,
-		path: "/",
+		path: "/work/coverjs",
 	},
 	GROUP_: {
 		tag: { value: "Programming", color: "main" },

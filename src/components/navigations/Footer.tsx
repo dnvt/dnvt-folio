@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
 
   return (
     <>
-      <footer style={{ height: "auto" }}>
+      <footer style={{ height: "auto", transform: "translateY(0)", zIndex: 10 }}>
         <Container>
           <Spacer height={window.width! > 767 ? 80 : 64} />
           <Font

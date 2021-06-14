@@ -1,6 +1,3 @@
-/**
- * Welcome to @dnvt/internal-link!
- */
 
 import React, { useState } from "react"
 import { useTheme } from "react-jss"
@@ -14,6 +11,9 @@ import { Link } from "react-router-dom"
 
 ////////////////////////////////////////////////////////////////////////////////
 
+/**
+ * Welcome to @dnvt/internal-link!
+ */
 const InternalLink: React.FC<LinkProps> = ({ path, children }) => {
   const classes = InternalLinkStyle()
   const theme: Theme = useTheme()
