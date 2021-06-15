@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { useTheme } from "react-jss"
 import Container from "../../components/containers/Container"
 import { useWindowSize } from "../../hooks/useWindowSize"
@@ -18,6 +18,7 @@ interface ImageType {
   big?: Boolean
   card?: Boolean
   mobile?: Boolean
+  instant?: Boolean
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -32,13 +33,9 @@ const ImageContainer: React.FC<ImageType> = (props) => {
   const theme: Theme = useTheme()
   const classes = ImageStyle({ ...props, theme })
   const window = useWindowSize()
+  const [loadState, setLoadState] = useState(false)
 
-  const { alt, src, scale, background, opacity, fullWidth, big, card, mobile } = props
-
-  let fullWidthSizing =
-    window.width! > 768
-      ? { width: "100%" }
-      : { height: "fill-available", minWidth: "100%" }
+  const { alt, src, scale, background, opacity, fullWidth, big, card, mobile, instant } = props
 
   let imageWebp: string | undefined
   let imagePng: string | undefined
@@ -48,10 +45,22 @@ const ImageContainer: React.FC<ImageType> = (props) => {
     imagePng = src[0]
   }
 
-  let loaderPositioningClass = classes.loading
-  if (big) loaderPositioningClass = classes.bigLoading
-  if (mobile) loaderPositioningClass = classes.mobileLoading
-  if (card) loaderPositioningClass = classes.cardLoading
+  useEffect(() => {
+    const img = new Image()
+    img.src = src![1] as string
+    img.addEventListener("load", onLoad)
+
+    return () => {
+      img.removeEventListener("load", onLoad)
+
+    }
+  }, [instant, src])
+
+  let fullWidthSizing =
+    window.width! > 768
+      ? { width: "100%" }
+      : { height: "fill-available", minWidth: "100%" }
+
 
   const picture = (
     <picture
@@ -72,15 +81,19 @@ const ImageContainer: React.FC<ImageType> = (props) => {
     </picture>
   )
 
-  if (src && src[0] != "") return picture
+  if (instant || loadState) return picture
   return loading()
 
   //
 
+  function onLoad() {
+    setLoadState(true)
+  }
+
   function loading(): JSX.Element {
     return containerWrapperForBigProps(
-      <div className={loaderPositioningClass}>
-        <div className={classes.MenuButton}>
+      <div className={loaderPositioningClass()}>
+        <div className={menuButtonClass()}>
           <div className={classes.Icon} style={{ marginRight: "8px" }}>
             <Icon name="loading" />
           </div>
@@ -95,6 +108,18 @@ const ImageContainer: React.FC<ImageType> = (props) => {
 
   function containerWrapperForBigProps(Element: JSX.Element): JSX.Element {
     return big ? <Container>{Element}</Container> : Element
+  }
+
+  function loaderPositioningClass() {
+    if (big) return classes.bigLoading
+    if (mobile) return classes.mobileLoading
+    if (card) return classes.cardLoading
+    else return classes.loading
+  }
+
+  function menuButtonClass() {
+    if (big) return classes.BigMenuButton
+    else return classes.MenuButton
   }
 }
 

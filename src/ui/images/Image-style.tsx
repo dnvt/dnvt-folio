@@ -9,6 +9,13 @@ const ImageStyle = createUseStyles({
 		marginBottom: "6px"
 	},
 
+	BigMenuButton: {
+		position: "absolute",
+		display: "flex",
+		flexDirection: "row",
+		bottom: 40
+	},
+
 	loading: {
 		width: "100%",
 		height: "100%",
@@ -22,7 +29,6 @@ const ImageStyle = createUseStyles({
 	bigLoading: {
 		minWidth: "100%",
 		height: "fill-available",
-		background: ({ theme }) => (theme as Theme).background.empty,
 		padding: "16px",
 		"@media (min-width: 1360px)": {
 			padding: "24px",
@@ -32,7 +38,6 @@ const ImageStyle = createUseStyles({
 	cardLoading: {
 		minWidth: "100%",
 		height: "100%",
-		background: ({ theme }) => (theme as Theme).background.empty,
 		padding: "16px 24px",
 
 		"@media (min-width: 768px)": {

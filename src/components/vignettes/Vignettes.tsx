@@ -90,7 +90,7 @@ const HeroVignette: React.FC<HeroProps> = props => {
     <div
       className={classes.heroVignette}
       style={{ height: transition == true ? undefined : height, background: background ?? theme.background.empty }}>
-      <ImageContainer big src={src} alt={alt} />
+      <ImageContainer big src={src} alt={alt} instant />
     </div>
   )
 }
