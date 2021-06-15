@@ -7,14 +7,10 @@ import Font from "../../../utils/fonts/Font"
 import Spacer from "../../../utils/spacer/Spacer"
 import HOMEPAGE_CONTENT from "../Homepage.content"
 
-
-
 const Introduction: React.FC = () => {
   const CONTENT = useMemo(() => HOMEPAGE_CONTENT.INTRODUCTION, [])
 
-
   return (
-
     <div style={{ transform: "translateY(0)", zIndex: 10 }}>
       <Container>
         <Font type='h1'>

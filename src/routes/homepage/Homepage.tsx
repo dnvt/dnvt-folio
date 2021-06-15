@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { lazy, Suspense, useEffect } from 'react'
 import Spacer from '../../utils/spacer/Spacer'
 import Font from '../../utils/fonts/Font'
 import Sidelines from '../../utils/sidelines/Sidelines'
@@ -8,15 +8,17 @@ import { Theme } from '../../utils/theme/theme'
 import { useWindowSize } from '../../hooks/useWindowSize'
 import { useMainColor } from '../../hooks/useSetMainColor'
 import { DocumentSizeProvider } from '../../hooks/useDimensionSize'
-import Introduction from './segments/Introduction'
-import USMWork from './segments/USMWork'
-import PrivateWork from './segments/PrivateWork'
-import SelectedWork from './segments/SelectedWork'
-import PlayGround from './segments/Playground'
-import About from './segments/About'
 import { useIntroTransition } from '../../hooks/useHeroTransition'
+import Introduction from './segments/Introduction'
+import Container from '../../components/containers/Container'
 
 ////////////////////////////////////////////////////////////////////////////////
+
+const USMWork = lazy(() => import('./segments/USMWork'))
+const PrivateWork = lazy(() => import('./segments/PrivateWork'))
+const SelectedWork = lazy(() => import('./segments/SelectedWork'))
+const PlayGround = lazy(() => import('./segments/Playground'))
+const About = lazy(() => import('./segments/About'))
 
 /**
  * Welcome to @dnvt/Guidelines!
@@ -46,22 +48,24 @@ const Homepage: React.FC = () => {
           <Font type="hero">François</Font>
         </div>
         <Introduction />
-        {spacer}
-        <USMWork />
-        <Spacer contained height={104} />
-        <PrivateWork />
-        <Spacer contained height={104} />
-        <SelectedWork />
-        {spacer}
-        <div style={{ position: "relative" }}>
-          <Font type="hero">Yeaaah</Font>
-        </div>
-        <PlayGround />
-        <div style={{ position: "relative" }}>
-          <Font type="hero" style={{ top: -200 }}>dnvt.me </Font>
-        </div>
-        {spacer}
-        <About />
+        <Suspense fallback={<Container><Font type="text">Loading...</Font></Container>} >
+          {spacer}
+          <USMWork />
+          <Spacer contained height={104} />
+          <PrivateWork />
+          <Spacer contained height={104} />
+          <SelectedWork />
+          {spacer}
+          <div style={{ position: "relative" }}>
+            <Font type="hero">Yeaaah</Font>
+          </div>
+          <PlayGround />
+          <div style={{ position: "relative" }}>
+            <Font type="hero" style={{ top: -200 }}>dnvt.me </Font>
+          </div>
+          {spacer}
+          <About />
+        </Suspense>
       </div>
     </DocumentSizeProvider>
   )

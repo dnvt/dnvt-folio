@@ -1,32 +1,38 @@
-import React, { useEffect, useMemo } from "react"
+import React, { lazy, Suspense, useEffect, useMemo } from "react"
 import { useTheme } from "react-jss"
 import { useMainColor } from "../../../../hooks/useSetMainColor"
 import { Theme } from "../../../../utils/theme/theme"
-import FooterCards from "../../../../components/cards/layouts/FooterCards"
 import Grid from "../../../../utils/grids/Grid"
 import Sidelines from "../../../../utils/sidelines/Sidelines"
 import Spacer from "../../../../utils/spacer/Spacer"
 import { BigVignette, HeroVignette } from "../../../../components/vignettes/Vignettes"
 import { useIntroTransition } from "../../../../hooks/useHeroTransition"
-import DashboardProduction from "./segments/DashboardProduction"
-import DashboardIntroduction from "./segments/DashboardIntroduction"
-import DashboardProcess from "./segments/DashboardProcess"
 import { DocumentSizeProvider } from "../../../../hooks/useDimensionSize"
-import DashboardContext from "./segments/DashboardContext"
-import DashRequirements from "./segments/DashboardRequirement"
-import DashDesigns from "./segments/DashboardDesigns"
-
 // 
 import heroPng from "../../../../assets/images/USMobile/System/DashboardHero.png"
 import heroWebp from "../../../../assets/images/USMobile/System/DashboardHero.webp"
 import diagramPng from "../../../../assets/images/USMobile/System/Diagram.png"
 import diagramWebp from "../../../../assets/images/USMobile/System/Diagram.webp"
 import DAHSBOARD_CONTENT from "./Dashboard.content"
-import DashLibrary from "./segments/DashboardLibrary"
+import Font from "../../../../utils/fonts/Font"
+import Container from "../../../../components/containers/Container"
+import DashboardIntroduction from "./segments/DashboardIntroduction"
 
+////////////////////////////////////////////////////////////////////////////////
+
+const DashboardContext = lazy(() => import("./segments/DashboardContext"))
+const DashboardProcess = lazy(() => import("./segments/DashboardProcess"))
+const DashRequirements = lazy(() => import("./segments/DashboardRequirement"))
+const DashboardProduction = lazy(() => import("./segments/DashboardProduction"))
+const DashDesigns = lazy(() => import("./segments/DashboardDesigns"))
+const DashLibrary = lazy(() => import("./segments/DashboardLibrary"))
+const FooterCards = lazy(() => import("../../../../components/cards/layouts/FooterCards"))
+
+/**
+ * This is US Mobile PWA Dashboard use
+ */
 const Dashboard: React.FC = () => {
   const theme: Theme = useTheme()
-  const content = useMemo(() => DAHSBOARD_CONTENT, [])
   const [, setColor] = useMainColor()
   const [heroTransition, setHeroTransition] = useIntroTransition()
 
@@ -35,6 +41,7 @@ const Dashboard: React.FC = () => {
     setHeroTransition({ usm_system: false })
   }, [setColor, setHeroTransition, theme.projects.usmobile.text])
 
+  const content = useMemo(() => DAHSBOARD_CONTENT, [])
   return (
     <DocumentSizeProvider>
       <Grid />
@@ -46,6 +53,8 @@ const Dashboard: React.FC = () => {
           transition={heroTransition.usm_system}
         />
         <DashboardIntroduction />
+      </div>
+      <Suspense fallback={<Container><Font type="text">Loading...</Font></Container>}>
         <DashboardContext />
         <DashboardProcess />
         <DashRequirements />
@@ -61,7 +70,7 @@ const Dashboard: React.FC = () => {
         <DashLibrary />
         <Spacer contained height={184} />
         <FooterCards content={content.FOOTER} />
-      </div>
+      </Suspense>
     </DocumentSizeProvider>
   )
 }

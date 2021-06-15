@@ -1,5 +1,8 @@
 import { Theme } from "../../utils/theme/theme"
 import { ListProjects } from "./ProjectsProps"
+
+////////////////////////////////////////////////////////////////////////////////
+
 import heroCoverPng from "../../assets/images/Coverjs/Work/CoverHero.png"
 import heroCoverWebp from "../../assets/images/Coverjs/Work/CoverHero.webp"
 import wasteFooterPng from "../../assets/images/Footer/Waste.png"

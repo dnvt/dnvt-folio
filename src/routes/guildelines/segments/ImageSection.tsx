@@ -3,7 +3,7 @@ import Container from "../../../components/containers/Container"
 import { BigVignette, Vignette } from "../../../components/vignettes/Vignettes"
 import Spacer from "../../../utils/spacer/Spacer"
 
-export const ImageSection: React.FC = () => {
+const ImageSection: React.FC = () => {
 
   return (
     <>
@@ -30,3 +30,5 @@ export const ImageSection: React.FC = () => {
     </>
   )
 }
+
+export default ImageSection

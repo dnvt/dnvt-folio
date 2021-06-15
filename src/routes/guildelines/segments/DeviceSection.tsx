@@ -5,7 +5,7 @@ import GroupedMobileBrowser from "../../../components/devices/layouts/GroupedMob
 import Spacer from "../../../utils/spacer/Spacer"
 import CONTENT_APP from "../Guidelines.content"
 
-export const DeviceSection: React.FC = () => {
+const DeviceSection: React.FC = () => {
   const content = useMemo(() => CONTENT_APP, [])
 
   return (
@@ -21,3 +21,5 @@ export const DeviceSection: React.FC = () => {
     </>
   )
 }
+
+export default DeviceSection

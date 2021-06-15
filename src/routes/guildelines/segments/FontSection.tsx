@@ -31,7 +31,7 @@ const FontSection: React.FC = () => {
             }}
           >
             {/* <FontHero animate={animate} value='Hello World!' /> */}
-            <Font type="hero">Hello Wold</Font>
+            <Font type="hero" style={{ top: -64 }}>Hello</Font>
           </div>
         </>
       )}

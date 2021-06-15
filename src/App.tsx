@@ -2,11 +2,11 @@ import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import ContextHooks from './hooks/ContextHooks'
 import Layout from './components/navigations/Layout'
-import Guidelines from "./routes/guildelines/Guidelines"
-import Homepage from "./routes/homepage/Homepage"
 import { MotionConfig } from 'framer-motion'
-import Dashboard from './routes/work/usmobile/dashboard/Dashboard'
 import ScrollToTop from './hooks/ScrollToTop'
+import Homepage from "./routes/homepage/Homepage"
+import Guidelines from "./routes/guildelines/Guidelines"
+import Dashboard from './routes/work/usmobile/dashboard/Dashboard'
 import Projects from './routes/projects/Projects'
 
 ////////////////////////////////////////////////////////////////////////////////
