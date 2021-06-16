@@ -49,7 +49,6 @@ const ImageContainer: React.FC<ImageType> = (props) => {
     const img = new Image()
     img.src = src![1] as string
     img.addEventListener("load", onLoad)
-
     return () => {
       img.removeEventListener("load", onLoad)
 
@@ -81,7 +80,7 @@ const ImageContainer: React.FC<ImageType> = (props) => {
     </picture>
   )
 
-  if (instant || loadState) return picture
+  if (loadState) return picture
   return loading()
 
   //

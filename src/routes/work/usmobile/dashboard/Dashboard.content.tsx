@@ -1,6 +1,7 @@
 import { VignetteProps } from "../../../../components/vignettes/Vignettes"
 import { DevicesMixed } from "../../../../components/devices/layouts/GroupedMobileBrowser"
 import { FooterContentType } from "../../../../components/cards/layouts/FooterCards"
+import { FiveImagesType } from "../../../../components/devices/layouts/DragFramelessFive"
 
 import desktopDash01Png from "../../../../assets/images/USMobile/System/desk-dashboard-01.png"
 import desktopDash01Webp from "../../../../assets/images/USMobile/System/desk-dashboard-01.webp"
@@ -38,7 +39,6 @@ import App02Webp from "../../../../assets/images/USMobile/System/App-02.webp"
 import App03Webp from "../../../../assets/images/USMobile/System/App-03.webp"
 import App04Webp from "../../../../assets/images/USMobile/System/App-04.webp"
 import App05Webp from "../../../../assets/images/USMobile/System/App-05.webp"
-import { FiveImagesType } from "../../../../components/devices/layouts/DragFramelessFive"
 
 type DesignsType = {
   GRP_DEVICES_FIRST: DevicesMixed
@@ -83,7 +83,6 @@ const LIBRARY: LibraryType = {
     { src: [App03Png, App03Webp], alt: "", key: 3 },
     { src: [App04Png, App04Webp], alt: "", key: 4 },
     { src: [App05Png, App05Webp], alt: "", key: 5 },
-
   ]
 }
 

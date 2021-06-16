@@ -3,6 +3,7 @@ import { Theme } from "../../utils/theme/theme"
 
 const VignetteStyle = createUseStyles(theme => ({
   Vignette: {
+    position: "relative",
     display: "flex",
     textAlign: "center",
     overflow: "hidden",
@@ -18,6 +19,7 @@ const VignetteStyle = createUseStyles(theme => ({
       height: "704px",
     },
   },
+
   VignetteWidth: {
     display: "flex",
     textAlign: "center",

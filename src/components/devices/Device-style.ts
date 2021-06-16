@@ -38,7 +38,7 @@ const DeviceStyle = createUseStyles((theme) => ({
 		height: "280px",
 		transition: "background .12s ease, box-shadow .12s ease",
 		"@media (min-width: 576px)": {
-			height: "428px",
+			height: "432px",
 		},
 		"@media (min-width: 768px)": {
 			height: "576px",
@@ -62,10 +62,10 @@ const DeviceStyle = createUseStyles((theme) => ({
 		overflow: "hidden",
 		width: "auto",
 		maxWidth: "100%",
-		height: "364px",
+		height: "368px",
 		transition: "background .12s ease, box-shadow .12s ease",
 		"@media (min-width: 576px)": {
-			height: "428px",
+			height: "432px",
 		},
 		"@media (min-width: 768px)": {
 			height: "568px",

@@ -2,15 +2,17 @@ import { FooterContentType } from "../../components/cards/layouts/FooterCards"
 import { ProjectColor } from "../../components/cards/Card"
 
 export type ProjectsProps = {
-  type: "coverjs"
+  type: "coverjs" | "system" | "matrix"
 }
 
 export type ListProjects = {
   coverjs: ProjectsContent
+  system: ProjectsContent
+  matrix: ProjectsContent
 }
 
 export type ProjectsContent = {
-  HERO: [string, string]
+  HERO: HeroProps
   INTRO: IntroType
   HEROBACKGROUND?: string
   IMAGES: ImageProps[]
@@ -29,8 +31,8 @@ export type IntroType = {
     value: string
   }
   paragraph: ParagraphProps[]
-  link: string
-  button: string
+  link?: string
+  button?: string
 }
 
 export type ImageProps = {
@@ -42,4 +44,9 @@ export type ImageProps = {
 export type ParagraphProps = {
   key: number
   paragraph: string
+}
+
+export type HeroProps = {
+  images: [string, string]
+  backgroundColor?: string
 }

@@ -52,7 +52,7 @@ const CardTitle: React.FC<CardTitleProps> = (props) => {
     if (tagColor == "main") return theme.text.hover
     if (tagColor == "white") return theme.constant.white
     if (tagColor == "black") return theme.constant.black
-    else return theme.text.secondary
+    else return theme.text.primary
 
   }
 

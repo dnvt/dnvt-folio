@@ -41,8 +41,8 @@ const Projects: React.FC<ProjectsProps> = ({ type }) => {
       <Sidelines />
       <div style={{ opacity: heroTransition[type] ? 0 : 1, transition: "opacity .6s ease" }}>
         <HeroVignette
-          src={CONTENT.HERO}
-          background={CONTENT.HEROBACKGROUND || theme.background.basic}
+          src={CONTENT.HERO.images}
+          background={CONTENT.HERO.backgroundColor || theme.background.basic}
           transition={heroTransition[type]}
         />
         <SpacerEightyHalf />

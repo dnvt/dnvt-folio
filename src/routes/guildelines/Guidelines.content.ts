@@ -67,7 +67,6 @@ const GROUPED_CARDS: GroupedContentType = [
 		tag: { value: "Value tag 1" },
 		title: { value: "Value title 1" },
 		background: "transparent",
-		href: "/",
 	},
 	{
 		key: 2,

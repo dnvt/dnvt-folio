@@ -53,7 +53,9 @@
 [x] - Set the initial animation one time only (=> make a global Hook)
 [x] - Project
 [x] - Clean Project colors in theme dictionnary
-[ ] - Hero
+[ ] - HeroFont
+[ ] - Make Project dictionnary
+[ ] - Design an About page
 [ ] - Add documentation to my functions
 
 ---

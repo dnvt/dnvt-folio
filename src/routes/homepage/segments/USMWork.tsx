@@ -9,8 +9,6 @@ import Column from "../../../components/containers/Column"
 import HOMEPAGE_CONTENT from "../Homepage.content"
 import { Theme } from "../../../utils/theme/theme"
 import { useTheme } from "react-jss"
-import InternalLink from "../../../ui/links/internal-link/InternalLink"
-import ExternalLink from "../../../ui/links/external-link/ExternalLink"
 
 const USMWork: React.FC = () => {
   const theme: Theme = useTheme()
@@ -32,11 +30,6 @@ const USMWork: React.FC = () => {
       </Container>
       <Container>
         <Spacer height={40} />
-        <div style={{ display: "flex", transform: "translateY(0)", zIndex: 10 }}>
-          <InternalLink path='/work/usmobile/dashboard'>Read use case</InternalLink>
-          <ExternalLink path='https://usmobile.com'>Visit usmobile.com</ExternalLink>
-        </div>
-        <Spacer height={8} />
         <Column spacer="half">
           <Font type='h3'>US Mobile, cellular plans for everybody.</Font>
         </Column>
