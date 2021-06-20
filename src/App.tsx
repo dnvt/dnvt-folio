@@ -21,9 +21,18 @@ const App: React.FC = () => {
           <Layout>
             <Switch>
               <Route path="/guidelines" component={Guidelines} />
-              <Route path="/work/usmobile/dashboard-pwa" component={Dashboard} />
               <Route path="/work/usmobile/branding" ><Projects type="branding" /></Route>
               <Route path="/work/usmobile/matrix" ><Projects type="matrix" /></Route>
+              <Route path="/work/usmobile/dashboard-pwa" component={Dashboard} />
+              <Route path="/work/private/airbus">{<Projects type="airbus" />}</Route>
+              <Route path="/work/private/siemens">{<Projects type="siemens" />}</Route>
+              <Route path="/work/private/telekom">{<Projects type="telekom" />}</Route>
+              <Route path="/work/norse-interior"><Projects type="norse" /></Route>
+              <Route path="/work/elastic-film"><Projects type="elastic" /></Route>
+              <Route path="/work/love-your-waste"><Projects type="waste" /></Route>
+              <Route path="/work/kipfit-app"><Projects type="kipfit" /></Route>
+              <Route path="/work/mimi-hearing-technology"><Projects type="mimi" /></Route>
+              <Route path="/work/a-park-for-the-homeless-in-the-stars"><Projects type="stars" /></Route>
               <Route path="/playground/coverjs"><Projects type="coverjs" /></Route>
               <Route path="/" component={Homepage} />
             </Switch>

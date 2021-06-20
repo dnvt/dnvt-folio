@@ -45,6 +45,7 @@ const ThreeDevices: React.FC<CardPropsType> = (props) => {
   return (
     <Card
       uncontained
+      noHover
       key={key}
       status={status}
       src={src}

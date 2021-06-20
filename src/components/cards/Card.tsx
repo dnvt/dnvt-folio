@@ -11,7 +11,7 @@ import CardStyle from "./card-style"
 import { useWindowSize } from "../../hooks/useWindowSize"
 
 export type STuples = [string, string]
-export type ProjectColor = "main" | "stars" | "mimi" | "kipfit" | "elastic" | "love" | "norse" | "black" | "white" | "usmobile" | "alert" | "brand" | "transparent"
+export type ProjectColor = "main" | "stars" | "mimi" | "kipfit" | "elastic" | "waste" | "norse" | "black" | "white" | "usmobile" | "alert" | "brand" | "transparent"
 
 export interface CardPropsType {
 	alt?: string
@@ -36,6 +36,7 @@ export interface CardPropsType {
 	path?: string
 	href?: string
 	paddingB?: number
+	noHover?: Boolean
 }
 
 const Card: React.FC<CardPropsType> = (props) => {
@@ -45,15 +46,15 @@ const Card: React.FC<CardPropsType> = (props) => {
 	const classes = CardStyle()
 	const [isHovered, setIsHovered] = useState<Boolean>(false)
 
-	const { background, height, width, status, alt, src, srcDark, srcMobile, path, href, paddingB, reverse, right, tag, title, uncontained, children } = props
-
-	const scaleValue = isHovered ? 1.04 : 1
-	// const opacityValue = isHovered ? .90 : 1
+	const { background, height, width, status, alt, src, srcDark, srcMobile, path, href, paddingB, reverse, right, tag, title, uncontained, noHover, children } = props
 
 	const backgroundImage = setBackgroundImage()
 
 	const backgroundColors = setBackgroundColor()
-	const backgroundValue = isHovered ? backgroundColors[1] : backgroundColors[0]
+
+	const backgroundValue = (isHovered && !noHover) ? backgroundColors[1] : backgroundColors[0]
+	const scaleValue = (isHovered && !noHover) ? 1.04 : 1
+	// const opacityValue = isHovered ? .90 : 1
 
 	let cardStyle: any = { height: height, width: width }
 	if (status == "stop") cardStyle = { height: height, width: width, cursor: " not-allowed" }
@@ -92,7 +93,7 @@ const Card: React.FC<CardPropsType> = (props) => {
 				tagValue={tag?.value}
 				tagColor={tag?.color}
 				titleColor={title?.color}
-				hover={isHovered}
+				hover={!noHover && isHovered}
 			>
 				{children}
 			</CardTitle>

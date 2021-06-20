@@ -44,7 +44,7 @@ const CardTitle: React.FC<CardTitleProps> = (props) => {
   function setTagColor() {
     if (tagColor == "usmobile") return theme.projects.usmobile.text
     if (tagColor == "norse") return theme.projects.norse.text
-    if (tagColor == "love") return theme.projects.love.text
+    if (tagColor == "waste") return theme.projects.waste.text
     if (tagColor == "elastic") return theme.projects.elastic.text
     if (tagColor == "mimi") return theme.projects.mimi.text
     if (tagColor == "kipfit") return theme.projects.kipfit.text

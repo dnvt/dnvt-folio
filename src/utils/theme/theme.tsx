@@ -67,11 +67,14 @@ export const THEME: Colors = {
       matrix: { text: "#667AF4", background: "#EEFAF4", hover: "#def5e9", },
       stars: { text: LIGHT.slate.S070 },
       mimi: { text: LIGHT.slate.S090, background: "#5ED0B0", hover: "#4AC6A5" },
-      love: { text: "#38CB7E" },
+      waste: { text: "#38CB7E" },
       norse: { text: "#787A8D" },
       elastic: { text: "#E16B2D" },
       kipfit: { text: "#D73951" },
-      coverjs: { text: "#E22125" }
+      coverjs: { text: "#E22125" },
+      airbus: { text: "#E22125" },
+      siemens: { text: "#E22125" },
+      telekom: { text: "#E22125" },
     }
   },
 
@@ -125,11 +128,14 @@ export const THEME: Colors = {
       matrix: { text: "#667AF4", background: "#EEFAF4", hover: "#def5e9", },
       mimi: { text: DARK.slate.S090, background: "#5ED0B0", hover: "#4AC6A5" },
       stars: { text: DARK.slate.S090 },
-      love: { text: "#38CB7E" },
+      waste: { text: "#38CB7E" },
       norse: { text: "#787A8D" },
       elastic: { text: "#E16B2D" },
       kipfit: { text: "#D73951" },
-      coverjs: { text: "#E22125" }
+      coverjs: { text: "#E22125" },
+      airbus: { text: "#E22125" },
+      siemens: { text: "#E22125" },
+      telekom: { text: "#E22125" },
     }
   },
 }
@@ -211,7 +217,7 @@ type Elastic = {
   text: string
 }
 
-type Love = {
+type Waste = {
   text: string
 }
 
@@ -225,9 +231,12 @@ type Projects = {
   matrix: Usmobile
   norse: Norse
   elastic: Elastic
-  love: Love
+  waste: Waste
   kipfit: Kipfit
   mimi: Mimi
   stars: Stars
-  coverjs: Love
+  coverjs: Waste
+  airbus: Waste
+  siemens: Waste
+  telekom: Waste
 }

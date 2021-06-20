@@ -134,7 +134,7 @@ const PRIVATE_WORK: ThreeCardsContentType = [
 		alt: "In-flight experience",
 		tag: { value: "Rethinking the in-flight experience" },
 		title: { value: "Airbus" },
-		path: "/",
+		path: "/work/private/airbus",
 	},
 	{
 		key: 2,
@@ -143,7 +143,7 @@ const PRIVATE_WORK: ThreeCardsContentType = [
 		alt: "Kitchen eperience",
 		tag: { value: "Rethinking home applicances' interface", color: "white" },
 		title: { value: "Siemens", color: "white" },
-		path: "/",
+		path: "/work/private/siemens",
 	},
 	{
 		key: 3,
@@ -152,7 +152,7 @@ const PRIVATE_WORK: ThreeCardsContentType = [
 		alt: "TV experience",
 		tag: { value: "Rethinking TV as a connected device", color: "white" },
 		title: { value: "Telekom", color: "white" },
-		path: "/",
+		path: "/work/private/telekom",
 	},
 ]
 
@@ -166,7 +166,7 @@ const SELECTED_WORK: SelectedWorkType = {
 			tag: { value: "Branding - Illustrations" },
 			title: { value: "Norse Interiors" },
 			background: "transparent",
-			href: "",
+			path: "/work/norse-interior",
 		},
 		{
 			key: 2,
@@ -175,14 +175,14 @@ const SELECTED_WORK: SelectedWorkType = {
 			alt: "Elastic movie who scared the hell out of me",
 			tag: { value: "Design - Webflow" },
 			title: { value: "Elastic Film" },
-			path: "/",
+			path: "/work/elastic-film",
 		},
 	],
 	CARD_LOVE: {
 		src: [wastePng, wasteWebp],
 		alt: "Love your Waste Paris based startup",
 		tag: { value: "Branding - Illustrations" },
-		path: "/",
+		path: "/work/love-your-waste",
 		paddingB: 72,
 	},
 	GRPD_CARD_SECOND: [
@@ -194,7 +194,7 @@ const SELECTED_WORK: SelectedWorkType = {
 			tag: { value: "Product Design - Motion design" },
 			title: { value: "Kipfit" },
 			background: "transparent",
-			path: "/",
+			path: "/work/kipfit-app",
 		},
 		{
 			key: 2,
@@ -203,7 +203,7 @@ const SELECTED_WORK: SelectedWorkType = {
 			tag: { value: "Illustration - Product design" },
 			title: { value: "Mimi Hearing Technology" },
 			background: "mimi",
-			path: "/",
+			path: "/work/mimi-hearing-technology",
 		},
 	],
 }
@@ -213,7 +213,7 @@ const PLAYGROUND: PlaygroundType = {
 		src: [starsPng, starsWebp],
 		alt: "Animation made with Lucas M Matholaz",
 		tag: { value: "Animation - Illustration" },
-		path: "/",
+		path: "/playground/a-park-for-the-homeless-in-the-stars",
 	},
 	GROUP_COVER: {
 		src: [coverPng, coverWebp],
