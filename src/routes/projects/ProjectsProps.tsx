@@ -2,12 +2,12 @@ import { FooterContentType } from "../../components/cards/layouts/FooterCards"
 import { ProjectColor } from "../../components/cards/Card"
 
 export type ProjectsProps = {
-  type: "coverjs" | "system" | "matrix"
+  type: "coverjs" | "branding" | "matrix"
 }
 
 export type ListProjects = {
   coverjs: ProjectsContent
-  system: ProjectsContent
+  branding: ProjectsContent
   matrix: ProjectsContent
 }
 

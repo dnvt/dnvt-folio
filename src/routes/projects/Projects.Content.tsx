@@ -172,7 +172,7 @@ function getContent(color: any, theme: Theme): ListProjects {
 				},
 			],
 		},
-		system: {
+		branding: {
 			HERO: { images: [heroCoverPng, heroCoverWebp] },
 			INTRO: {
 				section: "Fun coding project",

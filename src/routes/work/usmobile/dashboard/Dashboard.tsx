@@ -3,7 +3,6 @@ import { useTheme } from "react-jss"
 import { useMainColor } from "../../../../hooks/useSetMainColor"
 import { Theme } from "../../../../utils/theme/theme"
 import Grid from "../../../../utils/grids/Grid"
-import Sidelines from "../../../../utils/sidelines/Sidelines"
 import Spacer from "../../../../utils/spacer/Spacer"
 import { BigVignette, HeroVignette } from "../../../../components/vignettes/Vignettes"
 import { useIntroTransition } from "../../../../hooks/useHeroTransition"
@@ -37,15 +36,14 @@ const Dashboard: React.FC = () => {
   const [heroTransition, setHeroTransition] = useIntroTransition()
 
   useEffect(() => {
+    setHeroTransition((heroTransition: any) => { return { ...heroTransition, usm_system: false } })
     setColor(theme.projects.usmobile.text)
-    setHeroTransition({ usm_system: false })
   }, [setColor, setHeroTransition, theme.projects.usmobile.text])
 
   const content = useMemo(() => DAHSBOARD_CONTENT, [])
   return (
     <DocumentSizeProvider>
       <Grid />
-      <Sidelines />
       <div style={{ opacity: heroTransition.usm_system ? 0 : 1, transition: "opacity .6s ease" }}>
         <HeroVignette
           src={[heroPng, heroWebp]}

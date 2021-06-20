@@ -2,6 +2,7 @@ import { createUseStyles } from "react-jss"
 
 const ArrowSignalsStyle = createUseStyles({
 	aLeft: {
+		zIndex: -1,
 		position: "absolute",
 		display: "flex",
 		flexDirection: "column",
@@ -15,6 +16,7 @@ const ArrowSignalsStyle = createUseStyles({
 		},
 	},
 	aRight: {
+		zIndex: -1,
 		position: "absolute",
 		display: "flex",
 		flexDirection: "column",

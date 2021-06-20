@@ -22,7 +22,7 @@ const App: React.FC = () => {
             <Switch>
               <Route path="/guidelines" component={Guidelines} />
               <Route path="/work/usmobile/dashboard-pwa" component={Dashboard} />
-              <Route path="/work/usmobile/system" ><Projects type="system" /></Route>
+              <Route path="/work/usmobile/branding" ><Projects type="branding" /></Route>
               <Route path="/work/usmobile/matrix" ><Projects type="matrix" /></Route>
               <Route path="/playground/coverjs"><Projects type="coverjs" /></Route>
               <Route path="/" component={Homepage} />

@@ -8,6 +8,8 @@ export const IntroTranstionProvider: React.FC = ({ children }) => {
       homepage: true,
       usm_system: true,
       guidelines: true,
+      matrix: true,
+      branding: true,
       coverjs: true,
     })
 

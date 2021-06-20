@@ -1,5 +1,4 @@
 import React, { lazy, Suspense, useEffect } from 'react'
-import Sidelines from '../../utils/sidelines/Sidelines'
 import Grid from '../../utils/grids/Grid'
 import Section from './segments/Section'
 import Spacer from '../../utils/spacer/Spacer'
@@ -24,13 +23,12 @@ const Guidelines: React.FC = () => {
   const [heroTransition, setHeroTransition] = useIntroTransition()
 
   useEffect(() => {
-    setHeroTransition({ guidelines: false })
-  }, [setHeroTransition])
+    setHeroTransition({ ...heroTransition, guidelines: false })
+  }, [heroTransition, setHeroTransition])
 
   return (
     <DocumentSizeProvider>
       <Grid />
-      <Sidelines />
       <div style={{ transform: heroTransition.guidelines ? "translateY(240px)" : "translateY(0px)", opacity: heroTransition.guidelines ? 0 : 1, transition: "opacity .6s ease, transform .6s ease" }}>
         <Spacer contained height={104} />
         <Section title='Design Guidelines' value='Utility Section' />

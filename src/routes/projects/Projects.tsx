@@ -5,15 +5,14 @@ import { HeroVignette } from "../../components/vignettes/Vignettes"
 import { useMainColor } from "../../hooks/useSetMainColor"
 import SpacerEightyHalf from "../../utils/spacer/variations/SpacerEightyHalf"
 import Spacer from "../../utils/spacer/Spacer"
-import getContent from "./Projects.Content"
 import { useIntroTransition } from "../../hooks/useHeroTransition"
 import { DocumentSizeProvider } from "../../hooks/useDimensionSize"
-import Sidelines from "../../utils/sidelines/Sidelines"
 import Grid from "../../utils/grids/Grid"
 import { ProjectsProps } from "./ProjectsProps"
 import Container from "../../components/containers/Container"
 import Font from "../../utils/fonts/Font"
 import ProjectIntroduction from "./segments/ProjectIntroduction"
+import getContent from "./Projects.content"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -30,15 +29,14 @@ const Projects: React.FC<ProjectsProps> = ({ type }) => {
   const CONTENT = useMemo(() => PROJECTS_CONTENT[type], [PROJECTS_CONTENT, type])
 
   useEffect(() => {
+    setHeroTransition((heroTransition: any) => { return { ...heroTransition, [type]: false } })
     setColor(theme.projects[type].text)
-    setHeroTransition({ [type]: false })
-  }, [setColor, setHeroTransition, theme.projects, type])
+  }, [heroTransition, setColor, setHeroTransition, theme.projects, type])
 
 
   return (
     <DocumentSizeProvider>
       <Grid />
-      <Sidelines />
       <div style={{ opacity: heroTransition[type] ? 0 : 1, transition: "opacity .6s ease" }}>
         <HeroVignette
           src={CONTENT.HERO.images}

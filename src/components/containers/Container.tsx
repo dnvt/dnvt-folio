@@ -97,7 +97,7 @@ const Container: React.FC<ContainerType> = (props) => {
     if (drag == "five") scrollNumber = classes.ScrollFive
 
     return (
-      <div className={classes.FullContainer}>
+      <div className={classes.FullContainer} style={{ zIndex: -1 }}>
         <ArrowDragScroll big left />
         <div className={classes.DragContainer}>
           <div className={scrollNumber}>

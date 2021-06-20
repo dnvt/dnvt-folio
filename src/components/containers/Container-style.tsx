@@ -98,6 +98,7 @@ const ContainerStyle = createUseStyles({
 
   // Realm of the Dragable
   DragContainer: {
+    zIndex: -1,
     position: "relative",
     WebkitOverflowScrolling: "touch",
     scrollSnapType: "x mandatory",
@@ -114,7 +115,6 @@ const ContainerStyle = createUseStyles({
     maxWidth: "100%",
     margin: "-160px auto",
     padding: "160px 16px",
-    zIndex: "1",
   },
 
   ScrollFive: {
@@ -126,6 +126,7 @@ const ContainerStyle = createUseStyles({
   },
 
   ScrollFour: {
+    zIndex: -1,
     display: "grid",
     gridTemplateColumns: "64px 1fr 1fr 1fr 1fr 64px",
     columnGap: "24px",

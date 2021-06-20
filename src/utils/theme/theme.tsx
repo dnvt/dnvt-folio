@@ -63,7 +63,7 @@ export const THEME: Colors = {
     },
     projects: {
       usmobile: { text: "#667AF4", background: "#EEFAF4", hover: "#def5e9", },
-      system: { text: "#667AF4", background: "#EEFAF4", hover: "#def5e9", },
+      branding: { text: "#667AF4", background: "#EEFAF4", hover: "#def5e9", },
       matrix: { text: "#667AF4", background: "#EEFAF4", hover: "#def5e9", },
       stars: { text: LIGHT.slate.S070 },
       mimi: { text: LIGHT.slate.S090, background: "#5ED0B0", hover: "#4AC6A5" },
@@ -121,7 +121,7 @@ export const THEME: Colors = {
     },
     projects: {
       usmobile: { text: "#78C58E", background: "#192E23", hover: "#234232" },
-      system: { text: "#667AF4", background: "#EEFAF4", hover: "#def5e9", },
+      branding: { text: "#667AF4", background: "#EEFAF4", hover: "#def5e9", },
       matrix: { text: "#667AF4", background: "#EEFAF4", hover: "#def5e9", },
       mimi: { text: DARK.slate.S090, background: "#5ED0B0", hover: "#4AC6A5" },
       stars: { text: DARK.slate.S090 },
@@ -221,7 +221,7 @@ type Kipfit = {
 
 type Projects = {
   usmobile: Usmobile
-  system: Usmobile
+  branding: Usmobile
   matrix: Usmobile
   norse: Norse
   elastic: Elastic
