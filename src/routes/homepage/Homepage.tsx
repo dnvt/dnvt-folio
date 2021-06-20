@@ -1,15 +1,15 @@
 import React, { lazy, Suspense, useEffect } from 'react'
-import Spacer from '../../utils/spacer/Spacer'
-import Font from '../../utils/fonts/Font'
-import Grid from '../../utils/grids/Grid'
 import { useTheme } from 'theming'
-import { Theme } from '../../utils/theme/theme'
 import { useWindowSize } from '../../hooks/useWindowSize'
 import { useMainColor } from '../../hooks/useSetMainColor'
 import { DocumentSizeProvider } from '../../hooks/useDimensionSize'
 import { useIntroTransition } from '../../hooks/useHeroTransition'
 import Introduction from './segments/Introduction'
 import Container from '../../components/containers/Container'
+import { Theme } from '../../utils/theme/theme'
+import Spacer from '../../utils/spacer/Spacer'
+import Grid from '../../utils/grids/Grid'
+import Font from '../../utils/fonts/Font'
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -17,7 +17,7 @@ const USMWork = lazy(() => import('./segments/USMWork'))
 const PrivateWork = lazy(() => import('./segments/PrivateWork'))
 const SelectedWork = lazy(() => import('./segments/SelectedWork'))
 const PlayGround = lazy(() => import('./segments/Playground'))
-const About = lazy(() => import('./segments/About'))
+const AboutSection = lazy(() => import('./segments/AboutSection'))
 
 /**
  * Welcome to @dnvt/Guidelines!
@@ -63,7 +63,7 @@ const Homepage: React.FC = () => {
             <Font type="hero" style={{ top: -200 }}>dnvt.me </Font>
           </div>
           {spacer}
-          <About />
+          <AboutSection />
         </Suspense>
       </div>
     </DocumentSizeProvider>

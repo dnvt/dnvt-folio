@@ -1,10 +1,10 @@
 import React, { useMemo } from "react"
-import Container from "../../../../../components/containers/Container"
-import Spacer from "../../../../../utils/spacer/Spacer"
-import Column from "../../../../../components/containers/Column"
-import Font from "../../../../../utils/fonts/Font"
-import { Vignette } from "../../../../../components/vignettes/Vignettes"
-import DragFramelessFive from "../../../../../components/devices/layouts/DragFramelessFive"
+import Container from "../../../../components/containers/Container"
+import Column from "../../../../components/containers/Column"
+import { Vignette } from "../../../../components/vignettes/Vignettes"
+import DragFramelessFive from "../../../../components/devices/layouts/DragFramelessFive"
+import Spacer from "../../../../utils/spacer/Spacer"
+import Font from "../../../../utils/fonts/Font"
 import DAHSBOARD_CONTENT from "../Dashboard.content"
 
 const DashLibrary: React.FC = () => {

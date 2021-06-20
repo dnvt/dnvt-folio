@@ -1,13 +1,13 @@
-import { Theme } from "../../utils/theme/theme"
+import { Theme } from "../../../utils/theme/theme"
 import { ListProjects } from "./ProjectsProps"
-import heroCoverPng from "../../assets/images/Coverjs/Work/CoverHero.png"
-import heroCoverWebp from "../../assets/images/Coverjs/Work/CoverHero.webp"
-import wasteFooterPng from "../../assets/images/Footer/Waste.png"
-import wasteFooterWebp from "../../assets/images/Footer/Waste.webp"
-import starsFooterPng from "../../assets/images/Footer/Stars.png"
-import starsFooterWebp from "../../assets/images/Footer/Stars.webp"
-import coversFooterPng from "../../assets/images/Footer/Coverjs.png"
-import coversFooterWebp from "../../assets/images/Footer/Coverjs.webp"
+import heroCoverPng from "../../../assets/images/Coverjs/Work/CoverHero.png"
+import heroCoverWebp from "../../../assets/images/Coverjs/Work/CoverHero.webp"
+import wasteFooterPng from "../../../assets/images/Footer/Waste.png"
+import wasteFooterWebp from "../../../assets/images/Footer/Waste.webp"
+import starsFooterPng from "../../../assets/images/Footer/Stars.png"
+import starsFooterWebp from "../../../assets/images/Footer/Stars.webp"
+import coversFooterPng from "../../../assets/images/Footer/Coverjs.png"
+import coversFooterWebp from "../../../assets/images/Footer/Coverjs.webp"
 
 function getContent(color: any, theme: Theme): ListProjects {
 	return {

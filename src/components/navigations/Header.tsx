@@ -51,7 +51,7 @@ const Header: React.FC<HeaderType> = ({ positionNotfixed }) => {
       {spacer}
       <Button icon={ICONS.iconWork} path="/work/usmobile/dashboard-pwa">Work</Button>{spacer}
       <Button icon={ICONS.iconPlayground} path="/">Playground</Button>{spacer}
-      <Button icon={ICONS.iconAbout} path="/">About</Button>{spacer}
+      <Button icon={ICONS.iconAbout} path="/about">About</Button>{spacer}
       <Button icon={ICONS.iconGuidelines} path="/guidelines">Guidelines</Button>{iconSpacer}
       <IconButton icon="light" />{iconSpacer}
       <IconButton icon="grid" />

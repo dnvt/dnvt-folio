@@ -1,10 +1,9 @@
 import React, { useMemo } from "react"
-import Column from "../../../../../components/containers/Column"
-import Container from "../../../../../components/containers/Container"
-import GroupedMobileBrowser from "../../../../../components/devices/layouts/GroupedMobileBrowser"
-
-import Font from "../../../../../utils/fonts/Font"
-import Spacer from "../../../../../utils/spacer/Spacer"
+import Column from "../../../../components/containers/Column"
+import Container from "../../../../components/containers/Container"
+import GroupedMobileBrowser from "../../../../components/devices/layouts/GroupedMobileBrowser"
+import Font from "../../../../utils/fonts/Font"
+import Spacer from "../../../../utils/spacer/Spacer"
 import DAHSBOARD_CONTENT from "../Dashboard.content"
 
 const DashDesigns: React.FC = () => {

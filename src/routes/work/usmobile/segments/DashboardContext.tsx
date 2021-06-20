@@ -1,15 +1,15 @@
 import React from "react"
-import Container from "../../../../../components/containers/Container"
-import Spacer from "../../../../../utils/spacer/Spacer"
-import Font from "../../../../../utils/fonts/Font"
-import Column from "../../../../../components/containers/Column"
-import { Vignette } from "../../../../../components/vignettes/Vignettes"
+import Container from "../../../../components/containers/Container"
+import Column from "../../../../components/containers/Column"
+import Spacer from "../../../../utils/spacer/Spacer"
+import Font from "../../../../utils/fonts/Font"
+import { Vignette } from "../../../../components/vignettes/Vignettes"
 
 /// Images
-import contextPng from "../../../../../assets/images/USMobile/System/Context.png"
-import contextWebp from "../../../../../assets/images/USMobile/System/Context.webp"
-import componentsPng from "../../../../../assets/images/USMobile/System/Components.png"
-import componentsWebp from "../../../../../assets/images/USMobile/System/Components.webp"
+import contextPng from "../../../../assets/images/USMobile/System/Context.png"
+import contextWebp from "../../../../assets/images/USMobile/System/Context.webp"
+import componentsPng from "../../../../assets/images/USMobile/System/Components.png"
+import componentsWebp from "../../../../assets/images/USMobile/System/Components.webp"
 
 const DashboardContext: React.FC = () => {
   return (

@@ -1,10 +1,10 @@
 import React from "react"
-import Column from "../../../../../components/containers/Column"
-import Container from "../../../../../components/containers/Container"
-import { useMainColor } from "../../../../../hooks/useSetMainColor"
-import Font from "../../../../../utils/fonts/Font"
-import Spacer from "../../../../../utils/spacer/Spacer"
-import SpacerEightyHalf from "../../../../../utils/spacer/variations/SpacerEightyHalf"
+import { useMainColor } from "../../../../hooks/useSetMainColor"
+import Column from "../../../../components/containers/Column"
+import Container from "../../../../components/containers/Container"
+import Font from "../../../../utils/fonts/Font"
+import Spacer from "../../../../utils/spacer/Spacer"
+import SpacerEightyHalf from "../../../../utils/spacer/variations/SpacerEightyHalf"
 
 const DashboardIntroduction: React.FC = () => {
   const [color] = useMainColor()

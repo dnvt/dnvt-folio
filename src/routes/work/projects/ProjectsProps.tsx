@@ -1,5 +1,5 @@
-import { FooterContentType } from "../../components/cards/layouts/FooterCards"
-import { ProjectColor } from "../../components/cards/Card"
+import { FooterContentType } from "../../../components/cards/layouts/FooterCards"
+import { ProjectColor } from "../../../components/cards/Card"
 
 export type ProjectsProps = {
   type: "coverjs" | "branding" | "matrix" | "norse" | "elastic" | "waste" | "kipfit" | "mimi" | "stars" | "airbus" | "siemens" | "telekom"

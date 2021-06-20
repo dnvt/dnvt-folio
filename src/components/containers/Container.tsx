@@ -15,11 +15,10 @@ type ContainerType = {
 
 /**
  * Welcome to @dnvt/Container!
- * 
- * TODO:
- * - Add conditional Prop types
- * - Question Heght props
- * 
+ * @param center
+ * @param drag
+ * @param left
+ * @param type "group" | "big" | "height" | "footer"
  */
 const Container: React.FC<ContainerType> = (props) => {
   const classes = ContainerStyle()

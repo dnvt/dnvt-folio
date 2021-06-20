@@ -6,7 +6,7 @@ import Font from "../../../utils/fonts/Font"
 import Spacer from "../../../utils/spacer/Spacer"
 import { Theme } from "../../../utils/theme/theme"
 
-const About: React.FC = () => {
+const AboutSection: React.FC = () => {
   const theme: Theme = useTheme()
   return (
     <Container>
@@ -41,4 +41,4 @@ const About: React.FC = () => {
   )
 }
 
-export default About
+export default AboutSection

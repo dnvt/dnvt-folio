@@ -6,8 +6,9 @@ import { MotionConfig } from 'framer-motion'
 import ScrollToTop from './hooks/ScrollToTop'
 import Homepage from "./routes/homepage/Homepage"
 import Guidelines from "./routes/guildelines/Guidelines"
-import Dashboard from './routes/work/usmobile/dashboard/Dashboard'
-import Projects from './routes/projects/Projects'
+import Dashboard from './routes/work/usmobile/Dashboard'
+import Projects from './routes/work/projects/Projects'
+import About from './routes/about/About'
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -20,7 +21,6 @@ const App: React.FC = () => {
           <ScrollToTop />
           <Layout>
             <Switch>
-              <Route path="/guidelines" component={Guidelines} />
               <Route path="/work/usmobile/branding" ><Projects type="branding" /></Route>
               <Route path="/work/usmobile/matrix" ><Projects type="matrix" /></Route>
               <Route path="/work/usmobile/dashboard-pwa" component={Dashboard} />
@@ -34,6 +34,8 @@ const App: React.FC = () => {
               <Route path="/work/mimi-hearing-technology"><Projects type="mimi" /></Route>
               <Route path="/work/a-park-for-the-homeless-in-the-stars"><Projects type="stars" /></Route>
               <Route path="/playground/coverjs"><Projects type="coverjs" /></Route>
+              <Route path="/about" component={About} />
+              <Route path="/guidelines" component={Guidelines} />
               <Route path="/" component={Homepage} />
             </Switch>
           </Layout>

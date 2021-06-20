@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"
 import React from "react"
 import { useTheme } from "react-jss"
 import { Theme } from "../../theme/theme"
@@ -31,7 +32,7 @@ const FontTagWrapper: React.FC<FontTagWrapperProps> = (props): JSX.Element => {
       case "menu": return <div className={classes.menu} style={style}>{children}</div>
       case "link": return <div className={classes.link} style={style}>{children}</div>
       case "tooltip": return <div className={classes.tooltip} style={style}>{children}</div>
-      case "hero": return <div className={classesHero.Fontimation} style={style}><div className={classes.hero} style={style}>{children}</div></div>
+      case "hero": return <div className={classesHero.Fontimation}><motion.div className={classes.hero} variants={animation} style={style}>{children}</motion.div></div>
       default: return null
     }
   }

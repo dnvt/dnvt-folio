@@ -19,7 +19,7 @@ export type FontTagWrapperProps = {
     width?: number | "100%"
     top?: number
   }
-  animation?: Boolean
+  animation?: {}
 }
 
 export type StyleProps = {

@@ -1,25 +1,28 @@
 import React, { lazy, Suspense, useEffect, useMemo } from "react"
 import { useTheme } from "react-jss"
-import { Theme } from "../../utils/theme/theme"
-import { HeroVignette } from "../../components/vignettes/Vignettes"
-import { useMainColor } from "../../hooks/useSetMainColor"
-import SpacerEightyHalf from "../../utils/spacer/variations/SpacerEightyHalf"
-import Spacer from "../../utils/spacer/Spacer"
-import { useIntroTransition } from "../../hooks/useHeroTransition"
-import { DocumentSizeProvider } from "../../hooks/useDimensionSize"
-import Grid from "../../utils/grids/Grid"
+import { HeroVignette } from "../../../components/vignettes/Vignettes"
+import { useMainColor } from "../../../hooks/useSetMainColor"
+import { useIntroTransition } from "../../../hooks/useHeroTransition"
+import { DocumentSizeProvider } from "../../../hooks/useDimensionSize"
 import { ProjectsProps } from "./ProjectsProps"
-import Container from "../../components/containers/Container"
-import Font from "../../utils/fonts/Font"
 import ProjectIntroduction from "./segments/ProjectIntroduction"
 import getContent from "./Projects.content"
+import { Theme } from "../../../utils/theme/theme"
+import Grid from "../../../utils/grids/Grid"
+import SpacerEightyHalf from "../../../utils/spacer/variations/SpacerEightyHalf"
+import Spacer from "../../../utils/spacer/Spacer"
+import LoadingComponent from "../../../utils/suspence/Loading"
 
 ////////////////////////////////////////////////////////////////////////////////
 
 const ListofImages = lazy(() => import("./segments/ProjectListImages"))
 const ThanksProject = lazy(() => import("./segments/ProjectThanks"))
-const FooterCards = lazy(() => import("../../components/cards/layouts/FooterCards"))
+const FooterCards = lazy(() => import("../../../components/cards/layouts/FooterCards"))
 
+/** 
+ * Projects template Component
+ * @param type  "coverjs" | "branding" | "matrix" | "norse" | "elastic" | "waste" | "kipfit" | "mimi" | "stars" | "airbus" | "siemens" | "telekom"
+ */
 const Projects: React.FC<ProjectsProps> = ({ type }) => {
   const theme: Theme = useTheme()
   const [color, setColor] = useMainColor()
@@ -45,7 +48,7 @@ const Projects: React.FC<ProjectsProps> = ({ type }) => {
         />
         <SpacerEightyHalf />
         <ProjectIntroduction content={CONTENT.INTRO} />
-        <Suspense fallback={<Container><Spacer height={80} /><Font type="text">Loading...</Font></Container>}>
+        <Suspense fallback={<LoadingComponent />}>
           <ListofImages images={CONTENT.IMAGES} />
           <ThanksProject content={CONTENT.THANKS} />
           <Spacer contained height={184} />

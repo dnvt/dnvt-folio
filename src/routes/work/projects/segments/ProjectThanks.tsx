@@ -1,8 +1,8 @@
 import React from "react"
-import Column from "../../../components/containers/Column"
-import Container from "../../../components/containers/Container"
-import Font from "../../../utils/fonts/Font"
-import SpacerFortyHalf from "../../../utils/spacer/variations/SpacerFortyHalf"
+import Column from "../../../../components/containers/Column"
+import Container from "../../../../components/containers/Container"
+import Font from "../../../../utils/fonts/Font"
+import SpacerFortyHalf from "../../../../utils/spacer/variations/SpacerFortyHalf"
 import { ParagraphProps } from "../ProjectsProps"
 import ParagraphModule from "./ParagraphModule"
 

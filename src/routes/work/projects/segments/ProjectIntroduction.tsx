@@ -1,10 +1,10 @@
 import React from "react"
-import Container from "../../../components/containers/Container"
-import Font from "../../../utils/fonts/Font"
-import Spacer from "../../../utils/spacer/Spacer"
-import Column from "../../../components/containers/Column"
-import ExternalLink from "../../../ui/links/external-link/ExternalLink"
+import Container from "../../../../components/containers/Container"
+import Column from "../../../../components/containers/Column"
+import ExternalLink from "../../../../ui/links/external-link/ExternalLink"
 import ParagraphModule from "./ParagraphModule"
+import Font from "../../../../utils/fonts/Font"
+import Spacer from "../../../../utils/spacer/Spacer"
 import { IntroType } from "../ProjectsProps"
 
 const ProjectIntroduction: React.FC<{ content: IntroType }> = ({ content }) => {

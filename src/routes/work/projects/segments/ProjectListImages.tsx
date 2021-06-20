@@ -1,6 +1,6 @@
 import React from "react"
-import { Vignette } from "../../../components/vignettes/Vignettes"
-import SpacerFortyHalf from "../../../utils/spacer/variations/SpacerFortyHalf"
+import { Vignette } from "../../../../components/vignettes/Vignettes"
+import SpacerFortyHalf from "../../../../utils/spacer/variations/SpacerFortyHalf"
 import { ImageProps } from "../ProjectsProps"
 
 const ListofImages: React.FC<{ images: ImageProps[] }> = ({ images }) => {

@@ -1,12 +1,14 @@
 import React, { lazy, Suspense, useEffect } from 'react'
-import Grid from '../../utils/grids/Grid'
 import Section from './segments/Section'
-import Spacer from '../../utils/spacer/Spacer'
 import { DocumentSizeProvider } from '../../hooks/useDimensionSize'
 import { useIntroTransition } from '../../hooks/useHeroTransition'
 import UtilsSection from './segments/UtilsSection'
-import Font from '../../utils/fonts/Font'
-import Container from '../../components/containers/Container'
+import Grid from '../../utils/grids/Grid'
+import Spacer from '../../utils/spacer/Spacer'
+import LoadingComponent from '../../utils/suspence/Loading'
+import { useMainColor } from '../../hooks/useSetMainColor'
+import { Theme } from '../../utils/theme/theme'
+import { useTheme } from 'react-jss'
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -20,11 +22,14 @@ const ImageSection = lazy(() => import('./segments/ImageSection'))
  * Welcome to @dnvt/Guidelines!
  */
 const Guidelines: React.FC = () => {
+  const theme: Theme = useTheme()
   const [heroTransition, setHeroTransition] = useIntroTransition()
+  const [, setColor] = useMainColor()
 
   useEffect(() => {
-    setHeroTransition({ ...heroTransition, guidelines: false })
-  }, [heroTransition, setHeroTransition])
+    setHeroTransition((heroTransition: any) => { return { ...heroTransition, guidelines: false } })
+    setColor(theme.text.hover)
+  }, [heroTransition, setColor, setHeroTransition, theme.text.hover])
 
   return (
     <DocumentSizeProvider>
@@ -33,7 +38,7 @@ const Guidelines: React.FC = () => {
         <Spacer contained height={104} />
         <Section title='Design Guidelines' value='Utility Section' />
         <UtilsSection />
-        <Suspense fallback={<Container><Font type="text">Loading...</Font></Container>} >
+        <Suspense fallback={<LoadingComponent />} >
           <Section value='Font Section' />
           <FontSection />
           <Section value='Navigation Section' />

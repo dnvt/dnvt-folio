@@ -7,6 +7,7 @@ export const IntroTranstionProvider: React.FC = ({ children }) => {
     {
       homepage: true,
       guidelines: true,
+      about: true,
       usm_system: true,
       airbus: true,
       siemens: true,

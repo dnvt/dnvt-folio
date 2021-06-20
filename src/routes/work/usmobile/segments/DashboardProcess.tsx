@@ -1,8 +1,8 @@
 import React from "react"
-import Column from "../../../../../components/containers/Column"
-import Container from "../../../../../components/containers/Container"
-import Font from "../../../../../utils/fonts/Font"
-import Spacer from "../../../../../utils/spacer/Spacer"
+import Column from "../../../../components/containers/Column"
+import Container from "../../../../components/containers/Container"
+import Font from "../../../../utils/fonts/Font"
+import Spacer from "../../../../utils/spacer/Spacer"
 
 
 const DashboardProcess: React.FC = () => {
