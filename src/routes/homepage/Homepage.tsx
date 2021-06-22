@@ -10,6 +10,7 @@ import { Theme } from '../../utils/theme/theme'
 import Spacer from '../../utils/spacer/Spacer'
 import Grid from '../../utils/grids/Grid'
 import Font from '../../utils/fonts/Font'
+import Fontimation from '../../utils/fonts/Fontimation'
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -43,8 +44,8 @@ const Homepage: React.FC = () => {
       <div style={{ transform: heroTransition.homepage ? "translateY(240px)" : "translateY(0px)", opacity: heroTransition.homepage ? 0 : 1, transition: "opacity .6s ease, transform .6s ease" }}>
         <Spacer contained height={104} />
         {window.width > 767 && <Spacer contained height={184} />}
-        <div style={{ position: "relative", height: 0, transform: heroTransition.homepage ? "translateY(-80px)" : "translateY(0px)", transition: " transform .6s ease" }}>
-          <Font type="hero">François</Font>
+        <div style={{ position: "relative", marginBottom: -1320, transform: heroTransition.homepage ? "translateY(-80px)" : "translateY(0px)", transition: " transform .6s ease" }}>
+          <Fontimation>François</Fontimation>
         </div>
         <Introduction />
         <Suspense fallback={<Container><Font type="text">Loading...</Font></Container>} >
@@ -55,12 +56,12 @@ const Homepage: React.FC = () => {
           <Spacer contained height={104} />
           <SelectedWork />
           {spacer}
-          <div style={{ position: "relative" }}>
-            <Font type="hero">Yeaaah</Font>
+          <div style={{ position: "relative", marginBottom: -1320, transform: "translateX(0px)" }}>
+            <Fontimation>Yeaaaah</Fontimation>
           </div>
           <PlayGround />
-          <div style={{ position: "relative" }}>
-            <Font type="hero" style={{ top: -200 }}>dnvt.me </Font>
+          <div style={{ position: "relative", marginTop: -192, marginBottom: -1128, transform: "translateX(0px)" }}>
+            <Fontimation>dnvt.me</Fontimation>
           </div>
           {spacer}
           <AboutSection />

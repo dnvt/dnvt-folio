@@ -132,6 +132,7 @@ const ContainerStyle = createUseStyles({
     columnGap: "24px",
 
     "@media (min-width: 768px)": { columnGap: "32px" },
+    "@media (min-width: 1360px)": { columnGap: "48px" },
   },
 
   ScrollThree: {

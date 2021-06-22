@@ -4,11 +4,19 @@ import { Theme } from "../theme/theme"
 type Props = { color: string }
 
 const FontStyle = createUseStyles(theme => ({
+  Fontimation: {
+    zIndex: -1,
+    width: "100%",
+    display: "flex",
+    alignItems: "baseline",
+    justifyContent: "center",
+    overflowX: "hidden",
+  },
+
   hero: {
     // Test
     position: "absolute",
     zIndex: "-1",
-
     fontFamily: "Inter",
     fontWeight: "800",
     textAlign: "center",
@@ -17,7 +25,6 @@ const FontStyle = createUseStyles(theme => ({
     letterSpacing: "-.023em",
     userSelect: "none",
     padding: "0 60px",
-
     background: (theme as Theme).text.hero,
     WebkitBackgroundClip: "text !important",
     backgroundClip: "text !important",
@@ -33,12 +40,15 @@ const FontStyle = createUseStyles(theme => ({
       fontSize: "1000px",
       lineHeight: "1320px",
       letterSpacing: "-.024em",
+      margin: " -160px 0 160px"
     },
   },
+
   span: {
     borderBottom: "1px solid",
     transition: "borderBottom .12s ease",
   },
+
   link: {
     transition: "color .15s ease",
     fontFamily: "GT Sectra",
@@ -58,6 +68,7 @@ const FontStyle = createUseStyles(theme => ({
       lineHeight: "32px",
     },
   },
+
   legend: {
     transition: "color .15s ease",
     fontFamily: "iA Writer",
@@ -81,6 +92,7 @@ const FontStyle = createUseStyles(theme => ({
       letterSpacing: "-.011em",
     },
   },
+
   tooltip: {
     transition: "color .15s ease",
     fontFamily: "iA Writer",
@@ -105,6 +117,7 @@ const FontStyle = createUseStyles(theme => ({
       letterSpacing: "-.014em",
     },
   },
+
   menu: {
     transition: "color .15s ease",
     fontFamily: "iA Writer",
@@ -129,6 +142,7 @@ const FontStyle = createUseStyles(theme => ({
       letterSpacing: "-.014em",
     },
   },
+
   listNumber: {
     position: "relative",
     "@media (min-width: 992px)": {

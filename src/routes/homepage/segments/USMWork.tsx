@@ -11,6 +11,7 @@ import { Theme } from "../../../utils/theme/theme"
 import { useTheme } from "react-jss"
 import InternalLink from "../../../ui/links/internal-link/InternalLink"
 import ExternalLink from "../../../ui/links/external-link/ExternalLink"
+// import Fontimation from "../../../utils/fonts/Fontimation"
 
 const USMWork: React.FC = () => {
   const theme: Theme = useTheme()
@@ -24,9 +25,9 @@ const USMWork: React.FC = () => {
 
   return (
     <>
-      <div style={{ position: "relative" }}>
-        <Font type="hero">2016-19</Font>
-      </div>
+      {/* <div style={{ position: "relative", marginBottom: -1320, transform: "translateX(0px)" }}>
+        <Fontimation>2016-19</Fontimation>
+      </div> */}
       <Container>
         <Font type='h2'>Work</Font>
       </Container>

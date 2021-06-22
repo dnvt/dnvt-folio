@@ -9,8 +9,8 @@ const SidelinesStyle = createUseStyles({
     height: "100%",
     zIndex: "-1",
     top: "0",
-    borderLeft: ({ theme }) => `1px solid ${(theme as Theme).border.outline}`,
-    borderRight: ({ theme }) => `1px solid ${(theme as Theme).border.outline}`,
+    borderLeft: ({ theme }) => `1px solid ${ (theme as Theme).border.outline }`,
+    borderRight: ({ theme }) => `1px solid ${ (theme as Theme).border.outline }`,
     transition: "all 0.12s ease",
 
     "@media (min-width: 1080px)": {

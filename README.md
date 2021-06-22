@@ -54,7 +54,8 @@
 - [x] Project
 - [x] Clean Project colors in theme dictionnary
 - [x] Make Project dictionnary
-- [ ] HeroFont
+- [x] HeroFont
+  - [x] Container in all pages with variaable -Heigths
 - [ ] Design an About page
 - [ ] Add documentation to my functions
 

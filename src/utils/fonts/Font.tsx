@@ -4,7 +4,6 @@ import { FontTagWrapperProps } from "./Font-props"
 
 const Font: React.FC<FontTagWrapperProps> = (props) => {
   const { children, animation, type, style } = props
-
   return <FontTagWrapper animation={animation} type={type} style={style}>{children}</FontTagWrapper>
 }
 

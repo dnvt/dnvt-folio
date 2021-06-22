@@ -3,6 +3,7 @@ import { useTheme } from "react-jss"
 import Container from "../../../components/containers/Container"
 import { useWindowSize } from "../../../hooks/useWindowSize"
 import Font from "../../../utils/fonts/Font"
+import Fontimation from "../../../utils/fonts/Fontimation"
 import Spacer from "../../../utils/spacer/Spacer"
 import { Theme } from "../../../utils/theme/theme"
 import Description from "./Description"
@@ -18,23 +19,9 @@ const FontSection: React.FC = () => {
 
   return (
     <>
-      {window.width > 767 && (
-        <>
-          <div
-            style={{
-              position: "relative",
-              height: "1600px",
-              marginTop: "-280px",
-              marginBottom: "-720px",
-              padding: "120px -80px",
-              overflow: "hidden"
-            }}
-          >
-            {/* <FontHero animate={animate} value='Hello World!' /> */}
-            <Font type="hero" style={{ top: -64 }}>Hello</Font>
-          </div>
-        </>
-      )}
+      <div style={{ position: "relative", marginTop: -120, marginBottom: -640, transform: "translateX(0px)" }}>
+        <Fontimation>Hey world</Fontimation>
+      </div>
       <Container>
         <Spacer height={64} />
         <Font type='h1'>

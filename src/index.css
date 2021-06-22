@@ -152,6 +152,8 @@ h1 {
 	letter-spacing: -0.019em;
 	overflow-wrap: break-word;
 	transition: font 0.15s ease;
+	transform: translate(0px);
+	z-index: 10;
 }
 
 h2 {
@@ -165,6 +167,8 @@ h2 {
 	line-height: 88px;
 	letter-spacing: -0.022em;
 	transition: font 0.15s ease;
+	transform: translate(0px);
+	z-index: 10;
 }
 
 h3 {
@@ -176,11 +180,15 @@ h3 {
 	line-height: 48px;
 	letter-spacing: -0.016em;
 	transition: font 0.15s ease;
+	transform: translate(0px);
+	z-index: 10;
 }
 
 h3 span {
 	border-bottom: transparent 1px solid;
 	transition: border-bottom 0.15s ease;
+	transform: translate(0px);
+	z-index: 10;
 }
 
 h4 {
@@ -192,6 +200,8 @@ h4 {
 	line-height: 32px;
 	letter-spacing: 0.015em;
 	transition: font 0.15s ease;
+	transform: translate(0px);
+	z-index: 10;
 }
 
 h5 {
@@ -203,6 +213,8 @@ h5 {
 	line-height: 24px;
 	letter-spacing: -0.013em;
 	transition: font 0.15s ease;
+	transform: translate(0px);
+	z-index: 10;
 }
 
 p {
@@ -214,6 +226,8 @@ p {
 	line-height: 24px;
 	letter-spacing: 0em;
 	transition: font 0.15s ease;
+	transform: translate(0px);
+	z-index: 10;
 }
 
 p span {
@@ -227,6 +241,8 @@ p span {
 	padding-inline-start: 0;
 	padding-inline-end: 0;
 	transition: font 0.15s ease;
+	transform: translate(0px);
+	z-index: 10;
 }
 
 @media screen and (min-width: 768px) {

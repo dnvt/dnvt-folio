@@ -23,13 +23,14 @@ const ImageSection = lazy(() => import('./segments/ImageSection'))
  */
 const Guidelines: React.FC = () => {
   const theme: Theme = useTheme()
+
   const [heroTransition, setHeroTransition] = useIntroTransition()
   const [, setColor] = useMainColor()
 
   useEffect(() => {
     setHeroTransition((heroTransition: any) => { return { ...heroTransition, guidelines: false } })
     setColor(theme.text.hover)
-  }, [heroTransition, setColor, setHeroTransition, theme.text.hover])
+  }, [setColor, setHeroTransition, theme.text.hover])
 
   return (
     <DocumentSizeProvider>

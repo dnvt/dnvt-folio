@@ -11,7 +11,7 @@ const Introduction: React.FC = () => {
   const CONTENT = useMemo(() => HOMEPAGE_CONTENT.INTRODUCTION, [])
 
   return (
-    <div style={{ transform: "translateY(0)", zIndex: 10 }}>
+    <div>
       <Container>
         <Font type='h1'>
           Digital designer based in New York – currently redefining modern video

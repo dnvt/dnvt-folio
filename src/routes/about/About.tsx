@@ -6,6 +6,7 @@ import { DocumentSizeProvider } from "../../hooks/useDimensionSize"
 import { useIntroTransition } from "../../hooks/useHeroTransition"
 import { useMainColor } from "../../hooks/useSetMainColor"
 import Font from "../../utils/fonts/Font"
+import Fontimation from "../../utils/fonts/Fontimation"
 import Grid from "../../utils/grids/Grid"
 import Spacer from "../../utils/spacer/Spacer"
 import { Theme } from "../../utils/theme/theme"
@@ -24,12 +25,13 @@ const About: React.FC = () => {
   return (
     <DocumentSizeProvider>
       <Grid />
-      <div style={{ transform: heroTransition.about ? "translateY(240px)" : "translateY(0px)", opacity: heroTransition.about ? 0 : 1, transition: "opacity .6s ease, transform .6s ease", minHeight: "100%" }}>
+      <div style={{ transform: heroTransition.about ? "translateY(-120px)" : "translateY(-360px)", opacity: heroTransition.about ? 0 : 1, transition: "opacity .6s ease, transform .6s ease", minHeight: "100%" }}>
+        <div style={{ position: "relative", marginBottom: -528, transform: "translateX(0px)" }}>
+          <Fontimation>About Moi!</Fontimation>
+        </div>
         <Container>
-          <Spacer height={104} />
-          <Spacer height={184} />
           <Font type='h1'>
-            <br /> Product, Fun & Creative Direction for the Internets.
+            Product, Fun & Creative Direction for the Internets.
           </Font>
           <Font type='h5' style={{ color: theme.text.hover }}>
             Currently working at Frame.io
