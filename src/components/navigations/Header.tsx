@@ -50,7 +50,7 @@ const Header: React.FC<HeaderType> = ({ positionNotfixed }) => {
       <Button path="/">François Denavaut</Button>
       {spacer}
       <Button icon={ICONS.iconWork} path="/work/usmobile/dashboard-pwa">Work</Button>{spacer}
-      <Button icon={ICONS.iconPlayground} tooltip="Page under construction">Playground</Button>{spacer}
+      <Button icon={ICONS.iconPlayground} tooltip="Under construction">Playground</Button>{spacer}
       <Button icon={ICONS.iconAbout} path="/about">About</Button>{spacer}
       <Button icon={ICONS.iconGuidelines} path="/guidelines">Guidelines</Button>{iconSpacer}
       <IconButton tooltip="Switch to Dark Theme" icon="light" />{iconSpacer}

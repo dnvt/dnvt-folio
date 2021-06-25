@@ -38,7 +38,8 @@ const Tooltip: React.FC<TooltipProps> = ({ value, parentWidth }) => {
         style={{
           opacity: animation ? 1 : 0,
           transform: animation ? "translateY(0)" : "translateY(-8px)",
-          transition: "opacity .12s ease, transform .12s ease"
+          transition: "opacity .12s ease, transform .12s ease",
+          transitionDelay: ".8s"
         }}>
         <Font type='tooltip'>{value}</Font>
       </div>

@@ -36,63 +36,63 @@ const Fontimation: React.FC = ({ children }) => {
       }
     >
       <div className={classes.hideDiv}>
-        <animated.div style={{ transform: props6.xy.interpolate(trans1) }}>
+        <animated.div style={{ transform: props6.xy.to(trans1) }}>
           <Font type="hero">{children}</Font>
         </animated.div>
       </div>
       <div className={classes.hideDiv}>
-        <animated.div style={{ transform: props5.xy.interpolate(trans2) }}>
+        <animated.div style={{ transform: props5.xy.to(trans2) }}>
           <Font type="hero">{children}</Font>
         </animated.div>
       </div>
       <div className={classes.hideDiv}>
-        <animated.div style={{ transform: props4.xy.interpolate(trans3) }}>
+        <animated.div style={{ transform: props4.xy.to(trans3) }}>
           <Font type="hero">{children}</Font>
         </animated.div>
       </div>
       <div className={classes.hideDiv}>
-        <animated.div style={{ transform: props3.xy.interpolate(trans4) }}>
+        <animated.div style={{ transform: props3.xy.to(trans4) }}>
           <Font type="hero">{children}</Font>
         </animated.div>
       </div>
       <div className={classes.hideDiv}>
-        <animated.div style={{ transform: props2.xy.interpolate(trans5) }}>
+        <animated.div style={{ transform: props2.xy.to(trans5) }}>
           <Font type="hero">{children}</Font>
         </animated.div>
       </div>
       <div className={classes.hideDiv}>
-        <animated.div style={{ transform: props.xy.interpolate(trans6) }}>
+        <animated.div style={{ transform: props.xy.to(trans6) }}>
           <Font type="hero">{children}</Font>
         </animated.div>
       </div>
       <div className={classes.hideDiv}>
-        <animated.div style={{ transform: props.xy.interpolate(trans7) }}>
+        <animated.div style={{ transform: props.xy.to(trans7) }}>
           <Font type="hero">{children}</Font>
         </animated.div>
       </div>
       <div className={classes.hideDiv}>
-        <animated.div style={{ transform: props2.xy.interpolate(trans8) }}>
+        <animated.div style={{ transform: props2.xy.to(trans8) }}>
           <Font type="hero">{children}</Font>
         </animated.div>
       </div>
       <div className={classes.hideDiv}>
-        <animated.div style={{ transform: props3.xy.interpolate(trans9) }}>
+        <animated.div style={{ transform: props3.xy.to(trans9) }}>
           <Font type="hero">{children}</Font>
         </animated.div>
       </div>
       <div className={classes.hideDiv}>
-        <animated.div style={{ transform: props4.xy.interpolate(trans10) }}>
+        <animated.div style={{ transform: props4.xy.to(trans10) }}>
           <Font type="hero">{children}</Font>
         </animated.div>
       </div>
 
       <div className={classes.hideDiv}>
-        <animated.div style={{ transform: props5.xy.interpolate(trans11) }}>
+        <animated.div style={{ transform: props5.xy.to(trans11) }}>
           <Font type="hero">{children}</Font>
         </animated.div>
       </div>
       <div className={classes.hideDiv}>
-        <animated.div style={{ transform: props6.xy.interpolate(trans12) }}>
+        <animated.div style={{ transform: props6.xy.to(trans12) }}>
           <Font type="hero">{children}</Font>
         </animated.div>
       </div>

@@ -8,6 +8,8 @@ const ExternalLinkStyle = createUseStyles({
 		margin: "0",
 		paddingBottom: "8px",
 		width: "100%",
+		transform: "translate(0px)",
+		zIndex: 10,
 		"@media (min-width: 768px)": { width: "max-content", marginRight: "32px" },
 		"@media (min-width: 1360px)": { marginRight: "40px" },
 		"&:last-of-type": {

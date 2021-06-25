@@ -14,10 +14,19 @@ import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import { useMenuVisibility } from "../../hooks/useMenuVisibility"
 
-type ButtonProps = {
-  path?: string
+type ButtonProps = ButtonLinkProps | ButtonNoLinkProps
+
+type ButtonLinkProps = {
+  path: string
   icon?: ShapesTypes | [ShapesTypes, ShapesTypes]
   tooltip?: string
+  menuToggle?: Boolean
+}
+
+type ButtonNoLinkProps = {
+  path?: string
+  icon?: ShapesTypes | [ShapesTypes, ShapesTypes]
+  tooltip: string
   menuToggle?: Boolean
 }
 
@@ -71,16 +80,19 @@ const Button: React.FC<ButtonProps> = (props) => {
           {tooltipComponent}
         </Link>
         :
+        // TODO: 
+        // Get a link to avoid unlinkable menu
         <a
-          aria-disabled={path ? "false" : "true"}
+          aria-disabled="false"
           className={classes.MenuButton}
+          style={{ cursor: "not-allowed" }}
         >
           {iconComponent}
           <div>
             <Font type='menu'>
               {children}
             </Font>
-            <Underline button opacity={iconHover ? 1 : 0} />
+            <Underline button opacity={0} />
           </div>
           {tooltipComponent}
         </a>
