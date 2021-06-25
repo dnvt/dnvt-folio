@@ -8,6 +8,10 @@ const TooltipStyle = createUseStyles({
 		color: ({ theme }) => (theme as Theme).text.tooltip,
 		background: ({ theme }) => (theme as Theme).background.tooltip,
 	},
+	positioning: {
+		position: "absolute",
+		top: 40,
+	},
 })
 
 export default TooltipStyle

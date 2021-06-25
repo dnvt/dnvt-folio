@@ -14,6 +14,7 @@ const ButtonStyle = createUseStyles({
   //   flexDirection: "row",
   // },
   icon: {
+    position: "relative",
     height: "100%",
     padding: "5px 0",
     display: "flex",

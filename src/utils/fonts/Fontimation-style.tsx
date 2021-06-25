@@ -9,13 +9,10 @@ const FontimationStyle = createUseStyles({
     gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr",
     width: "100%",
     userSelect: "none",
-    "@media (min-width: 576px)": {
-      height: "240px",
-      // margin: "-320px auto 320px",
-    },
+    height: "240px",
+
     "@media (min-width: 768px)": {
       height: "800px",
-      // margin: "-120px auto -640px",
     },
     "@media (min-width: 1360px)": {
       height: "1320px",

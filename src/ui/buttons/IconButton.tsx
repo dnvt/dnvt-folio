@@ -10,19 +10,24 @@ import GridToggleIcon from "./variants/GridToggleIcon"
 import ThemeToggleIcon from "./variants/ThemeToggleIcon"
 import MenuToggleIcon from "./variants/MenuToggleIcon"
 import MenuButtonStyle from "./Buttons-style"
+import Tooltip from "../tooltips/Tooltip"
 
 export type IconButtonType = "grid" | "light" | "menu"
+interface IconButtonProps {
+  icon: IconButtonType
+  tooltip?: string
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 
-const IconButton: React.FC<{ icon: IconButtonType }> = ({ icon }) => {
+const IconButton: React.FC<IconButtonProps> = ({ icon, tooltip }) => {
   const classes = MenuButtonStyle()
   const theme: Theme = useTheme()
-  const [iconColor, setIconColor] = useState<Boolean>(false)
+  const [iconHover, setIconHover] = useState<Boolean>(false)
 
   const hover = theme.text.hover
   const primary = theme.text.primary
-  const hoverAnimation = iconColor ? hover : primary
+  const hoverAnimation = iconHover ? hover : primary
 
   let iconComponent: JSX.Element | undefined
 
@@ -30,12 +35,16 @@ const IconButton: React.FC<{ icon: IconButtonType }> = ({ icon }) => {
   if (icon == "light") iconComponent = <ThemeToggleIcon color={hoverAnimation} />
   if (icon == "menu") iconComponent = <MenuToggleIcon color={hoverAnimation} />
 
+  let menuTooltip: JSX.Element | undefined
+  if (tooltip && iconHover) menuTooltip = <Tooltip value={tooltip} />
+
   return (
     <motion.div
       className={classes.icon}
-      onHoverStart={() => setIconColor(iconColor => !iconColor)}
-      onHoverEnd={() => setIconColor(iconColor => !iconColor)} >
+      onHoverStart={() => setIconHover(iconHover => !iconHover)}
+      onHoverEnd={() => setIconHover(iconHover => !iconHover)} >
       {iconComponent}
+      {menuTooltip}
     </motion.div>)
 
 

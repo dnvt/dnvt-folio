@@ -2,7 +2,7 @@
  * Welcome to @dnvt/button!
  */
 
-import React, { useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { useTheme } from "react-jss"
 import { Theme } from "../../utils/theme/theme"
 import Font from "../../utils/fonts/Font"
@@ -15,7 +15,7 @@ import { Link } from "react-router-dom"
 import { useMenuVisibility } from "../../hooks/useMenuVisibility"
 
 type ButtonProps = {
-  path: string
+  path?: string
   icon?: ShapesTypes | [ShapesTypes, ShapesTypes]
   tooltip?: string
   menuToggle?: Boolean
@@ -27,40 +27,64 @@ const Button: React.FC<ButtonProps> = (props) => {
   const theme: Theme = useTheme()
   const [menu, setMenu] = useMenuVisibility()
   const [iconHover, setIconHover] = useState(false)
+  const [elWidth, setElWidth] = useState(null as any)
+
   const classes = MenuButtonStyle({ ...props, theme })
+  const buttonRef = useRef(null as any)
 
   const { path, icon, tooltip, menuToggle, children } = props
+
+  useEffect(() => {
+    setElWidth(buttonRef.current.offsetWidth)
+  }, [])
 
   let iconComponent: JSX.Element | undefined
   if (typeof (icon) == "string") iconComponent = iconWrapper(<Icon name={icon} />)
   if (Array.isArray(icon)) iconComponent = iconWrapper(<Icon name={iconHover ? icon[1] || icon : icon[0]} />)
 
   let tooltipComponent: JSX.Element | undefined
-  if (tooltip) tooltipComponent = <Tooltip value={tooltip} />
+  if (tooltip && iconHover) tooltipComponent = <Tooltip value={tooltip} parentWidth={elWidth * .5} />
 
   return (
     <motion.div
+      ref={buttonRef}
       initial="rest"
       whileHover="hover"
       animate="rest"
       onClick={() => menuToggle && setMenu(!menu)}
-
       onHoverStart={() => setIconHover(iconHover => !iconHover)}
       onHoverEnd={() => setIconHover(iconHover => !iconHover)}>
-      <Link
-        to={path}
-        aria-disabled={path ? "false" : "true"}
-        className={classes.MenuButton}
-      >
-        {iconComponent}
-        <div>
-          <Font type='menu'>
-            {children}
-          </Font>
-          <Underline button opacity={iconHover ? 1 : 0} />
-        </div>
-        {tooltipComponent}
-      </Link>
+
+      {path ?
+        <Link
+          to={path}
+          aria-disabled={path ? "false" : "true"}
+          className={classes.MenuButton}
+        >
+          {iconComponent}
+          <div>
+            <Font type='menu'>
+              {children}
+            </Font>
+            <Underline button opacity={iconHover ? 1 : 0} />
+          </div>
+          {tooltipComponent}
+        </Link>
+        :
+        <a
+          aria-disabled={path ? "false" : "true"}
+          className={classes.MenuButton}
+        >
+          {iconComponent}
+          <div>
+            <Font type='menu'>
+              {children}
+            </Font>
+            <Underline button opacity={iconHover ? 1 : 0} />
+          </div>
+          {tooltipComponent}
+        </a>
+      }
     </motion.div>
   )
 

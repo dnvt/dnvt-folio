@@ -57,6 +57,8 @@ const FontStyle = createUseStyles(theme => ({
     lineHeight: "24px",
     letterSpacing: "0em",
     margin: "0",
+    transform: "translateY(0)", zIndex: 10,
+
     color: props => (props as unknown as Props).color ?? (theme as Theme).text.primary,
 
     "@media (min-width: 768px)": {
@@ -80,7 +82,7 @@ const FontStyle = createUseStyles(theme => ({
     paddingInlineEnd: 0,
     color: (theme as Theme).text.secondary,
     margin: "0",
-
+    transform: "translateY(0)", zIndex: 10,
     "@media (min-width: 768px)": {
       fontSize: "16px",
       lineHeight: "32px",

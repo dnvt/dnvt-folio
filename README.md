@@ -55,9 +55,12 @@
 - [x] Clean Project colors in theme dictionnary
 - [x] Make Project dictionnary
 - [x] HeroFont
-  - [x] Container in all pages with variaable -Heigths
+  - [x] Container in all pages
+  - [ ] Update Responsive heights for the Hero container
+- [ ] Tooltips
 - [ ] Design an About page
 - [ ] Add documentation to my functions
+- [ ] Finish Project pages
 
 ---
 

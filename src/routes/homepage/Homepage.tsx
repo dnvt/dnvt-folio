@@ -10,7 +10,7 @@ import { Theme } from '../../utils/theme/theme'
 import Spacer from '../../utils/spacer/Spacer'
 import Grid from '../../utils/grids/Grid'
 import Font from '../../utils/fonts/Font'
-import Fontimation from '../../utils/fonts/Fontimation'
+import Fontimation, { compensateFontimationHeight } from '../../utils/fonts/Fontimation'
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -35,7 +35,7 @@ const Homepage: React.FC = () => {
     setColor(theme.text.hover)
   }, [setColor, setHeroTransition, theme.text.hover])
 
-  let spacer = <Spacer contained height={window.width > 768 ? 184 : 40} />
+  let spacer = <Spacer contained height={window.width > 767 ? 184 : 40} />
 
   console.log(heroTransition)
   return (
@@ -44,7 +44,14 @@ const Homepage: React.FC = () => {
       <div style={{ transform: heroTransition.homepage ? "translateY(240px)" : "translateY(0px)", opacity: heroTransition.homepage ? 0 : 1, transition: "opacity .6s ease, transform .6s ease" }}>
         <Spacer contained height={104} />
         {window.width > 767 && <Spacer contained height={184} />}
-        <div style={{ position: "relative", marginBottom: -1320, transform: heroTransition.homepage ? "translateY(-80px)" : "translateY(0px)", transition: " transform .6s ease" }}>
+        <div style={{
+          position: "relative",
+          marginBottom: compensateFontimationHeight(window),
+          transform:
+            heroTransition.homepage ?
+              "translateY(-80px)" :
+              "translateY(0px)", transition: " transform .6s ease"
+        }}>
           <Fontimation>François</Fontimation>
         </div>
         <Introduction />
@@ -56,11 +63,20 @@ const Homepage: React.FC = () => {
           <Spacer contained height={104} />
           <SelectedWork />
           {spacer}
-          <div style={{ position: "relative", marginBottom: -1320, transform: "translateX(0px)" }}>
+          <div style={{
+            position: "relative",
+            marginBottom: compensateFontimationHeight(window),
+            transform: "translateX(0px)"
+          }}>
             <Fontimation>Yeaaaah</Fontimation>
           </div>
           <PlayGround />
-          <div style={{ position: "relative", marginTop: -192, marginBottom: -1128, transform: "translateX(0px)" }}>
+          <div style={{
+            position: "relative",
+            marginTop: -192,
+            marginBottom: compensateFontimationHeight(window) + 192,
+            transform: "translateX(0px)"
+          }}>
             <Fontimation>dnvt.me</Fontimation>
           </div>
           {spacer}

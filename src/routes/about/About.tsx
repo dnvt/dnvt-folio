@@ -5,6 +5,7 @@ import Container from "../../components/containers/Container"
 import { DocumentSizeProvider } from "../../hooks/useDimensionSize"
 import { useIntroTransition } from "../../hooks/useHeroTransition"
 import { useMainColor } from "../../hooks/useSetMainColor"
+import { useWindowSize } from "../../hooks/useWindowSize"
 import Font from "../../utils/fonts/Font"
 import Fontimation from "../../utils/fonts/Fontimation"
 import Grid from "../../utils/grids/Grid"
@@ -13,7 +14,7 @@ import { Theme } from "../../utils/theme/theme"
 
 const About: React.FC = () => {
   const theme: Theme = useTheme()
-
+  const window = useWindowSize()
   const [heroTransition, setHeroTransition] = useIntroTransition()
   const [, setColor] = useMainColor()
 
@@ -26,7 +27,7 @@ const About: React.FC = () => {
     <DocumentSizeProvider>
       <Grid />
       <div style={{ transform: heroTransition.about ? "translateY(-120px)" : "translateY(-360px)", opacity: heroTransition.about ? 0 : 1, transition: "opacity .6s ease, transform .6s ease", minHeight: "100%" }}>
-        <div style={{ position: "relative", marginBottom: -528, transform: "translateX(0px)" }}>
+        <div style={{ position: "relative", marginBottom: compensateFontimationHeight(), transform: "translateX(0px)" }}>
           <Fontimation>About Moi!</Fontimation>
         </div>
         <Container>
@@ -56,6 +57,14 @@ const About: React.FC = () => {
       </div>
     </DocumentSizeProvider >
   )
+
+  //
+
+  function compensateFontimationHeight() {
+    if (window.width > 1359) return -528
+    if (window.width > 767) return -320
+    return -80
+  }
 }
 
 export default About

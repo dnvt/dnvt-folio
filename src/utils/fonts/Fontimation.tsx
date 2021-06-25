@@ -9,6 +9,7 @@ const calc = (x: number, y: number, window_w: number) => [
   y - window_w / 2,
 ]
 
+
 const Fontimation: React.FC = ({ children }) => {
   const classes = FontimationStyle()
   const window = useWindowSize()
@@ -133,4 +134,10 @@ function getSpringProps(tension: number, friction: number) {
     xy: [0, 0],
     config: { mass: 25, tension: tension, friction: friction },
   }
+}
+
+export function compensateFontimationHeight(window: { width: number }) {
+  if (window.width > 1359) return -1360
+  if (window.width > 767) return -800
+  return -240
 }
