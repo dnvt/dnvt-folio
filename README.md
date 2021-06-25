@@ -57,17 +57,7 @@
 - [x] HeroFont
   - [x] Container in all pages
   - [ ] Update Responsive heights for the Hero container
-- [ ] Tooltips
+- [x] Tooltips
 - [ ] Design an About page
 - [ ] Add documentation to my functions
 - [ ] Finish Project pages
-
----
-
-## Google cloud
-
-`git push --all google`
-
-`gcloud app deploy`
-
-`gcloud app browse`
