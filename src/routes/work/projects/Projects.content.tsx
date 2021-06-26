@@ -8,6 +8,7 @@ import starsFooterPng from "../../../assets/images/Footer/Stars.png"
 import starsFooterWebp from "../../../assets/images/Footer/Stars.webp"
 import coversFooterPng from "../../../assets/images/Footer/Coverjs.png"
 import coversFooterWebp from "../../../assets/images/Footer/Coverjs.webp"
+import getFooter from "./Footer.content"
 
 function getContent(color: any, theme: Theme): ListProjects {
 	return {
@@ -50,23 +51,17 @@ function getContent(color: any, theme: Theme): ListProjects {
 					key: 1,
 					reverse: true,
 					title: { value: "Previous" },
-					src: [wasteFooterPng, wasteFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
+					...getFooter().coverjs
 				},
 				{
 					key: 2,
 					title: { value: "Random" },
-					src: [starsFooterPng, starsFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
+					...getFooter().coverjs
 				},
 				{
 					key: 3,
 					title: { value: "Next" },
-					src: [coversFooterPng, coversFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
+					...getFooter().coverjs
 				},
 			],
 		},

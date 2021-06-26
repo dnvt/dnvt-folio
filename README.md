@@ -47,7 +47,6 @@
 - [x] Add Link to: CardImage | InternalLink | Button
 - [x] Guidelines
   - [ ] Update the Descriptions
-  - [ ] Update the colors swatches
 - [x] Menu on mobile
 - [x] Homepage
 - [x] Set the initial animation one time only (=> make a global Hook)
@@ -61,3 +60,6 @@
 - [ ] Design an About page
 - [ ] Add documentation to my functions
 - [ ] Finish Project pages
+  - [ ] Update Footer Content
+  - [ ] Update Footer Images
+  - [ ] Update Content Hero images
