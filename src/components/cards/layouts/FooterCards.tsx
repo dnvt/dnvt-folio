@@ -45,7 +45,7 @@ const CardUnit = (props: CardPropsType) => {
       title={{ color: title?.color }}
       background={background}
     >
-      { title!.value}
+      {title!.value}
     </Card >
   )
 }

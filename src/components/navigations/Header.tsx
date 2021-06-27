@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useMemo } from "react"
 import { useWindowSize } from "../../hooks/useWindowSize"
 import Container from "../containers/Container"
 import Button from "../../ui/buttons/Button"
@@ -8,11 +8,13 @@ import HeaderStyle from "./Header-style"
 import { ShapesTypes } from "../../utils/icons/Icon"
 
 type HeaderType = { positionNotfixed?: Boolean }
+type IconProps = { icon?: [ShapesTypes, ShapesTypes], text: string | string[] }
 type ContentType = {
-  iconWork?: [ShapesTypes, ShapesTypes]
-  iconPlayground?: [ShapesTypes, ShapesTypes]
-  iconAbout?: [ShapesTypes, ShapesTypes]
-  iconGuidelines?: [ShapesTypes, ShapesTypes]
+  home: IconProps
+  work: IconProps
+  playground: IconProps
+  about: IconProps
+  guidelines: IconProps
 }
 
 /**
@@ -28,18 +30,17 @@ const Header: React.FC<HeaderType> = ({ positionNotfixed }) => {
   const spacer = <Spacer borderLess height='100%' width={window.width > 1359 ? 40 : 32} />
   const iconSpacer = <Spacer borderLess height='100%' width={window.width > 1359 ? 32 : 24} />
 
-  const ICONS: ContentType = {
-    iconWork: ["mouse", "mouseHover"],
-    iconPlayground: ["cheese", "cheeseHover"],
-    iconAbout: ["smiley", "smileyHover"],
-    iconGuidelines: ["guidelines", "guidelinesHover"],
-  }
+  const HEADER_CONTENT = getHeaderContent()
+  const CONTENT = useMemo(() => HEADER_CONTENT, [HEADER_CONTENT])
+
+
+
 
   const mobileMenu = (<>
     <IconButton icon='menu' />
     {spacer}
     {spacer}
-    <Button menuToggle path="/">François</Button>
+    <Button menuToggle path="/">{CONTENT.home.text[1]}</Button>
     {spacer}
     <IconButton icon="light" />
     <IconButton icon="grid" />
@@ -47,12 +48,12 @@ const Header: React.FC<HeaderType> = ({ positionNotfixed }) => {
 
   const desktopMenu = (
     <>
-      <Button path="/">François Denavaut</Button>
+      <Button path="/">{CONTENT.home.text[0]}</Button>
       {spacer}
-      <Button icon={ICONS.iconWork} path="/work/usmobile/dashboard-pwa">Work</Button>{spacer}
-      <Button icon={ICONS.iconPlayground} tooltip="Under construction">Playground</Button>{spacer}
-      <Button icon={ICONS.iconAbout} path="/about">About</Button>{spacer}
-      <Button icon={ICONS.iconGuidelines} path="/guidelines">Guidelines</Button>{iconSpacer}
+      <Button icon={CONTENT.work.icon} path="/work/usmobile/dashboard-pwa">{CONTENT.work.text}</Button>{spacer}
+      <Button icon={CONTENT.playground.icon} tooltip="Under construction">{CONTENT.playground.text}</Button>{spacer}
+      <Button icon={CONTENT.about.icon} path="/about">{CONTENT.about.text}</Button>{spacer}
+      <Button icon={CONTENT.guidelines.icon} path="/guidelines">{CONTENT.guidelines.text}</Button>{iconSpacer}
       <IconButton tooltip="Switch to Dark Theme" icon="light" />{iconSpacer}
       <IconButton tooltip="Show the Grid" icon="grid" />
     </>
@@ -75,3 +76,15 @@ const Header: React.FC<HeaderType> = ({ positionNotfixed }) => {
 }
 
 export default Header
+
+/////////////////////////////////////////////////////////////////
+
+function getHeaderContent(): ContentType {
+  return {
+    home: { text: ["François Denavaut", "François"] },
+    work: { icon: ["mouse", "mouseHover"], text: "Work" },
+    playground: { icon: ["cheese", "cheeseHover"], text: "Playground" },
+    about: { icon: ["smiley", "smileyHover"], text: "About" },
+    guidelines: { icon: ["guidelines", "guidelinesHover"], text: "Guidelines" },
+  }
+}

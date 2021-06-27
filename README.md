@@ -60,6 +60,8 @@
 - [ ] Design an About page
 - [ ] Add documentation to my functions
 - [ ] Finish Project pages
-  - [ ] Update Footer Content
-  - [ ] Update Footer Images
+  - [x] Update Footer Content
+  - [x] Update Footer Images
   - [ ] Update Content Hero images
+- [ ] Create missing images
+  - [ ] Norse Footer images

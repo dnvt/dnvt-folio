@@ -19,12 +19,6 @@ import mobileDash04Png from "../../../assets/images/USMobile/System/mobile-dashb
 import mobileDash04Webp from "../../../assets/images/USMobile/System/mobile-dashboard-04.webp"
 import mobileDash05Png from "../../../assets/images/USMobile/System/mobile-dashboard-05.png"
 import mobileDash05Webp from "../../../assets/images/USMobile/System/mobile-dashboard-05.webp"
-import systemPng from "../../../assets/images/Footer/System.png"
-import systemWebp from "../../../assets/images/Footer/System.webp"
-import matrixPng from "../../../assets/images/Footer/Matrix.png"
-import matrixWebp from "../../../assets/images/Footer/Matrix.webp"
-import starsFooterPng from "../../../assets/images/Footer/Stars.png"
-import starsFooterWebp from "../../../assets/images/Footer/Stars.webp"
 import Library01Png from "../../../assets/images/USMobile/System/Library-01.png"
 import Library01Webp from "../../../assets/images/USMobile/System/Library-01.webp"
 import Library02Png from "../../../assets/images/USMobile/System/Library-02.png"
@@ -39,6 +33,7 @@ import App02Webp from "../../../assets/images/USMobile/System/App-02.webp"
 import App03Webp from "../../../assets/images/USMobile/System/App-03.webp"
 import App04Webp from "../../../assets/images/USMobile/System/App-04.webp"
 import App05Webp from "../../../assets/images/USMobile/System/App-05.webp"
+import getFooter from "../projects/Footer.content"
 
 type DesignsType = {
   GRP_DEVICES_FIRST: DevicesMixed
@@ -91,25 +86,18 @@ const FOOTER: FooterContentType = [
     key: 1,
     reverse: true,
     title: { value: "Previous" },
-    src: [systemPng, systemWebp],
-    alt: "I'm an alt ",
-    background: "usmobile",
-    path: "/",
+    ...getFooter().branding
   },
   {
     key: 2,
     title: { value: "Random" },
-    src: [starsFooterPng, starsFooterWebp],
-    alt: "I'm an alt ",
-    path: "/",
+    ...getFooter().matrix
   },
   {
     key: 3,
     title: { value: "Next" },
     background: "usmobile",
-    src: [matrixPng, matrixWebp],
-    alt: "I'm an alt ",
-    path: "/",
+    ...getFooter().norse
   },
 ]
 

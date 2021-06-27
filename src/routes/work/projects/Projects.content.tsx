@@ -51,17 +51,70 @@ function getContent(color: any, theme: Theme): ListProjects {
 					key: 1,
 					reverse: true,
 					title: { value: "Previous" },
-					...getFooter().coverjs
+					...getFooter().stars
 				},
 				{
 					key: 2,
-					title: { value: "Random" },
-					...getFooter().coverjs
+					title: { value: "Other" },
+					...getFooter().norse
 				},
 				{
 					key: 3,
 					title: { value: "Next" },
+					...getFooter().branding
+				},
+			],
+		},
+		branding: {
+			HERO: { images: [heroCoverPng, heroCoverWebp] },
+			INTRO: {
+				section: "Fun coding project",
+				title: { value: "Album covers animated in javascript." },
+				typeOfProject: { value: "Javascript", color: color },
+				paragraph: [
+					{
+						key: 1,
+						paragraph:
+							"Product designer and creative director able to provide strong ip on the development of product designs, marketing campaigns, user interfaces, and motion design.",
+					},
+				],
+				link: "https://dnvt.github.io/Coverjs/",
+				button: "Visit project",
+			},
+			IMAGES: [
+				{
+					key: 1,
+					src: [heroCoverPng, heroCoverWebp],
+					alt: "alt",
+				},
+			],
+			THANKS: [
+				{
+					key: 1,
+					paragraph:
+						"Thanks to all the team at US Mobile for making this project happening. Thanks for @Nikita for implementing all the guidelines in React.",
+				},
+				{
+					key: 2,
+					paragraph: "Thanks for reading it.",
+				},
+			],
+			FOOTER: [
+				{
+					key: 1,
+					reverse: true,
+					title: { value: "Previous" },
 					...getFooter().coverjs
+				},
+				{
+					key: 2,
+					title: { value: "Other" },
+					...getFooter().system
+				},
+				{
+					key: 3,
+					title: { value: "Next" },
+					...getFooter().matrix
 				},
 			],
 		},
@@ -107,82 +160,17 @@ function getContent(color: any, theme: Theme): ListProjects {
 					key: 1,
 					reverse: true,
 					title: { value: "Previous" },
-					src: [wasteFooterPng, wasteFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
+					...getFooter().branding
 				},
 				{
 					key: 2,
-					title: { value: "Random" },
-					src: [starsFooterPng, starsFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
+					title: { value: "Other" },
+					...getFooter().matrix
 				},
 				{
 					key: 3,
 					title: { value: "Next" },
-					src: [coversFooterPng, coversFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
-				},
-			],
-		},
-		branding: {
-			HERO: { images: [heroCoverPng, heroCoverWebp] },
-			INTRO: {
-				section: "Fun coding project",
-				title: { value: "Album covers animated in javascript." },
-				typeOfProject: { value: "Javascript", color: color },
-				paragraph: [
-					{
-						key: 1,
-						paragraph:
-							"Product designer and creative director able to provide strong ip on the development of product designs, marketing campaigns, user interfaces, and motion design.",
-					},
-				],
-				link: "https://dnvt.github.io/Coverjs/",
-				button: "Visit project",
-			},
-			IMAGES: [
-				{
-					key: 1,
-					src: [heroCoverPng, heroCoverWebp],
-					alt: "alt",
-				},
-			],
-			THANKS: [
-				{
-					key: 1,
-					paragraph:
-						"Thanks to all the team at US Mobile for making this project happening. Thanks for @Nikita for implementing all the guidelines in React.",
-				},
-				{
-					key: 2,
-					paragraph: "Thanks for reading it.",
-				},
-			],
-			FOOTER: [
-				{
-					key: 1,
-					reverse: true,
-					title: { value: "Previous" },
-					src: [wasteFooterPng, wasteFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
-				},
-				{
-					key: 2,
-					title: { value: "Random" },
-					src: [starsFooterPng, starsFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
-				},
-				{
-					key: 3,
-					title: { value: "Next" },
-					src: [coversFooterPng, coversFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
+					...getFooter().system
 				},
 			],
 		},
@@ -225,23 +213,17 @@ function getContent(color: any, theme: Theme): ListProjects {
 					key: 1,
 					reverse: true,
 					title: { value: "Previous" },
-					src: [wasteFooterPng, wasteFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
+					...getFooter().telekom
 				},
 				{
 					key: 2,
-					title: { value: "Random" },
-					src: [starsFooterPng, starsFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
+					title: { value: "Other" },
+					...getFooter().stars
 				},
 				{
 					key: 3,
 					title: { value: "Next" },
-					src: [coversFooterPng, coversFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
+					...getFooter().elastic
 				},
 			],
 		},
@@ -284,23 +266,17 @@ function getContent(color: any, theme: Theme): ListProjects {
 					key: 1,
 					reverse: true,
 					title: { value: "Previous" },
-					src: [wasteFooterPng, wasteFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
+					...getFooter().norse
 				},
 				{
 					key: 2,
-					title: { value: "Random" },
-					src: [starsFooterPng, starsFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
+					title: { value: "Other" },
+					...getFooter().system
 				},
 				{
 					key: 3,
 					title: { value: "Next" },
-					src: [coversFooterPng, coversFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
+					...getFooter().kipfit
 				},
 			],
 		},
@@ -343,23 +319,17 @@ function getContent(color: any, theme: Theme): ListProjects {
 					key: 1,
 					reverse: true,
 					title: { value: "Previous" },
-					src: [wasteFooterPng, wasteFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
+					...getFooter().elastic
 				},
 				{
 					key: 2,
 					title: { value: "Random" },
-					src: [starsFooterPng, starsFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
+					...getFooter().coverjs
 				},
 				{
 					key: 3,
 					title: { value: "Next" },
-					src: [coversFooterPng, coversFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
+					...getFooter().waste
 				},
 			],
 		},
@@ -402,23 +372,17 @@ function getContent(color: any, theme: Theme): ListProjects {
 					key: 1,
 					reverse: true,
 					title: { value: "Previous" },
-					src: [wasteFooterPng, wasteFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
+					...getFooter().kipfit
 				},
 				{
 					key: 2,
-					title: { value: "Random" },
-					src: [starsFooterPng, starsFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
+					title: { value: "Other" },
+					...getFooter().matrix
 				},
 				{
 					key: 3,
 					title: { value: "Next" },
-					src: [coversFooterPng, coversFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
+					...getFooter().mimi
 				},
 			],
 		},
@@ -461,23 +425,17 @@ function getContent(color: any, theme: Theme): ListProjects {
 					key: 1,
 					reverse: true,
 					title: { value: "Previous" },
-					src: [wasteFooterPng, wasteFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
+					...getFooter().waste
 				},
 				{
 					key: 2,
-					title: { value: "Random" },
-					src: [starsFooterPng, starsFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
+					title: { value: "Other" },
+					...getFooter().system
 				},
 				{
 					key: 3,
 					title: { value: "Next" },
-					src: [coversFooterPng, coversFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
+					...getFooter().stars
 				},
 			],
 		},
@@ -520,23 +478,17 @@ function getContent(color: any, theme: Theme): ListProjects {
 					key: 1,
 					reverse: true,
 					title: { value: "Previous" },
-					src: [wasteFooterPng, wasteFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
+					...getFooter().mimi
 				},
 				{
 					key: 2,
-					title: { value: "Random" },
-					src: [starsFooterPng, starsFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
+					title: { value: "Other" },
+					...getFooter().matrix
 				},
 				{
 					key: 3,
 					title: { value: "Next" },
-					src: [coversFooterPng, coversFooterWebp],
-					alt: "I'm an alt ",
-					path: "/",
+					...getFooter().coverjs
 				},
 			],
 		},
