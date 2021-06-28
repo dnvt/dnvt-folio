@@ -1,7 +1,20 @@
 import { Theme } from "../../../utils/theme/theme"
 import { ListProjects } from "./ProjectsProps"
-import heroCoverPng from "../../../assets/images/Coverjs/Work/CoverHero.png"
-import heroCoverWebp from "../../../assets/images/Coverjs/Work/CoverHero.webp"
+import matrixCoverPng from "../../../assets/images/USMobile/Matrix/MatrixHero.png"
+import matrixCoverWebp from "../../../assets/images/USMobile/Matrix/MatrixHero.webp"
+// import brandingCoverPng from "../../../assets/images/USMobile/Matrix/BrandingHero.png"
+// import brandingCoverWebp from "../../../assets/images/USMobile/Matrix/BrandingHero.webp"
+import coverjsCoverPng from "../../../assets/images/Coverjs/CoverHero.png"
+import coverjsCoverWebp from "../../../assets/images/Coverjs/CoverHero.webp"
+import norseCoverPng from "../../../assets/images/Norse/NorseHero.png"
+import norseCoverWebp from "../../../assets/images/Norse/NorseHero.webp"
+import wasteCoverPng from "../../../assets/images/Waste/WasteHero.png"
+import wasteCoverWebp from "../../../assets/images/Waste/WasteHero.webp"
+import mimiCoverPng from "../../../assets/images/Mimi/MimiHero.png"
+import mimiCoverWebp from "../../../assets/images/Mimi/MimiHero.webp"
+import kipfitCoverPng from "../../../assets/images/Kipfit/KipfitHero.png"
+import kipfitCoverWebp from "../../../assets/images/Kipfit/KipfitHero.webp"
+
 import wasteFooterPng from "../../../assets/images/Footer/Waste.png"
 import wasteFooterWebp from "../../../assets/images/Footer/Waste.webp"
 import starsFooterPng from "../../../assets/images/Footer/Stars.png"
@@ -13,7 +26,7 @@ import getFooter from "./Footer.content"
 function getContent(color: any, theme: Theme): ListProjects {
 	return {
 		coverjs: {
-			HERO: { images: [heroCoverPng, heroCoverWebp] },
+			HERO: { images: [coverjsCoverPng, coverjsCoverWebp] },
 			INTRO: {
 				section: "Fun coding project",
 				title: { value: "Album covers animated in javascript." },
@@ -31,7 +44,7 @@ function getContent(color: any, theme: Theme): ListProjects {
 			IMAGES: [
 				{
 					key: 1,
-					src: [heroCoverPng, heroCoverWebp],
+					src: ["", ""],
 					alt: "alt",
 				},
 			],
@@ -66,11 +79,16 @@ function getContent(color: any, theme: Theme): ListProjects {
 			],
 		},
 		branding: {
-			HERO: { images: [heroCoverPng, heroCoverWebp] },
+			HERO: {
+				images: ["", ""],
+				backgroundColor: theme.projects.usmobile.background
+			},
 			INTRO: {
-				section: "Fun coding project",
-				title: { value: "Album covers animated in javascript." },
-				typeOfProject: { value: "Javascript", color: color },
+				section: "Head of design",
+				title: {
+					value: "Creative direction & design guidelines"
+				},
+				typeOfProject: { value: "Design system, Illustration, Motion Design", color: color },
 				paragraph: [
 					{
 						key: 1,
@@ -84,7 +102,7 @@ function getContent(color: any, theme: Theme): ListProjects {
 			IMAGES: [
 				{
 					key: 1,
-					src: [heroCoverPng, heroCoverWebp],
+					src: ["", ""],
 					alt: "alt",
 				},
 			],
@@ -120,7 +138,7 @@ function getContent(color: any, theme: Theme): ListProjects {
 		},
 		matrix: {
 			HERO: {
-				images: [heroCoverPng, heroCoverWebp],
+				images: [matrixCoverPng, matrixCoverWebp],
 				backgroundColor: theme.projects.usmobile.background
 			},
 			INTRO: {
@@ -140,7 +158,7 @@ function getContent(color: any, theme: Theme): ListProjects {
 			IMAGES: [
 				{
 					key: 1,
-					src: [heroCoverPng, heroCoverWebp],
+					src: ["", ""],
 					alt: "alt",
 				},
 			],
@@ -165,7 +183,7 @@ function getContent(color: any, theme: Theme): ListProjects {
 				{
 					key: 2,
 					title: { value: "Other" },
-					...getFooter().matrix
+					...getFooter().mimi
 				},
 				{
 					key: 3,
@@ -175,7 +193,7 @@ function getContent(color: any, theme: Theme): ListProjects {
 			],
 		},
 		norse: {
-			HERO: { images: [heroCoverPng, heroCoverWebp] },
+			HERO: { images: [norseCoverPng, norseCoverWebp], backgroundColor: "transparent" },
 			INTRO: {
 				section: "Selected work",
 				title: { value: "Norse Interior" },
@@ -193,7 +211,7 @@ function getContent(color: any, theme: Theme): ListProjects {
 			IMAGES: [
 				{
 					key: 1,
-					src: [heroCoverPng, heroCoverWebp],
+					src: ["", ""],
 					alt: "alt",
 				},
 			],
@@ -218,7 +236,7 @@ function getContent(color: any, theme: Theme): ListProjects {
 				{
 					key: 2,
 					title: { value: "Other" },
-					...getFooter().stars
+					...getFooter().matrix
 				},
 				{
 					key: 3,
@@ -227,8 +245,9 @@ function getContent(color: any, theme: Theme): ListProjects {
 				},
 			],
 		},
+		// TODO
 		elastic: {
-			HERO: { images: [heroCoverPng, heroCoverWebp] },
+			HERO: { images: ["", ""] },
 			INTRO: {
 				section: "Freelancing gig",
 				title: { value: "Elastic Film" },
@@ -246,7 +265,7 @@ function getContent(color: any, theme: Theme): ListProjects {
 			IMAGES: [
 				{
 					key: 1,
-					src: [heroCoverPng, heroCoverWebp],
+					src: ["", ""],
 					alt: "alt",
 				},
 			],
@@ -281,7 +300,10 @@ function getContent(color: any, theme: Theme): ListProjects {
 			],
 		},
 		kipfit: {
-			HERO: { images: [heroCoverPng, heroCoverWebp] },
+			HERO: {
+				images: [kipfitCoverPng, kipfitCoverWebp],
+				backgroundColor: "transparent"
+			},
 			INTRO: {
 				section: "Senior Thesis",
 				title: { value: "Kipfit" },
@@ -299,7 +321,7 @@ function getContent(color: any, theme: Theme): ListProjects {
 			IMAGES: [
 				{
 					key: 1,
-					src: [heroCoverPng, heroCoverWebp],
+					src: ["", ""],
 					alt: "alt",
 				},
 			],
@@ -334,7 +356,10 @@ function getContent(color: any, theme: Theme): ListProjects {
 			],
 		},
 		waste: {
-			HERO: { images: [heroCoverPng, heroCoverWebp] },
+			HERO: {
+				images: [wasteCoverPng, wasteCoverWebp],
+				backgroundColor: "transparent"
+			},
 			INTRO: {
 				section: "Freelance gig",
 				title: { value: "Love your waste" },
@@ -352,7 +377,7 @@ function getContent(color: any, theme: Theme): ListProjects {
 			IMAGES: [
 				{
 					key: 1,
-					src: [heroCoverPng, heroCoverWebp],
+					src: ["", ""],
 					alt: "alt",
 				},
 			],
@@ -387,7 +412,10 @@ function getContent(color: any, theme: Theme): ListProjects {
 			],
 		},
 		mimi: {
-			HERO: { images: [heroCoverPng, heroCoverWebp] },
+			HERO: {
+				images: [mimiCoverPng, mimiCoverWebp],
+				backgroundColor: theme.projects.mimi.background
+			},
 			INTRO: {
 				section: "Freelance gig",
 				title: { value: "Mimi Hearing Technology" },
@@ -405,7 +433,7 @@ function getContent(color: any, theme: Theme): ListProjects {
 			IMAGES: [
 				{
 					key: 1,
-					src: [heroCoverPng, heroCoverWebp],
+					src: ["", ""],
 					alt: "alt",
 				},
 			],
@@ -440,7 +468,7 @@ function getContent(color: any, theme: Theme): ListProjects {
 			],
 		},
 		stars: {
-			HERO: { images: [heroCoverPng, heroCoverWebp] },
+			HERO: { images: ["", ""] },
 			INTRO: {
 				section: "Fun animation project",
 				title: { value: "A park for the homeless in the stars" },
@@ -458,7 +486,7 @@ function getContent(color: any, theme: Theme): ListProjects {
 			IMAGES: [
 				{
 					key: 1,
-					src: [heroCoverPng, heroCoverWebp],
+					src: ["", ""],
 					alt: "alt",
 				},
 			],
@@ -493,7 +521,7 @@ function getContent(color: any, theme: Theme): ListProjects {
 			],
 		},
 		airbus: {
-			HERO: { images: [heroCoverPng, heroCoverWebp] },
+			HERO: { images: ["", ""] },
 			INTRO: {
 				section: "Fun animation project",
 				title: { value: "A park for the homeless in the stars" },
@@ -511,7 +539,7 @@ function getContent(color: any, theme: Theme): ListProjects {
 			IMAGES: [
 				{
 					key: 1,
-					src: [heroCoverPng, heroCoverWebp],
+					src: ["", ""],
 					alt: "alt",
 				},
 			],
@@ -552,7 +580,7 @@ function getContent(color: any, theme: Theme): ListProjects {
 			],
 		},
 		telekom: {
-			HERO: { images: [heroCoverPng, heroCoverWebp] },
+			HERO: { images: ["", ""] },
 			INTRO: {
 				section: "Fun animation project",
 				title: { value: "A park for the homeless in the stars" },
@@ -570,7 +598,7 @@ function getContent(color: any, theme: Theme): ListProjects {
 			IMAGES: [
 				{
 					key: 1,
-					src: [heroCoverPng, heroCoverWebp],
+					src: ["", ""],
 					alt: "alt",
 				},
 			],
@@ -611,7 +639,7 @@ function getContent(color: any, theme: Theme): ListProjects {
 			],
 		},
 		siemens: {
-			HERO: { images: [heroCoverPng, heroCoverWebp] },
+			HERO: { images: ["", ""] },
 			INTRO: {
 				section: "Fun animation project",
 				title: { value: "A park for the homeless in the stars" },
@@ -629,7 +657,7 @@ function getContent(color: any, theme: Theme): ListProjects {
 			IMAGES: [
 				{
 					key: 1,
-					src: [heroCoverPng, heroCoverWebp],
+					src: ["", ""],
 					alt: "alt",
 				},
 			],

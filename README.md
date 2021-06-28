@@ -62,6 +62,6 @@
 - [ ] Finish Project pages
   - [x] Update Footer Content
   - [x] Update Footer Images
-  - [ ] Update Content Hero images
-- [ ] Create missing images
-  - [ ] Norse Footer images
+  - [x] Update Content Hero images
+  - [ ] Write the contents
+- [ ] Problem with ContainerFull responsive
