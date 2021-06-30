@@ -3,12 +3,13 @@ import { useTheme } from "react-jss"
 import useDarkMode from "use-dark-mode"
 import { motion } from "framer-motion"
 import { Theme } from "../../utils/theme/theme"
+import { useWindowSize } from "../../hooks/useWindowSize"
 import Container from "../containers/Container"
 import CardImage from "./segments/CardImage"
 import CardStatus, { CardStatusType } from "./segments/CardStatus"
 import CardTitle from "./segments/CardTitle"
 import CardStyle from "./card-style"
-import { useWindowSize } from "../../hooks/useWindowSize"
+import FloatingTooltip from "../../ui/tooltips/FloatingTooltip"
 
 export type STuples = [string, string]
 export type ProjectColor = "main" | "stars" | "mimi" | "kipfit" | "elastic" | "waste" | "norse" | "black" | "white" | "usmobile" | "alert" | "brand" | "transparent"
@@ -49,7 +50,6 @@ const Card: React.FC<CardPropsType> = (props) => {
 	const { background, height, width, status, alt, src, srcDark, srcMobile, path, href, paddingB, reverse, right, tag, title, uncontained, noHover, children } = props
 
 	const backgroundImage = setBackgroundImage()
-
 	const backgroundColors = setBackgroundColor()
 
 	const backgroundValue = (isHovered && !noHover) ? backgroundColors[1] : backgroundColors[0]
@@ -57,7 +57,7 @@ const Card: React.FC<CardPropsType> = (props) => {
 	// const opacityValue = isHovered ? .90 : 1
 
 	let cardStyle: any = { height: height, width: width }
-	if (status == "stop") cardStyle = { height: height, width: width, cursor: " not-allowed" }
+	if (status == "stop" || "construction") cardStyle = { height: height, width: width, cursor: " not-allowed" }
 	if (background == "transparent") {
 		cardStyle = {
 			border: `1px solid ${ theme.border.outline }`,
@@ -76,6 +76,7 @@ const Card: React.FC<CardPropsType> = (props) => {
 			style={cardStyle}>
 			{status && <CardStatus status={status} color={title?.color} />}
 			{href && <CardStatus status={"externalLink"} color={title?.color} />}
+			{status == "construction" && <FloatingTooltip hover={isHovered} />}
 			<CardImage
 				status={status}
 				alt={alt}

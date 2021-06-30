@@ -65,3 +65,4 @@
   - [x] Update Content Hero images
   - [ ] Write the contents
 - [ ] Problem with ContainerFull responsive
+- [x] Floating tooltip

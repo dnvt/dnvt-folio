@@ -134,7 +134,7 @@ const PRIVATE_WORK: ThreeCardsContentType = [
 		alt: "In-flight experience",
 		tag: { value: "Rethinking the in-flight experience" },
 		title: { value: "Airbus" },
-		path: "/work/private/airbus",
+		// path: "/work/private/airbus",
 	},
 	{
 		key: 2,
@@ -143,7 +143,7 @@ const PRIVATE_WORK: ThreeCardsContentType = [
 		alt: "Kitchen eperience",
 		tag: { value: "Rethinking home applicances' interface", color: "white" },
 		title: { value: "Siemens", color: "white" },
-		path: "/work/private/siemens",
+		// path: "/work/private/siemens",
 	},
 	{
 		key: 3,
@@ -152,7 +152,7 @@ const PRIVATE_WORK: ThreeCardsContentType = [
 		alt: "TV experience",
 		tag: { value: "Rethinking TV as a connected device", color: "white" },
 		title: { value: "Telekom", color: "white" },
-		path: "/work/private/telekom",
+		// path: "/work/private/telekom",
 	},
 ]
 
@@ -182,8 +182,8 @@ const SELECTED_WORK: SelectedWorkType = {
 		src: [wastePng, wasteWebp],
 		alt: "Love your Waste Paris based startup",
 		tag: { value: "Branding - Illustrations" },
-		path: "/work/love-your-waste",
 		paddingB: 72,
+		// path: "/work/love-your-waste",
 	},
 	GRPD_CARD_SECOND: [
 		{

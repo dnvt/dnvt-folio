@@ -4,11 +4,7 @@ import { useWindowSize } from "../../hooks/useWindowSize"
 import Font from "./Font"
 import FontimationStyle from "./Fontimation-style"
 
-const calc = (x: number, y: number, window_w: number) => [
-  x - window_w,
-  y - window_w / 2,
-]
-
+const calc = (x: number, y: number, window_w: number) => [x - window_w, y - window_w / 2]
 
 const Fontimation: React.FC = ({ children }) => {
   const classes = FontimationStyle()
