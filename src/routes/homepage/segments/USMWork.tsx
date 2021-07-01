@@ -7,14 +7,11 @@ import DragMobileFour from "../../../components/devices/layouts/DragMobileFour"
 import Card from "../../../components/cards/Card"
 import Column from "../../../components/containers/Column"
 import HOMEPAGE_CONTENT from "../Homepage.content"
-import { Theme } from "../../../utils/theme/theme"
-import { useTheme } from "react-jss"
 import InternalLink from "../../../ui/links/internal-link/InternalLink"
 import ExternalLink from "../../../ui/links/external-link/ExternalLink"
 // import Fontimation from "../../../utils/fonts/Fontimation"
 
 const USMWork: React.FC = () => {
-  const theme: Theme = useTheme()
   const window = useWindowSize()
 
   const CONTENT = useMemo(() => HOMEPAGE_CONTENT.USMWORK, [])
@@ -49,7 +46,7 @@ const USMWork: React.FC = () => {
             </Font>
           </div>
           <div>
-            <Font type='text' style={{ color: theme.text.primary, width: spacerWidth }}>
+            <Font type='text' style={{ width: spacerWidth }}>
               Lead to the expansion of the organization from 15,000 customers to
               more than 60,000 users, which occurred primarily through word of
               mouth from product experience.
@@ -68,24 +65,14 @@ const USMWork: React.FC = () => {
       <Container>
         <Card
           uncontained
-          tag={CONTENT.CARD_BRANDING.tag}
-          src={CONTENT.CARD_BRANDING.src}
-          alt={CONTENT.CARD_BRANDING.alt}
-          path={CONTENT.CARD_BRANDING.path}
-          paddingB={CONTENT.CARD_BRANDING.paddingB}
-          background={CONTENT.CARD_BRANDING.background}
+          {...CONTENT.CARD_BRANDING}
         >
           Creative direction <br /> & design guidelines
         </Card>
         <Spacer height={32} />
         <Card
           uncontained
-          tag={CONTENT.CARD_MATRIX.tag}
-          src={CONTENT.CARD_MATRIX.src}
-          alt={CONTENT.CARD_MATRIX.alt}
-          path={CONTENT.CARD_MATRIX.path}
-          paddingB={CONTENT.CARD_MATRIX.paddingB}
-          background={CONTENT.CARD_MATRIX.background}
+          {...CONTENT.CARD_MATRIX}
         >
           Build your plan
         </Card>
@@ -93,12 +80,7 @@ const USMWork: React.FC = () => {
         <Card
           uncontained
           right
-          tag={CONTENT.CARD_SYSTEM.tag}
-          src={CONTENT.CARD_SYSTEM.src}
-          alt={CONTENT.CARD_SYSTEM.alt}
-          path={CONTENT.CARD_SYSTEM.path}
-          paddingB={CONTENT.CARD_SYSTEM.paddingB}
-          background={CONTENT.CARD_SYSTEM.background}
+          {...CONTENT.CARD_SYSTEM}
         >
           US Mobile Dashboard use case
         </Card>

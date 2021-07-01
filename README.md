@@ -55,7 +55,7 @@
 - [x] Make Project dictionnary
 - [x] HeroFont
   - [x] Container in all pages
-  - [ ] Update Responsive heights for the Hero container
+  - [x] Update Responsive heights for the Hero container
 - [x] Tooltips
 - [ ] Design an About page
 - [ ] Add documentation to my functions
@@ -64,5 +64,5 @@
   - [x] Update Footer Images
   - [x] Update Content Hero images
   - [ ] Write the contents
-- [ ] Problem with ContainerFull responsive
+- [x] Problem with ContainerFull responsive
 - [x] Floating tooltip

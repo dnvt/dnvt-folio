@@ -74,7 +74,7 @@ const VignetteStyle = createUseStyles(theme => ({
       minWidth: "100%",
     },
     "@media (min-width: 768px)": {
-      height: "576px",
+      height: "584px",
     },
     "@media (min-width: 1360px)": {
       height: "704px",

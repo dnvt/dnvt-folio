@@ -14,9 +14,8 @@ type ContainerType = {
 }
 
 /**
- * Welcome to @dnvt/Container!
- * @param center
- * @param drag
+ * @param center Boolean
+ * @param drag "three" | "four" | "five"
  * @param left
  * @param type "group" | "big" | "height" | "footer"
  */
@@ -96,7 +95,7 @@ const Container: React.FC<ContainerType> = (props) => {
     if (drag == "five") scrollNumber = classes.ScrollFive
 
     return (
-      <div className={classes.FullContainer} style={{ zIndex: -1 }}>
+      <div className={classes.FullContainer} style={(drag != "five") ? { zIndex: -1 } : { zIndex: 0 }}>
         <ArrowDragScroll big left />
         <div className={classes.DragContainer}>
           <div className={scrollNumber}>

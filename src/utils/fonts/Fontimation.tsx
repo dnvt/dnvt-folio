@@ -19,81 +19,85 @@ const Fontimation: React.FC = ({ children }) => {
   const [props2, set2] = useSpring(() => getSpringProps(340, 140))
   const [props, set] = useSpring(() => getSpringProps(335, 145))
 
-  return (
-    <div
-      className={classes.fontimation}
-      onMouseMove={({ clientX: x, clientY: y }) =>
-        set({ xy: calc(x, y, window.width) }) &&
-        set2({ xy: calc(x, y, window.width) }) &&
-        set3({ xy: calc(x, y, window.width) }) &&
-        set4({ xy: calc(x, y, window.width) }) &&
-        set5({ xy: calc(x, y, window.width) }) &&
-        set6({ xy: calc(x, y, window.width) })
-      }
-    >
-      <div className={classes.hideDiv}>
-        <animated.div style={{ transform: props6.xy.to(trans1) }}>
-          <Font type="hero">{children}</Font>
-        </animated.div>
-      </div>
-      <div className={classes.hideDiv}>
-        <animated.div style={{ transform: props5.xy.to(trans2) }}>
-          <Font type="hero">{children}</Font>
-        </animated.div>
-      </div>
-      <div className={classes.hideDiv}>
-        <animated.div style={{ transform: props4.xy.to(trans3) }}>
-          <Font type="hero">{children}</Font>
-        </animated.div>
-      </div>
-      <div className={classes.hideDiv}>
-        <animated.div style={{ transform: props3.xy.to(trans4) }}>
-          <Font type="hero">{children}</Font>
-        </animated.div>
-      </div>
-      <div className={classes.hideDiv}>
-        <animated.div style={{ transform: props2.xy.to(trans5) }}>
-          <Font type="hero">{children}</Font>
-        </animated.div>
-      </div>
-      <div className={classes.hideDiv}>
-        <animated.div style={{ transform: props.xy.to(trans6) }}>
-          <Font type="hero">{children}</Font>
-        </animated.div>
-      </div>
-      <div className={classes.hideDiv}>
-        <animated.div style={{ transform: props.xy.to(trans7) }}>
-          <Font type="hero">{children}</Font>
-        </animated.div>
-      </div>
-      <div className={classes.hideDiv}>
-        <animated.div style={{ transform: props2.xy.to(trans8) }}>
-          <Font type="hero">{children}</Font>
-        </animated.div>
-      </div>
-      <div className={classes.hideDiv}>
-        <animated.div style={{ transform: props3.xy.to(trans9) }}>
-          <Font type="hero">{children}</Font>
-        </animated.div>
-      </div>
-      <div className={classes.hideDiv}>
-        <animated.div style={{ transform: props4.xy.to(trans10) }}>
-          <Font type="hero">{children}</Font>
-        </animated.div>
-      </div>
+  if (window.width > 767) {
+    return (
+      <div
+        className={classes.fontimation}
+        onMouseMove={({ clientX: x, clientY: y }) =>
+          set({ xy: calc(x, y, window.width) }) &&
+          set2({ xy: calc(x, y, window.width) }) &&
+          set3({ xy: calc(x, y, window.width) }) &&
+          set4({ xy: calc(x, y, window.width) }) &&
+          set5({ xy: calc(x, y, window.width) }) &&
+          set6({ xy: calc(x, y, window.width) })
+        }
+      >
+        <div className={classes.hideDiv}>
+          <animated.div style={{ transform: props6.xy.to(trans1) }}>
+            <Font type="hero">{children}</Font>
+          </animated.div>
+        </div>
+        <div className={classes.hideDiv}>
+          <animated.div style={{ transform: props5.xy.to(trans2) }}>
+            <Font type="hero">{children}</Font>
+          </animated.div>
+        </div>
+        <div className={classes.hideDiv}>
+          <animated.div style={{ transform: props4.xy.to(trans3) }}>
+            <Font type="hero">{children}</Font>
+          </animated.div>
+        </div>
+        <div className={classes.hideDiv}>
+          <animated.div style={{ transform: props3.xy.to(trans4) }}>
+            <Font type="hero">{children}</Font>
+          </animated.div>
+        </div>
+        <div className={classes.hideDiv}>
+          <animated.div style={{ transform: props2.xy.to(trans5) }}>
+            <Font type="hero">{children}</Font>
+          </animated.div>
+        </div>
+        <div className={classes.hideDiv}>
+          <animated.div style={{ transform: props.xy.to(trans6) }}>
+            <Font type="hero">{children}</Font>
+          </animated.div>
+        </div>
+        <div className={classes.hideDiv}>
+          <animated.div style={{ transform: props.xy.to(trans7) }}>
+            <Font type="hero">{children}</Font>
+          </animated.div>
+        </div>
+        <div className={classes.hideDiv}>
+          <animated.div style={{ transform: props2.xy.to(trans8) }}>
+            <Font type="hero">{children}</Font>
+          </animated.div>
+        </div>
+        <div className={classes.hideDiv}>
+          <animated.div style={{ transform: props3.xy.to(trans9) }}>
+            <Font type="hero">{children}</Font>
+          </animated.div>
+        </div>
+        <div className={classes.hideDiv}>
+          <animated.div style={{ transform: props4.xy.to(trans10) }}>
+            <Font type="hero">{children}</Font>
+          </animated.div>
+        </div>
 
-      <div className={classes.hideDiv}>
-        <animated.div style={{ transform: props5.xy.to(trans11) }}>
-          <Font type="hero">{children}</Font>
-        </animated.div>
+        <div className={classes.hideDiv}>
+          <animated.div style={{ transform: props5.xy.to(trans11) }}>
+            <Font type="hero">{children}</Font>
+          </animated.div>
+        </div>
+        <div className={classes.hideDiv}>
+          <animated.div style={{ transform: props6.xy.to(trans12) }}>
+            <Font type="hero">{children}</Font>
+          </animated.div>
+        </div>
       </div>
-      <div className={classes.hideDiv}>
-        <animated.div style={{ transform: props6.xy.to(trans12) }}>
-          <Font type="hero">{children}</Font>
-        </animated.div>
-      </div>
-    </div>
-  )
+    )
+  }
+
+  return null
 }
 
 export default Fontimation
@@ -134,6 +138,6 @@ function getSpringProps(tension: number, friction: number) {
 
 export function compensateFontimationHeight(window: { width: number }) {
   if (window.width > 1359) return -1360
-  if (window.width > 767) return -800
-  return -240
+  if (window.width > 767) return -960
+  return 0
 }

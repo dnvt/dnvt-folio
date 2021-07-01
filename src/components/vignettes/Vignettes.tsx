@@ -42,15 +42,17 @@ const Vignette: React.FC<VignetteProps> = (props) => {
   const { src, alt, withLegend } = props
 
   return (
-    <Container>
-      <div className={classes.Image}>
-        <ImageContainer
-          src={src}
-          alt={alt}
-        />
-      </div>
-      {withLegend && <Legend alt={alt} />}
-    </Container>
+    <div style={{ overflow: "hidden" }}>
+      <Container>
+        <div className={classes.Image}>
+          <ImageContainer
+            src={src}
+            alt={alt}
+          />
+        </div>
+        {withLegend && <Legend alt={alt} />}
+      </Container>
+    </div>
   )
 }
 

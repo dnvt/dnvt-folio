@@ -102,6 +102,8 @@ const USMWORK: USMWorkType = {
 	],
 	CARD_BRANDING: {
 		src: [brandingPng, brandingWebp],
+		status: "construction",
+		noHover: true,
 		alt: "Branding image for US Mobile",
 		tag: { value: "Design system, UI, Motion Design" },
 		path: "/work/usmobile/branding",
@@ -110,6 +112,8 @@ const USMWORK: USMWorkType = {
 	},
 	CARD_MATRIX: {
 		src: [matrixPng, matrixWebp],
+		noHover: true,
+		status: "construction",
 		alt: "test 2",
 		tag: { value: "Design system, UI, Motion Design" },
 		path: "/work/usmobile/matrix",
@@ -160,6 +164,8 @@ const SELECTED_WORK: SelectedWorkType = {
 	GRPD_CARD_FIRST: [
 		{
 			key: 1,
+			noHover: true,
+			status: "construction",
 			src: [norsePng, norseWebp],
 			srcDark: [norseDarkPng, norseDarkWebp],
 			alt: "Norse interieur manual",
@@ -170,6 +176,8 @@ const SELECTED_WORK: SelectedWorkType = {
 		},
 		{
 			key: 2,
+			noHover: true,
+			status: "construction",
 			srcMobile: [elasticPng, elasticWebp],
 			src: [elasticFullPng, elasticFullWebp],
 			alt: "Elastic movie who scared the hell out of me",
@@ -179,6 +187,8 @@ const SELECTED_WORK: SelectedWorkType = {
 		},
 	],
 	CARD_LOVE: {
+		noHover: true,
+		status: "construction",
 		src: [wastePng, wasteWebp],
 		alt: "Love your Waste Paris based startup",
 		tag: { value: "Branding - Illustrations" },
@@ -188,6 +198,8 @@ const SELECTED_WORK: SelectedWorkType = {
 	GRPD_CARD_SECOND: [
 		{
 			key: 1,
+			noHover: true,
+			status: "construction",
 			src: [kipfitPng, kipfitWebp],
 			srcDark: [kipfitDarkPng, kipfitDarkWebp],
 			alt: "kiptfit keeps you fit!",
@@ -198,6 +210,8 @@ const SELECTED_WORK: SelectedWorkType = {
 		},
 		{
 			key: 2,
+			noHover: true,
+			status: "construction",
 			src: [mimiPng, mimiWebp],
 			alt: "Mimi hearing illustrations",
 			tag: { value: "Illustration - Product design" },
@@ -211,6 +225,8 @@ const SELECTED_WORK: SelectedWorkType = {
 const PLAYGROUND: PlaygroundType = {
 	GROUP_ANIM: {
 		src: [starsPng, starsWebp],
+		noHover: true,
+		status: "construction",
 		alt: "Animation made with Lucas M Matholaz",
 		tag: { value: "Animation - Illustration" },
 		path: "/playground/a-park-for-the-homeless-in-the-stars",

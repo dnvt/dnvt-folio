@@ -35,6 +35,7 @@ const FontStyle = createUseStyles(theme => ({
     "@media (min-width: 768px)": {
       fontSize: "640px",
       lineHeight: "1160px",
+      margin: " -160px 0 160px"
     },
     "@media (min-width: 1360px)": {
       fontSize: "1000px",

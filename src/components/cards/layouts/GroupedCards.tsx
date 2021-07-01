@@ -21,6 +21,7 @@ interface CardGroupedProps {
   paddingB?: number
   reverse?: Boolean
   left?: Boolean
+  noHover?: Boolean
 }
 
 interface GroupedCardProps { content: GroupedContentType, left?: Boolean }
@@ -47,7 +48,7 @@ const GroupedCard: React.FC<GroupedCardProps> = ({ content, left }) => {
 //
 
 const CardUnit: React.FC<CardGroupedProps> = (props) => {
-  const { key, status, src, srcDark, srcMobile, alt, path, href, tag, background, title, height, paddingB } = props
+  const { key, status, src, srcDark, srcMobile, alt, path, href, tag, background, title, height, paddingB, noHover } = props
 
   return (
     <Card
@@ -66,8 +67,9 @@ const CardUnit: React.FC<CardGroupedProps> = (props) => {
       height={height}
       title={title}
       paddingB={paddingB}
+      noHover={noHover}
     >
-      { title!.value}
+      {title!.value}
     </Card >
   )
 }

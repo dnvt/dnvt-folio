@@ -12,7 +12,7 @@ const FontimationStyle = createUseStyles({
     height: "240px",
 
     "@media (min-width: 768px)": {
-      height: "800px",
+      height: "960px",
     },
     "@media (min-width: 1360px)": {
       height: "1320px",

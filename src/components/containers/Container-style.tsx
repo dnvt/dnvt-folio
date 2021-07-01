@@ -169,12 +169,12 @@ const ContainerStyle = createUseStyles({
     columnGap: "24px",
 
     "@media (min-width: 768px)": {
-      display: "grid",
-      gridTemplateColumns: "auto 1fr",
       columnGap: "24px",
     },
 
     "@media (min-width: 992px)": {
+      display: "grid",
+      gridTemplateColumns: "auto 1fr",
       columnGap: "32px",
     },
   },

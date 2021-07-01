@@ -27,15 +27,7 @@ const SelectedWork: React.FC = () => {
       </Container>
       <GroupedCard content={CONTENT.GRPD_CARD_FIRST} />
       <SpacerFortyHalf />
-      <Card
-        noHover
-        status="construction"
-        tag={CONTENT.CARD_LOVE.tag}
-        src={CONTENT.CARD_LOVE.src}
-        alt={CONTENT.CARD_LOVE.alt}
-        path={CONTENT.CARD_LOVE.path}
-        paddingB={CONTENT.CARD_LOVE.paddingB}
-      >
+      <Card {...CONTENT.CARD_LOVE}>
         Love your waste
       </Card>
       <SpacerFortyHalf />

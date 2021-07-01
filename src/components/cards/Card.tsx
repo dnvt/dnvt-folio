@@ -52,8 +52,8 @@ const Card: React.FC<CardPropsType> = (props) => {
 	const backgroundImage = setBackgroundImage()
 	const backgroundColors = setBackgroundColor()
 
-	const backgroundValue = (isHovered && !noHover) ? backgroundColors[1] : backgroundColors[0]
-	const scaleValue = (isHovered && !noHover) ? 1.04 : 1
+	const backgroundValue = (isHovered && (!noHover)) ? backgroundColors[1] : backgroundColors[0]
+	const scaleValue = (isHovered && (!noHover)) ? 1.04 : 1
 	// const opacityValue = isHovered ? .90 : 1
 
 	let cardStyle: any = { height: height, width: width }
