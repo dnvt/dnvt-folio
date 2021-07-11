@@ -1,21 +1,21 @@
-import React, { useMemo } from "react"
+import React from "react"
 import { useTheme } from "react-jss"
+import Column from "../../../components/containers/Column"
 import Container from "../../../components/containers/Container"
 import { useWindowSize } from "../../../hooks/useWindowSize"
 import Font from "../../../utils/fonts/Font"
 import Fontimation from "../../../utils/fonts/Fontimation"
 import Spacer from "../../../utils/spacer/Spacer"
 import { Theme } from "../../../utils/theme/theme"
-import Description from "./Description"
-// import { parse } from "query-string"
 
 
 const FontSection: React.FC = () => {
   const theme: Theme = useTheme()
   const window = useWindowSize()
 
-  const DESCRIPTION = useMemo(() => DESC, [])
-  // const animate = parse(props.location.search).fontAnimation
+  let spacerWidth: number | "100%" = "100%"
+  if (window.width > 991) spacerWidth = 448
+  if (window.width > 1359) spacerWidth = 544
 
   return (
     <>
@@ -28,194 +28,56 @@ const FontSection: React.FC = () => {
           H1 Heading. <br /> This is my H1 and I tried to make it a long long
           long ass title. Is this too long?
         </Font>
-        <Description
-          width={window.width}
-          valueLarge={DESCRIPTION.large.h1}
-          valueMedium={DESCRIPTION.medium.h1}
-          valueSmall={DESCRIPTION.small.h1}
-        />
         <Spacer height={40} />
         <Font type='h2'>H2 Section</Font>
-        <Description
-          width={window.width}
-          valueLarge={DESCRIPTION.large.h2}
-          valueMedium={DESCRIPTION.medium.h2}
-          valueSmall={DESCRIPTION.small.h2}
-        />
         <Spacer height={40} />
         <Font type='h3'>H3 Title. This is a long long long ass title.</Font>
-        <Description
-          width={window.width}
-          valueLarge={DESCRIPTION.large.h3}
-          valueMedium={DESCRIPTION.medium.h3}
-          valueSmall={DESCRIPTION.small.h3}
-        />
-        <Spacer height={40} />
         <Font type='h4'>H4 Subtitle. This is a long long long ass title.</Font>
-        <Description
-          width={window.width}
-          valueLarge={DESCRIPTION.large.h4}
-          valueMedium={DESCRIPTION.medium.h4}
-          valueSmall={DESCRIPTION.small.h4}
-        />
+        <Font type='h5' style={{ color: theme.text.hover }}>
+          H5 Tags. This is a long long long tag.
+        </Font>
+        <Column spacer="third">
+          <Font type='text'>
+            Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget
+            lacinia odio sem nec elit. Donec sed odio dui. Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit. Donec id elit non mi porta gravida
+            at eget metus. Aenean lacinia bibendum nulla sed consectetur. Duis
+            mollis, est non commodo luctus, nisi erat porttitor ligula, eget
+            lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo,
+            tortor mauris condimentum nibh, ut fermentum massa justo sit amet
+            risus.
+          </Font>
+        </Column>
         <Spacer height={40} />
         <Font type='h5' style={{ color: theme.text.hover }}>
           H5 Tags. This is a long long long tag.
         </Font>
-        <Description
-          width={window.width}
-          valueLarge={DESCRIPTION.large.h5}
-          valueMedium={DESCRIPTION.medium.h5}
-          valueSmall={DESCRIPTION.small.h5}
-        />
-        <Spacer height={40} />
-        <Font type='text'>
-          Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget
-          lacinia odio sem nec elit. Donec sed odio dui. Lorem ipsum dolor sit
-          amet, consectetur adipiscing elit. Donec id elit non mi porta gravida
-          at eget metus. Aenean lacinia bibendum nulla sed consectetur. Duis
-          mollis, est non commodo luctus, nisi erat porttitor ligula, eget
-          lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo,
-          tortor mauris condimentum nibh, ut fermentum massa justo sit amet
-          risus.
-        </Font>
-        <Font type='text'>
-          Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id
-          elit non mi porta gravida at eget metus. Donec ullamcorper nulla non
-          metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.
-          Cras mattis consectetur purus sit amet fermentum. Sed posuere
-          consectetur est at lobortis.
-        </Font>
-        <Font type='text'>
-          Maecenas faucibus mollis interdum. Fusce dapibus, tellus ac cursus
-          commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
-          amet risus. Donec sed odio dui. Donec id elit non mi porta gravida at
-          eget metus. Praesent commodo cursus magna, vel scelerisque nisl
-          consectetur et. Cum sociis natoque penatibus et magnis dis parturient
-          montes, nascetur ridiculus mus. Fusce dapibus, tellus ac cursus
-          commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
-          amet risus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-          condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo
-          odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus
-          mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing
-          elit. Nulla vitae elit libero, a pharetra augue. Integer posuere erat
-          a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non
-          commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec
-          elit. Donec id elit non mi porta gravida at eget metus. Lorem ipsum
-          dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum
-          nulla sed consectetur. Maecenas sed diam eget risus varius blandit sit
-          amet non magna. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-          condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta
-          sem malesuada magna mollis euismod.
-        </Font>
-        <Description
-          width={window.width}
-          valueLarge={DESCRIPTION.large.text}
-          valueMedium={DESCRIPTION.medium.text}
-          valueSmall={DESCRIPTION.small.text}
-        />
+        <Column grid >
+          <div>
+            <Font type='text'>
+              Maecenas faucibus mollis interdum. Fusce dapibus, tellus ac cursus
+              commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+              amet risus. Donec sed odio dui. Donec id elit non mi porta gravida at
+              eget metus. Praesent commodo cursus magna, vel scelerisque nisl
+              consectetur et. Cum sociis natoque penatibus et magnis dis parturient
+              montes, nascetur ridiculus mus. Fusce dapibus, tellus ac cursus
+              commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+              amet risus.
+            </Font>
+          </div>
+          <div>
+            <Font type='text' style={{ width: spacerWidth }}>
+              Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id
+              elit non mi porta gravida at eget metus. Donec ullamcorper nulla non
+              metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.
+              Cras mattis consectetur purus sit amet fermentum. Sed posuere
+              consectetur est at lobortis.
+            </Font>
+          </div>
+        </Column>
       </Container>
     </>
   )
-}
-
-const DESC = {
-  large: {
-    h1: [
-      "Hero Font. 1000/1000px",
-      "Letter Spacing. -0.02px",
-      "Padding. 32px 0px 32px",
-    ],
-    h2: [
-      "Hero Font. 1000/1000px",
-      "Letter Spacing. -0.02px",
-      "Padding. 32px 0px 32px",
-    ],
-    h3: [
-      "Hero Font. 1000/1000px",
-      "Letter Spacing. -0.02px",
-      "Padding. 32px 0px 32px",
-    ],
-    h4: [
-      "Hero Font. 1000/1000px",
-      "Letter Spacing. -0.02px",
-      "Padding. 32px 0px 32px",
-    ],
-    h5: [
-      "Hero Font. 1000/1000px",
-      "Letter Spacing. -0.02px",
-      "Padding. 32px 0px 32px",
-    ],
-    text: [
-      "Hero Font. 1000/1000px",
-      "Letter Spacing. -0.02px",
-      "Padding. 32px 0px 32px",
-    ],
-  },
-  medium: {
-    h1: [
-      "Hero Font. 1000/1000px",
-      "Letter Spacing. -0.02px",
-      "Padding. 32px 0px 32px",
-    ],
-    h2: [
-      "Hero Font. 1000/1000px",
-      "Letter Spacing. -0.02px",
-      "Padding. 32px 0px 32px",
-    ],
-    h3: [
-      "Hero Font. 1000/1000px",
-      "Letter Spacing. -0.02px",
-      "Padding. 32px 0px 32px",
-    ],
-    h4: [
-      "Hero Font. 1000/1000px",
-      "Letter Spacing. -0.02px",
-      "Padding. 32px 0px 32px",
-    ],
-    h5: [
-      "Hero Font. 1000/1000px",
-      "Letter Spacing. -0.02px",
-      "Padding. 32px 0px 32px",
-    ],
-    text: [
-      "Hero Font. 1000/1000px",
-      "Letter Spacing. -0.02px",
-      "Padding. 32px 0px 32px",
-    ],
-  },
-  small: {
-    h1: [
-      "Hero Font. 1000/1000px",
-      "Letter Spacing. -0.02px",
-      "Padding. 32px 0px 32px",
-    ],
-    h2: [
-      "Hero Font. 1000/1000px",
-      "Letter Spacing. -0.02px",
-      "Padding. 32px 0px 32px",
-    ],
-    h3: [
-      "Hero Font. 1000/1000px",
-      "Letter Spacing. -0.02px",
-      "Padding. 32px 0px 32px",
-    ],
-    h4: [
-      "Hero Font. 1000/1000px",
-      "Letter Spacing. -0.02px",
-      "Padding. 32px 0px 32px",
-    ],
-    h5: [
-      "Hero Font. 1000/1000px",
-      "Letter Spacing. -0.02px",
-      "Padding. 32px 0px 32px",
-    ],
-    text: [
-      "Hero Font. 1000/1000px",
-      "Letter Spacing. -0.02px",
-      "Padding. 32px 0px 32px",
-    ],
-  },
 }
 
 export default FontSection
