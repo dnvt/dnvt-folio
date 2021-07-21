@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import { useTheme } from "react-jss"
 import Column from "../../components/containers/Column"
 import Container from "../../components/containers/Container"
+import { BigVignette, Vignette } from "../../components/vignettes/Vignettes"
 import { DocumentSizeProvider } from "../../hooks/useDimensionSize"
 import { useIntroTransition } from "../../hooks/useHeroTransition"
 import { useMainColor } from "../../hooks/useSetMainColor"
@@ -16,7 +17,7 @@ const About: React.FC = () => {
   const theme: Theme = useTheme()
   const window = useWindowSize()
   const [heroTransition, setHeroTransition] = useIntroTransition()
-  const [, setColor] = useMainColor()
+  const [color, setColor] = useMainColor()
 
   useEffect(() => {
     setHeroTransition((heroTransition: any) => { return { ...heroTransition, about: false } })
@@ -32,28 +33,31 @@ const About: React.FC = () => {
         </div>
         <Container>
           <Font type='h1'>
-            Product, Fun & Creative Direction for the Internets.
+            François Denavaut, <br /> digital designer.
           </Font>
-          <Font type='h5' style={{ color: theme.text.hover }}>
-            Currently working at Frame.io
-          </Font>
-          <Spacer height={8} />
+          <Spacer height={40} />
           <Column spacer="third">
             <Font type='text'>
-              Accomplished product designer and creative director able to provide
-              strong leadership on the development of product designs, marketing
-              campaigns, and user interfaces.
+              Description of me and what I do and what I like. <br />
+              Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Etiam porta sem malesuada magna mollis euismod. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
             </Font>
           </Column>
-          <Column spacer="third">
-            <Font type='text'>
-              Skilled project manager, capable of driving a project from inception
-              to completion. Excellent communicator adept at taking complex topics
-              and conveying them in a clear and concise manner understandable by
-              both industry professionals and non-industry professionals.
-            </Font>
-          </Column>
+          <Spacer height={40} />
         </Container>
+        <BigVignette withLegend alt="Das ist mich!" src={["", ""]} background="#ccc" />
+        <Container>
+          <Spacer height={104} />
+          <Font type="h5" style={{ color }}>January 2020 till now</Font>
+          <Font type="h3">Senior Product Designer <br /> at Frame.io</Font>
+          <Spacer height={16} />
+          <Column spacer="third">
+            <Font type='text'>
+              Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla vitae elit libero, a pharetra augue. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum. Donec sed odio dui.
+            </Font>
+          </Column>
+          <Spacer height={40} />
+        </Container>
+        <Vignette alt="Das ist mich!" src={["", ""]} background="#ccc" />
       </div>
     </DocumentSizeProvider >
   )
