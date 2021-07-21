@@ -57,7 +57,7 @@
   - [x] Container in all pages
   - [x] Update Responsive heights for the Hero container
 - [x] Tooltips
-- [ ] Design an About page
+- [x] Design an About page
 - [ ] Add documentation to my functions
 - [ ] Finish Project pages
   - [x] Update Footer Content
