@@ -18,6 +18,7 @@ export type FontTagWrapperProps = {
     margin?: string
     width?: number | "100%"
     top?: number
+    fontWeight?: string
   }
   animation?: {}
 }

@@ -41,7 +41,7 @@ const Homepage: React.FC = () => {
   return (
     <DocumentSizeProvider>
       <Grid />
-      <div style={{ transform: heroTransition.homepage ? "translateY(240px)" : "translateY(0px)", opacity: heroTransition.homepage ? 0 : 1, transition: "opacity .6s ease, transform .6s ease" }}>
+      <div style={{ transform: heroTransition.homepage ? "translateY(288px)" : "translateY(0px)", opacity: heroTransition.homepage ? 0 : 1, transition: "opacity .6s ease, transform .6s ease" }}>
         <Spacer contained height={104} />
         {window.width > 767 &&
           <>

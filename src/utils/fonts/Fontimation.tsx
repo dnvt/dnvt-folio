@@ -137,7 +137,7 @@ function getSpringProps(tension: number, friction: number) {
 }
 
 export function compensateFontimationHeight(window: { width: number }) {
-  if (window.width > 1359) return -1360
+  if (window.width > 1359) return -1320
   if (window.width > 767) return -960
   return 0
 }
