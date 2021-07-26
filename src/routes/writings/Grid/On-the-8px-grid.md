@@ -60,8 +60,7 @@ TLDR; I'm encapsulating each element to be their own 8px height elements (yes, f
 - Code your own 8px grid to have a visual reference to build all your components
  One of the many reasons for not implementing the Hard grid system is that there aren't grid systems available for frontEnd developers – whereas it is simple to get in Figma or Sketch. So I built a Hook to have a grid available for every new project.
 
-![Browser grid off](../../assets/images/../../../assets/images/Writings/Grid/browser-grid-off.png)
-![Browser grid on](../../assets/images/../../../assets/images/Writings/Grid/browser-grid-on.png)
+![Browser grid off](../../assets/images/../../../assets/images/Writings/Grid/show-grid.gif)
 
 ### Encapsulate font as components divisible by 8
 
@@ -86,9 +85,22 @@ Set it up once and for all for each font used in your design system – and only
 
 ![Font Boxing Demo](../../assets/images/../../../assets/images/Writings/Grid/font-boxing-demo.png)
 
-So just to make sure the benefits are clear, let's look at the initial example, with our custom 8px based height containers. See what's hapenning here? All spacers are now multiple of 8. Implementation start to already feel as simple as with the soft grid method.
+```javascript
+export const FontH3 = () => {
+  <FontSpacer height={3} />
+  <h3>This is your text component</h3>
+  <FontSpacer height={5} />
+}
+```
+
+So just to make sure the benefits are clear, let's look at the initial example, with our custom 8px based height containers. Same design view without the grid system, with the baseline grid and finally with the padding grid.
 
 ![Font Boxing Demo](../../assets/images/../../../assets/images/Writings/Grid/font-boxing-benefits.png)
+
+See what's hapenning here? All spacers are now multiple of 8 but everything sits perfectly on the baseline by default.
+**Implementation start to already feel as simple as with the soft grid method.**
+
+![Font Exemple](../../assets/images/../../../assets/images/Writings/Grid/font-exemple.png)
 
 ### Control each component as a component divisible by 8
 
