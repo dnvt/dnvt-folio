@@ -35,7 +35,7 @@ With the soft grid method, we are not getting the mathematical grid rhythm from 
 
 ### What's stopping us from having to implement a Hard grid
 
-- Seamingly Uncontrollable and random Font baseline
+- Seamingly uncontrollable and random Font baseline
 - None divisible by 8 spacings in between elements
 - Lack of control of every component
 - Image heights
@@ -57,10 +57,63 @@ TLDR; I'm encapsulating each element to be their own 8px height elements (yes, f
 
 ### Get your design grid into your coding environment
 
-- Code your own 8px grid to have a visual reference to build all your components
- One of the many reasons for not implementing the Hard grid system is that there aren't grid systems available for frontEnd developers – whereas it is simple to get in Figma or Sketch. So I built a Hook to have a grid available for every new project.
+Code your own 8px grid to have a visual reference to build all your components
+One of the many reasons for not implementing the Hard grid system is that there aren't grid systems available for frontEnd developers – whereas it is simple to get in Figma or Sketch. So I built a Hook to have a grid available for every new project.
 
 ![Browser grid off](../../assets/images/../../../assets/images/Writings/Grid/show-grid.gif)
+
+```javascript
+import { useDocumentSize } from "../../hooks/useDimensionSize"
+import React, { useEffect, useState } from "react"
+
+const Horizontal = (props) => {
+  const HorizontalStyle = createUseStyles({
+    Horizontal: {
+      zIndex: "-1", // No one wants the grid to interfere with the UI!
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      userSelect: "none",
+    },
+
+    Row: {
+      position: "relative",
+      top: 0,
+      width: "100%",
+      height: 8,
+
+      "&:after": {
+        content: '""',
+        position: "absolute",
+        bottom: 0,
+        width: "100%",
+        height: 1,
+        background: #E1E4FF,
+        transition: "background .12s ease",
+      },
+    },
+  })
+
+  const document = useDocumentSize() // Hook to get the height of the page
+  const [rowNumber, setRowNumber] = useState(0) // Initialize the number of rows for the grid
+  const rowArray: JSX.Element[] = [] // Initialize an array to contain all the row
+
+  useEffect(() => {
+    if (document.height) setRowNumber(Math.trunc(document.height / 8))
+    // Define the number of 8px height rows needed to fill the entire height of the page
+  }, [document.height])
+
+  for (let index = 0; index < rowNumber; index++) {
+    // Generate that many rows in your array
+    rowArray.push(<div key={index} className={classes.Row}></div>)
+  }
+
+  // Return your grid container with all these rows!
+  return <div className={classes.Horizontal}>{rowArray}</div>
+}
+
+```
 
 ### Encapsulate font as components divisible by 8
 
@@ -86,12 +139,19 @@ Set it up once and for all for each font used in your design system – and only
 ![Font Boxing Demo](../../assets/images/../../../assets/images/Writings/Grid/font-boxing-demo.png)
 
 ```javascript
+// Gotta work on an understable fontWrapping concept
 export const FontH3 = () => {
-  <FontSpacer height={3} />
-  <h3>This is your text component</h3>
-  <FontSpacer height={5} />
+  <div>
+    <FontSpacer height={3} />
+    <h3>This is your text component</h3>
+    <FontSpacer height={5} />
+  </div>
 }
 ```
+
+[Github FontWrapper component to simplify for the article ↗️](https://github.com/dnvt/Dnvt-Folio/blob/c21a4d484a703532a6f19ebb939e57dd11b7de04/src/utils/fonts/elements/FontTagWrapper.tsx#L8)
+
+#### Result
 
 So just to make sure the benefits are clear, let's look at the initial example, with our custom 8px based height containers. Same design view without the grid system, with the baseline grid and finally with the padding grid.
 
@@ -102,11 +162,27 @@ See what's hapenning here? All spacers are now multiple of 8 but everything sits
 
 ![Font Exemple](../../assets/images/../../../assets/images/Writings/Grid/font-exemple.png)
 
+#### Caveat
+
+One of the drawback with this method is that you can't anymore just `T` key in Figma (or whatever other software you are using) and start typing your text, then pick from one of your font style.
+Rather, you have to get used to pick your font container from the list of Components.  ¯/\_(ツ)_/¯
+
+![Figma list of Font components](../../assets/images/../../../assets/images/Writings/Grid/font-caveat.png)
+
 ### Control each component as a component divisible by 8
 
-- If the font is set up as an independent and / 8 element, 90% of the work is already done
-- You only want to use 8px grid Spacers to manage spacings and rhythm in between components
-- Adjust with weird paddings within containers, so they standalone are 8px components elements
+Well, this is lovely you gonna say, but it's only dealing with font elements! How about all these other cases with buttons, icons. Whatabout my cards elements and the dividers and all this??!
+These are great questions and worries! Though if the font is set up as an independent and / 8 element, 90% of the work is already done, really!
+
+Reminder: You only want to use 8px grid Spacers to manage spacings and rhythm in between components otherwise, would break all your component alignment efforts.
+
+- Showing specific and detailed cases/components?
+  - Link buttons (with icons)
+    - Adjust with weird paddings within containers, so they standalone are 8px components elements
+  - Header menu
+  - Footer menu
+  - Cards?
+- Showing more examples without detailing too much
 
 ### Image heights
 
