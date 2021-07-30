@@ -115,6 +115,8 @@ const Horizontal = (props) => {
 
 ```
 
+`TODO: Create a standalone Grid Hook`
+
 ### Encapsulate font as components divisible by 8
 
 #### Font Line height
