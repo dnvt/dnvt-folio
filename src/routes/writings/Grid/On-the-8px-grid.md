@@ -69,7 +69,7 @@ import React, { useEffect, useState } from "react"
 const Horizontal = (props) => {
   const document = useDocumentSize() // Hook to get the height of the page
   const [rowNumber, setRowNumber] = useState(0) // Initialize the number of rows for the grid
-  const rowArray: JSX.Element[] = [] // Initialize an array to contain all the row
+  const rowArray = [] // Initialize an array to contain all the row
 
   useEffect(() => {
     // Define the number of 8px height rows needed to fill the entire height of the page
@@ -132,16 +132,14 @@ Math.ceil(x/8)*8
 
 Or you can also use this [handy tool](https://www.thegoodlineheight.com) to calculate your baseline.
 
-#### Font container aka line-box
+#### Font Line-box
 
 > The height of the line-box is calculated from the height of all its child elements. The browser will calculate the height of each child element in this line, and then get the height of the line-box (specifically, the height from the highest point to the lowest point of the child element), so by default, a line-box is always Have enough height to accommodate its child elements.
 
 c.f. [Deep dive CSS: font metrics, line-height and vertical-align](https://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align)
 
-Encapsulate each individual font into their own font component that's divisble by eight
-Adjust the paddings up and down as necessary to get the font baseline correct.
-
-Set it up once and for all for each font used in your design system – and only call your Font component.
+The idea is to encapsulate each individual font into its own Container that's divisble by eight.
+Then we adjust the paddings up and down as necessary to get the font to correctly sit on the baseline.
 
 ![Font Boxing Demo](../../assets/images/../../../assets/images/Writings/Grid/font-boxing-demo.png)
 
@@ -156,16 +154,20 @@ export const FontH3 = () => {
 }
 ```
 
+Set it up once and for all, for each font used in your design system. Only call your Font container component and you'd always have a prestine font.
+
 [Github FontWrapper component to simplify for the article ↗️](https://github.com/dnvt/Dnvt-Folio/blob/c21a4d484a703532a6f19ebb939e57dd11b7de04/src/utils/fonts/elements/FontTagWrapper.tsx#L8)
 
 #### Result
 
-So just to make sure the benefits are clear, let's look at the initial example, with our custom 8px based height containers. Same design view without the grid system, with the baseline grid and finally with the padding grid.
+So just to make sure the benefits are clear, let's look at the initial example, with our custom 8px based height font containers. Displayed below, same design view a) without the grid system,b) with the baseline grid and finally b) with the padding grid.
 
 ![Font Boxing Demo](../../assets/images/../../../assets/images/Writings/Grid/font-boxing-benefits.png)
 
-See what's hapenning here? All spacers are now multiple of 8 but everything sits perfectly on the baseline by default.
-**Implementation start to already feel as simple as with the soft grid method.**
+See what's hapenning here?
+All spacers are now multiple of 8, all font containers are multiple of 8, but everything sits perfectly on the baseline by default. 
+
+The implementation start to already feel as simple as with the soft grid method.
 
 ![Font Exemple](../../assets/images/../../../assets/images/Writings/Grid/font-exemple.png)
 
@@ -187,21 +189,21 @@ These are great questions and worries! Though if the font is set up as an indepe
 
 Reminder: You only want to use 8px grid Spacers to manage spacings and rhythm in between components otherwise, would break all your component alignment efforts.
 
-- Showing specific and detailed cases/components?
-  - Link buttons (with icons)
-    - Adjust with weird paddings within containers, so they standalone are 8px components elements
-  - Header menu
-  - Footer menu
-  - Cards?
-- Showing more examples without detailing too much
+#### Font and Icons
 
-### Image heights
+#### Button and Inputs
+
+#### Other components
+
+#### Image heights
 
 - Imposing a height divisible by 8 for any images
 - We kinda force this for images width; I don't see any problem with masking images' height
 - Working on automating it (TODO: Work on a script with modulo to force the height to be / 8)
 
-### Responsiveness
+#### Responsiveness
 
 - Grid systems
 - Mobile grid and all
+
+### Opening up for discussion
