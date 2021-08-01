@@ -1,4 +1,4 @@
-# Personal take on the 8px Grid systems – the hard grid method
+# Personal take on the 8px Grid systems – Or how to make the Hard grid method as easy to implement as the Soft grid method?
 
 ## Why 8px grid?
 
@@ -67,41 +67,13 @@ import { useDocumentSize } from "../../hooks/useDimensionSize"
 import React, { useEffect, useState } from "react"
 
 const Horizontal = (props) => {
-  const HorizontalStyle = createUseStyles({
-    Horizontal: {
-      zIndex: "-1", // No one wants the grid to interfere with the UI!
-      position: "absolute",
-      top: 0,
-      left: 0,
-      width: "100%",
-      userSelect: "none",
-    },
-
-    Row: {
-      position: "relative",
-      top: 0,
-      width: "100%",
-      height: 8,
-
-      "&:after": {
-        content: '""',
-        position: "absolute",
-        bottom: 0,
-        width: "100%",
-        height: 1,
-        background: #E1E4FF,
-        transition: "background .12s ease",
-      },
-    },
-  })
-
   const document = useDocumentSize() // Hook to get the height of the page
   const [rowNumber, setRowNumber] = useState(0) // Initialize the number of rows for the grid
   const rowArray: JSX.Element[] = [] // Initialize an array to contain all the row
 
   useEffect(() => {
-    if (document.height) setRowNumber(Math.trunc(document.height / 8))
     // Define the number of 8px height rows needed to fill the entire height of the page
+    if (document.height) setRowNumber(Math.trunc(document.height / 8))
   }, [document.height])
 
   for (let index = 0; index < rowNumber; index++) {
@@ -113,17 +85,46 @@ const Horizontal = (props) => {
   return <div className={classes.Horizontal}>{rowArray}</div>
 }
 
+const HorizontalStyle = createUseStyles({
+  Horizontal: {
+    zIndex: "-1", // No one wants the grid to interfere with the UI!
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    userSelect: "none",
+  },
+
+  Row: {
+    position: "relative",
+    top: 0,
+    width: "100%",
+    height: 8,
+
+    "&:after": {
+      content: '""',
+      position: "absolute",
+      bottom: 0,
+      width: "100%",
+      height: 1,
+      background: #E1E4FF,
+    },
+  },
+})
+
 ```
 
 `TODO: Create a standalone Grid Hook`
 
 ### Encapsulate font as components divisible by 8
 
-#### Font Line height
+#### Font Line-height
 
-Need to make sure each selected font has a line-height also based on a multiple of 8.
+Need to make sure each selected font has a line-height based on a multiple of 8.
 
 It's commonly assumed that a good line height should be around 130% of the font size. So I round up the result to its closest multiple of 8 to get the font to always sit on the baseline
+
+![Line-Height and Baseline](../../assets/images/../../../assets/images/Writings/Grid/font-name-convention.png)
 
 ```javascript
 Math.ceil(x/8)*8
@@ -131,7 +132,11 @@ Math.ceil(x/8)*8
 
 Or you can also use this [handy tool](https://www.thegoodlineheight.com) to calculate your baseline.
 
-#### Font container
+#### Font container aka line-box
+
+> The height of the line-box is calculated from the height of all its child elements. The browser will calculate the height of each child element in this line, and then get the height of the line-box (specifically, the height from the highest point to the lowest point of the child element), so by default, a line-box is always Have enough height to accommodate its child elements.
+
+c.f. [Deep dive CSS: font metrics, line-height and vertical-align](https://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align)
 
 Encapsulate each individual font into their own font component that's divisble by eight
 Adjust the paddings up and down as necessary to get the font baseline correct.
@@ -170,6 +175,10 @@ One of the drawback with this method is that you can't anymore just `T` key in F
 Rather, you have to get used to pick your font container from the list of Components.  ¯/\_(ツ)_/¯
 
 ![Figma list of Font components](../../assets/images/../../../assets/images/Writings/Grid/font-caveat.png)
+
+<!-- TODO: To triple check the correspondance from Design software Fonts and code is 1:1
+
+Another annoying thing is that the padding values that you need to add to your Font container are not the same on Figma on the desktop. So once you managed your font padding in the desig, you have to manually do it again, with different padding values, while building design system component. -->
 
 ### Control each component as a component divisible by 8
 
