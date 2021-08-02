@@ -182,16 +182,53 @@ Rather, you have to get used to pick your font container from the list of Compon
 
 Another annoying thing is that the padding values that you need to add to your Font container are not the same on Figma on the desktop. So once you managed your font padding in the desig, you have to manually do it again, with different padding values, while building design system component. -->
 
-### Control each component as a component divisible by 8
+### Every other components must have a height divisible by 8
 
 Well, this is lovely you gonna say, but it's only dealing with font elements! How about all these other cases with buttons, icons. Whatabout my cards elements and the dividers and all this??!
 These are great questions and worries! Though if the font is set up as an independent and / 8 element, 90% of the work is already done, really!
 
 Reminder: You only want to use 8px grid Spacers to manage spacings and rhythm in between components otherwise, would break all your component alignment efforts.
 
+![Your list of spaces](../../assets/images/../../../assets/images/Writings/Grid/spacers.png)
+
 #### Font and Icons
 
+Assuming that you are using icons of 16px, 24px or 32px, let's see how you everything fits with an icon.
+
+#### Menus
+
+As an example, I'm going to use my Menu and my Link components.
+For both components, I'm using existing font Legend and existing font Body. Because I'm using a custom underline on hover, I'm not reusing the default Font Container in so I can adjust the underline position within the container.
+
+![menu components variations](../../assets/images/../../../assets/images/Writings/Grid/menu-icons.png)
+
+So now, however you place and combine your menus component together, you know with certainty that they will always be conveniently snapping on that 8x8 grid, with the font on its baseline.
+
+For example, menus combined in a header:
+
+![header made of the menu components](../../assets/images/../../../assets/images/Writings/Grid/header.png)
+
+#### Links
+
+Similarly for the links components that use the a similar font than the body font, in order to fit the underline properly on the basline, I had to customize the font. So I have both Font Body at 23/32px and the font links at 23/24px.
+This way, I have some space in the component to play with the spacing between the font and the underline, to make it snap perfectly.
+
+![link components variations](../../assets/images/../../../assets/images/Writings/Grid/links.png)
+
+And thus, here how easy and perfectly snapped is a footer using these links.
+
+![footer made of the link components](../../assets/images/../../../assets/images/Writings/Grid/footer.png)
+
 #### Button and Inputs
+
+Something strange happened when I worked on the buttons. Unlike what I'm used to, I couldnt find a way to have both the button to be perfectly on the 8px grid, nor have the font aligned on the baseline. But after some get used to, now it feels like a necessary even – that actually doesn't fall off of our previous guidelines.
+
+Might feel un natural but the same logic used for the font is applied for the buttons.
+Keep the font content on the baseline, build your button shape, vertically centered as pleased around it, and then and only then can you box the whole thing in it's container, with paddings up and down to sit the button on its grid.
+
+WIP
+
+![footer made of the link components](../../assets/images/../../../assets/images/Writings/Grid/buttons.png)
 
 #### Other components
 
