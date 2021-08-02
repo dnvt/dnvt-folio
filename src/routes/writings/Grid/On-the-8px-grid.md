@@ -226,9 +226,20 @@ Something strange happened when I worked on the buttons. Unlike what I'm used to
 Might feel un natural but the same logic used for the font is applied for the buttons.
 Keep the font content on the baseline, build your button shape, vertically centered as pleased around it, and then and only then can you box the whole thing in it's container, with paddings up and down to sit the button on its grid.
 
-WIP
+> Illustrations are WIP
+
+##### Inputs
+
+![footer made of the link components](../../assets/images/../../../assets/images/Writings/Grid/inputs.png)
+
+##### Buttons
 
 ![footer made of the link components](../../assets/images/../../../assets/images/Writings/Grid/buttons.png)
+
+##### Forms
+
+![footer made of the link components](../../assets/images/../../../assets/images/Writings/Grid/form-example.png)
+![footer made of the link components](../../assets/images/../../../assets/images/Writings/Grid/form-example-v2.png)
 
 #### Other components
 
