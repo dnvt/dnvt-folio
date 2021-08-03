@@ -1,6 +1,6 @@
-# Personal take on the 8px Grid systems – Or how to make the Hard grid method as easy to implement as the Soft grid method?
+# Personal take on the 8px Grid systems – Or how to make the Hard grid method as easy to implement as the Soft grid method? <!-- omit in toc -->
 
-## Why 8px grid?
+## Why 8px grid? <!-- omit in toc -->
 
 Why is it becoming a rule to build a website and design system based on an 8px grid system?
 
@@ -19,13 +19,13 @@ Some articles about it the subject, if you need to get some freshen up reminder:
 - [From Google DS ↗️](https://www.designsystems.com/space-grids-and-layouts/)
 - [Hard vs. Soft Grid method ↗️](https://medium.com/sketch-app-sources/hard-and-soft-8-point-grids-60cf803b9de4)
 
-### Hard grid method
+### Hard grid method <!-- omit in toc -->
 
 Everything snaps to a strict 8x8 pixel grid, and typography sits on a baseline.
 
 ![Hard Grid method intro](../../assets/images/../../../assets/images/Writings/Grid/hard-grid-intro.png)
 
-### Soft grid method
+### Soft grid method <!-- omit in toc -->
 
 Everything still follows the 8 point scale, but we remove the vertical baseline and horizontal adherence to a strict 8x8 pixel grid. The spacing between every element can become a multiple of 8 (note that 4 and 12px, which are commonly included in the list of spacers, even though not /8)
 
@@ -33,7 +33,7 @@ Everything still follows the 8 point scale, but we remove the vertical baseline 
 
 With the soft grid method, we are not getting the mathematical grid rhythm from the Print world. Why would we be settling up for a soft grid system while there are evident and scalable tricks to develop? I think it's a shame, and I started to explore some work-around to make the Hard grid method implementation as simple as implementing the soft grid method.
 
-### What's stopping us from having to implement a Hard grid
+### What's stopping us from having to implement a Hard grid <!-- omit in toc -->
 
 - Seamingly uncontrollable and random Font baseline
 - None divisible by 8 spacings in between elements
@@ -43,17 +43,31 @@ With the soft grid method, we are not getting the mathematical grid rhythm from 
 
 ---
 
-## What I'm experimenting with to simplify Hard grid implementation
+## What I'm experimenting with to simplify Hard grid implementation <!-- omit in toc -->
 
 I'm going to cover how I'm designing build-around to handle these issues.
 
 TLDR; I'm encapsulating each element to be their own 8px height elements (yes, fonts as well) - so there aren't any components dropped on the page that is not independently a multiple of 8.
 
-- [↓ Grid scarcity](#get-your-design-grid-into-your-coding-environment)
-- [↓ Dealing with the font](#encapsulate-font-as-components-divisible-by-8)
-- [↓ Dealing with the components](#control-each-component-as-a-component-disibile-by-8)
-- [↓ Dealing with the images](#image-heights)
-- [↓ Dealing with the responsive](#responsiveness)
+- [Get your design grid into your coding environment](#get-your-design-grid-into-your-coding-environment)
+- [Encapsulate font as components divisible by 8](#encapsulate-font-as-components-divisible-by-8)
+  - [Font Line-height](#font-line-height)
+  - [Font Line-box](#font-line-box)
+  - [Result](#result)
+  - [Caveat](#caveat)
+- [Every other components must have a height divisible by 8](#every-other-components-must-have-a-height-divisible-by-8)
+  - [Font and Icons](#font-and-icons)
+  - [Menus](#menus)
+  - [Links](#links)
+  - [Button and Inputs](#button-and-inputs)
+    - [Inputs](#inputs)
+    - [Buttons](#buttons)
+    - [Forms](#forms)
+  - [Cards](#cards)
+  - [Devices](#devices)
+  - [Images](#images)
+  - [Responsiveness](#responsiveness)
+- [Opening up for discussion](#opening-up-for-discussion)
 
 ### Get your design grid into your coding environment
 
@@ -178,10 +192,6 @@ Rather, you have to get used to pick your font container from the list of Compon
 
 ![Figma list of Font components](../../assets/images/../../../assets/images/Writings/Grid/font-caveat.png)
 
-<!-- TODO: To triple check the correspondance from Design software Fonts and code is 1:1
-
-Another annoying thing is that the padding values that you need to add to your Font container are not the same on Figma on the desktop. So once you managed your font padding in the desig, you have to manually do it again, with different padding values, while building design system component. -->
-
 ### Every other components must have a height divisible by 8
 
 Well, this is lovely you gonna say, but it's only dealing with font elements! How about all these other cases with buttons, icons. Whatabout my cards elements and the dividers and all this??!
@@ -230,12 +240,12 @@ Keep the font content on the baseline, build your button shape, vertically cente
 
 ##### Inputs
 
-![footer made of the link components](../../assets/images/../../../assets/images/Writings/Grid/input-v1.png)
+![Decomposition of the input v1 components](../../assets/images/../../../assets/images/Writings/Grid/input-v1.png)
 
 Another version of the inputs that could be considered more tricky?
 Indeed in this case, I'm using margin negative... but 16px, multiple of 8 as well!
 
-![footer made of the link components](../../assets/images/../../../assets/images/Writings/Grid/input-v2.png)
+![Decomposition of the input v2 components](../../assets/images/../../../assets/images/Writings/Grid/input-v2.png)
 
 **Note on the borders:**
 Wether or not the borders are inside or outside type of outline, it doesn't impact the size of your container. It's like a virtual invisible coat of paint on a shape. It's not going to be affecting your spacing.
@@ -246,20 +256,33 @@ If you have some issues managing borders in css, have a look at box-sizing: bord
 
 Similarly with the buttons, the outline of the buttons can't snap on the grid if we want the font to seat on the baseline, but the Button containers needs some padding tweeks to fit our rule.
 
-![footer made of the link components](../../assets/images/../../../assets/images/Writings/Grid/buttons.png)
+![Decomposition of button components](../../assets/images/../../../assets/images/Writings/Grid/buttons.png)
 
-An example of menus and buttons living together. Everything vertically align perfectly! Everything is on an irreprochable baseline. We did it! ✅
+An example of menus and buttons living together. Everything vertically align perfectly! Everything is on an irreprochable baseline.
 
-![footer made of the link components](../../assets/images/../../../assets/images/Writings/Grid/menu-buttons.png)
+We did it! ✅
+
+![Header with buttons](../../assets/images/../../../assets/images/Writings/Grid/menu-buttons.png)
 
 ##### Forms
 
-![footer made of the link components](../../assets/images/../../../assets/images/Writings/Grid/form-example.png)
-![footer made of the link components](../../assets/images/../../../assets/images/Writings/Grid/form-example-v2.png)
+So to wrape up this section with complex inputs and button's height – here there are, all together in a form. Just stack on top of each other, with spacers in between.
 
-#### Other components
+![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/form-example.png)
 
-#### Image heights
+
+Same for less complicated components
+
+#### Cards
+
+![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/card-box.png)
+
+![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/card-grid.png)
+
+
+#### Devices
+
+#### Images
 
 - Imposing a height divisible by 8 for any images
 - We kinda force this for images width; I don't see any problem with masking images' height
