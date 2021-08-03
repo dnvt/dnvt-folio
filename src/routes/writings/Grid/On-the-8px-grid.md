@@ -165,7 +165,7 @@ So just to make sure the benefits are clear, let's look at the initial example, 
 ![Font Boxing Demo](../../assets/images/../../../assets/images/Writings/Grid/font-boxing-benefits.png)
 
 See what's hapenning here?
-All spacers are now multiple of 8, all font containers are multiple of 8, but everything sits perfectly on the baseline by default. 
+All spacers are now multiple of 8, all font containers are multiple of 8, but everything sits perfectly on the baseline by default.
 
 The implementation start to already feel as simple as with the soft grid method.
 
@@ -224,17 +224,33 @@ And thus, here how easy and perfectly snapped is a footer using these links.
 Something strange happened when I worked on the buttons. Unlike what I'm used to, I couldnt find a way to have both the button to be perfectly on the 8px grid, nor have the font aligned on the baseline. But after some get used to, now it feels like a necessary even – that actually doesn't fall off of our previous guidelines.
 
 Might feel un natural but the same logic used for the font is applied for the buttons.
-Keep the font content on the baseline, build your button shape, vertically centered as pleased around it, and then and only then can you box the whole thing in it's container, with paddings up and down to sit the button on its grid.
+Keep the font content on the baseline, build your button shape, vertically centered as pleased around it. Then and only then can you box the whole thing in it's container, with paddings up and down to sit the button on its grid.
 
 > Illustrations are WIP
 
 ##### Inputs
 
-![footer made of the link components](../../assets/images/../../../assets/images/Writings/Grid/inputs.png)
+![footer made of the link components](../../assets/images/../../../assets/images/Writings/Grid/input-v1.png)
+
+Another version of the inputs that could be considered more tricky?
+Indeed in this case, I'm using margin negative... but 16px, multiple of 8 as well!
+
+![footer made of the link components](../../assets/images/../../../assets/images/Writings/Grid/input-v2.png)
+
+**Note on the borders:**
+Wether or not the borders are inside or outside type of outline, it doesn't impact the size of your container. It's like a virtual invisible coat of paint on a shape. It's not going to be affecting your spacing.
+
+If you have some issues managing borders in css, have a look at box-sizing: border-box method [on CSS Tricks](https://css-tricks.com/box-sizing/) and play around with *border* and/or *outline* css property!
 
 ##### Buttons
 
+Similarly with the buttons, the outline of the buttons can't snap on the grid if we want the font to seat on the baseline, but the Button containers needs some padding tweeks to fit our rule.
+
 ![footer made of the link components](../../assets/images/../../../assets/images/Writings/Grid/buttons.png)
+
+An example of menus and buttons living together. Everything vertically align perfectly! Everything is on an irreprochable baseline. We did it! ✅
+
+![footer made of the link components](../../assets/images/../../../assets/images/Writings/Grid/menu-buttons.png)
 
 ##### Forms
 
