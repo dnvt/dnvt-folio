@@ -51,18 +51,11 @@ TLDR; I'm encapsulating each element to be their own 8px height elements (yes, f
 
 - [Get your design grid into your coding environment](#get-your-design-grid-into-your-coding-environment)
 - [Encapsulate font as components divisible by 8](#encapsulate-font-as-components-divisible-by-8)
-  - [Font Line-height](#font-line-height)
-  - [Font Line-box](#font-line-box)
-  - [Result](#result)
-  - [Caveat](#caveat)
 - [Every other components must have a height divisible by 8](#every-other-components-must-have-a-height-divisible-by-8)
   - [Font and Icons](#font-and-icons)
   - [Menus](#menus)
   - [Links](#links)
   - [Button and Inputs](#button-and-inputs)
-    - [Inputs](#inputs)
-    - [Buttons](#buttons)
-    - [Forms](#forms)
   - [Cards](#cards)
   - [Devices](#devices)
   - [Images](#images)
@@ -132,7 +125,7 @@ const HorizontalStyle = createUseStyles({
 
 ### Encapsulate font as components divisible by 8
 
-#### Font Line-height
+#### Font Line-height <!-- omit in toc -->
 
 Need to make sure each selected font has a line-height based on a multiple of 8.
 
@@ -146,7 +139,7 @@ Math.ceil(x/8)*8
 
 Or you can also use this [handy tool](https://www.thegoodlineheight.com) to calculate your baseline.
 
-#### Font Line-box
+#### Font Line-box <!-- omit in toc -->
 
 > The height of the line-box is calculated from the height of all its child elements. The browser will calculate the height of each child element in this line, and then get the height of the line-box (specifically, the height from the highest point to the lowest point of the child element), so by default, a line-box is always Have enough height to accommodate its child elements.
 
@@ -172,7 +165,7 @@ Set it up once and for all, for each font used in your design system. Only call 
 
 [Github FontWrapper component to simplify for the article ↗️](https://github.com/dnvt/Dnvt-Folio/blob/c21a4d484a703532a6f19ebb939e57dd11b7de04/src/utils/fonts/elements/FontTagWrapper.tsx#L8)
 
-#### Result
+#### Result <!-- omit in toc -->
 
 So just to make sure the benefits are clear, let's look at the initial example, with our custom 8px based height font containers. Displayed below, same design view a) without the grid system,b) with the baseline grid and finally b) with the padding grid.
 
@@ -185,7 +178,7 @@ The implementation start to already feel as simple as with the soft grid method.
 
 ![Font Exemple](../../assets/images/../../../assets/images/Writings/Grid/font-exemple.png)
 
-#### Caveat
+#### Caveat <!-- omit in toc -->
 
 One of the drawback with this method is that you can't anymore just `T` key in Figma (or whatever other software you are using) and start typing your text, then pick from one of your font style.
 Rather, you have to get used to pick your font container from the list of Components.  ¯/\_(ツ)_/¯
@@ -205,7 +198,7 @@ Reminder: You only want to use 8px grid Spacers to manage spacings and rhythm in
 
 Assuming that you are using icons of 16px, 24px or 32px, let's see how you everything fits with an icon.
 
-#### Menus
+#### Menus 
 
 As an example, I'm going to use my Menu and my Link components.
 For both components, I'm using existing font Legend and existing font Body. Because I'm using a custom underline on hover, I'm not reusing the default Font Container in so I can adjust the underline position within the container.
@@ -236,9 +229,7 @@ Something strange happened when I worked on the buttons. Unlike what I'm used to
 Might feel un natural but the same logic used for the font is applied for the buttons.
 Keep the font content on the baseline, build your button shape, vertically centered as pleased around it. Then and only then can you box the whole thing in it's container, with paddings up and down to sit the button on its grid.
 
-> Illustrations are WIP
-
-##### Inputs
+##### Inputs <!-- omit in toc -->
 
 ![Decomposition of the input v1 components](../../assets/images/../../../assets/images/Writings/Grid/input-v1.png)
 
@@ -252,7 +243,7 @@ Wether or not the borders are inside or outside type of outline, it doesn't impa
 
 If you have some issues managing borders in css, have a look at box-sizing: border-box method [on CSS Tricks](https://css-tricks.com/box-sizing/) and play around with *border* and/or *outline* css property!
 
-##### Buttons
+##### Buttons <!-- omit in toc -->
 
 Similarly with the buttons, the outline of the buttons can't snap on the grid if we want the font to seat on the baseline, but the Button containers needs some padding tweeks to fit our rule.
 
@@ -264,7 +255,7 @@ We did it! ✅
 
 ![Header with buttons](../../assets/images/../../../assets/images/Writings/Grid/menu-buttons.png)
 
-##### Forms
+##### Forms <!-- omit in toc -->
 
 So to wrape up this section with complex inputs and button's height – here there are, all together in a form. Just stack on top of each other, with spacers in between.
 
@@ -278,6 +269,8 @@ Same for less complicated components
 ![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/card-box.png)
 
 ![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/card-grid.png)
+
+![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/card-images.png)
 
 
 #### Devices
