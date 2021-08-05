@@ -266,6 +266,9 @@ Same for less complicated components
 
 #### Cards
 
+I'm using cards as a visual entry point to my work projects. It's a combination of image with couple of text.
+The cards are force into a 8x8 height and the text are placed with spacer, within card, fitting the baseline as always, effortlessly.
+
 ![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/card-box.png)
 
 ![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/card-grid.png)
@@ -274,6 +277,17 @@ Same for less complicated components
 
 
 #### Devices
+
+I css some device components to present some of my work. 
+Only little issue here (apart from making the iphone looks like one with CSS) was to keep the iphone screen ratio correct at all time, without breaking the 8x8 height rule.
+
+For the browser, well, it a bit messier. I just have the 8x8 height, my image to fit in on its lenght – and I have the with truncated however it fits.  ¯\_(ツ)_/¯ 
+
+![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/device-box.png)
+
+![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/device-grid.png)
+
+![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/device-images.png)
 
 #### Images
 
@@ -287,3 +301,16 @@ Same for less complicated components
 - Mobile grid and all
 
 ### Opening up for discussion
+
+So, not sure if I have a conclusion, but I liked very much working all my components in Figma and React this ways. The initial creation and implemation of each component is a bit tedious but, so does creating a Design System from scratch!
+
+You can see all the components that I presented in the article on [Figma](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/8px-Grid?node-id=724%3A961).
+
+And you can also see all the components that I made in react on my website at [dnvt.me/guidelines](www.dnvt.me/guidelines). (Website fully using this 8x8 design system)
+<!-- TODO: Add the link for dnvt.me/guidelines when live  -->
+
+Let me know if you have any questions, any suggestions or improvment to offer to build on this idea/concept. Lemme know if you find this totally absurd and the whys, it would also tremendously help the grid discussion.
+
+Thanks for reading! 
+
+✌🏽
