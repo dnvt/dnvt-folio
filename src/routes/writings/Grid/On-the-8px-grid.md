@@ -153,11 +153,13 @@ Then we adjust the paddings up and down as necessary to get the font to correctl
 ```javascript
 // Gotta work on an understable fontWrapping concept
 export const FontH3 = () => {
-  <div>
-    <FontSpacer height={3} />
-    <h3>This is your text component</h3>
-    <FontSpacer height={5} />
-  </div>
+  return (
+    <div>
+      <FontSpacer height={3} />
+      <h3>This is your text component</h3>
+      <FontSpacer height={5} />
+    </div>
+  )
 }
 ```
 
@@ -291,12 +293,51 @@ For the browser, well, it a bit messier. I just have the 8x8 height, my image to
 
 #### Images
 
-- Imposing a height divisible by 8 for any images
-- We kinda force this for images width; I don't see any problem with masking images' height
-- Working on automating it (TODO: Work on a script with modulo to force the height to be / 8)
+Same with all the images. Make sure to be imposing a height divisible by 8 for any images' container. 
+
+![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/vignette-box.png)
+
+![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/vignette-grid.png)
+
+![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/vignette-images.png)
+
+And if you can't get to think about your images with a fixed height, maybe let them go wild but make sure the height is only scaling gradually by 8.
+
+To reuse previous code:
+
+<!-- Try the code! And make a GIF demo -->
+
+```javascript
+import React, { useRef, useEffect, useState } from 'react'
+
+const Vignette = () => {
+  const imageHeight = useState()
+  const ref = useRef()
+
+  useEffect(() => {
+    if (ref && ref.current && ref.current.clientHeight) {
+      imageHeight = ref.current.clientHeight
+    }
+  }, [])
+  
+  return (
+    <div 
+      style={{
+        overflow:"hidden", 
+        height: imageHeight ? Math.ceil(imageHeight/8)*8 : 480
+      }}>
+      <img ref={ref}>
+      <img>
+    </div>
+  )
+}
+```
 
 #### Responsiveness
 
+Nothing really changes because of mobile version. 
+The same grid is applied and the same 8x8 and height rule applies. If your components and the fonts have to be smaller, than be it. Redesign them to match you use case. 
+That's what I did with most of my components.
 - Grid systems
 - Mobile grid and all
 
