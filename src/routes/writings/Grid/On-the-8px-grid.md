@@ -1,73 +1,96 @@
-# Personal take on the 8px Grid systems – Or how to make the Hard grid method as easy to implement as the Soft grid method? <!-- omit in toc -->
+# Personal take on the 8px Grid systems – Or how to make the Hard grid method as easy to implement as the Soft grid method?
 
-## Why 8px grid? <!-- omit in toc -->
+## The 8px grid system
 
-Why is it becoming a rule to build a website and design system based on an 8px grid system?
+### Refresher
 
-- Help to manage pixel-perfect better
-- It scales perfectly in all the different screen displays (including android's @0.75 and @1.5).
-- Grid rhythm
+Many people and blogs are talking about either designing with an 8px grid system or forgetting grids altogether. I personally think grids and baselines are beautiful mathematical systems that, used properly, are more than just helpers or guides. They can elevate your designs. One of these fantastic foundations coming from the print design world that seems to never be appropriately implemented in the digital space because of scale or coding complexity.
+
+Some of the reasons why people tend to use the 8px grid system:
+
+- It helps to manage pixel-perfect better
+- It scales perfectly in all the different screen displays (including android's @0.75 and @1.5)
 - Google and Apple say so (Seems to be a best practice already in place)
 - Simple multiple, easily divisible, and scalable
+- Probably plenty of arguments more that I'm forgetting
 
----
-
-Some articles about it the subject, if you need to get some freshen up reminder:
+Some articles about the subject, if you need to get some literature on the subject:
 
 - [The Comprehensive 8pt Grid Guide ↗️](https://medium.com/swlh/the-comprehensive-8pt-grid-guide-aa16ff402179)
 - [Text Baseline ↗️](https://alistapart.com/article/settingtypeontheweb/)
 - [From Google DS ↗️](https://www.designsystems.com/space-grids-and-layouts/)
 - [Hard vs. Soft Grid method ↗️](https://medium.com/sketch-app-sources/hard-and-soft-8-point-grids-60cf803b9de4)
 
-### Hard grid method <!-- omit in toc -->
+Using some of the jargon from these articles, here are the two common ways to implement the 8px grid system.
 
-Everything snaps to a strict 8x8 pixel grid, and typography sits on a baseline.
+### Hard grid method
+
+Icons and other components' sizes are multiples of 8, so they snap to a strict 8x8 pixel grid, **and the typography always sits on a baseline (as it should).**
+
+> Baseline grid. In typography, the baseline is a line upon which the text rests. Aligning baselines to a specific absolute grid establishes a vertical rhythm, which is easier for the human brain to scan, especially with multiple-column content.
 
 ![Hard Grid method intro](../../assets/images/../../../assets/images/Writings/Grid/hard-grid-intro.png)
 
 ### Soft grid method <!-- omit in toc -->
 
-Everything still follows the 8 point scale, but we remove the vertical baseline and horizontal adherence to a strict 8x8 pixel grid. The spacing between every element can become a multiple of 8 (note that 4 and 12px, which are commonly included in the list of spacers, even though not /8)
+Everything still follows the 8 point scale, **but we remove the vertical baseline and horizontal adherence to a strict 8x8 pixel grid.** The spacing between every element can become a multiple of 8. Note that 4 and 12px, which are commonly included in the list of spacers, even though not multiple of 8.
+
+This is seemingly easier to implement because one doesn't have to do a case-per-case spacing assessment with the developers. 
 
 ![Soft Grid method intro](../../assets/images/../../../assets/images/Writings/Grid/soft-grid-intro.png)
 
-With the soft grid method, we are not getting the mathematical grid rhythm from the Print world. Why would we be settling up for a soft grid system while there are evident and scalable tricks to develop? I think it's a shame, and I started to explore some work-around to make the Hard grid method implementation as simple as implementing the soft grid method.
+### Personal take
 
-### What's stopping us from having to implement a Hard grid <!-- omit in toc -->
+With the soft grid method, we are not getting the mathematical grid rhythm at all. It feels like a simplified version of a grid system, purely vertical, to ease the implementation. 
 
-- Seamingly uncontrollable and random Font baseline
-- None divisible by 8 spacings in between elements
-- Lack of control of every component
-- Image heights
-- Responsiveness
+Why would we settle up for a soft grid system while we could develop evident and scalable tricks? 
+I think it's a shame not to, and I started to explore some work-around to make the Hard grid method implementation as simple as implementing the soft grid method.
+
+So in this article, I'm going to detail these methods I used and some of the design system components I created to build my portfolio, answering this question of how one can implement a perfect 8x8 Hard grid method with the ease of the soft grid method.
 
 ---
 
-## What I'm experimenting with to simplify Hard grid implementation <!-- omit in toc -->
+## The building of an 8x8 design system
 
-I'm going to cover how I'm designing build-around to handle these issues.
+To make an analogy, let's consider the bricks that are used to build walls. Every brick shares the same height; otherwise, it would break the horizontal pattern of a wall, building a house very tedious. (You would have to compensate for every size variation of the bricks)
 
-TLDR; I'm encapsulating each element to be their own 8px height elements (yes, fonts as well) - so there aren't any components dropped on the page that is not independently a multiple of 8.
+![Brick wall analogy](../../assets/images/../../../assets/images/Writings/Grid/brick-analogy.png)
+Photo by <a href="https://unsplash.com/@mitchel3uo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mitchell Luo</a> on <a href="https://unsplash.com/wallpapers/design/brick?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
-- [Get your design grid into your coding environment](#get-your-design-grid-into-your-coding-environment)
-- [Encapsulate font as components divisible by 8](#encapsulate-font-as-components-divisible-by-8)
-- [Every other components must have a height divisible by 8](#every-other-components-must-have-a-height-divisible-by-8)
-  - [Font and Icons](#font-and-icons)
-  - [Menus](#menus)
-  - [Links](#links)
-  - [Button and Inputs](#button-and-inputs)
-  - [Cards](#cards)
-  - [Devices](#devices)
-  - [Images](#images)
-  - [Responsiveness](#responsiveness)
-- [Opening up for discussion](#opening-up-for-discussion)
+That's it. That's the concept. Consider each element (or component to take a more design system term) that you put on a page like a brick. Each of these components has to fit the 8-pixel rule to be accepted – otherwise, your entire vertical grid pattern would be broken, and you would have to compensate for each variation at a time.
+
+To make it less figurative, I'm encapsulating each element to be a component with a height equal to a multiple of 8 (yes, fonts as well). 
+That way their bounding box is always siting on the baseline.
+
+![Schematic bounding-box](../../assets/images/../../../assets/images/Writings/Grid/boundingbox-schematic.png)
+
+Each of these components should be independently dealing, inside their own container, with top and bottom paddings to fit the baseline, to offset the typography. 
+
+
+![Schematic baseline](../../assets/images/../../../assets/images/Writings/Grid/baseline-schematic.png)
+
+So no matter where you call the components, they match the grid system of 8px with a de-facto typography that sits on the baseline. No more spacing compensation on the case-per-case, for every new page you create. The offsets are dealt with, within your components.
+
+Does this make sense?
+To illustrate and prove that this is doable, these are the steps we are going to explore together, based on my portfolio design system:
+
+1. [Get your grid into your coding environment](#get-your-design-grid-into-your-coding-environment)
+2. [Encapsulate fonts in components divisible by 8](#encapsulate-font-as-components-divisible-by-8)
+3. [Every other component must have a height divisible by 8](#every-other-components-must-have-a-height-divisible-by-8)
 
 ### Get your design grid into your coding environment
 
-Code your own 8px grid to have a visual reference to build all your components
-One of the many reasons for not implementing the Hard grid system is that there aren't grid systems available for frontEnd developers – whereas it is simple to get in Figma or Sketch. So I built a Hook to have a grid available for every new project.
+### 1. Get your design grid into your coding environment
+
+If you want to implement your design system based on a grid system, there is no other way to bring your grid and baseline guides to your local coding environment.
+
+One of the many reasons for not implementing the Hard grid system is that there aren't grid systems available on the browser for developers – whereas it is simple to get in Figma or Sketch. 
+
+So I recommend you code your own grid and have a visual reference to implement all your components.
 
 ![Browser grid off](../../assets/images/../../../assets/images/Writings/Grid/show-grid.gif)
+
+Here is the Grid component that I built for my project.
 
 ```javascript
 import { useDocumentSize } from "../../hooks/useDimensionSize"
@@ -121,17 +144,23 @@ const HorizontalStyle = createUseStyles({
 
 ```
 
+And I have a hook to toggle the grid visibility.
+
 `TODO: Create a standalone Grid Hook`
 
-### Encapsulate font as components divisible by 8
+### 2. Encapsulate font as components divisible by 8
 
-#### Font Line-height <!-- omit in toc -->
+Now that we have our grid, we can build our components and check their baseline and bounding-box directly in the browser.
 
-Need to make sure each selected font has a line-height based on a multiple of 8.
+Since the font is arguably the most essential part of our designs, we will explore this first. Most of the other components fall off from your Font management anyways.
 
-It's commonly assumed that a good line height should be around 130% of the font size. So I round up the result to its closest multiple of 8 to get the font to always sit on the baseline
+#### Line-height 
+
+First, we need to ensure each font in the design system has a line height based on a multiple of 8.
 
 ![Line-Height and Baseline](../../assets/images/../../../assets/images/Writings/Grid/font-name-convention.png)
+
+It's commonly assumed that a good line height should be around 130% of the font size. Round up the result to its closest multiple of 8 to get the font to always sit on the baseline.
 
 ```javascript
 Math.ceil(x/8)*8
@@ -139,14 +168,13 @@ Math.ceil(x/8)*8
 
 Or you can also use this [handy tool](https://www.thegoodlineheight.com) to calculate your baseline.
 
-#### Font Line-box <!-- omit in toc -->
+#### Line-box / bounding-box
 
-> The height of the line-box is calculated from the height of all its child elements. The browser will calculate the height of each child element in this line, and then get the height of the line-box (specifically, the height from the highest point to the lowest point of the child element), so by default, a line-box is always Have enough height to accommodate its child elements.
+The line-box or bounding-box of a font or component is the physical limit within which your element is contained.
 
-c.f. [Deep dive CSS: font metrics, line-height and vertical-align](https://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align)
+![Font Bounding Box demo](../../assets/images/../../../assets/images/Writings/Grid/font-boundingbox.png)
 
-The idea is to encapsulate each individual font into its own Container that's divisble by eight.
-Then we adjust the paddings up and down as necessary to get the font to correctly sit on the baseline.
+The idea is to encapsulate each individual font into its own container divisible by 8 while adjusting the top and bottom of the padding as necessary to get the font to correctly sit on the baseline.
 
 ![Font Boxing Demo](../../assets/images/../../../assets/images/Writings/Grid/font-boxing-demo.png)
 
@@ -163,31 +191,39 @@ export const FontH3 = () => {
 }
 ```
 
-Set it up once and for all, for each font used in your design system. Only call your Font container component and you'd always have a prestine font.
+Set it up once and for all for each font used in your design system. Only call these font components in your design, and you'll not have to compensate spacings for having your font sitting on the baseline.
 
 [Github FontWrapper component to simplify for the article ↗️](https://github.com/dnvt/Dnvt-Folio/blob/c21a4d484a703532a6f19ebb939e57dd11b7de04/src/utils/fonts/elements/FontTagWrapper.tsx#L8)
 
-#### Result <!-- omit in toc -->
+Some more in-depth details about bounding-box compensation can be read [here](https://uxdesign.cc/baseline-grids-design-systems-ae23b5af8cec).
 
-So just to make sure the benefits are clear, let's look at the initial example, with our custom 8px based height font containers. Displayed below, same design view a) without the grid system,b) with the baseline grid and finally b) with the padding grid.
+It's using a precise 5 steps method:
+1. Absolute Grid Setup;
+2. Height Rule;
+3. Line Height Rule;
+4. Offsetting Typography;
+5. Compensating Typography's Offset.
+
+#### Result 
+
+Let's look at the initial example with our custom 8px based height font containers to ensure the benefits are clear. Displayed below, same design view a) without the grid system, b) with the baseline grid, and finally, c) with the padding grid.
 
 ![Font Boxing Demo](../../assets/images/../../../assets/images/Writings/Grid/font-boxing-benefits.png)
 
-See what's hapenning here?
-All spacers are now multiple of 8, all font containers are multiple of 8, but everything sits perfectly on the baseline by default.
+See what's happening here?
+All spacers are multiple of 8, all font containers are now multiple of 8, and everything sits perfectly and automatically on the baseline.
 
-The implementation start to already feel as simple as with the soft grid method.
+The implementation starts to already feel as simple as with the soft grid method.
 
 ![Font Exemple](../../assets/images/../../../assets/images/Writings/Grid/font-exemple.png)
 
-#### Caveat <!-- omit in toc -->
+#### Caveat
 
-One of the drawback with this method is that you can't anymore just `T` key in Figma (or whatever other software you are using) and start typing your text, then pick from one of your font style.
-Rather, you have to get used to pick your font container from the list of Components.  ¯/\_(ツ)_/¯
+One of the drawbacks with this method is that you can't anymore just hit the `T` key in Figma (or whatever other software you are using) and start typing some text. Instead, you have to get used to picking your font container from the list of Components.  ¯/\_(ツ)_/¯
 
 ![Figma list of Font components](../../assets/images/../../../assets/images/Writings/Grid/font-caveat.png)
 
-### Every other components must have a height divisible by 8
+### 3. Every other components must have a height divisible by 8
 
 Well, this is lovely you gonna say, but it's only dealing with font elements! How about all these other cases with buttons, icons. Whatabout my cards elements and the dividers and all this??!
 These are great questions and worries! Though if the font is set up as an independent and / 8 element, 90% of the work is already done, really!
