@@ -78,8 +78,6 @@ To illustrate and prove that this is doable, these are the steps we are going to
 2. [Encapsulate fonts in components divisible by 8](#encapsulate-font-as-components-divisible-by-8)
 3. [Every other component must have a height divisible by 8](#every-other-components-must-have-a-height-divisible-by-8)
 
-### Get your design grid into your coding environment
-
 ### 1. Get your design grid into your coding environment
 
 If you want to implement your design system based on a grid system, there is no other way to bring your grid and baseline guides to your local coding environment.
