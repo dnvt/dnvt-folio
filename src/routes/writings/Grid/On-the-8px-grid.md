@@ -96,49 +96,49 @@ import { useDocumentSize } from "../../hooks/useDimensionSize"
 import React, { useEffect, useState } from "react"
 
 const Horizontal = (props) => {
- const document = useDocumentSize() // Hook to get the height of the page
- const [rowNumber, setRowNumber] = useState(0) // Initialize the number of rows for the grid
- const rowArray = [] // Initialize an array to contain all the row
+  const document = useDocumentSize() // Hook to get the height of the page
+  const [rowNumber, setRowNumber] = useState(0) // Initialize the number of rows for the grid
+  const rowArray = [] // Initialize an array to contain all the row
 
- useEffect(() => {
- // Define the number of 8px height rows needed to fill the entire height of the page
- if (document.height) setRowNumber(Math.trunc(document.height / 8))
- }, [document.height])
+  useEffect(() => {
+    // Define the number of 8px height rows needed to fill the entire height of the page
+    if (document.height) setRowNumber(Math.trunc(document.height / 8))
+  }, [document.height])
 
- for (let index = 0; index < rowNumber; index++) {
- // Generate that many rows in your array
- rowArray.push(<div key={index} className={classes.Row}></div>)
- }
+  for (let index = 0; index < rowNumber; index++) {
+    // Generate that many rows in your array
+    rowArray.push(<div key={index} className={classes.Row}></div>)
+  }
 
- // Return your grid container with all these rows!
- return <div className={classes.Horizontal}>{rowArray}</div>
+  // Return your grid container with all these rows!
+  return <div className={classes.Horizontal}>{rowArray}</div>
 }
 
 const HorizontalStyle = createUseStyles({
- Horizontal: {
- zIndex: "-1", // No one wants the grid to interfere with the UI!
- position: "absolute",
- top: 0,
- left: 0,
- width: "100%",
- userSelect: "none",
- },
+  Horizontal: {
+    zIndex: "-1", // No one wants the grid to interfere with the UI!
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    userSelect: "none",
+  },
 
- Row: {
- position: "relative",
- top: 0,
- width: "100%",
- height: 8,
+  Row: {
+    position: "relative",
+    top: 0,
+    width: "100%",
+    height: 8,
 
- "&:after": {
- content: '""',
- position: "absolute",
- bottom: 0,
- width: "100%",
- height: 1,
- background: #E1E4FF,
- },
- },
+    "&:after": {
+      content: '""',
+      position: "absolute",
+      bottom: 0,
+      width: "100%",
+      height: 1,
+      background: #E1E4FF,
+    },
+  },
 })
 
 ```
@@ -183,13 +183,13 @@ The idea is to encapsulate each individual font into its own container divisible
 ```javascript
 // Gotta work on an understable fontWrapping concept
 export const FontH3 = () => {
- return (
- <div>
- <FontSpacer height={3} />
- <h3>This is your text component</h3>
- <FontSpacer height={5} />
- </div>
- )
+  return (
+    <div>
+      <FontSpacer height={3} />
+      <h3>This is your text component</h3>
+      <FontSpacer height={5} />
+    </div>
+  )
 }
 ```
 
