@@ -386,7 +386,7 @@ So, not sure if I have a conclusion, but I liked very much working all my compon
 
 You can see all the components that I presented in the article on [Figma](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/8px-Grid?node-id=724%3A961).
 
-And you can also see all the components that I made in react on my website at [dnvt.me/guidelines](www.dnvt.me/guidelines). (Website fully using this 8x8 design system)
+And you can also see all the components that I made in react on my website under the menu guidelines [dnvt.me/](https://dnvt.github.io/). (Website fully using this 8x8 design system)
 <!-- TODO: Add the link for dnvt.me/guidelines when live  -->
 
 Let me know if you have any questions, any suggestions or improvment to offer to build on this idea/concept. Lemme know if you find this totally absurd and the whys, it would also tremendously help the grid discussion.
