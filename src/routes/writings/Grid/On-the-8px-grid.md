@@ -260,19 +260,24 @@ For example, menus combined in a header:
 
 `Continue reviewing copy from here`
 
-Similarly for the links components that use the a similar font than the body font, in order to fit the underline properly on the basline, I had to customize the font. So I have both Font Body at 23/32px and the font links at 23/24px.
-This way, I have some space in the component to play with the spacing between the font and the underline, to make it snap perfectly.
+Similarly, for the Link components that use the Body font, I had to impose padding-bottom variations, but in addition, to fit the underline properly on the baseline, I had to edit the font line-height. So at the end of the day, there are two fonts: Font Body at 23/32px and Font Link is at 23/24px.
+
+Thereafter, I have enough space in the component to play with the distance between the typography and the underline and make it snap perfectly.
 
 ![link components variations](../../assets/images/../../../assets/images/Writings/Grid/links.png)
 
-And thus, here how easy and perfectly snapped is a footer using these links.
+Here is a footer using these links – perfectly snapped to the grid and super simple to implement.
 
 ![footer made of the link components](../../assets/images/../../../assets/images/Writings/Grid/footer.png)
 
 #### Buttons and Inputs
 
-Might feel un natural but the same logic used for the font is applied for the buttons.
-Keep the font content on the baseline, build your button shape, vertically centered as pleased around it. Then and only then can you box the whole thing in it's container, with paddings up and down to sit the button on its grid.
+The same logic used for the font is applied for the buttons and inputs.
+It might feel a bit uneasy at first because the shape of the components does not necessarily fit the grid.
+
+Nonetheless, keep the focus on the typography and the baseline. Build your button/input shape, so the font appears horizontally centered in it. 
+
+Then and only then can you encapsulate the whole thing in a container, with offsetting padding tops and bottoms that snap the complete Button component on the 8x8 grid.
 
 ##### Inputs
 
@@ -326,7 +331,7 @@ The cards are force into a 8x8 height and the text are placed with spacer, withi
 I css some device components to present some of my work. 
 Only little issue here (apart from making the iphone looks like one with CSS) was to keep the iphone screen ratio correct at all time, without breaking the 8x8 height rule.
 
-For the browser, well, it a bit messier. I just have the 8x8 height, my image to fit in on its lenght – and I have the with truncated however it fits.  ¯\_(ツ)_/¯ 
+For the browser, well, it a bit messier. I just have the 8x8 height, my image to fit in on its lenght – and I have the with truncated however it fits.  ¯|_(ツ)_/¯ 
 
 ![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/device-box.png)
 
@@ -344,7 +349,7 @@ Same with all the images. Make sure to be imposing a height divisible by 8 for a
 
 ![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/vignette-images.png)
 
-And if you can't get to think about your images with a fixed height, maybe let them go wild but make sure the height is only scaling gradually by 8.
+And if you can't get to think about your images with a fixed height, maybe let them go wild but make sure the height is cropped and only scaling gradually by 8px.
 
 To reuse previous code:
 
