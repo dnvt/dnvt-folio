@@ -258,8 +258,6 @@ For example, menus combined in a header:
 
 ##### Links
 
-`Continue reviewing copy from here`
-
 Similarly, for the Link components that use the Body font, I had to impose padding-bottom variations, but in addition, to fit the underline properly on the baseline, I had to edit the font line-height. So at the end of the day, there are two fonts: Font Body at 23/32px and Font Link is at 23/24px.
 
 Thereafter, I have enough space in the component to play with the distance between the typography and the underline and make it snap perfectly.
@@ -280,6 +278,8 @@ Nonetheless, keep the focus on the typography and the baseline. Build your butto
 Then and only then can you encapsulate the whole thing in a container, with offsetting padding tops and bottoms that snap the complete Button component on the 8x8 grid.
 
 ##### Inputs
+
+`Continue reviewing copy from here`
 
 ![Decomposition of the input v1 components](../../assets/images/../../../assets/images/Writings/Grid/input-v1.png)
 
