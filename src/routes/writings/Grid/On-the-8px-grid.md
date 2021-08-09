@@ -40,6 +40,8 @@ This is seemingly easier to implement because one doesn't have to do a case-per-
 
 ![Soft Grid method intro](../../assets/images/../../../assets/images/Writings/Grid/soft-grid-intro.png)
 
+`More clear examples on the distinction between Hard vs. Soft grid system. The current ones are not obvious enough. Maybe additional comparison would help.`
+
 ### Personal take
 
 With the soft grid method, we truly are not getting the mathematical grid rhythm at all. It feels like a simplified version of a grid system, purely vertical, to ease the implementation. 
@@ -311,6 +313,19 @@ So to wrape up this section with complex inputs and button's height – here the
 
 ![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/form-example.png)
 
+
+#### Separator
+
+` TODO: Add a section on regarding the separator`
+
+Separator are contained in a a 8px height container, with padding offset to get the effect needed.
+
+![Separators](../../assets/images/../../../assets/images/Writings/Grid/separator.png)
+
+> Probably way to complicated separator for starter?
+
+
+---
 
 Same for less complicated components
 
