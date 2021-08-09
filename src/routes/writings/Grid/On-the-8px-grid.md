@@ -227,6 +227,8 @@ One of the drawbacks with this method is that you can't anymore just hit the `T`
 
 ![Figma list of Font components](../../assets/images/../../../assets/images/Writings/Grid/font-caveat.png)
 
+`TODO: Add a caveat on the separator > discuss more in depth in the article`
+
 ### 3. Same shit, different components
 
 Well, this is lovely, but it's only about typography. How about all these other cases with icons and buttons. What about cards components, images, dividers and all this??!
@@ -314,22 +316,20 @@ So to wrape up this section with complex inputs and button's height – here the
 ![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/form-example.png)
 
 
-#### Separator
+#### Separator (WIP)
 
-` TODO: Add a section on regarding the separator`
+` TODO: Add a section regarding the separator`
 
-Separator are contained in a a 8px height container, with padding offset to get the effect needed.
+(First image > Bring back the initial mail app visual with the simple separator (5 1 6 = 8px height))
+
+(Only after maybe bring the more complicated separator that follows)
+Separator are contained in a 8px height container, with padding offset to get the effect needed.
 
 ![Separators](../../assets/images/../../../assets/images/Writings/Grid/separator.png)
 
-> Probably way to complicated separator for starter?
-
-
----
-
-Same for less complicated components
-
 #### Cards
+
+Same thing applies for less complicated components.
 
 I'm using cards as a visual entry point to my work projects. It's a combination of image with couple of text.
 The cards are force into a 8x8 height and the text are placed with spacer, within card, fitting the baseline as always, effortlessly.
