@@ -335,7 +335,7 @@ The Separator container has an 8px height, composed of padding-top of 3px, the s
 
 Note that you don't want to have a line in a 0.5 position to reach pixel perfection. This would render blurry fluffy lines on many devices. So unless you go for 2px height separators for your designs, you'll have to live with tiny uneven paddings ¯\/_(ツ)_/¯
 
-![Fluffy line image](../../assets/images/../../../assets/images/Writings/Grid/fluffy-image.png)
+![Fluffy line image](../../assets/images/../../../assets/images/Writings/Grid/fluffy-line.png)
 
 The other advantage of this method is the flexibility to move the line itself freely within the container. For example, for these very tight rows of editable settings, I needed to adjust the separator's position within its container to create an equal spacing between the selectors and the lines.
 
