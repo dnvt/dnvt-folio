@@ -292,10 +292,15 @@ Indeed in this case, I'm using margin negative... but 16px, multiple of 8 as wel
 
 ![Decomposition of the input v2 components](../../assets/images/../../../assets/images/Writings/Grid/input-v2.png)
 
+---
+
 **Note on the borders:**
 Wether or not the borders are inside or outside type of outline, it doesn't impact the size of your container. It's like a virtual invisible coat of paint on a shape. It's not going to be affecting your spacing.
 
 If you have some issues managing borders in css, have a look at box-sizing: border-box method [on CSS Tricks](https://css-tricks.com/box-sizing/) and play around with *border* and/or *outline* css property!
+
+**Note on the separators:**
+Hold on to your horses! We will discuss this in 3 sections!
 
 ##### Buttons
 
@@ -316,16 +321,29 @@ So to wrape up this section with complex inputs and button's height – here the
 ![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/form-example.png)
 
 
-#### Separator (WIP)
+#### Separator
 
-` TODO: Add a section regarding the separator`
+To discuss the separator, let me add one in our previous form.
 
-(First image > Bring back the initial mail app visual with the simple separator (5 1 6 = 8px height))
+Separators, in this case, are no borders. I'm not attaching them to a component, so you can't abstract their height. Their height matter. Meaning that a 1px height separator in our form design will impact and push your designs by 1px.
 
-(Only after maybe bring the more complicated separator that follows)
-Separator are contained in a 8px height container, with padding offset to get the effect needed.
+So what I like to do with my separators is to also contain them into their own 8px container to abstract their mathematical impact. Surprise!
 
-![Separators](../../assets/images/../../../assets/images/Writings/Grid/separator.png)
+This way, separators can be called anywhere in the designs without the fear of doing annoying math or doing some annoying CSS transform on your component to compensate for that seldom 1px height.
+
+![Separators 1](../../assets/images/../../../assets/images/Writings/Grid/form-separator.png)
+
+The Separator container has an 8px height, composed of padding-top of 3px, the size of the separator of 1px, and padding-bottom of 4px.
+
+Note that you don't want to have a line in a 0.5 position to reach pixel perfection. This would render blurry fluffy lines on many devices. So unless you go for 2px height separators for your designs, you'll have to live with tiny uneven paddings ¯\/_(ツ)_/¯
+
+![Fluffy line image](../../assets/images/../../../assets/images/Writings/Grid/fluffy-image.png)
+
+The other advantage of this method is the flexibility to move the line itself freely within the container. For example, for these very tight rows of editable settings, I needed to adjust the separator's position within its container to create an equal spacing between the selectors and the lines.
+
+![Separators 2](../../assets/images/../../../assets/images/Writings/Grid/separator.png)
+
+(Keep in mind that the line itself doesn't need to consider the baseline, only the typography!)
 
 #### Cards
 
