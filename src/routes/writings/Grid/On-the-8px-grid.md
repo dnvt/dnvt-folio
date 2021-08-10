@@ -290,8 +290,6 @@ Indeed in this case, I'm using margin negative... but 16px, multiple of 8 as wel
 
 ![Decomposition of the input v2 components](../../assets/images/../../../assets/images/Writings/Grid/input-v2.png)
 
----
-
 **Note on the borders:**
 Wether or not the borders are inside or outside type of outline, it doesn't impact the size of your container. It's like a virtual invisible coat of paint on a shape. It's not going to be affecting your spacing.
 
