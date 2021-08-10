@@ -227,8 +227,6 @@ One of the drawbacks with this method is that you can't anymore just hit the `T`
 
 ![Figma list of Font components](../../assets/images/../../../assets/images/Writings/Grid/font-caveat.png)
 
-`TODO: Add a caveat on the separator > discuss more in depth in the article`
-
 ### 3. Same shit, different components
 
 Well, this is lovely, but it's only about typography. How about all these other cases with icons and buttons. What about cards components, images, dividers and all this??!
