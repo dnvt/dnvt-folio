@@ -1,10 +1,25 @@
 # Personal take on the 8px Grid systems – Or how to make the Hard grid method as easy to implement as the Soft grid method?
 
-## The 8px grid system
+## The 8x8 scale grid system
 
 ### Refresher
 
-There is still a lot going on out there about either designing with an 8px grid system or forgetting grids altogether. I personally think grids and baselines are beautiful mathematical systems that, used properly, are more than just helpers or guides. They can elevate your designs. Grids are one of these fantastic foundations inherited from the print world that seems seldom implemented in the digital space.
+There is still a lot going on about either designing with an 8px grid system or forgetting grids altogether. I personally think grids and baselines are beautiful mathematical systems that, used properly, are more than just helpers or guides. They can elevate your designs. Baseline grids are one of these fantastic foundations inherited from the print world that seems seldom implemented in the digital space.
+
+#### What is a baseline grid?
+
+A baseline grid is a series of invisible vertical units that can create consistent vertical spacing with your typography and page elements. It's a hidden way of giving order to disorder.
+
+- Baseline grids take the guesswork out of how to space things vertically
+- It allows elements across columns to line up visually
+- It helps to unify scale
+- It gives guidelines for teams working on a project
+- It will give your work cohesion and consistency. It is this element that will make things feel just right. That crispness that people can't quite put their finger on.
+
+![Baseline visuals from the web](../../assets/images/../../../assets/images/Writings/Grid/baseline.png)
+Some visuals to illustrate baselines, from [Ellen Lupton's website](http://thinkingwithtype.com/grid/)
+
+#### 8x8 scale system
 
 When using a grid system, here are some of the reasons why people tend to prefer the 8x8 scale system:
 
@@ -28,11 +43,9 @@ Using the jargon from these articles, here are the two common ways to implement 
 
 Icons and other components' sizes are multiples of 8, so they snap to a strict 8x8 pixel grid, **and the typography always sits on a baseline (as it should).**
 
-*The baseline is the invisible line upon which a line of text rests.*
-
 ![Hard Grid method intro](../../assets/images/../../../assets/images/Writings/Grid/hard-grid-intro.png)
 
-### Soft grid method <!-- omit in toc -->
+### Soft grid method
 
 Everything still follows the 8-pixel scale, **but we remove the vertical baseline and horizontal adherence to a strict 8x8 pixel grid.** The spacing between every element can become a multiple of 8. Note that 4 and 12px are commonly included in the list of spacers, even though not multiple of 8.
 
@@ -77,13 +90,13 @@ Does this make sense yet?
 
 To illustrate and prove that this is doable, we are going to explore the following steps together:
 
-1. [Get your grid into your coding environment](#get-your-design-grid-into-your-coding-environment)
+1. [Get your grid into your developer environment](#get-your-design-grid-into-your-developer-environment)
 2. [Encapsulate fonts in components that are divisible by 8, and offset the typography](#encapsulate-fonts-in-components-that-are-divisible-by-8,-and-offset-the-typography)
 3. [Same shit, different components](#same-shit,-different-components)
 
-### 1. Get your design grid into your coding environment
+### 1. Get your design grid into your developer environment
 
-If you want to code your designs based on a grid system, there is no other way; you need to bring your grid and baseline guides to your coding environment.
+If you want to code your designs based on a grid system, there is no other way; you need to bring your grid and baseline guides to your developer environment.
 
 In my opinion, one of the many reasons for not implementing the Hard grid system is that there aren't grid systems available on the browser for developers – whereas it is simple to set them on Figma or Sketch. 
 
@@ -270,7 +283,9 @@ Here is a footer using these links – perfectly snapped to the grid and super s
 
 ![footer made of the link components](../../assets/images/../../../assets/images/Writings/Grid/footer.png)
 
-#### Buttons and Inputs
+#### Inputs and Buttons
+
+##### Inputs
 
 The same logic used for the font is applied for the buttons and inputs.
 It might feel a bit uneasy at first because the shape of the components does not necessarily fit the grid.
@@ -278,10 +293,6 @@ It might feel a bit uneasy at first because the shape of the components does not
 Nonetheless, keep the focus on the typography and the baseline. Build your button/input shape, so the font appears horizontally centered in it. 
 
 Then and only then can you encapsulate the whole thing in a container, with offsetting padding tops and bottoms that snap the complete Button component on the 8x8 grid.
-
-##### Inputs
-
-`Continue reviewing copy from here`
 
 ![Decomposition of the input v1 components](../../assets/images/../../../assets/images/Writings/Grid/input-v1.png)
 
@@ -316,7 +327,6 @@ So to wrape up this section with complex inputs and button's height – here the
 
 ![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/form-example.png)
 
-
 #### Separator
 
 To discuss the separator, let me add one in our previous form.
@@ -342,6 +352,8 @@ The other advantage of this method is the flexibility to move the line itself fr
 (Keep in mind that the line itself doesn't need to consider the baseline, only the typography!)
 
 #### Cards
+
+`TODO: Continue copy review from here onward`
 
 Same thing applies for less complicated components.
 
