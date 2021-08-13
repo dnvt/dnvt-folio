@@ -1,68 +1,16 @@
 # Porfolio
 
-## Todos
+Personal desgin website build in react on a 8x8 grid system.
+Still a work in progress that can be reviewed at [https://dnvt.github.io/dnvt-folio/](https://dnvt.github.io/dnvt-folio/)
 
-- [x] Create the theme light
-- [x] Continue with the Dark theme color
-- [x] Update all the Figma file with
-- [x] Deal with the Dark and Ligth Mode
-- [x] Work on the grid
-- [x] Basic Container
-- [x] Window size hook
-- [x] Document size hook
-- [x] Work on the spacers
-- [x] Icons
-- [x] Fonts
-- [x] FontStyle directly in css
-- [x] Internal link
-- [x] External link
-- [x] Icon Button
-- [x] Button
-- [x] Button animation
-- [x] Button underline postion css
-- [x] Icon Button animation
-- [x] Link animation
-- [x] Header Component
-- [x] Footer Component
-- [x] Image
-- [x] Vignettes
-- [x] Independant Devices
-- [x] Devices layouts
-  - [x] Grouped
-  - [x] DragFour
-  - [x] DragFramless
-  - [x] Repair the src (should be empty for loading states?)
-  - [x] Repair ligns and sound on the phone
-  - [x] Responsive height jump bug in the Grouped Deviced
-  - [x] Flex Space-Even the Grouped Phone on Mobile
-- [x] Cards
-  - [x] CardImage
-  - [x] CardStatus
-  - [x] Cardtitle
-  - [x] Layout
-  - [x] UseMemo in the Component, where the function is called, calling the CONTENT
-  - [x] Add Keys to the map
-  - [x] Card hovers animation
-- [x] Turn loading into a non Button
-- [x] Add Link to: CardImage | InternalLink | Button
-- [x] Guidelines
-  - [ ] Update the Descriptions
-- [x] Menu on mobile
-- [x] Homepage
-- [x] Set the initial animation one time only (=> make a global Hook)
-- [x] Project
-- [x] Clean Project colors in theme dictionnary
-- [x] Make Project dictionnary
-- [x] HeroFont
-  - [x] Container in all pages
-  - [x] Update Responsive heights for the Hero container
-- [x] Tooltips
-- [x] Design an About page
+## Read about the 8x8 Design system created for this project
+
+Read about the 8x8 scale design system create for this project in this article:
+[-> Personal take on the 8px Grid systems – Or how to make the Hard Grid method as easy to implement as the Soft Grid method?](https://github.com/dnvt/dnvt-folio)
+
+## Todos left
+
 - [ ] Add documentation to my functions
-- [ ] Finish Project pages
-  - [x] Update Footer Content
-  - [x] Update Footer Images
-  - [x] Update Content Hero images
-  - [ ] Write the contents
-- [x] Problem with ContainerFull responsive
-- [x] Floating tooltip
+- [ ] Update the content in the Homepage
+- [ ] Finish to write the Project pages
+- [ ] Update images in the About page
