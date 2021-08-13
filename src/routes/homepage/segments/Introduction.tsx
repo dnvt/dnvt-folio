@@ -1,5 +1,6 @@
 import React, { useMemo } from "react"
-import GroupedCard from "../../../components/cards/layouts/GroupedCards"
+import FooterCards from "../../../components/cards/layouts/FooterCards"
+// import GroupedCard from "../../../components/cards/layouts/GroupedCards"
 import Column from "../../../components/containers/Column"
 import Container from "../../../components/containers/Container"
 import ExternalLink from "../../../ui/links/external-link/ExternalLink"
@@ -30,7 +31,8 @@ const Introduction: React.FC = () => {
         <Font type='h2'>Latest releases</Font>
         <Spacer height={64} />
       </Container>
-      <GroupedCard left content={CONTENT.GRPD_CARD} />
+      <FooterCards content={CONTENT.GRPD_CARD} />
+      {/* <GroupedCard left content={CONTENT.GRPD_CARD} /> */}
     </div>
   )
 }

@@ -57,12 +57,12 @@ const Card: React.FC<CardPropsType> = (props) => {
 	// const opacityValue = isHovered ? .90 : 1
 
 	let cardStyle: any = { height: height, width: width }
-	if (status == "stop" || "construction") cardStyle = { height: height, width: width, cursor: " not-allowed" }
+	if (status == "stop" || "construction") cardStyle = { height: height, width: width, cursor: "not-allowed" }
 	if (background == "transparent") {
 		cardStyle = {
 			border: `1px solid ${ theme.border.outline }`,
 			height: height,
-			idth: width
+			width: width
 		}
 	}
 
