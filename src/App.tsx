@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, HashRouter, Route, Switch } from 'react-router-dom'
 import ContextHooks from './hooks/ContextHooks'
 import Layout from './components/navigations/Layout'
 import { MotionConfig } from 'framer-motion'
@@ -17,7 +17,9 @@ const App: React.FC = () => {
   return (
     <ContextHooks>
       <MotionConfig transition={{ duration: .012, type: "springs" }}>
-        <BrowserRouter basename='/'>
+        <HashRouter
+          basename={process.env.PUBLIC_URL + '/'}
+        >
           <ScrollToTop />
           <Layout>
             <Switch>
@@ -39,7 +41,7 @@ const App: React.FC = () => {
               <Route path="/" component={Homepage} />
             </Switch>
           </Layout>
-        </BrowserRouter>
+        </HashRouter>
       </MotionConfig>
     </ContextHooks>
   )
