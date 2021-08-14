@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, HashRouter, Route, Switch } from 'react-router-dom'
+import { HashRouter, Route, Switch } from 'react-router-dom'
 import ContextHooks from './hooks/ContextHooks'
 import Layout from './components/navigations/Layout'
 import { MotionConfig } from 'framer-motion'
@@ -39,6 +39,7 @@ const App: React.FC = () => {
               <Route path="/about" component={About} />
               <Route path="/guidelines" component={Guidelines} />
               <Route path="/" component={Homepage} />
+              <Route component={Homepage} />
             </Switch>
           </Layout>
         </HashRouter>
