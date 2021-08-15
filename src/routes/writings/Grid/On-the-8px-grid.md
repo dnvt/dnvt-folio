@@ -1,6 +1,6 @@
 # How to reach baseline fit? Padded Grid as designer's practical grid hack.
 
-There is still a lot of controversy about whether to implement a grid system when designing for digital layouts. I personally think grids and baselines are beautiful mathematical systems that, used properly, are more than just helpers or guides. They can elevate your designs. Horizontal and Responsive grid systems are extensively explored within CSS frameworks. However, baseline grids are one of these fantastic foundations inherited from the print world that seems seldom implemented in the digital space.
+There is still a lot of controversy about implementing a grid system when designing for digital layouts. I personally think grids and baselines are beautiful mathematical systems that, used properly, are more than just helpers or guides. They can elevate your designs. Horizontal and Responsive grid systems are extensively explored within CSS frameworks. However, baseline grids are one of these fantastic foundations inherited from the print world that seems seldom implemented in the digital space.
 
 This inspired me to take on the challenge to build my own grid system – which I'll be calling the Padded Grid for the sake of this article.
 
@@ -41,7 +41,7 @@ The biggest drawback with the Hard Grid method is settings the space on a case-p
 
 #### Soft Grid method
 
-Everything still follows the 8 Point Grid, **but we remove the vertical baseline, and horizontal adherence to a strict 8 point grid** The spacing between every element can become a multiple of 8. 
+Everything still follows the 8 Point Grid, **but we remove the vertical baseline, and horizontal adherence to a strict 8 point grid.** The spacing between every element can be a multiple of 8. 
 Note that 4 and 12px are commonly included in the list of spacers, even though they are not multiples of 8.
 
 The Soft Grid method is seemingly easier to implement because one doesn't have to do a case-per-case spacing assessment with the developers. 
