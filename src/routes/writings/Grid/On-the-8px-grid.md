@@ -203,14 +203,6 @@ export const FontH3 = () => {
 
 [Github FontWrapper component to simplify for the article ↗️](https://github.com/dnvt/Dnvt-Folio/blob/c21a4d484a703532a6f19ebb939e57dd11b7de04/src/utils/fonts/elements/FontTagWrapper.tsx#L8)
 
-Some more in-depth details about bounding-box compensation can be read [here](https://uxdesign.cc/baseline-grids-design-systems-ae23b5af8cec). The author is using a precise 5 steps method:
-
-1. Absolute Grid Setup;
-2. Height Rule;
-3. Line Height Rule;
-4. Offsetting Typography;
-5. Compensating Typography's Offset.
-
 #### Result 
 
 Let's look at the initial example with our custom 8px based height font containers to ensure the benefits are clear. Displayed below, same design view a) without the grid system, b) with the baseline grid, and finally, c) with the bounding box displayed.
@@ -442,7 +434,7 @@ Thanks for reading!
 
 ## Glossary
 
-Some articles about the subject, if you want to get some literature on the subject:
+Some articles about the grid subject, if you want to get some literature on the subject:
 
 - [The Comprehensive 8pt Grid Guide ↗️](https://medium.com/swlh/the-comprehensive-8pt-grid-guide-aa16ff402179)
 - [Text Baseline ↗️](https://alistapart.com/article/settingtypeontheweb/)
@@ -450,52 +442,11 @@ Some articles about the subject, if you want to get some literature on the subje
 - [Hard vs. Soft Grid method ↗️](https://medium.com/sketch-app-sources/hard-and-soft-8-point-grids-60cf803b9de4)
 - [Baseline grids & design systems ↗️](https://uxdesign.cc/baseline-grids-design-systems-ae23b5af8cec).
 
+Some more in-depth details about bounding-box compensation can be read [here](https://uxdesign.cc/baseline-grids-design-systems-ae23b5af8cec). The author is using a precise 5 steps method:
 
-
-# How to reach baseline fit? Padded Grid as designer's practical grid hack.
-
-## Personal Take
-
-  ### Refresher on grid systems
-
-    #### Baseline
-    #### 8x8 scale
-    #### Hard Grid
-    #### Soft Grid
-
-  ### Padded Grid
-
----
-
-## How to implement the Padded Grid System
-
-  ### 1. Get your design grid into your developer environment
-
-  ### 2. Encapsulate fonts in components that are divisible by 8, and offset the typography
-    #### Line-height 
-    #### Bounding-box
-    #### Result 
-    #### Caveat
-
-  ### 3. Same shit, different components
-    #### Font and Icons
-      - Menus 
-      - Links
-    
-    #### Inputs and Buttons
-      - Inputs
-      - Buttons
-      - Forms
-
-    #### Separator
-    #### Cards
-    #### Devices
-    #### Images
-    #### Responsiveness
-
----
-
-## Opening up for discussion
-
----
-
+1. Absolute Grid Setup;
+2. Height Rule;
+3. Line Height Rule;
+4. Offsetting Typography;
+5. Compensating Typography's Offset.
+   
