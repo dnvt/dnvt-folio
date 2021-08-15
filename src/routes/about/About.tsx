@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import { useTheme } from "react-jss"
 import Card from "../../components/cards/Card"
 import FooterCards, { FooterContentType } from "../../components/cards/layouts/FooterCards"
@@ -8,9 +8,7 @@ import { BigVignette, Vignette } from "../../components/vignettes/Vignettes"
 import { DocumentSizeProvider } from "../../hooks/useDimensionSize"
 import { useIntroTransition } from "../../hooks/useHeroTransition"
 import { useMainColor } from "../../hooks/useSetMainColor"
-// import { useWindowSize } from "../../hooks/useWindowSize"
 import Font from "../../utils/fonts/Font"
-// import Fontimation from "../../utils/fonts/Fontimation"
 import NumberedList from "../../utils/fonts/NumberedList"
 import Grid from "../../utils/grids/Grid"
 import Spacer from "../../utils/spacer/Spacer"
@@ -19,20 +17,21 @@ import getFooter from "../work/projects/Footer.content"
 import norsePng from "../../assets/images/Norse/Norse.png"
 import norseWebp from "../../assets/images/Norse/Norse.webp"
 import GroupedCard, { GroupedContentType } from "../../components/cards/layouts/GroupedCards"
-import GoogleMapReact from 'google-map-react'
+import judoPng from "../../assets/images/About/judo.png"
+import judoWebp from "../../assets/images/About/judo.webp"
+import mapPng from "../../assets/images/About/map.png"
+import mapWebp from "../../assets/images/About/map.webp"
 
 const About: React.FC = () => {
   const theme: Theme = useTheme()
-  // const window = useWindowSize()
   const [, setHeroTransition] = useIntroTransition()
   const [color, setColor] = useMainColor()
-  const [map] = useState({
-    center: {
-      lat: 50.290812313420425,
-      lng: 2.778031617495157
-    },
-    zoom: 14
-  })
+  const map =
+  {
+    lat: 50.290812313420425,
+    lng: 2.778031617495157
+  }
+
 
   const USMOBILE: FooterContentType = [
     {
@@ -326,8 +325,8 @@ const About: React.FC = () => {
         <Font type="h5" style={{ color }}>2008</Font>
         <Font type="h3">Got my second Dan of Judo <span>🥋</span></Font>
         <Spacer height={40} />
-        <Vignette alt="Probably the last time I wore a Kimono..." src={["", ""]} background="#ccc" />
       </Container>
+      <Vignette withLegend alt="Probably the last time I wore a Kimono..." src={[judoPng, judoWebp]} background="#ccc" />
 
       {/* Hometown  */}
 
@@ -336,16 +335,10 @@ const About: React.FC = () => {
         <Font type="h5" style={{ color }}>1990</Font>
         <Font type="h3">Born and raised in Arras, France <span>🐣</span></Font>
         <Spacer height={40} />
-        <div style={{ height: "704px" }}>
-
-          <GoogleMapReact
-            bootstrapURLKeys={{ key: process.env.REACT_APP_SECRET_NAME as string }}
-            defaultCenter={map.center}
-            defaultZoom={map.zoom}
-          >
-          </GoogleMapReact>
-        </div>
       </Container>
+      <a href="https://goo.gl/maps/jJQWV7HQmUZAqLUU7">
+        <Vignette withLegend alt={"Longitude:" + map.lng + " and Latitude:" + map.lat} src={[mapPng, mapWebp]} background="#ccc" />
+      </a>
 
     </DocumentSizeProvider >
   )

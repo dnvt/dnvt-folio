@@ -15,8 +15,8 @@ Read about the 8x8 scale design system create for this project in this article:
 
 ## Todos
 
-- [ ] Add documentation to my functions
-- [ ] Update the content in the Homepage
-- [ ] Finish to write the Project pages
 - [ ] Update images in the About page
 - [ ] Add analytics
+- [ ] Update the content in the Homepage
+- [ ] Finish to write the Project pages
+- [ ] Add documentation to my functions

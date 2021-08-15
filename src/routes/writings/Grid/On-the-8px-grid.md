@@ -1,12 +1,14 @@
-# Personal take on the 8px Grid systems – Or how to make the Hard Grid method as easy to implement as the Soft Grid method?
+# How to reach baseline fit? Padded Grid as designer's practical grid hack.
 
-## The 8x8 scale grid system
+There is still a lot of controversy about whether to implement a grid system when designing for digital layouts. I personally think grids and baselines are beautiful mathematical systems that, used properly, are more than just helpers or guides. They can elevate your designs. Horizontal and Responsive grid systems are extensively explored within CSS frameworks. However, baseline grids are one of these fantastic foundations inherited from the print world that seems seldom implemented in the digital space.
 
-### Refresher
+This inspired me to take on the challenge to build my own grid system – which I'll be calling the Padded Grid for the sake of this article.
 
-There is still a lot of controversy about whether to implement a grid system or not when designing for digital layouts. I personally think grids and baselines are beautiful mathematical systems that, used properly, are more than just helpers or guides. They can elevate your designs. Baseline grids are one of these fantastic foundations inherited from the print world that seems seldom implemented in the digital space.
+## Personal Take
 
-#### What is a baseline grid?
+### Refresher on grid systems
+
+#### Baseline
 
 A baseline grid is a series of invisible vertical units that assist in creating consistent vertical spacing with your typography and page elements. It's a hidden way of giving order to disorder. In short, baseline grids:
 
@@ -19,43 +21,34 @@ A baseline grid is a series of invisible vertical units that assist in creating 
 ![Baseline visuals from the web](../../assets/images/../../../assets/images/Writings/Grid/baseline.png)
 Some visuals to illustrate baselines, from [Ellen Lupton's website](http://thinkingwithtype.com/grid/)
 
-#### 8x8 scale system
+#### 8 Point Grid method
 
-When using a grid system, here are some of the reasons why designers tend to prefer the 8x8 scale system over other scales:
+This method means using multiples of 8 to define the dimensions, padding, and margin of your design elements. Designers tend to prefer this 8 scale system over other scales (5,6,7,10) for a couple of reasons:
 
+- Eliminates guesswork and decision fatigue while designing and developing
 - Simple multiple, easily divisible, and scalable
 - Helps better manage pixel-perfect
 - Scales perfectly in all the different screen displays (including android's @0.75 and @1.5)
 - Google and Apple seem to define it as best practice
-- Probably plenty of arguments more that I'm forgetting
 
-Some articles about the subject, if you want to get some literature on the subject:
+#### Hard Grid method
 
-- [The Comprehensive 8pt Grid Guide ↗️](https://medium.com/swlh/the-comprehensive-8pt-grid-guide-aa16ff402179)
-- [Text Baseline ↗️](https://alistapart.com/article/settingtypeontheweb/)
-- [From Google DS ↗️](https://www.designsystems.com/space-grids-and-layouts/)
-- [Hard vs. Soft Grid method ↗️](https://medium.com/sketch-app-sources/hard-and-soft-8-point-grids-60cf803b9de4)
-- [Baseline grids & design systems ↗️](https://uxdesign.cc/baseline-grids-design-systems-ae23b5af8cec).
+Icons, font-size, and other components' sizes are multiples of 8, so they snap to a strict 8 Point Grid. However, the space between elements is not. Users have to adjust the margins for **the typography to sit on the baseline (as it should).** 
 
-Using the wording from these articles, here are the two common ways to implement the 8px grid system.
-
-### Hard Grid method
-
-Icons and other components' sizes are multiples of 8, so they snap to a strict 8x8 pixel grid, **and the typography always sits on a baseline (as it should).**
+The biggest drawback with the Hard Grid method is settings the space on a case-per-case. Which makes it tedious and a less appreciated candidate for implementation.
 
 ![Hard Grid method intro](../../assets/images/../../../assets/images/Writings/Grid/hard-grid-intro.png)
 
-### Soft Grid method
+#### Soft Grid method
 
-Everything still follows the 8-pixel scale, **but we remove the vertical baseline and horizontal adherence to a strict 8x8 pixel grid.** The spacing between every element can become a multiple of 8. Note that 4 and 12px are commonly included in the list of spacers, even though they are not multiples of 8.
+Everything still follows the 8 Point Grid, **but we remove the vertical baseline, and horizontal adherence to a strict 8 point grid** The spacing between every element can become a multiple of 8. 
+Note that 4 and 12px are commonly included in the list of spacers, even though they are not multiples of 8.
 
 The Soft Grid method is seemingly easier to implement because one doesn't have to do a case-per-case spacing assessment with the developers. 
 
 ![Soft Grid method intro](../../assets/images/../../../assets/images/Writings/Grid/soft-grid-intro.png)
 
-`More clear examples on the distinction between Hard vs. Soft Grid system. The current ones are not obvious enough. Maybe additional comparison would help.`
-
-### Personal take
+#### Frustration
 
 With the Soft Grid method, we truly are not getting the mathematical grid rhythm at all. It feels like a simplified version of a grid system, purely vertical, to ease the implementation. 
 
@@ -64,9 +57,7 @@ I think it's a shame not to, and that's why I started to explore some workaround
 
 So in this article, I'm going to detail these methods I used through some of the design system components I crafted for my portfolio, answering this question of how one can implement a perfect 8x8 Hard Grid method with the ease of the Soft Grid method.
 
----
-
-## The building of an 8-pixel scale design system
+### Padded Grid
 
 To introduce the central concept used here, let me make an analogy. Consider the Lego bricks; every brick's height and width share a multiple – meaning that you can stack x amount of bricks to match the size of a larger brick. Without this rule, it would be nearly impossible to stack a variety of bricks horizontally to build a wall. You would have to compensate for every size variation, maybe even with pieces not part of the lego set!
 
@@ -93,6 +84,8 @@ To illustrate and prove that this is doable, we are going to explore the followi
 1. [Get your grid into your developer environment](#get-your-design-grid-into-your-developer-environment)
 2. [Encapsulate fonts in components that are divisible by 8, and offset the typography](#encapsulate-fonts-in-components-that-are-divisible-by-8,-and-offset-the-typography)
 3. [Same shit, different components](#same-shit,-different-components)
+
+## How to implement the Padded Grid System
 
 ### 1. Get your design grid into your developer environment
 
@@ -252,7 +245,7 @@ These are great questions! However, if your fonts are correctly set up, 90% of t
 
 Assuming that you are using icons of 8x8 pixel scale such as 16x16px, 24x24px, or 32x32px icons, let's see how everything fits our model.
 
-##### Menus 
+**Menus**
 
 As an example, I will use the Menu and the Link components from my design system.
 For both components, I'm using existing font Legend and font Body, with minimal variations.
@@ -269,7 +262,7 @@ For example, menus combined in a header:
 
 ![header made of the menu components](../../assets/images/../../../assets/images/Writings/Grid/header.png)
 
-##### Links
+**Links**
 
 Similarly, for the Link components that use the Body font, I had to impose padding-bottom variations, but in addition, to fit the underline properly on the baseline, I had to edit the font line-height. So at the end of the day, there are two fonts: Font Body at 23/32px and Font Link is at 23/24px.
 
@@ -283,7 +276,7 @@ Here is a footer using these links – perfectly snapped to the grid and super s
 
 #### Inputs and Buttons
 
-##### Inputs
+**Inputs**
 
 The same logic used for the font is applied for the buttons and inputs.
 It might feel a bit uneasy at first because the shape of the components does not necessarily fit the grid.
@@ -306,7 +299,7 @@ If you have some issues managing borders in css, have a look at box-sizing: bord
 **Note on the separators:**
 Hold on to your horses! We will discuss this in 3 sections!
 
-##### Buttons
+**Buttons**
 
 Similarly with the buttons, the outline of the buttons can't snap on the grid if we want the font to sit on the baseline, but the Button containers needs some padding tweeks to fit our rule.
 
@@ -318,7 +311,7 @@ We did it! ✅
 
 ![Header with buttons](../../assets/images/../../../assets/images/Writings/Grid/menu-buttons.png)
 
-##### Forms
+**Forms**
 
 So to wrap up this section with complex inputs and button heights – here they are, all together in a form. Just stack on top of each other, with spacers in between.
 
@@ -427,13 +420,13 @@ That's what I did with most of my components.
 `TODO: Show some size variations for different screen ratios`
 `TODO: Share 8x8 pixel grids for desktop and mobile`
 
-### Opening up for discussion
+## Opening up for discussion
 
 So, not sure if I have a conclusion, but I liked very much working all my components in Figma and React this way. The initial creation and implemation of each component is a bit tedious but, so is creating a Design System from scratch!
 
 You can see all the components that I presented in the article on [Figma](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/8px-Grid?node-id=724%3A961).
 
-**And you can also see all the components that I made in React on my website under the menu guidelines [> Website](https://dnvt.github.io/dnvt-folio/).** (Website fully using this 8x8 design system). 
+**And you can also see all the components that I made in React on my website. [dnvt's guidelines](https://dnvt.github.io/dnvt-folio/#/dnvt-folio/guidelines/).** (Website fully using this Padded Grid system). 
 
 Click on the grid icon to reveal the various grids and baselines!
 
@@ -444,3 +437,65 @@ Let me know if you have any questions, any suggestions or improvements on this i
 Thanks for reading! 
 
 ✌🏽
+
+---
+
+## Glossary
+
+Some articles about the subject, if you want to get some literature on the subject:
+
+- [The Comprehensive 8pt Grid Guide ↗️](https://medium.com/swlh/the-comprehensive-8pt-grid-guide-aa16ff402179)
+- [Text Baseline ↗️](https://alistapart.com/article/settingtypeontheweb/)
+- [From Google DS ↗️](https://www.designsystems.com/space-grids-and-layouts/)
+- [Hard vs. Soft Grid method ↗️](https://medium.com/sketch-app-sources/hard-and-soft-8-point-grids-60cf803b9de4)
+- [Baseline grids & design systems ↗️](https://uxdesign.cc/baseline-grids-design-systems-ae23b5af8cec).
+
+
+
+# How to reach baseline fit? Padded Grid as designer's practical grid hack.
+
+## Personal Take
+
+  ### Refresher on grid systems
+
+    #### Baseline
+    #### 8x8 scale
+    #### Hard Grid
+    #### Soft Grid
+
+  ### Padded Grid
+
+---
+
+## How to implement the Padded Grid System
+
+  ### 1. Get your design grid into your developer environment
+
+  ### 2. Encapsulate fonts in components that are divisible by 8, and offset the typography
+    #### Line-height 
+    #### Bounding-box
+    #### Result 
+    #### Caveat
+
+  ### 3. Same shit, different components
+    #### Font and Icons
+      - Menus 
+      - Links
+    
+    #### Inputs and Buttons
+      - Inputs
+      - Buttons
+      - Forms
+
+    #### Separator
+    #### Cards
+    #### Devices
+    #### Images
+    #### Responsiveness
+
+---
+
+## Opening up for discussion
+
+---
+

@@ -2,6 +2,7 @@ import React from "react"
 import { useTheme } from "react-jss"
 import Column from "../../../components/containers/Column"
 import Container from "../../../components/containers/Container"
+import Button from "../../../ui/buttons/Button"
 import Font from "../../../utils/fonts/Font"
 import Spacer from "../../../utils/spacer/Spacer"
 import { Theme } from "../../../utils/theme/theme"
@@ -35,6 +36,7 @@ const AboutSection: React.FC = () => {
           to completion. Excellent communicator adept at taking complex topics
           and conveying them in a clear and concise manner understandable by
           both industry professionals and non-industry professionals.
+          <span><Button path="/about">Continue reading...</Button></span>
         </Font>
       </Column>
     </Container>
