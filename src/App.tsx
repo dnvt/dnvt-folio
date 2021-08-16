@@ -9,6 +9,7 @@ import Guidelines from "./routes/guildelines/Guidelines"
 import Dashboard from './routes/work/usmobile/Dashboard'
 import Projects from './routes/work/projects/Projects'
 import About from './routes/about/About'
+import Error from './routes/error/404'
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -23,6 +24,7 @@ const App: React.FC = () => {
           <ScrollToTop />
           <Layout>
             <Switch>
+              <Route exact path="/" component={Homepage} />
               <Route path="/work/usmobile/branding" ><Projects type="branding" /></Route>
               <Route path="/work/usmobile/matrix" ><Projects type="matrix" /></Route>
               <Route path="/work/usmobile/dashboard-pwa" component={Dashboard} />
@@ -38,8 +40,7 @@ const App: React.FC = () => {
               <Route path="/playground/coverjs"><Projects type="coverjs" /></Route>
               <Route path="/about" component={About} />
               <Route path="/guidelines" component={Guidelines} />
-              <Route path="/" component={Homepage} />
-              <Route component={Homepage} />
+              <Route component={Error} />
             </Switch>
           </Layout>
         </HashRouter>

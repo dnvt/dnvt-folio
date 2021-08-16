@@ -413,7 +413,8 @@ The same Grid is applied, and the same 8x8 and height rule applies. If your comp
 That's what I did with most of my components.
 
 `TODO: Show some size variations for different screen ratios`
-`TODO: Share 8x8 pixel grids for desktop and mobile
+
+`TODO: Share 8x8 pixel grids for desktop and mobile`
 
 ## Opening up for discussion
 

@@ -17,7 +17,7 @@ import Fontimation, { compensateFontimationHeight } from '../../utils/fonts/Font
 const USMWork = lazy(() => import('./segments/USMWork'))
 const PrivateWork = lazy(() => import('./segments/PrivateWork'))
 const SelectedWork = lazy(() => import('./segments/SelectedWork'))
-const PlayGround = lazy(() => import('./segments/Playground'))
+const PlayGround = lazy(() => import('./segments/PlaygroundWork'))
 const AboutSection = lazy(() => import('./segments/AboutSection'))
 
 /**
