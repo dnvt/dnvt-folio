@@ -1,14 +1,16 @@
 # How to reach baseline fit? Padded Grid as designer's practical grid hack.
 
-There is still a lot of controversy about implementing a grid system when designing for digital layouts. I personally think grids and baselines are beautiful mathematical systems that, used properly, are more than just helpers or guides. They can elevate your designs. Horizontal and Responsive grid systems are extensively explored within CSS frameworks. However, baseline grids are one of these fantastic foundations inherited from the print world that seems seldom implemented in the digital space.
+There is still a lot of controversy about implementing a grid system when designing for digital layouts. I personally think grids and baselines are beautiful mathematical systems that, used properly, are more than just helpers or guides. They can elevate your designs. 
+
+Horizontal and Responsive grid systems are extensively explored within CSS frameworks. However, baseline grids are one of these fantastic foundations inherited from the print world that seems seldom implemented in the digital space.
 
 This inspired me to take on the challenge to build my own grid system – which I'll be calling the Padded Grid for the sake of this article.
 
 ## Personal Take
 
-### Refresher on grid systems
+### Refresher on the grid systems
 
-#### Baseline
+#### Baseline Grid
 
 A baseline grid is a series of invisible vertical units that assist in creating consistent vertical spacing with your typography and page elements. It's a hidden way of giving order to disorder. In short, baseline grids:
 
@@ -21,9 +23,9 @@ A baseline grid is a series of invisible vertical units that assist in creating 
 ![Baseline visuals from the web](../../assets/images/../../../assets/images/Writings/Grid/baseline.png)
 Some visuals to illustrate baselines, from [Ellen Lupton's website](http://thinkingwithtype.com/grid/)
 
-#### 8 Point Grid method
+#### 8px Grid method
 
-This method means using multiples of 8 to define the dimensions, padding, and margin of your design elements. Designers tend to prefer this 8 scale system over other scales (5,6,7,10) for a couple of reasons:
+This method uses multiples of 8 to define your design elements' dimensions, padding, and margin. Designers tend to prefer this 8px scale over other scales (5px, 6px, 10px) for a couple of reasons:
 
 - Eliminates guesswork and decision fatigue while designing and developing
 - Simple multiple, easily divisible, and scalable
@@ -33,7 +35,7 @@ This method means using multiples of 8 to define the dimensions, padding, and ma
 
 #### Hard Grid method
 
-Icons, font-size, and other components' sizes are multiples of 8, so they snap to a strict 8 Point Grid. However, the space between elements is not. Users have to adjust the margins for **the typography to sit on the baseline (as it should).** 
+This method is a combination of both of these grids. Icons, font-size, and other components' sizes are multiples of 8, so they snap to a strict 8px Grid. However, the space between elements is not. Users have to adjust the margins for **the typography to sit on the baseline (as it should).** 
 
 The biggest drawback with the Hard Grid method is settings the space on a case-per-case. Which makes it tedious and a less appreciated candidate for implementation.
 
@@ -41,7 +43,68 @@ The biggest drawback with the Hard Grid method is settings the space on a case-p
 
 #### Soft Grid method
 
-Everything still follows the 8 Point Grid, **but we remove the vertical baseline, and horizontal adherence to a strict 8 point grid.** The spacing between every element can be a multiple of 8. 
+Everything still follows the 8px Grid, **but we remove the vertical baseline and horizontal adherence to a strict 8px Grid.** The spacing between every element can be a multiple of 8. 
+Note that 4 and 12px are commonly included in the list of spacers, even though they are not multiples of 8.
+
+The Soft Grid method is seemingly easier to implement because one doesn't have to do a case-per-case spacing assessment with the developers. 
+
+![Soft Grid method intro](../../assets/images/../../../assets/images/Writings/Grid/soft-grid-intro.png)
+
+#### Frustration
+
+With the Soft Grid method, we truly are not getting the mathematical grid rhythm at all. It feels like a simplified version of a grid system, purely vertical, to ease the implementation. 
+
+Why would we settle up for a Soft Grid system while we could develop obvious and scalable tricks? 
+I think it's a shame not to, and that's why I started to explore some workaround that makes the Hard Grid method implementation as simple as the Soft Grid method one.
+
+So in this article, I'm going to detail these methods I used through some of the design system components I crafted for my portfolio, answering this question of how one can implement a perfect 8x8 Hard Grid method with the ease of the Soft Grid method.
+
+# How to reach baseline fit? Padded Grid as designer's practical grid hack.
+
+There is still a lot of controversy about implementing a grid system when designing for digital layouts. I personally think grids and baselines are beautiful mathematical systems that, used properly, are more than just helpers or guides. They can elevate your designs. 
+
+Horizontal and Responsive grid systems are extensively explored within CSS frameworks. However, baseline grids are one of these fantastic foundations inherited from the print world that seems seldom implemented in the digital space.
+
+This inspired me to take on the challenge to build my own grid system – which I'll be calling the Padded Grid for the sake of this article.
+
+## Personal Take
+
+### Refresher on the grid systems
+
+#### Baseline Grid
+
+A baseline grid is a series of invisible vertical units that assist in creating consistent vertical spacing with your typography and page elements. It's a hidden way of giving order to disorder. In short, baseline grids:
+
+- Takes the guesswork out of how to space elements vertically
+- Allows elements across columns to line up visually
+- Provides guidelines for teams working on a project
+- Helps to unify scale
+- Brings cohesion and consistency to designs
+
+![Baseline visuals from the web](../../assets/images/../../../assets/images/Writings/Grid/baseline.png)
+Some visuals to illustrate baselines, from [Ellen Lupton's website](http://thinkingwithtype.com/grid/)
+
+#### 8px Grid method
+
+This method uses multiples of 8 to define your design elements' dimensions, padding, and margin. Designers tend to prefer this 8px scale over other scales (5px, 6px, 10px) for a couple of reasons:
+
+- Eliminates guesswork and decision fatigue while designing and developing
+- Simple multiple, easily divisible, and scalable
+- Helps better manage pixel-perfect
+- Scales perfectly in all the different screen displays (including android's @0.75 and @1.5)
+- Google and Apple seem to define it as best practice
+
+#### Hard Grid method
+
+This method is a combination of both of these grids. Icons, font-size, and other components' sizes are multiples of 8, so they snap to a strict 8px Grid. However, the space between elements is not. Users have to adjust the margins for **the typography to sit on the baseline (as it should).** 
+
+The biggest drawback with the Hard Grid method is settings the space on a case-per-case. Which makes it tedious and a less appreciated candidate for implementation.
+
+![Hard Grid method intro](../../assets/images/../../../assets/images/Writings/Grid/hard-grid-intro.png)
+
+#### Soft Grid method
+
+Everything still follows the 8px Grid, **but we remove the vertical baseline and horizontal adherence to a strict 8px Grid.** The spacing between every element can be a multiple of 8. 
 Note that 4 and 12px are commonly included in the list of spacers, even though they are not multiples of 8.
 
 The Soft Grid method is seemingly easier to implement because one doesn't have to do a case-per-case spacing assessment with the developers. 
@@ -93,7 +156,7 @@ If you want to code your designs based on a grid system, there is only one way; 
 
 **In my opinion, one of the many reasons for not implementing the Hard Grid system is that there aren't grid systems available on the browser for developers – whereas it is simple to set them on Figma or Sketch.** 
 
-So I recommend you code your own grid and have a visual reference to implement all your components.
+So I recommend you code your own Grid and have a visual reference to implement all your components.
 
 ![Browser grid off](../../assets/images/../../../assets/images/Writings/Grid/show-grid.gif)
 
@@ -157,7 +220,7 @@ And I have a hook to toggle the grid visibility.
 
 ### 2. Encapsulate fonts in components that are divisible by 8, and offset the typography
 
-Now that we have our grid, we can build our components, check their baseline and bounding-box directly in the browser.
+Now that we have our Grid, we can build our components, check their baseline and bounding-box directly in the browser.
 
 Since the typography is arguably the most essential part of our designs, we will explore this first. Most of the other components fall off from your Font management anyways.
 
@@ -177,19 +240,18 @@ Or you can also use this handy tool, [the good line height](https://www.thegoodl
 
 #### Line-box or bounding-box
 
-The bounding box of a font (or other component) is the container size of an element, as calculated by the browser (or software).
+The bounding box of a font (or other components) is the container size of an element, as calculated by the browser (or software).
 
 ![Font Bounding Box demo](../../assets/images/../../../assets/images/Writings/Grid/font-boundingbox.png)
 
 The idea is to encapsulate each individual font (whose height is divisible by 8) while adjusting the top and bottom paddings of the container to get the typography correctly seated on the baseline. 
 
-1. The padding top offsets the typography to make it sit on the baseline. 
+1. The padding-top offsets the typography to make it sit on the baseline. 
 2. The padding bottom compensates for the typography's offset, so the bounding box fits the 8x8 scale system.
 
 ![Font Boxing Demo](../../assets/images/../../../assets/images/Writings/Grid/font-boxing-demo.png)
 
 ```javascript
-// Gotta work on an understable fontWrapping concept
 export const FontH3 = () => {
   return (
     <div>
@@ -219,13 +281,13 @@ The implementation starts to already feel as simple as with the Soft Grid method
 
 #### Caveat
 
-One of the drawbacks with this method is that you can't anymore just hit the `T` key in Figma (or whatever other software you are using) and start typing some text. Instead, you have to get used to picking your font container from the list of Components.  ¯/\_(ツ)_/¯
+One of the drawbacks with this method is that you can't anymore just hit the `T` key in Figma (or whatever other software you are using) and start typing some text. Instead, you have to get used to picking your font container from the list of Components. ¯/\_(ツ)_/¯
 
 ![Figma list of Font components](../../assets/images/../../../assets/images/Writings/Grid/font-caveat.png)
 
 ### 3. Same shit, different components
 
-Well, this is lovely, but it's only about typography. How about all these other cases with icons and buttons. What about cards components, images, dividers and all the rest?!
+Well, this is lovely, but it's only about typography. How about all these other cases with icons and buttons. What about cards components, images, dividers, and all the rest?!
 
 These are great questions! However, if your fonts are correctly set up, 90% of the work is already done, really! Let's have a look.
 
@@ -244,11 +306,11 @@ For both components, I'm using existing font Legend and font Body, with minimal 
 
 ![menu components variations](../../assets/images/../../../assets/images/Writings/Grid/menu-icons.png)
 
-Because of an underline that appears on hover, I can't fully reuse the default initial Font components. I want the underline to be seating on the baseline that follows the typography. Hence I create a specific spacer in between the typography and the underline. Which alienates a little bit the final padding bottom that compensates for the typography offset.
+Because of an underline that appears on hover, I can't fully reuse the default initial Font components. I want the underline to be seating on the baseline that follows the typography. Hence I create a specific spacer in between the typography and the underline. Which alienates a little bit the final padding-bottom that compensates for the typography offset.
 
 Because the icons will always be part of the Menu component variations, they are set in the same container. The (darker blue) spacer within the container helps for horizontally centering the icon.
 
-So now, when I place and combine my Menu components together, I know with certainty that they will always be conveniently snapping on that 8x8 grid, with the typography on its baseline.
+So now, when I place and combine my Menu components together, I know with certainty that they will always be conveniently snapping on that 8x8 Grid, with the typography on its baseline.
 
 For example, menus combined in a header:
 
@@ -262,7 +324,7 @@ Thereafter, I have enough space in the component to play with the distance betwe
 
 ![link components variations](../../assets/images/../../../assets/images/Writings/Grid/links.png)
 
-Here is a footer using these links – perfectly snapped to the grid and super simple to implement.
+Here is a footer using these links – perfectly snapped to the Grid and super simple to implement.
 
 ![footer made of the link components](../../assets/images/../../../assets/images/Writings/Grid/footer.png)
 
@@ -271,33 +333,33 @@ Here is a footer using these links – perfectly snapped to the grid and super s
 **Inputs**
 
 The same logic used for the font is applied for the buttons and inputs.
-It might feel a bit uneasy at first because the shape of the components does not necessarily fit the grid.
+It might feel a bit uneasy at first because the shape of the components does not necessarily fit the Grid.
 
 Nonetheless, keep the focus on the typography and the baseline. Build your button/input shape, so the font appears horizontally centered in it. 
 
-Then and only then can you encapsulate the whole thing in a container, with offsetting padding tops and bottoms that snap the complete Button component on the 8x8 grid.
+Then and only then can you encapsulate the whole thing in a container, with offsetting padding tops and bottoms that snap the complete Button component on the 8x8 Grid.
 
 ![Decomposition of the input v1 components](../../assets/images/../../../assets/images/Writings/Grid/input-v1.png)
 
-The below example is another version of inputs that could be considered unethical. Indeed in this case, I'm using margin negative... but 16px, multiple of 8 as well!
+The below example is another version of inputs that could be considered unethical. Indeed, in this case, I'm using margin negative... but 16px, multiple of 8 as well!
 
 ![Decomposition of the input v2 components](../../assets/images/../../../assets/images/Writings/Grid/input-v2.png)
 
 **Note on the borders:**
-Whether or not the borders are inside or outside type of outline, it doesn't impact the size of your container. It's like a virtual invisible coat of paint on a shape. It's not going to affect your spacing.
+Whether or not the borders are inside or outside doesn't impact the size of its container. It's like a virtually invisible coat of paint on a shape. Hence, it's not affecting your spacing.
 
-If you have some issues managing borders in css, have a look at box-sizing: border-box method [on CSS Tricks](https://css-tricks.com/box-sizing/) and play around with *border* and/or *outline* css property!
+If you have issues managing borders in CSS, look at box-sizing: border-box method [on CSS Tricks](https://css-tricks.com/box-sizing/) and play around with *border* and/or *outline* CSS property!
 
 **Note on the separators:**
 Hold on to your horses! We will discuss this in 3 sections!
 
 **Buttons**
 
-Similarly with the buttons, the outline of the buttons can't snap on the grid if we want the font to sit on the baseline, but the Button containers needs some padding tweeks to fit our rule.
+Similarly, with the buttons, the outline of the buttons can't snap on the Grid if we want the font to sit on the baseline, but the Button containers need some padding tweaks to fit our rule.
 
 ![Decomposition of button components](../../assets/images/../../../assets/images/Writings/Grid/buttons.png)
 
-An example of menus and buttons living together. Everything vertically aligns perfectly! Everything is on an irreprochable baseline.
+An example of menus and buttons living together. Everything vertically aligns perfectly! Everything is on an irreproachable baseline.
 
 We did it! ✅
 
@@ -335,10 +397,10 @@ The other advantage of this method is the flexibility to move the line itself fr
 
 #### Cards
 
-Same thing applies for less complicated components.
+The same thing applies to less complicated components.
 
-I'm using cards to present my projects. It's a combination of image with couple of text.
-The cards are forced into a 8x8 height and the texts are sommoned inside, with spacers. Typography fits the baseline as always, effortlessly.
+I'm using cards to present my projects. It's a combination of an image with a couple of texts.
+The cards are forced into an 8px scale height, and the texts are summoned inside with spacers. Typography fits the baseline as always, effortlessly.
 
 ![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/card-box.png)
 
@@ -350,9 +412,9 @@ The cards are forced into a 8x8 height and the texts are sommoned inside, with s
 #### Devices
 
 I coded a couple of device mockups to present my designs. 
-Only little issue here (apart from making the iphone looks like one with CSS) was to keep the iphone screen ratio correct at all times, without breaking the 8x8 height rule.
+The only minor issue here (apart from making the iPhone looks like one with CSS) was to keep the iPhone screen ratio correct at all times without breaking the 8x8 height rule.
 
-For the browser, well, it's a bit messier. I just have the 8x8 height, my image to fit in on its length – and I have the width truncated however it fits.  ¯/\/_(ツ)_/¯ 
+For the browser, well, it's a bit messier. I just have the 8x8 height, my image to fit in on its length – and I have the width truncated however it fits. ¯/\/_(ツ)_/¯ 
 
 ![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/device-box.png)
 
@@ -370,11 +432,11 @@ Same with all the images. Make sure to be imposing a height divisible by 8 for a
 
 ![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/vignette-images.png)
 
-And if you can't accept for your images to have a fixed height, maybe let them go wild but make sure the height is cropped and only scaling gradually by 8px.
+And if you can't accept for your images to have a fixed height, maybe let them go wild but make sure the size is cropped and only scaling gradually by 8px.
 
 To reuse previous code:
 
-`TODO: Test the code and make a demo GIF`
+`TODO: Test the code and make a demo GIF.`
 
 ```javascript
 import React, { useRef, useEffect, useState } from 'react'
@@ -388,15 +450,14 @@ const Vignette = () => {
       imageHeight = ref.current.clientHeight
     }
   }, [])
-  
+
   return (
     <div 
       style={{
         overflow:"hidden", 
         height: imageHeight ? Math.ceil(imageHeight/8)*8 : 480
       }}>
-      <img ref={ref}>
-      <img>
+      <img ref={ref}><img>
     </div>
   )
 }
@@ -404,27 +465,27 @@ const Vignette = () => {
 
 #### Responsiveness
 
-Nothing really changes because of mobile version. 
-The same grid is applied and the same 8x8 and height rule applies. If your components and the fonts have to be smaller, then be it. Redesign them to match your use case. 
+Nothing really changes because of the mobile version. 
+The same Grid is applied, and the same 8x8 and height rule applies. If your components and the fonts have to be smaller, then be it. Redesign them to match your use case. 
 
 That's what I did with most of my components.
 
 `TODO: Show some size variations for different screen ratios`
-`TODO: Share 8x8 pixel grids for desktop and mobile`
+`TODO: Share 8x8 pixel grids for desktop and mobile
 
 ## Opening up for discussion
 
-So, not sure if I have a conclusion, but I liked very much working all my components in Figma and React this way. The initial creation and implemation of each component is a bit tedious but, so is creating a Design System from scratch!
+So, not sure if I have a conclusion, but I liked working all my components in Figma and React this way. Each component's initial creation and implementation is a bit tedious, but so is creating a Design System from scratch!
 
-You can see all the components that I presented in the article on [Figma](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/8px-Grid?node-id=724%3A961).
+You can see all the components I presented in the article on [Figma](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/8px-Grid?node-id=724%3A961).
 
-**And you can also see all the components that I made in React on my website. [dnvt's guidelines](https://dnvt.github.io/dnvt-folio/#/dnvt-folio/guidelines/).** (Website fully using this Padded Grid system). 
+**And you can also see all the components that I made in React on my website – entirely using this Padded Grid system: [dnvt's guidelines](https://dnvt.github.io/dnvt-folio/#/dnvt-folio/guidelines/).**  
 
 Click on the grid icon to reveal the various grids and baselines!
 
 ![Show grid](../../assets/images/../../../assets/images/Writings/Grid/show-grid-button.png)
 
-Let me know if you have any questions, any suggestions or improvements on this idea/concept. Lemme know if you find this totally absurd and the whys, it would also tremendously help the grid discussion.
+Let me know if you have any questions any suggestions or improvements on this idea/concept. Let me know if you find this totally absurd and the whys. It would also tremendously help the grid discussion.
 
 Thanks for reading! 
 
@@ -449,4 +510,3 @@ Some more in-depth details about bounding-box compensation can be read [here](ht
 3. Line Height Rule;
 4. Offsetting Typography;
 5. Compensating Typography's Offset.
-   
