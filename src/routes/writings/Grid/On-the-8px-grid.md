@@ -1,4 +1,4 @@
-# How to reach baseline fit? Padded Grid as designer's practical grid hack.
+# The Padded Grid: A Designer’s Hack To Achieve Baseline Fit.
 
 There is still a lot of controversy about implementing a grid system when designing for digital layouts. I personally think grids and baselines are beautiful mathematical systems that, used properly, are more than just helpers or guides. They can elevate your designs. 
 
@@ -33,85 +33,29 @@ This method uses multiples of 8 to define your design elements' dimensions, padd
 - Scales perfectly in all the different screen displays (including android's @0.75 and @1.5)
 - Google and Apple seem to define it as best practice
 
+Based on my research, there are two different variations on implementing this 8px Grid method: the Hard way and the Soft way. (I stole the wording from other articles)
+
 #### Hard Grid method
 
-This method is a combination of both of these grids. Icons, font-size, and other components' sizes are multiples of 8, so they snap to a strict 8px Grid. However, the space between elements is not. Users have to adjust the margins for **the typography to sit on the baseline (as it should).** 
+This method is a combination of the 8x Grid method with the Baseline Grid. 
 
-The biggest drawback with the Hard Grid method is settings the space on a case-per-case. Which makes it tedious and a less appreciated candidate for implementation.
+Icons, font-size, and other components' sizes are multiples of 8, so they snap to a strict 8px Grid. However, the space between elements is not. Users have to adjust the margins for **the typography to sit on the baseline (as it should).** 
+
+The biggest drawback with the Hard Grid method is settings the spaces on a case-per-case. Which makes it tedious and a less appreciated candidate for implementation.
 
 ![Hard Grid method intro](../../assets/images/../../../assets/images/Writings/Grid/hard-grid-intro.png)
 
 #### Soft Grid method
 
-Everything still follows the 8px Grid, **but we remove the vertical baseline and horizontal adherence to a strict 8px Grid.** The spacing between every element can be a multiple of 8. 
-Note that 4 and 12px are commonly included in the list of spacers, even though they are not multiples of 8.
+Closer to the definition of the 8px Grid Method, one follows the multiple of 8 rule, **but one removes the vertical baseline and horizontal adherence to a strict 8px Grid.** The spacing between every element can be a multiple of 8. 
+
+Note that 4px and 12px are commonly included in the list of spacers for some visual edge cases, even though they are not multiples of 8.
 
 The Soft Grid method is seemingly easier to implement because one doesn't have to do a case-per-case spacing assessment with the developers. 
 
 ![Soft Grid method intro](../../assets/images/../../../assets/images/Writings/Grid/soft-grid-intro.png)
 
-#### Frustration
-
-With the Soft Grid method, we truly are not getting the mathematical grid rhythm at all. It feels like a simplified version of a grid system, purely vertical, to ease the implementation. 
-
-Why would we settle up for a Soft Grid system while we could develop obvious and scalable tricks? 
-I think it's a shame not to, and that's why I started to explore some workaround that makes the Hard Grid method implementation as simple as the Soft Grid method one.
-
-So in this article, I'm going to detail these methods I used through some of the design system components I crafted for my portfolio, answering this question of how one can implement a perfect 8x8 Hard Grid method with the ease of the Soft Grid method.
-
-# How to reach baseline fit? Padded Grid as designer's practical grid hack.
-
-There is still a lot of controversy about implementing a grid system when designing for digital layouts. I personally think grids and baselines are beautiful mathematical systems that, used properly, are more than just helpers or guides. They can elevate your designs. 
-
-Horizontal and Responsive grid systems are extensively explored within CSS frameworks. However, baseline grids are one of these fantastic foundations inherited from the print world that seems seldom implemented in the digital space.
-
-This inspired me to take on the challenge to build my own grid system – which I'll be calling the Padded Grid for the sake of this article.
-
-## Personal Take
-
-### Refresher on the grid systems
-
-#### Baseline Grid
-
-A baseline grid is a series of invisible vertical units that assist in creating consistent vertical spacing with your typography and page elements. It's a hidden way of giving order to disorder. In short, baseline grids:
-
-- Takes the guesswork out of how to space elements vertically
-- Allows elements across columns to line up visually
-- Provides guidelines for teams working on a project
-- Helps to unify scale
-- Brings cohesion and consistency to designs
-
-![Baseline visuals from the web](../../assets/images/../../../assets/images/Writings/Grid/baseline.png)
-Some visuals to illustrate baselines, from [Ellen Lupton's website](http://thinkingwithtype.com/grid/)
-
-#### 8px Grid method
-
-This method uses multiples of 8 to define your design elements' dimensions, padding, and margin. Designers tend to prefer this 8px scale over other scales (5px, 6px, 10px) for a couple of reasons:
-
-- Eliminates guesswork and decision fatigue while designing and developing
-- Simple multiple, easily divisible, and scalable
-- Helps better manage pixel-perfect
-- Scales perfectly in all the different screen displays (including android's @0.75 and @1.5)
-- Google and Apple seem to define it as best practice
-
-#### Hard Grid method
-
-This method is a combination of both of these grids. Icons, font-size, and other components' sizes are multiples of 8, so they snap to a strict 8px Grid. However, the space between elements is not. Users have to adjust the margins for **the typography to sit on the baseline (as it should).** 
-
-The biggest drawback with the Hard Grid method is settings the space on a case-per-case. Which makes it tedious and a less appreciated candidate for implementation.
-
-![Hard Grid method intro](../../assets/images/../../../assets/images/Writings/Grid/hard-grid-intro.png)
-
-#### Soft Grid method
-
-Everything still follows the 8px Grid, **but we remove the vertical baseline and horizontal adherence to a strict 8px Grid.** The spacing between every element can be a multiple of 8. 
-Note that 4 and 12px are commonly included in the list of spacers, even though they are not multiples of 8.
-
-The Soft Grid method is seemingly easier to implement because one doesn't have to do a case-per-case spacing assessment with the developers. 
-
-![Soft Grid method intro](../../assets/images/../../../assets/images/Writings/Grid/soft-grid-intro.png)
-
-#### Frustration
+#### Frustrations
 
 With the Soft Grid method, we truly are not getting the mathematical grid rhythm at all. It feels like a simplified version of a grid system, purely vertical, to ease the implementation. 
 
@@ -214,9 +158,7 @@ const HorizontalStyle = createUseStyles({
 
 ```
 
-And I have a hook to toggle the grid visibility.
-
-`TODO: Create a standalone Grid Hook?`
+Additionally, I have a hook to toggle the grid visibility.
 
 ### 2. Encapsulate fonts in components that are divisible by 8, and offset the typography
 
