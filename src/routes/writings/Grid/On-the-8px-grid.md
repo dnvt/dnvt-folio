@@ -111,16 +111,68 @@ So I recommend you code your own Grid and have a visual reference to implement a
 ![Browser grid off](../../assets/images/../../../assets/images/Writings/Grid/show-grid.gif)
 
 Here is the Horizontal Grid component that I built for my project.
-
+<!-- 
 <iframe src="https://codesandbox.io/embed/grid-toggle-forked-s6llp?fontsize=14&hidenavigation=1&theme=dark"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
      title="grid-toggle (forked)"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    >
-</iframe>
+</iframe> -->
 
-[Codesandbox](https://codesandbox.io/embed/grid-toggle-forked-s6llp?fontsize=14&hidenavigation=1&theme=dark)
+
+```javascript
+import { useDocumentSize } from "../../hooks/useDimensionSize"
+import React, { useEffect, useState } from "react"
+
+const Horizontal = (props) => {
+  const document = useDocumentSize() // Hook to get the height of the page
+  const [rowNumber, setRowNumber] = useState(0) // Initialize the number of rows for the grid
+  const rowArray = [] // Initialize an array to contain all the row
+
+  useEffect(() => {
+    // Define the number of 8px height rows needed to fill the entire height of the page
+    if (document.height) setRowNumber(Math.trunc(document.height / 8))
+  }, [document.height])
+
+  for (let index = 0; index < rowNumber; index++) {
+    // Generate that many rows in your array
+    rowArray.push(<div key={index} className={classes.Row}></div>)
+  }
+
+  // Return your grid container with all these rows!
+  return <div className={classes.Horizontal}>{rowArray}</div>
+}
+
+const HorizontalStyle = createUseStyles({
+  Horizontal: {
+    zIndex: "-1", // No one wants the grid to interfere with the UI!
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    userSelect: "none",
+  },
+
+  Row: {
+    position: "relative",
+    top: 0,
+    width: "100%",
+    height: 8,
+
+    "&:after": {
+      content: '""',
+      position: "absolute",
+      bottom: 0,
+      width: "100%",
+      height: 1,
+      background: "#E1E4FF",
+    },
+  },
+})
+```
+
+[Link to Codesandbox until I can embed it ->](https://codesandbox.io/embed/grid-toggle-forked-s6llp?fontsize=14&hidenavigation=1&theme=dark)
 
 ### 2. Encapsulate fonts in components that are divisible by 8, and offset the typography
 
