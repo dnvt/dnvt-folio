@@ -35,6 +35,8 @@ This method uses multiples of 8 to define your design elements' dimensions, padd
 
 Based on my research, there are two different variations on implementing this 8px Grid method: the Hard way and the Soft way. (I stole the wording from other articles)
 
+**Note:** Because 8px is quite a big start of a scale value for your designs, 4px and 12px are commonly included in the list of spacers for some visual edge cases, even though they are not multiples of 8.
+
 #### Hard Grid method
 
 This method is a combination of the 8x Grid method with the Baseline Grid. 
@@ -45,15 +47,17 @@ The biggest drawback with the Hard Grid method is settings the spaces on a case-
 
 ![Hard Grid method intro](../../assets/images/../../../assets/images/Writings/Grid/hard-grid-intro.png)
 
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/8px-Grid?node-id=844%3A21169)
+
 #### Soft Grid method
 
 Closer to the definition of the 8px Grid Method, one follows the multiple of 8 rule, **but one removes the vertical baseline and horizontal adherence to a strict 8px Grid.** The spacing between every element can be a multiple of 8. 
 
-Note that 4px and 12px are commonly included in the list of spacers for some visual edge cases, even though they are not multiples of 8.
-
 The Soft Grid method is seemingly easier to implement because one doesn't have to do a case-per-case spacing assessment with the developers. 
 
 ![Soft Grid method intro](../../assets/images/../../../assets/images/Writings/Grid/soft-grid-intro.png)
+
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/8px-Grid?node-id=847%3A20071)
 
 #### Frustrations
 
@@ -78,9 +82,11 @@ To make it less figurative, I'm encapsulating each element as a component with a
 
 ![Schematic bounding-box](../../assets/images/../../../assets/images/Writings/Grid/boundingbox-schematic.png)
 
-But, the most essential piece of the concept is that each of these components independently deals with their top and bottom paddings to offset the typography and make sure the typography sits on the baseline. 
+**But, the most essential piece of the concept is that each of these components independently deals with their top and bottom paddings to offset the typography and make sure the typography sits on the baseline.**
 
 ![Schematic baseline](../../assets/images/../../../assets/images/Writings/Grid/baseline-schematic.png)
+
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/8px-Grid?node-id=850%3A20629)
 
 Consequently, no matter where you call the components, they match the 8x8 scale grid system with typography that de-facto sits on the baseline. No more spacing compensation on the case-per-case for every new page you create.
 
@@ -105,6 +111,15 @@ So I recommend you code your own Grid and have a visual reference to implement a
 ![Browser grid off](../../assets/images/../../../assets/images/Writings/Grid/show-grid.gif)
 
 Here is the Horizontal Grid component that I built for my project.
+
+<iframe src="https://codesandbox.io/embed/grid-toggle-forked-s6llp?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="grid-toggle (forked)"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+[Codesandbox](https://codesandbox.io/embed/grid-toggle-forked-s6llp?fontsize=14&hidenavigation=1&theme=dark)
 
 ```javascript
 import { useDocumentSize } from "../../hooks/useDimensionSize"
@@ -151,7 +166,7 @@ const HorizontalStyle = createUseStyles({
       bottom: 0,
       width: "100%",
       height: 1,
-      background: #E1E4FF,
+      background: "#E1E4FF",
     },
   },
 })
