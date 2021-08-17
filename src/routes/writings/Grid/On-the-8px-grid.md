@@ -45,7 +45,7 @@ Icons, font-size, and other components' sizes are multiples of 8, so they snap t
 
 The biggest drawback with the Hard Grid method is settings the spaces on a case-per-case. Which makes it tedious and a less appreciated candidate for implementation.
 
-![Hard Grid method intro](../../assets/images/../../../assets/images/Writings/Grid/hard-grid-intro.png)
+![HHard Grid method](../../assets/images/../../../assets/images/Writings/Grid/hard-grid-intro.png)
 
 [Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/8px-Grid?node-id=844%3A21169)
 
@@ -55,7 +55,7 @@ Closer to the definition of the 8px Grid Method, one follows the multiple of 8 r
 
 The Soft Grid method is seemingly easier to implement because one doesn't have to do a case-per-case spacing assessment with the developers. 
 
-![Soft Grid method intro](../../assets/images/../../../assets/images/Writings/Grid/soft-grid-intro.png)
+![Soft Grid method](../../assets/images/../../../assets/images/Writings/Grid/soft-grid-intro.png)
 
 [Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/8px-Grid?node-id=847%3A20071)
 
@@ -72,7 +72,7 @@ So in this article, I'm going to detail these methods I used through some of the
 
 To introduce the central concept used here, let me make an analogy. Consider the Lego bricks; every brick's height and width share a multiple – meaning that you can stack x amount of bricks to match the size of a larger brick. Without this rule, it would be nearly impossible to stack a variety of bricks horizontally to build a wall. You would have to compensate for every size variation, maybe even with pieces not part of the lego set!
 
-![Brick wall analogy](../../assets/images/../../../assets/images/Writings/Grid/brick-analogy-02.png)
+![Legos analogy](../../assets/images/../../../assets/images/Writings/Grid/brick-analogy-02.png)
 
 That's it. That's the concept. 
 
@@ -80,11 +80,11 @@ Consider each component you put on a page to be a lego brick. Each one has to fi
 
 To make it less figurative, I'm encapsulating each element as a component with a height equal to a multiple of 8 (yes - especially the fonts). That way, their bounding box is always sitting on the baseline.
 
-![Schematic bounding-box](../../assets/images/../../../assets/images/Writings/Grid/boundingbox-schematic.png)
+![Bounding-box concept](../../assets/images/../../../assets/images/Writings/Grid/boundingbox-schematic.png)
 
 **But, the most essential piece of the concept is that each of these components independently deals with their top and bottom paddings to offset the typography and make sure the typography sits on the baseline.**
 
-![Schematic baseline](../../assets/images/../../../assets/images/Writings/Grid/baseline-schematic.png)
+![Padded bounding-box concept](../../assets/images/../../../assets/images/Writings/Grid/baseline-schematic.png)
 
 [Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/8px-Grid?node-id=850%3A20629)
 
@@ -108,9 +108,10 @@ If you want to code your designs based on a grid system, there is only one way; 
 
 So I recommend you code your own Grid and have a visual reference to implement all your components.
 
-![Browser grid off](../../assets/images/../../../assets/images/Writings/Grid/show-grid.gif)
+![Toogling your Browser grid](../../assets/images/../../../assets/images/Writings/Grid/show-grid.gif)
 
 Here is the Horizontal Grid component that I built for my project.
+
 <!-- 
 <iframe src="https://codesandbox.io/embed/grid-toggle-forked-s6llp?fontsize=14&hidenavigation=1&theme=dark"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
@@ -120,59 +121,7 @@ Here is the Horizontal Grid component that I built for my project.
    >
 </iframe> -->
 
-
-```javascript
-import { useDocumentSize } from "../../hooks/useDimensionSize"
-import React, { useEffect, useState } from "react"
-
-const Horizontal = (props) => {
-  const document = useDocumentSize() // Hook to get the height of the page
-  const [rowNumber, setRowNumber] = useState(0) // Initialize the number of rows for the grid
-  const rowArray = [] // Initialize an array to contain all the row
-
-  useEffect(() => {
-    // Define the number of 8px height rows needed to fill the entire height of the page
-    if (document.height) setRowNumber(Math.trunc(document.height / 8))
-  }, [document.height])
-
-  for (let index = 0; index < rowNumber; index++) {
-    // Generate that many rows in your array
-    rowArray.push(<div key={index} className={classes.Row}></div>)
-  }
-
-  // Return your grid container with all these rows!
-  return <div className={classes.Horizontal}>{rowArray}</div>
-}
-
-const HorizontalStyle = createUseStyles({
-  Horizontal: {
-    zIndex: "-1", // No one wants the grid to interfere with the UI!
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    userSelect: "none",
-  },
-
-  Row: {
-    position: "relative",
-    top: 0,
-    width: "100%",
-    height: 8,
-
-    "&:after": {
-      content: '""',
-      position: "absolute",
-      bottom: 0,
-      width: "100%",
-      height: 1,
-      background: "#E1E4FF",
-    },
-  },
-})
-```
-
-[Link to Codesandbox until I can embed it ->](https://codesandbox.io/s/grid-toggle-82vq1)
+[Link to the Codesandbox demo ->](https://codesandbox.io/s/grid-toggle-82vq1)
 
 ### 2. Encapsulate fonts in components that are divisible by 8, and offset the typography
 
@@ -184,7 +133,9 @@ Since the typography is arguably the most essential part of our designs, we will
 
 First, we need to ensure each font in the design system has a line height based on a multiple of 8. This will ensure that your font leading respects the 8x8 scale and that your typography sits on the baseline.
 
-![Line-Height and Baseline](../../assets/images/../../../assets/images/Writings/Grid/font-name-convention.png)
+![Line-Heigt vs Leading](../../assets/images/../../../assets/images/Writings/Grid/font-name-convention.png)
+
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=859%3A20480)
 
 It's commonly assumed that a good line height should be around 130% of the font size. Round up the result to its closest multiple of 8 to get the font to always sit on the baseline.
 
@@ -198,14 +149,16 @@ Or you can also use this handy tool, [the good line height](https://www.thegoodl
 
 The bounding box of a font (or other components) is the container size of an element, as calculated by the browser (or software).
 
-![Font Bounding Box demo](../../assets/images/../../../assets/images/Writings/Grid/font-boundingbox.png)
+![Font Bounding Box](../../assets/images/../../../assets/images/Writings/Grid/font-boundingbox.png)
 
 The idea is to encapsulate each individual font (whose height is divisible by 8) while adjusting the top and bottom paddings of the container to get the typography correctly seated on the baseline. 
 
 1. The padding-top offsets the typography to make it sit on the baseline. 
 2. The padding bottom compensates for the typography's offset, so the bounding box fits the 8x8 scale system.
 
-![Font Boxing Demo](../../assets/images/../../../assets/images/Writings/Grid/font-boxing-demo.png)
+![Font bounding-box vs Padded-box](../../assets/images/../../../assets/images/Writings/Grid/font-boxing-demo.png)
+
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=860%3A20554)
 
 ```javascript
 export const FontH3 = () => {
@@ -219,13 +172,17 @@ export const FontH3 = () => {
 }
 ```
 
+`TODO: Embedding the Font into Codesandbox`
+
 [Github FontWrapper component to simplify for the article ↗️](https://github.com/dnvt/Dnvt-Folio/blob/c21a4d484a703532a6f19ebb939e57dd11b7de04/src/utils/fonts/elements/FontTagWrapper.tsx#L8)
 
 #### Result 
 
 Let's look at the initial example with our custom 8px based height font containers to ensure the benefits are clear. Displayed below, same design view a) without the grid system, b) with the baseline grid, and finally, c) with the bounding box displayed.
 
-![Font Boxing Demo](../../assets/images/../../../assets/images/Writings/Grid/font-boxing-benefits.png)
+![Padded Grid method](../../assets/images/../../../assets/images/Writings/Grid/padded-grid-method.png)
+
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=861%3A20589)
 
 See what's happening here?
 
@@ -233,7 +190,9 @@ All spacers are multiple of 8, all font containers are now multiple of 8, and ev
 
 The implementation starts to already feel as simple as with the Soft Grid method.
 
-![Font Exemple](../../assets/images/../../../assets/images/Writings/Grid/font-exemple.png)
+![Padded Grid font examples](../../assets/images/../../../assets/images/Writings/Grid/font-exemple.png)
+
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=862%3A23053)
 
 #### Caveat
 
