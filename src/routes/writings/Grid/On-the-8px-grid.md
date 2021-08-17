@@ -172,7 +172,7 @@ const HorizontalStyle = createUseStyles({
 })
 ```
 
-[Link to Codesandbox until I can embed it ->](https://codesandbox.io/embed/grid-toggle-forked-s6llp?fontsize=14&hidenavigation=1&theme=dark)
+[Link to Codesandbox until I can embed it ->](https://codesandbox.io/s/grid-toggle-82vq1)
 
 ### 2. Encapsulate fonts in components that are divisible by 8, and offset the typography
 
