@@ -185,7 +185,6 @@ Let's look at the initial example with our custom 8px based height font containe
 [Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=861%3A20589)
 
 See what's happening here?
-
 All spacers are multiple of 8, all font containers are now multiple of 8, and everything sits perfectly and automatically on the baseline.
 
 The implementation starts to already feel as simple as with the Soft Grid method.
@@ -198,7 +197,7 @@ The implementation starts to already feel as simple as with the Soft Grid method
 
 One of the drawbacks with this method is that you can't anymore just hit the `T` key in Figma (or whatever other software you are using) and start typing some text. Instead, you have to get used to picking your font container from the list of Components. ¯/\_(ツ)_/¯
 
-![Figma list of Font components](../../assets/images/../../../assets/images/Writings/Grid/font-caveat.png)
+![Figma's screenshot of a Font component](../../assets/images/../../../assets/images/Writings/Grid/font-caveat.png)
 
 ### 3. Same shit, different components
 
@@ -206,9 +205,13 @@ Well, this is lovely, but it's only about typography. How about all these other 
 
 These are great questions! However, if your fonts are correctly set up, 90% of the work is already done, really! Let's have a look.
 
-<!-- Reminder: You only want to use 8px grid Spacers to manage spacings and rhythm between components; otherwise, it would break all your component alignment efforts.
+**Reminder:** You only want to use multiple of 8 Spacers to manage spacings and rhythm between components; otherwise, it would break all your component alignment efforts (no 4px or 12px in this instance!). 
 
-![Your list of spaces](../../assets/images/../../../assets/images/Writings/Grid/spacers.png) -->
+In the following visuals, I'm changing a little bit the design of a spacer, for visual clarity.
+
+![List of Spacers](../../assets/images/../../../assets/images/Writings/Grid/spacers.png)
+
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=866%3A21443)
 
 #### Font and Icons
 
@@ -219,7 +222,9 @@ Assuming that you are using icons of 8x8 pixel scale such as 16x16px, 24x24px, o
 As an example, I will use the Menu and the Link components from my design system.
 For both components, I'm using existing font Legend and font Body, with minimal variations.
 
-![menu components variations](../../assets/images/../../../assets/images/Writings/Grid/menu-icons.png)
+![Menu and Icons components](../../assets/images/../../../assets/images/Writings/Grid/menu-icons.png)
+
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=865%3A21330)
 
 Because of an underline that appears on hover, I can't fully reuse the default initial Font components. I want the underline to be seating on the baseline that follows the typography. Hence I create a specific spacer in between the typography and the underline. Which alienates a little bit the final padding-bottom that compensates for the typography offset.
 
