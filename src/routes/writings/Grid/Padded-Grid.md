@@ -149,8 +149,6 @@ Or you can also use this handy tool, [the good line height](https://www.thegoodl
 
 The bounding box of a font (or other components) is the container size of an element, as calculated by the browser (or software).
 
-![Font Bounding Box](../../assets/images/../../../assets/images/Writings/Grid/font-boundingbox.png)
-
 The idea is to encapsulate each individual font (whose height is divisible by 8) while adjusting the top and bottom paddings of the container to get the typography correctly seated on the baseline. 
 
 1. The padding-top offsets the typography to make it sit on the baseline. 
@@ -222,7 +220,7 @@ Assuming that you are using icons of 8x8 pixel scale such as 16x16px, 24x24px, o
 As an example, I will use the Menu and the Link components from my design system.
 For both components, I'm using existing font Legend and font Body, with minimal variations.
 
-![Menu and Icons components](../../assets/images/../../../assets/images/Writings/Grid/menu-icons.png)
+![Menu and Icon components](../../assets/images/../../../assets/images/Writings/Grid/menu-icons.png)
 
 [Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=865%3A21330)
 
@@ -234,7 +232,9 @@ So now, when I place and combine my Menu components together, I know with certai
 
 For example, menus combined in a header:
 
-![header made of the menu components](../../assets/images/../../../assets/images/Writings/Grid/header.png)
+![Header, made out of Menu and Icon components](../../assets/images/../../../assets/images/Writings/Grid/header.png)
+
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=867%3A21588)
 
 **Links**
 
@@ -242,11 +242,15 @@ Similarly, for the Link components that use the Body font, I had to impose paddi
 
 Thereafter, I have enough space in the component to play with the distance between the typography and the underline and make it snap perfectly.
 
-![link components variations](../../assets/images/../../../assets/images/Writings/Grid/links.png)
+![Link components variations](../../assets/images/../../../assets/images/Writings/Grid/links.png)
+
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=868%3A22748)
 
 Here is a footer using these links – perfectly snapped to the Grid and super simple to implement.
 
-![footer made of the link components](../../assets/images/../../../assets/images/Writings/Grid/footer.png)
+![Footer, made out of Link components](../../assets/images/../../../assets/images/Writings/Grid/footer.png)
+
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=868%3A23127)
 
 #### Inputs and Buttons
 
