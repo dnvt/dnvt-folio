@@ -205,7 +205,7 @@ These are great questions! However, if your fonts are correctly set up, 90% of t
 
 **Reminder:** You only want to use multiple of 8 Spacers to manage spacings and rhythm between components; otherwise, it would break all your component alignment efforts (no 4px or 12px in this instance!). 
 
-In the following visuals, I'm changing a little bit the design of a spacer, for visual clarity.
+In the following visuals, I'm changing a little bit the design of a spacer, for clarity.
 
 ![List of Spacers](../../assets/images/../../../assets/images/Writings/Grid/spacers.png)
 
@@ -263,11 +263,15 @@ Nonetheless, keep the focus on the typography and the baseline. Build your butto
 
 Then and only then can you encapsulate the whole thing in a container, with offsetting padding tops and bottoms that snap the complete Button component on the 8x8 Grid.
 
-![Decomposition of the input v1 components](../../assets/images/../../../assets/images/Writings/Grid/input-v1.png)
+![Decomposition of the input components - v1](../../assets/images/../../../assets/images/Writings/Grid/input-v1.png)
+
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=871%3A23039)
 
 The below example is another version of inputs that could be considered unethical. Indeed, in this case, I'm using margin negative... but 16px, multiple of 8 as well!
 
-![Decomposition of the input v2 components](../../assets/images/../../../assets/images/Writings/Grid/input-v2.png)
+![Decomposition of the input components - v2](../../assets/images/../../../assets/images/Writings/Grid/input-v2.png)
+
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=871%3A23348)
 
 **Note on the borders:**
 Whether or not the borders are inside or outside doesn't impact the size of its container. It's like a virtually invisible coat of paint on a shape. Hence, it's not affecting your spacing.
@@ -281,19 +285,25 @@ Hold on to your horses! We will discuss this in 3 sections!
 
 Similarly, with the buttons, the outline of the buttons can't snap on the Grid if we want the font to sit on the baseline, but the Button containers need some padding tweaks to fit our rule.
 
-![Decomposition of button components](../../assets/images/../../../assets/images/Writings/Grid/buttons.png)
+![Decomposition of the button components](../../assets/images/../../../assets/images/Writings/Grid/buttons.png)
+
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=871%3A23714)
 
 An example of menus and buttons living together. Everything vertically aligns perfectly! Everything is on an irreproachable baseline.
 
 We did it! ✅
 
-![Header with buttons](../../assets/images/../../../assets/images/Writings/Grid/menu-buttons.png)
+![Header mixed with Button components](../../assets/images/../../../assets/images/Writings/Grid/menu-buttons.png)
+
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=871%3A24237)
 
 **Forms**
 
 So to wrap up this section with complex inputs and button heights – here they are, all together in a form. Just stack on top of each other, with spacers in between.
 
-![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/form-example.png)
+![Form made of the Input and Button components](../../assets/images/../../../assets/images/Writings/Grid/form-example.png)
+
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=871%3A24682)
 
 #### Separator
 
@@ -305,7 +315,9 @@ So what I like to do with my separators is to also contain them into their own 8
 
 This way, separators can be called anywhere in the designs without the fear of doing annoying math or doing some annoying CSS transform on your component to compensate for that seldom 1px height.
 
-![Separators 1](../../assets/images/../../../assets/images/Writings/Grid/form-separator.png)
+![Decomposition of the Separator components - v1](../../assets/images/../../../assets/images/Writings/Grid/form-separator.png)
+
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=871%3A25131)
 
 The Separator container has an 8px height, composed of padding-top of 3px, the size of the separator of 1px, and padding-bottom of 4px.
 
@@ -315,7 +327,9 @@ Note that you don't want to have a line in a 0.5 position to reach pixel perfect
 
 The other advantage of this method is the flexibility to move the line itself freely within the container. For example, for these very tight rows of editable settings, I needed to adjust the separator's position within its container to create an equal spacing between the selectors and the lines.
 
-![Separators 2](../../assets/images/../../../assets/images/Writings/Grid/separator.png)
+![Decomposition of the Separator components - v2](../../assets/images/../../../assets/images/Writings/Grid/separator.png)
+
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=871%3A25635)
 
 (Keep in mind that the line itself doesn't need to consider the baseline, only the typography!)
 
@@ -326,12 +340,17 @@ The same thing applies to less complicated components.
 I'm using cards to present my projects. It's a combination of an image with a couple of texts.
 The cards are forced into an 8px scale height, and the texts are summoned inside with spacers. Typography fits the baseline as always, effortlessly.
 
-![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/card-box.png)
+![Decomposition of the Card components - Spacers](../../assets/images/../../../assets/images/Writings/Grid/card-box.png)
 
-![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/card-grid.png)
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=871%3A26353)
 
-![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/card-images.png)
+![Decomposition of the Card components - Baseline](../../assets/images/../../../assets/images/Writings/Grid/card-grid.png)
 
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=871%3A26212)
+
+![Card components - Final](../../assets/images/../../../assets/images/Writings/Grid/card-images.png)
+
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=871%3A26348)
 
 #### Devices
 
@@ -340,21 +359,33 @@ The only minor issue here (apart from making the iPhone looks like one with CSS)
 
 For the browser, well, it's a bit messier. I just have the 8x8 height, my image to fit in on its length – and I have the width truncated however it fits. ¯/\/_(ツ)_/¯ 
 
-![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/device-box.png)
+![Decomposition of the Device components - Spacers](../../assets/images/../../../assets/images/Writings/Grid/device-box.png)
 
-![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/device-grid.png)
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=871%3A26857)
 
-![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/device-images.png)
+![Decomposition of the Device components - Baseline](../../assets/images/../../../assets/images/Writings/Grid/device-grid.png)
+
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=871%3A26711)
+
+![Device components - Final](../../assets/images/../../../assets/images/Writings/Grid/device-images.png)
+
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=871%3A26850)
 
 #### Images
 
 Same with all the images. Make sure to be imposing a height divisible by 8 for any image container. 
 
-![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/vignette-box.png)
+![Decomposition of the Image components - Spacers](../../assets/images/../../../assets/images/Writings/Grid/vignette-box.png)
 
-![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/vignette-grid.png)
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=871%3A28515)
 
-![form made of the inputs and buttons components](../../assets/images/../../../assets/images/Writings/Grid/vignette-images.png)
+![Decomposition of the Image components - Baseline](../../assets/images/../../../assets/images/Writings/Grid/vignette-grid.png)
+
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=871%3A28370)
+
+![Image components - Final](../../assets/images/../../../assets/images/Writings/Grid/vignette-images.png)
+
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=871%3A28511)
 
 And if you can't accept for your images to have a fixed height, maybe let them go wild but make sure the size is cropped and only scaling gradually by 8px.
 
