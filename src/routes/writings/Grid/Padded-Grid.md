@@ -112,15 +112,6 @@ So I recommend you code your own Grid and have a visual reference to implement a
 
 Here is the Horizontal Grid component that I built for my project.
 
-<!-- 
-<iframe src="https://codesandbox.io/embed/grid-toggle-forked-s6llp?fontsize=14&hidenavigation=1&theme=dark"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="grid-toggle (forked)"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   >
-</iframe> -->
-
 [Link to the Codesandbox demo ->](https://codesandbox.io/s/grid-toggle-82vq1)
 
 ### 2. Encapsulate fonts in components that are divisible by 8, and offset the typography
@@ -389,34 +380,9 @@ Same with all the images. Make sure to be imposing a height divisible by 8 for a
 
 And if you can't accept for your images to have a fixed height, maybe let them go wild but make sure the size is cropped and only scaling gradually by 8px.
 
-To reuse previous code:
+To reuse previous truncating principal: `Math.trunc(x/8)*8`
 
-`TODO: Test the code and make a demo GIF.`
-
-```javascript
-import React, { useRef, useEffect, useState } from 'react'
-
-const Vignette = () => {
-  const imageHeight = useState()
-  const ref = useRef()
-
-  useEffect(() => {
-    if (ref && ref.current && ref.current.clientHeight) {
-      imageHeight = ref.current.clientHeight
-    }
-  }, [])
-
-  return (
-    <div 
-      style={{
-        overflow:"hidden", 
-        height: imageHeight ? Math.ceil(imageHeight/8)*8 : 480
-      }}>
-      <img ref={ref}><img>
-    </div>
-  )
-}
-```
+[Link to the Codesandbox demo ->](https://codesandbox.io/s/image-resize-xc1o8?file=/src/App.js)
 
 #### Responsiveness
 
