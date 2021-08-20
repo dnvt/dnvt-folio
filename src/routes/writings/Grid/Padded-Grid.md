@@ -264,13 +264,13 @@ The below example is another version of inputs that could be considered unethica
 
 [Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=871%3A23348)
 
-**Note on the borders:**
+<!-- **Note on the borders:**
 Whether or not the borders are inside or outside doesn't impact the size of its container. It's like a virtually invisible coat of paint on a shape. Hence, it's not affecting your spacing.
 
 If you have issues managing borders in CSS, look at box-sizing: border-box method [on CSS Tricks](https://css-tricks.com/box-sizing/) and play around with *border* and/or *outline* CSS property!
 
 **Note on the separators:**
-Hold on to your horses! We will discuss this in 3 sections!
+Hold on to your horses! We will discuss this in 3 sections! -->
 
 **Buttons**
 
