@@ -389,9 +389,10 @@ The same Grid is applied, and the same 8x8 and height rule applies. If your comp
 
 That's what I did with most of my components.
 
-`TODO: Show some size variations for different screen ratios`
+![Font variation for different breakdown](../../assets/images/../../../assets/images/Writings/Grid/breakdowns.png)
 
-`TODO: Share 8x8 pixel grids for desktop and mobile`
+[Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=881%3A25478)
+
 
 ## Opening up for discussion
 
@@ -417,16 +418,9 @@ Thanks for reading!
 
 Some articles about the grid subject, if you want to get some literature on the subject:
 
-- [The Comprehensive 8pt Grid Guide ↗️](https://medium.com/swlh/the-comprehensive-8pt-grid-guide-aa16ff402179)
+- [Baseline grids & design systems ↗️](https://uxdesign.cc/baseline-grids-design-systems-ae23b5af8cec)
 - [Text Baseline ↗️](https://alistapart.com/article/settingtypeontheweb/)
-- [From Google DS ↗️](https://www.designsystems.com/space-grids-and-layouts/)
+- [The good line height ↗️](https://www.thegoodlineheight.com)
 - [Hard vs. Soft Grid method ↗️](https://medium.com/sketch-app-sources/hard-and-soft-8-point-grids-60cf803b9de4)
-- [Baseline grids & design systems ↗️](https://uxdesign.cc/baseline-grids-design-systems-ae23b5af8cec).
-
-Some more in-depth details about bounding-box compensation can be read [here](https://uxdesign.cc/baseline-grids-design-systems-ae23b5af8cec). The author is using a precise 5 steps method:
-
-1. Absolute Grid Setup;
-2. Height Rule;
-3. Line Height Rule;
-4. Offsetting Typography;
-5. Compensating Typography's Offset.
+- [From Google DS ↗️](https://www.designsystems.com/space-grids-and-layouts/)
+- [The Comprehensive 8pt Grid Guide ↗️](https://medium.com/swlh/the-comprehensive-8pt-grid-guide-aa16ff402179)
