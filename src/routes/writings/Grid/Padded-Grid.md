@@ -136,7 +136,7 @@ Math.ceil(x/8)*8
 
 Or you can also use this handy tool, [the good line height](https://www.thegoodlineheight.com), to calculate your baseline.
 
-#### Line-box or bounding-box
+#### Bounding-box
 
 The bounding box of a font (or other components) is the container size of an element, as calculated by the browser (or software).
 
@@ -414,13 +414,27 @@ Thanks for reading!
 
 ---
 
-## Glossary
+## Glossary and acknowledgments
 
-Some articles about the grid subject, if you want to get some literature on the subject:
+While writing this article, I discovered this article on [Baseline grids & design systems](https://uxdesign.cc/baseline-grids-design-systems-ae23b5af8cec), written by Dmitrijs Ginkuls. The author uses a similar approach for the "padded" fonts, with more in-depth details and 5 straightforward steps:
 
-- [Baseline grids & design systems ↗️](https://uxdesign.cc/baseline-grids-design-systems-ae23b5af8cec)
+1. Absolute Grid Setup;
+2. Height Rule;
+3. Line Height Rule;
+4. Offsetting Typography;
+5. Compensating Typography's Offset.
+
+---
+
+Some more articles about the grid subject for more literature on the subject:
+
 - [Text Baseline ↗️](https://alistapart.com/article/settingtypeontheweb/)
-- [The good line height ↗️](https://www.thegoodlineheight.com)
 - [Hard vs. Soft Grid method ↗️](https://medium.com/sketch-app-sources/hard-and-soft-8-point-grids-60cf803b9de4)
 - [From Google DS ↗️](https://www.designsystems.com/space-grids-and-layouts/)
 - [The Comprehensive 8pt Grid Guide ↗️](https://medium.com/swlh/the-comprehensive-8pt-grid-guide-aa16ff402179)
+
+---
+
+An excellent tool for your line-height
+
+- [The good line height ↗️](https://www.thegoodlineheight.com)
