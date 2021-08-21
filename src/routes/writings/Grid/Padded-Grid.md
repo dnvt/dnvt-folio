@@ -45,7 +45,7 @@ Icons, font-size, and other components' sizes are multiples of 8, so they snap t
 
 The biggest drawback with the Hard Grid method is settings the spaces on a case-per-case. Which makes it tedious and a less appreciated candidate for implementation.
 
-![HHard Grid method](../../assets/images/../../../assets/images/Writings/Grid/hard-grid-intro.png)
+![Hard Grid method](../../assets/images/../../../assets/images/Writings/Grid/hard-grid-intro.png)
 
 [Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/8px-Grid?node-id=844%3A21169)
 
@@ -304,7 +304,7 @@ So what I like to do with my separators is to also contain them into their own 8
 
 This way, separators can be called anywhere in the designs without the fear of doing annoying math or doing some annoying CSS transform on your component to compensate for that seldom 1px height.
 
-![Decomposition of the Separator components - v1](../../assets/images/../../../assets/images/Writings/Grid/form-separator.png)
+![Decomposition of the Separator components](../../assets/images/../../../assets/images/Writings/Grid/form-separator.png)
 
 [Check in Figma ->](https://www.figma.com/file/rmvFgJXvCa8bjYaj2iU4PI/Padded-Grid?node-id=871%3A25131)
 
