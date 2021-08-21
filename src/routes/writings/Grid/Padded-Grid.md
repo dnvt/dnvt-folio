@@ -153,17 +153,15 @@ The idea is to encapsulate each individual font (whose height is divisible by 8)
 export const FontH3 = () => {
   return (
     <div>
-      <FontSpacer height={3} />
+      <FontPadding height={3} />
       <h3>This is your text component</h3>
-      <FontSpacer height={5} />
+      <FontPadding height={5} />
     </div>
   )
 }
 ```
 
-`TODO: Embedding the Font into Codesandbox`
-
-[Github FontWrapper component to simplify for the article ↗️](https://github.com/dnvt/Dnvt-Folio/blob/c21a4d484a703532a6f19ebb939e57dd11b7de04/src/utils/fonts/elements/FontTagWrapper.tsx#L8)
+[Link to the Codesandbox demo ->](https://codesandbox.io/s/padded-font-mf9qd)
 
 #### Result 
 
