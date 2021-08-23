@@ -1,6 +1,6 @@
 import React from 'react'
 import { DocumentSizeProvider } from '../../hooks/useDimensionSize'
-import Fontimation from '../../utils/fonts/Fontimation'
+import Font from '../../utils/fonts/Font'
 import Grid from '../../utils/grids/Grid'
 
 /**
@@ -11,7 +11,7 @@ const Error: React.FC = () => {
     <DocumentSizeProvider>
       <Grid />
       <div style={{ width: "100%", maxHeight: "calc(100vh - 304px)" }}>
-        <Fontimation>404</Fontimation>
+        <Font type="h2">404</Font>
       </div>
     </DocumentSizeProvider>
   )

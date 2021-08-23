@@ -10,7 +10,12 @@ interface CardPropsType {
   srcDark?: STuples
   srcMobile?: STuples
   path?: string
+  href?: string
   status?: CardStatusType
+  tag?: {
+    value: string
+    color?: ProjectColor
+  }
   title: {
     value: string
     color?: ProjectColor

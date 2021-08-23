@@ -22,9 +22,8 @@ const USMWork: React.FC = () => {
 
   return (
     <>
-      {/* <div style={{ position: "relative", marginBottom: -1320, transform: "translateX(0px)" }}>
-        <Fontimation>2016-19</Fontimation>
-      </div> */}
+
+      {/* <Font type="hero">2016-19</Font> */}
       <Container>
         <Font type='h2'>Work</Font>
       </Container>

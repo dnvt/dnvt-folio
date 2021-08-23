@@ -32,7 +32,6 @@ const Introduction: React.FC = () => {
         <Spacer height={64} />
       </Container>
       <FooterCards content={CONTENT.GRPD_CARD} />
-      {/* <GroupedCard left content={CONTENT.GRPD_CARD} /> */}
     </div>
   )
 }

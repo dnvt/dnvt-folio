@@ -6,7 +6,7 @@ import Icon from "../../../utils/icons/Icon"
 import Underline from "../../../utils/line/Underline"
 import CardStyle from "../card-style"
 
-export type CardStatusType = "loading" | "stop" | "construction" | "externalLink"
+export type CardStatusType = "loading" | "stop" | "construction" | "externalLink" | "medium"
 interface StatusProps {
   status: CardStatusType
   color?: string

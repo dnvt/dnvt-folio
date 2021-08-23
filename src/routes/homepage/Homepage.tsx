@@ -10,7 +10,7 @@ import { Theme } from '../../utils/theme/theme'
 import Spacer from '../../utils/spacer/Spacer'
 import Grid from '../../utils/grids/Grid'
 import Font from '../../utils/fonts/Font'
-import Fontimation, { compensateFontimationHeight } from '../../utils/fonts/Fontimation'
+// import Fontimation, { compensateFontimationHeight } from '../../utils/fonts/Fontimation'
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -43,21 +43,8 @@ const Homepage: React.FC = () => {
       <Grid />
       <div style={{ transform: heroTransition.homepage ? "translateY(288px)" : "translateY(0px)", opacity: heroTransition.homepage ? 0 : 1, transition: "opacity .6s ease, transform .6s ease" }}>
         <Spacer contained height={104} />
-        {window.width > 767 &&
-          <>
-            <Spacer contained height={184} />
-            <div style={{
-              position: "relative",
-              marginBottom: compensateFontimationHeight(window),
-              transform:
-                heroTransition.homepage ?
-                  "translateY(-80px)" :
-                  "translateY(0px)", transition: " transform .6s ease"
-            }}>
-              <Fontimation>François</Fontimation>
-            </div>
-          </>
-        }
+        <Spacer contained height={184} />
+        {/* <Font type="hero">François</Font> */}
         <Introduction />
         <Suspense fallback={<Container><Font type="text">Loading...</Font></Container>} >
           {spacer}
@@ -67,29 +54,13 @@ const Homepage: React.FC = () => {
           <Spacer contained height={104} />
           <SelectedWork />
           {spacer}
-          {/* <div style={{
-            position: "relative",
-            marginBottom: compensateFontimationHeight(window),
-            transform: "translateX(0px)"
-          }}>
-            <Fontimation>Yeaaaah</Fontimation>
-          </div> */}
           <PlayGround />
-          {window.width > 767 &&
-            <div style={{
-              position: "relative",
-              marginTop: -192,
-              marginBottom: compensateFontimationHeight(window) + 192,
-              transform: "translateX(0px)"
-            }}>
-              <Fontimation>dnvt.me</Fontimation>
-            </div>
-          }
+          {/* <Font type="hero">dnvt.me</Font> */}
           {spacer}
           <AboutSection />
         </Suspense>
       </div>
-    </DocumentSizeProvider>
+    </DocumentSizeProvider >
   )
 }
 

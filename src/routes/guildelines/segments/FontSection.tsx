@@ -4,7 +4,6 @@ import Column from "../../../components/containers/Column"
 import Container from "../../../components/containers/Container"
 import { useWindowSize } from "../../../hooks/useWindowSize"
 import Font from "../../../utils/fonts/Font"
-import Fontimation from "../../../utils/fonts/Fontimation"
 import Spacer from "../../../utils/spacer/Spacer"
 import { Theme } from "../../../utils/theme/theme"
 
@@ -20,7 +19,7 @@ const FontSection: React.FC = () => {
   return (
     <>
       <div style={{ position: "relative", marginTop: -120, marginBottom: -640, transform: "translateX(0px)" }}>
-        <Fontimation>Hey world</Fontimation>
+        <Font type="hero">Hey world</Font>
       </div>
       <Container>
         <Spacer height={64} />
