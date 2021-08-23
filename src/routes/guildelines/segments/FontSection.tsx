@@ -18,9 +18,9 @@ const FontSection: React.FC = () => {
 
   return (
     <>
-      <div style={{ position: "relative", marginTop: -120, marginBottom: -640, transform: "translateX(0px)" }}>
+      {/* <div style={{ position: "relative", marginTop: -120, marginBottom: -640, transform: "translateX(0px)" }}>
         <Font type="hero">Hey world</Font>
-      </div>
+      </div> */}
       <Container>
         <Spacer height={64} />
         <Font type='h1'>

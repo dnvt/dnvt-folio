@@ -18,9 +18,7 @@ const SelectedWork: React.FC = () => {
         <Font type='h4'>Selected</Font>
         <Column spacer="third">
           <Font type='text'>
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-            auctor. Sed posuere consectetur est at lobortis. Etiam porta sem
-            malesuada magna mollis euismod.
+            A selection of product, branding and illustrative work done in Berlin and Paris, for various startups, throughout the years.
           </Font>
         </Column>
         <Spacer height={40} />

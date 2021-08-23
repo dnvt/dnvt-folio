@@ -21,11 +21,11 @@ const PlayGround: React.FC = () => {
       <Card {...CONTENT.GROUP_ANIM}>
         A Park for the Homeless<br />in the stars
       </Card>
-      <Spacer height={40} />
+      <Spacer contained height={40} />
       <Card {...CONTENT.GROUP_COVER} >
         Coverjs
       </Card>
-      <Spacer height={40} />
+      <Spacer contained height={40} />
       <Card
         height={216}
         noHover
