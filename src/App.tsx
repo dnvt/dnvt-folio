@@ -11,13 +11,10 @@ import Dashboard from './routes/work/usmobile/Dashboard'
 import Projects from './routes/work/projects/Projects'
 import About from './routes/about/About'
 import Error from './routes/error/404'
-import useGaTracker from './useGaTracker'
 
 ////////////////////////////////////////////////////////////////////////////////
 
 const App: React.FC = () => {
-
-  useGaTracker()
 
   return (
     <ContextHooks>
