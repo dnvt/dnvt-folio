@@ -1,8 +1,9 @@
 import React from 'react'
 import { HashRouter, Route, Switch } from 'react-router-dom'
+import { MotionConfig } from 'framer-motion'
+
 import ContextHooks from './hooks/ContextHooks'
 import Layout from './components/navigations/Layout'
-import { MotionConfig } from 'framer-motion'
 import ScrollToTop from './hooks/ScrollToTop'
 import Homepage from "./routes/homepage/Homepage"
 import Guidelines from "./routes/guildelines/Guidelines"
@@ -10,10 +11,13 @@ import Dashboard from './routes/work/usmobile/Dashboard'
 import Projects from './routes/work/projects/Projects'
 import About from './routes/about/About'
 import Error from './routes/error/404'
+import useGaTracker from './useGaTracker'
 
 ////////////////////////////////////////////////////////////////////////////////
 
 const App: React.FC = () => {
+
+  useGaTracker()
 
   return (
     <ContextHooks>
