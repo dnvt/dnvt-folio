@@ -42,7 +42,7 @@ const Header: React.FC<HeaderType> = ({ positionNotfixed }) => {
     {spacer}
     <Button menuToggle path="/">{CONTENT.home.text[1]}</Button>
     {spacer}
-    <IconButton icon="light" />
+    {/* <IconButton icon="light" /> */}
     <IconButton icon="grid" />
   </>)
 
@@ -54,7 +54,7 @@ const Header: React.FC<HeaderType> = ({ positionNotfixed }) => {
       <Button icon={CONTENT.playground.icon} tooltip="Under construction">{CONTENT.playground.text}</Button>{spacer}
       <Button icon={CONTENT.about.icon} path="/about">{CONTENT.about.text}</Button>{spacer}
       <Button icon={CONTENT.guidelines.icon} path="/guidelines">{CONTENT.guidelines.text}</Button>{iconSpacer}
-      <IconButton tooltip="Switch to Dark Theme" icon="light" />{iconSpacer}
+      {/* <IconButton tooltip="Switch to Dark Theme" icon="light" />{iconSpacer} */}
       <IconButton tooltip="Show the Grid" icon="grid" />
     </>
   )

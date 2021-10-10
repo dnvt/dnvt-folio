@@ -37,10 +37,10 @@ const SidelinesStyle = createUseStyles({
 
     "@media (min-width: 1480px)": {
       display: "block",
-      width: "1480px",
+      width: "1520px",
       padding: "0",
       left: "50%",
-      marginLeft: "-740px",
+      marginLeft: "-760px",
     },
   },
 })

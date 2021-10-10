@@ -1,5 +1,5 @@
 import React, { createContext, useContext } from "react"
-import useDarkMode from "use-dark-mode"
+// import useDarkMode from "use-dark-mode"
 import { useTheme, ThemeProvider } from "react-jss"
 import { THEME } from "../utils/theme/theme"
 
@@ -8,11 +8,11 @@ type Context = [boolean, Function?] | boolean
 const DarkModeCtx = createContext<Context>([false, () => { }])
 
 export const ColorTheme: React.FC = ({ children }) => {
-  const darkMode = useDarkMode(false)
+  const darkMode = false // useDarkMode(false)
 
   return (
     <DarkModeCtx.Provider value={false}>
-      <ThemeProvider theme={darkMode.value ? THEME.dark : THEME.light}>
+      <ThemeProvider theme={darkMode/*darkMode.value*/ ? THEME.dark : THEME.light}>
         {children}
       </ThemeProvider>
     </DarkModeCtx.Provider>

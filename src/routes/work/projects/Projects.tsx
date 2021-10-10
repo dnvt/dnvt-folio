@@ -21,7 +21,7 @@ const FooterCards = lazy(() => import("../../../components/cards/layouts/FooterC
 
 /** 
  * Projects template Component
- * @param type  "coverjs" | "branding" | "matrix" | "norse" | "elastic" | "waste" | "kipfit" | "mimi" | "stars" | "airbus" | "siemens" | "telekom"
+ * @param type "coverjs" | "branding" | "matrix" | "norse" | "elastic" | "waste" | "kipfit" | "mimi" | "stars" | "airbus" | "siemens" | "telekom"
  */
 const Projects: React.FC<ProjectsProps> = ({ type }) => {
   const theme: Theme = useTheme()

@@ -1,6 +1,6 @@
 import React from "react"
 import { useTheme } from "react-jss"
-import useDarkMode from "use-dark-mode"
+// import useDarkMode from "use-dark-mode"
 import Container from "../../../components/containers/Container"
 import { useWindowSize } from "../../../hooks/useWindowSize"
 import Font from "../../../utils/fonts/Font"
@@ -60,7 +60,7 @@ const ColorSwatch: React.FC<ColorSwatchType> = (props) => {
 
 const UtilsSection: React.FC = () => {
   const theme: Theme = useTheme()
-  const darkMode = useDarkMode()
+  const darkMode = false/*useDarkMode()*/
   const window = useWindowSize()
   const spacer = <Spacer height={8} />
 
@@ -134,32 +134,32 @@ const UtilsSection: React.FC = () => {
           <ColorSwatch
             color={theme.text.primary}
             name='Text'
-            value={darkMode.value ? "#E9E9E9" : "#191919"}
+            value={darkMode/*darkMode.value*/ ? "#E9E9E9" : "#191919"}
           />
           <ColorSwatch
             color={theme.text.secondary}
             name='Legend'
-            value={darkMode.value ? "#878888" : "#757575"}
+            value={darkMode/*darkMode.value*/ ? "#878888" : "#757575"}
           />
           <ColorSwatch
             color={theme.background.hover}
             name='Hover'
-            value={darkMode.value ? "#414141" : "#E7E7E7"}
+            value={darkMode/*darkMode.value*/ ? "#414141" : "#E7E7E7"}
           />
           <ColorSwatch
             color={theme.background.basic}
             name='Grey'
-            value={darkMode.value ? "#1C1C1C" : "#F3F3F3"}
+            value={darkMode/*darkMode.value*/ ? "#1C1C1C" : "#F3F3F3"}
           />
           <ColorSwatch
             color={theme.text.hover}
             name='Main'
-            value={darkMode.value ? "#6946BA" : "#00BAFF"}
+            value={darkMode/*darkMode.value*/ ? "#6946BA" : "#00BAFF"}
           />
           <ColorSwatch
             color={theme.text.active}
             name='Secondary'
-            value={darkMode.value ? "#500BF1" : "#6A78FF"}
+            value={darkMode/*darkMode.value*/ ? "#500BF1" : "#6A78FF"}
           />
           <ColorSwatch
             color={theme.text.hero}
@@ -170,7 +170,7 @@ const UtilsSection: React.FC = () => {
           <ColorSwatch
             color={theme.background.tint}
             name='Tint'
-            value={darkMode.value ? "#2C292E" : "#F4F6F9"}
+            value={darkMode/*darkMode.value*/ ? "#2C292E" : "#F4F6F9"}
           />
         </div>
         {/* <Spacer height={32} />
