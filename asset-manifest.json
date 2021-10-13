@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/dnvt-folio/static/css/main.b705027e.chunk.css",
-    "main.js": "/dnvt-folio/static/js/main.a9073cda.chunk.js",
-    "main.js.map": "/dnvt-folio/static/js/main.a9073cda.chunk.js.map",
+    "main.js": "/dnvt-folio/static/js/main.e010d898.chunk.js",
+    "main.js.map": "/dnvt-folio/static/js/main.e010d898.chunk.js.map",
     "runtime-main.js": "/dnvt-folio/static/js/runtime-main.f64fb87e.js",
     "runtime-main.js.map": "/dnvt-folio/static/js/runtime-main.f64fb87e.js.map",
     "static/js/2.41253ea8.chunk.js": "/dnvt-folio/static/js/2.41253ea8.chunk.js",
@@ -171,6 +171,6 @@
     "static/js/runtime-main.f64fb87e.js",
     "static/js/2.41253ea8.chunk.js",
     "static/css/main.b705027e.chunk.css",
-    "static/js/main.a9073cda.chunk.js"
+    "static/js/main.e010d898.chunk.js"
   ]
 }
