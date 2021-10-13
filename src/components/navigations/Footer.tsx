@@ -41,11 +41,11 @@ const Footer: React.FC = () => {
           : { display: "block", padding: "8px 0" }
       }
     >
-      <ExternalLink path='/' >{FOOTER_CONTENT[0].value}</ExternalLink>
-      <ExternalLink path='/' >{FOOTER_CONTENT[1].value}</ExternalLink>
-      <ExternalLink path='/' >{FOOTER_CONTENT[2].value}</ExternalLink>
-      <ExternalLink path='/' >{FOOTER_CONTENT[3].value}</ExternalLink>
-      <ExternalLink path='/' >{FOOTER_CONTENT[4].value}</ExternalLink>
+      <ExternalLink path='https://dribbble.com/Franzwa' >{FOOTER_CONTENT[0].value}</ExternalLink>
+      <ExternalLink path='https://github.com/dnvt' >{FOOTER_CONTENT[1].value}</ExternalLink>
+      <ExternalLink path='https://dribbble.com/Franzwa' >{FOOTER_CONTENT[2].value}</ExternalLink>
+      <ExternalLink path='https://www.linkedin.com/in/françois-denavaut-a75307153/' >{FOOTER_CONTENT[3].value}</ExternalLink>
+      <ExternalLink path='mailto:francois@dnvt.me' >{FOOTER_CONTENT[4].value}</ExternalLink>
     </div>
   )
 
