@@ -39,7 +39,6 @@ const Header: React.FC<HeaderType> = ({ positionNotfixed }) => {
   const mobileMenu = (<>
     <IconButton icon='menu' />
     {spacer}
-    {spacer}
     <Button menuToggle path="/">{CONTENT.home.text[1]}</Button>
     {spacer}
     {/* <IconButton icon="light" /> */}
