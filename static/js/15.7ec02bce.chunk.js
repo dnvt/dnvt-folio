@@ -1,2 +1,0 @@
-(this["webpackJsonpdnvt-folio"]=this["webpackJsonpdnvt-folio"]||[]).push([[15],{106:function(t,e,s){"use strict";s.r(e);s(1);var n=s(8),c=s(66),i=s(68),j=s(4),o=s(0);e.default=function(){return Object(o.jsxs)(o.Fragment,{children:[Object(o.jsx)(j.a,{contained:!0,height:40}),Object(o.jsx)(i.a,{positionNotfixed:!0}),Object(o.jsx)(n.a,{}),Object(o.jsx)(c.a,{}),Object(o.jsx)(n.a,{})]})}}}]);
-//# sourceMappingURL=15.7ec02bce.chunk.js.map
