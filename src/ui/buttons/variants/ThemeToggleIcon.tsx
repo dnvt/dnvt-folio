@@ -3,7 +3,6 @@
  */
 
 import React from "react"
-import useDarkMode from "use-dark-mode"
 import Icon from "../../../utils/icons/Icon"
 
 type ToggleProps = { color?: string, animation?: {} }
@@ -11,15 +10,15 @@ type ToggleProps = { color?: string, animation?: {} }
 ////////////////////////////////////////////////////////////////////////////////
 
 const ThemeToggleIcon: React.FC<ToggleProps> = ({ color }) => {
-  const darkMode = useDarkMode()
+  const darkMode = false
 
   return (
     <button
       type='button'
-      onClick={darkMode.toggle}
+
       aria-label='theme color toggle'
     >
-      <Icon color={color} name={darkMode.value ? "dark" : "light"} />
+      <Icon color={color} name={darkMode ? "dark" : "light"} />
     </button>
   )
 }

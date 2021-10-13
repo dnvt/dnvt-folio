@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { useTheme } from "react-jss"
-import useDarkMode from "use-dark-mode"
 import { motion } from "framer-motion"
 import { Theme } from "../../utils/theme/theme"
 import { useWindowSize } from "../../hooks/useWindowSize"
@@ -42,7 +41,7 @@ export interface CardPropsType {
 
 const Card: React.FC<CardPropsType> = (props) => {
 	const theme: Theme = useTheme()
-	const darkMode = useDarkMode()
+	const darkMode = false
 	const window = useWindowSize()
 	const classes = CardStyle()
 	const [isHovered, setIsHovered] = useState<Boolean>(false)
@@ -115,7 +114,7 @@ const Card: React.FC<CardPropsType> = (props) => {
 	}
 
 	function setBackgroundImage() {
-		if (srcDark && darkMode.value) return srcDark
+		if (srcDark && darkMode) return srcDark
 		if (srcMobile && window.width > 767) return srcMobile
 		else return src
 	}
