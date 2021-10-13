@@ -4,7 +4,7 @@ import { Theme } from "../theme/theme"
 type Props = { color: string }
 
 const FontStyle = createUseStyles(theme => ({
-  Fontimation: {
+  fontimation: {
     zIndex: -1,
     width: "100%",
     display: "flex",

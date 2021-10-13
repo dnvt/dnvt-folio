@@ -30,7 +30,7 @@ const FontTagWrapper: React.FC<FontTagWrapperProps> = (props): JSX.Element => {
       case "menu": return <div className={classes.menu} style={style}>{children}</div>
       case "link": return <div className={classes.link} style={style}>{children}</div>
       case "tooltip": return <div className={classes.tooltip} style={style}>{children}</div>
-      case "hero": return <div className={classes.Fontimation}><div className={classes.hero} style={style}>{children}</div></div>
+      case "hero": return <div className={classes.fontimation}><div className={classes.hero} style={style}>{children}</div></div>
       default: return null
     }
   }

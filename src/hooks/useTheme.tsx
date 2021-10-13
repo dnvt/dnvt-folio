@@ -8,11 +8,11 @@ type Context = [boolean, Function?] | boolean
 const DarkModeCtx = createContext<Context>([false, () => { }])
 
 export const ColorTheme: React.FC = ({ children }) => {
-  const darkMode = false // useDarkMode(false)
+  // const darkMode = useDarkMode(false)
 
   return (
     <DarkModeCtx.Provider value={false}>
-      <ThemeProvider theme={darkMode/*darkMode.value*/ ? THEME.dark : THEME.light}>
+      <ThemeProvider theme={THEME.light}>
         {children}
       </ThemeProvider>
     </DarkModeCtx.Provider>

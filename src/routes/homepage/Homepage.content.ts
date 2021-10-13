@@ -49,11 +49,8 @@ import starsPng from "../../assets/images/Stars/Stars.png"
 import starsWebp from "../../assets/images/Stars/Stars.webp"
 import coverPng from "../../assets/images/Coverjs/Coverjs.png"
 import coverWebp from "../../assets/images/Coverjs/Coverjs.webp"
-import gridPng from "../../assets/images/Writings/Grid/grid.png"
-import gridWebp from "../../assets/images/Writings/Grid/grid.webp"
-import { FooterContentType } from "../../components/cards/layouts/FooterCards"
 
-type IntroductionType = { GRPD_CARD: FooterContentType }
+type IntroductionType = { GRPD_CARD: GroupedContentType }
 type USMWorkType = {
 	MOBILE_FOUR: FourImagesType
 	CARD_BRANDING: CardPropsType
@@ -78,29 +75,19 @@ const INTRODUCTION: IntroductionType = {
 	GRPD_CARD: [
 		{
 			key: 1,
-			src: [gridPng, gridWebp],
-			alt: "test 2",
-			status: "externalLink",
-			title: { color: "black", value: "The Padded Grid · Medium article" },
-			background: "transparent",
-			href: "https://denavaut.medium.com/the-padded-grid-a-designers-hack-to-achieve-baseline-fit-fc40d022bc84",
-		},
-		{
-			key: 2,
 			src: [frame37Png, frame37Webp],
 			alt: "test 1",
-			status: "externalLink",
+			tag: { value: "Product design", color: "white" },
 			title: { color: "white", value: "Frame.io 3.7" },
 			background: "transparent",
 			href: "https://blog.frame.io/2020/08/25/frameio-v3-7/",
 		},
 		{
-			key: 3,
+			key: 2,
 			src: [frame36Png, frame36Webp],
 			alt: "test 2",
-			status: "externalLink",
+			tag: { value: "Product design", color: "white" },
 			title: { color: "white", value: "Frame.io 3.6" },
-			background: "transparent",
 			href: "https://blog.frame.io/2020/08/25/frameio-v3-6/",
 		},
 	],
