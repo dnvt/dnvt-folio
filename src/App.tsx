@@ -11,6 +11,7 @@ import Dashboard from './routes/work/usmobile/Dashboard'
 import Projects from './routes/work/projects/Projects'
 import About from './routes/about/About'
 import Error from './routes/error/404'
+import HeroTest from './routes/guildelines/hero/HeroTest'
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -40,6 +41,7 @@ const App: React.FC = () => {
               <Route path="/work/a-park-for-the-homeless-in-the-stars"><Projects type="stars" /></Route>
               <Route path="/playground/coverjs"><Projects type="coverjs" /></Route>
               <Route path="/about" component={About} />
+              <Route path="/hero-test" component={HeroTest} />
               <Route path="/guidelines" component={Guidelines} />
               <Route component={Error} />
             </Switch>
